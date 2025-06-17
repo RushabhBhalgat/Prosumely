@@ -2,12 +2,24 @@ import { useState, useEffect } from 'react'
 import { detectUserCountry, getCountryConfig } from '../utils/geolocation'
 import { CountryConfig, SUPPORTED_COUNTRIES } from '../types/country'
 
+// Default country config to ensure we always have a valid initial state
+const DEFAULT_COUNTRY_CONFIG: CountryConfig = {
+  code: 'US',
+  name: 'United States',
+  currency: 'USD',
+  currencySymbol: '$',
+  // Add any other required properties from your CountryConfig type
+}
+
 export function useCountryDetection() {
   const [detectedCountry, setDetectedCountry] = useState<string | null>(null)
   const [selectedCountry, setSelectedCountry] = useState<string>('')
   const [showCountryPrompt, setShowCountryPrompt] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
-  const [countryConfig, setCountryConfig] = useState<CountryConfig>(SUPPORTED_COUNTRIES.US)
+  // Fix: Provide a fallback to ensure we always have a valid CountryConfig
+  const [countryConfig, setCountryConfig] = useState<CountryConfig>(
+    SUPPORTED_COUNTRIES.US || DEFAULT_COUNTRY_CONFIG,
+  )
 
   useEffect(() => {
     async function initCountryDetection() {
@@ -22,12 +34,12 @@ export function useCountryDetection() {
         } else {
           // Show prompt if country not detected or not supported
           setShowCountryPrompt(true)
-          setCountryConfig(SUPPORTED_COUNTRIES.US) // Default to USD
+          setCountryConfig(SUPPORTED_COUNTRIES.US || DEFAULT_COUNTRY_CONFIG) // Default with fallback
         }
       } catch (error) {
         console.error('Country detection failed:', error)
         setShowCountryPrompt(true)
-        setCountryConfig(SUPPORTED_COUNTRIES.US)
+        setCountryConfig(SUPPORTED_COUNTRIES.US || DEFAULT_COUNTRY_CONFIG)
       } finally {
         setIsLoading(false)
       }
