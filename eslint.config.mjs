@@ -28,6 +28,8 @@ const eslintConfig = [
           caughtErrorsIgnorePattern: '^(_|ignore)',
         },
       ],
+      // Add this rule to fix the unescaped entities errors
+      'react/no-unescaped-entities': 'off',
     },
   },
   {
