@@ -7,7 +7,6 @@ import ClientReviews from '@/components/ClientReviews'
 import HowItWorksSection from '@/components/HowItWorks'
 import ServicesSection from '@/components/ServicesSection'
 import IcebergSection from '@/components/IcebergSection'
-import LatestBlogs from '@/components/LatestBlogs'
 
 export default function LandingPage() {
   return (
@@ -71,7 +70,6 @@ export default function LandingPage() {
       <IcebergSection />
       <HowItWorksSection />
       <ClientReviews />
-      <LatestBlogs />
     </main>
   )
 }
