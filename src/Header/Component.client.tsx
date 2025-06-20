@@ -93,7 +93,7 @@ export const HeaderClient: React.FC<{
                 onClick={() => {}}
                 className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
               >
-                Resume Services
+                Services
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
