@@ -1,8 +1,48 @@
 import React from 'react'
 import { Clock, FileText, MessageCircle, Mail } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+
+// Define interfaces for the props
+interface ServiceProps {
+  title?: string
+  price?: string
+  currency?: string
+  tagline?: string
+  description?: string
+  detailedDescription?: string
+}
+
+interface ContactProps {
+  whatsapp?: string
+  email?: string
+  note?: string
+}
+
+interface FeatureProps {
+  icon: React.ElementType
+  color: string
+  text: string
+}
+
+interface DeliveryInfoProps {
+  timeframe?: string
+  formats?: string[]
+}
+
+interface ServiceProductPageProps {
+  service?: ServiceProps
+  contact?: ContactProps
+  features?: FeatureProps[]
+  deliveryInfo?: DeliveryInfoProps
+}
 
 // Main reusable component
-const ServiceProductPage = ({ service = {}, contact = {}, features = [], deliveryInfo = {} }) => {
+const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
+  service = {},
+  contact = {},
+  features = [],
+  deliveryInfo = {},
+}) => {
   const {
     title = 'Service Title',
     price = '0',
