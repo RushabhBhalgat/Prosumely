@@ -10,7 +10,7 @@ export default function ServicesSection() {
       color: 'bg-blue-600',
       popular: false,
       description:
-        'Get a professionally written resume that beats Applicant Tracking Systems(ATS) and gets you shortlisted.  Optimized with the right keywords, formatting, and structure.',
+        'Get a professionally written resume that beats Applicant Tracking Systems(ATS) and gets you shortlisted. Optimized with the right keywords, formatting, and structure.',
       bestFor: 'Recent graduates, career starters',
     },
     {
@@ -21,7 +21,7 @@ export default function ServicesSection() {
       color: 'bg-blue-700',
       popular: false,
       description:
-        'Position yourself as a leader with a powerful, achievement-driven executive resume.  Crafted for senior roles, it highlights your impact, vision, and executive presence.',
+        'Position yourself as a leader with a powerful, achievement-driven executive resume. Crafted for senior roles, it highlights your impact, vision, and executive presence.',
       bestFor: 'Mid-level professionals, career changers',
     },
     {
