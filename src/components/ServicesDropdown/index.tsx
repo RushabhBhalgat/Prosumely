@@ -19,7 +19,7 @@ export function ServicesDropdown() {
         onClick={handleClick}
         className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-900 font-medium  dark:text-black transition-all duration-300 ease-in-out transform hover:scale-105 "
       >
-        <span className="font-medium">Resume Services</span>
+        <span className="font-medium">Services</span>
         <ChevronDown
           className={`h-4 w-4 transition-all duration-300 ease-in-out ${isOpen ? 'rotate-180' : ''}`}
         />
