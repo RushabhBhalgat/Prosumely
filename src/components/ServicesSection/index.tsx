@@ -1,5 +1,3 @@
-import { Star, Crown, Rocket, Shield, Check } from 'lucide-react'
-
 export default function ServicesSection() {
   const services = [
     {
