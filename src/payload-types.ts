@@ -724,6 +724,14 @@ export interface Form {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Enable this to allow users to attach files to this form
+   */
+  hasAttachment?: boolean | null;
+  /**
+   * Label for the attachment field (e.g. "Upload your resume")
+   */
+  hasAttachmentLabel?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -767,6 +775,7 @@ export interface FormSubmission {
         id?: string | null;
       }[]
     | null;
+  file?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
 }
@@ -1423,6 +1432,8 @@ export interface FormsSelect<T extends boolean = true> {
         message?: T;
         id?: T;
       };
+  hasAttachment?: T;
+  hasAttachmentLabel?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -1439,6 +1450,7 @@ export interface FormSubmissionsSelect<T extends boolean = true> {
         value?: T;
         id?: T;
       };
+  file?: T;
   updatedAt?: T;
   createdAt?: T;
 }
