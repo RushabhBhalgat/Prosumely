@@ -1,16 +1,6 @@
 'use client'
 import { useState } from 'react'
-import {
-  FileText,
-  Target,
-  Users,
-  Sparkles,
-  ArrowRight,
-  CheckCircle,
-  Clock,
-  FileCheck,
-  Zap,
-} from 'lucide-react'
+import { FileText, Users, Sparkles, ArrowRight, CheckCircle, Clock } from 'lucide-react'
 
 export default function HowItWorksSection() {
   const [activeStep, setActiveStep] = useState(1)

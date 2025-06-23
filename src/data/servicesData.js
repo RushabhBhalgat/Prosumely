@@ -1,4 +1,4 @@
-import { CheckCircle, Star, Shield, Zap, Users, Eye, Award, Target } from 'lucide-react'
+import { CheckCircle, Eye, Award, Target } from 'lucide-react'
 
 export const servicesData = {
   atsResume: {
