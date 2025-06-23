@@ -81,7 +81,7 @@ export default function HowItWorksSection() {
         <div className="hidden lg:block mb-16">
           <div className="relative max-w-6xl mx-auto">
             {/* Progress Line */}
-            <div className="absolute top-20 left-0 w-full h-1 bg-gradient-to-r from-cyan-200 via-blue-200 via-indigo-200 to-purple-200 rounded-full">
+            <div className="absolute top-20 left-0 w-full h-1 bg-gradient-to-r from-cyan-200 via-indigo-200 to-purple-200 rounded-full">
               <div
                 className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full transition-all duration-1000 ease-out"
                 style={{ width: `${(activeStep / 4) * 100}%` }}
