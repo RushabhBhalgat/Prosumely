@@ -15,6 +15,7 @@ export const servicesData = {
       email: 'contact@prosumely.com',
       note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
     },
+    redirectLink: '/ats-resume-writing-service/form',
     features: [
       { icon: CheckCircle, color: 'text-green-500', text: 'A dedicated professional to your CV' },
       { icon: CheckCircle, color: 'text-green-500', text: 'ATS optimized' },
@@ -39,6 +40,7 @@ export const servicesData = {
       email: 'contact@prosumely.com',
       note: 'International payments can be made through PayPal, offering a convenient option for those without an Indian bank account.',
     },
+    redirectLink: '/visual-resume-writing-service/form',
     features: [
       { icon: CheckCircle, color: 'text-green-500', text: 'Free Cover Letter included' },
       { icon: CheckCircle, color: 'text-green-500', text: 'Free Cover Email included' },
@@ -63,6 +65,8 @@ export const servicesData = {
       email: 'contact@prosumely.com',
       note: 'International payments can be made through PayPal, offering a convenient option for those without an Indian bank account.',
     },
+    redirectLink: '/executive-resume-writing-service/form',
+
     features: [
       { icon: CheckCircle, color: 'text-green-500', text: 'Free Cover Letter included' },
       { icon: CheckCircle, color: 'text-green-500', text: 'Free Cover Email included' },
@@ -87,6 +91,8 @@ export const servicesData = {
       email: 'contact@prosumely.com',
       note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
     },
+    redirectLink: '/linkedin-profile-makeover/form',
+
     features: [
       {
         icon: CheckCircle,

@@ -61,7 +61,8 @@ export const plugins: Plugin[] = [
     },
     formOverrides: {
       fields: ({ defaultFields }) => {
-        return defaultFields.map((field) => {
+        // First process existing fields that need modifications
+        const processedDefaultFields = defaultFields.map((field) => {
           if ('name' in field && field.name === 'confirmationMessage') {
             return {
               ...field,
@@ -78,6 +79,46 @@ export const plugins: Plugin[] = [
           }
           return field
         })
+
+        // Then add the new fields
+        return [
+          ...processedDefaultFields,
+          {
+            name: 'hasAttachment',
+            type: 'checkbox',
+            label: 'Allow File Attachments',
+            admin: {
+              description: 'Enable this to allow users to attach files to this form',
+            },
+          },
+          {
+            name: 'hasAttachmentLabel',
+            type: 'text',
+            label: 'Attachment Field Label',
+            admin: {
+              description: 'Label for the attachment field (e.g. "Upload your resume")',
+              condition: (data) => Boolean(data?.hasAttachment),
+            },
+            defaultValue: 'Upload your file',
+          },
+        ]
+      },
+    },
+    // Add the formSubmissionOverrides for file uploads
+    formSubmissionOverrides: {
+      fields: ({ defaultFields }) => {
+        return [
+          ...defaultFields,
+          {
+            name: 'file',
+            type: 'upload',
+            relationTo: 'media',
+            admin: {
+              allowCreate: true,
+              allowEdit: true,
+            },
+          },
+        ]
       },
     },
   }),
