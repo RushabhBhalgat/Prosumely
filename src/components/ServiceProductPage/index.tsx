@@ -1,6 +1,6 @@
 import React from 'react'
 import { Clock, FileText, MessageCircle, Mail } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
+import Link from 'next/link'
 
 // Define interfaces for the props
 interface ServiceProps {
@@ -34,6 +34,7 @@ interface ServiceProductPageProps {
   contact?: ContactProps
   features?: FeatureProps[]
   deliveryInfo?: DeliveryInfoProps
+  redirectLink?: string
 }
 
 // Main reusable component
@@ -42,6 +43,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
   contact = {},
   features = [],
   deliveryInfo = {},
+  redirectLink = '',
 }) => {
   const {
     title = 'Service Title',
@@ -121,9 +123,17 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
                 </div>
               )}
 
-              <button className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mb-6">
-                Get {title}
-              </button>
+              {redirectLink ? (
+                <Link href={redirectLink} className="block w-full">
+                  <button className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mb-6">
+                    Get {title}
+                  </button>
+                </Link>
+              ) : (
+                <button className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg mb-6">
+                  Get {title}
+                </button>
+              )}
 
               {(contact.whatsapp || contact.email) && (
                 <div className="bg-gray-50 rounded-xl p-6 space-y-4">
