@@ -1,4 +1,4 @@
-import { CheckCircle, Eye, Award, Target } from 'lucide-react'
+import { CheckCircle, Eye, Award, Target, Briefcase, TrendingUp } from 'lucide-react'
 
 export const servicesData = {
   atsResume: {
@@ -110,6 +110,34 @@ export const servicesData = {
     deliveryInfo: {
       timeframe: '48hrs',
       formats: ['LinkedIn Direct Update', 'Document Guide'],
+    },
+  },
+  careerPortfolio: {
+    service: {
+      title: 'Career Portfolio',
+      price: '40',
+      currency: '$',
+      tagline: 'Your Personal Brand, Amplified!',
+      description: `<strong style="color: #2563eb;">Transform Your Career with a Professional Portfolio! 🚀</strong><br/><br/>Your skills, achievements, and experience deserve a powerful presentation. A career portfolio is your ultimate personal brand—crafted to showcase your expertise, stand out in job applications, and attract high-value opportunities. 💼✨`,
+      detailedDescription: `<strong style="color: #2563eb;">Why You Need a Career Portfolio?</strong><br/><br/>✅ <strong>More Than a Resume</strong> – Resumes tell, but portfolios show! Impress recruiters with proof of your expertise.<br/>✅ <strong>Personal Brand Authority</strong> – Establish yourself as an industry leader with a well-structured, compelling portfolio.<br/>✅ <strong>Higher Interview Chances</strong> – 3X your callbacks by providing an in-depth look at your skills and achievements.<br/>✅ <strong>Attract Clients & Employers</strong> – Whether job hunting or freelancing, a career portfolio gets you noticed.<br/>✅ <strong>Showcase Your Work & Impact</strong> – Present past projects, client testimonials, and certifications effectively.<br/><br/>We at Prosumely create comprehensive career portfolios by <strong style="color: #2563eb;">strategically organizing</strong>, <strong style="color: #2563eb;">professionally designing</strong>, <strong style="color: #2563eb;">content optimizing</strong> & develop industry-leading output. We intend to make your portfolio compelling and impactful.`,
+    },
+    contact: {
+      whatsapp: '+91 7559112241',
+      email: 'contact@prosumely.com',
+      note: 'International payments can be made through PayPal, offering a convenient option for those without an Indian bank account.',
+    },
+    redirectLink: '/career-portfolio/form',
+    features: [
+      {
+        icon: Briefcase,
+        color: 'text-blue-500',
+        text: 'Comprehensive project showcase & testimonials',
+      },
+      { icon: TrendingUp, color: 'text-purple-500', text: '3X higher interview callback rate' },
+    ],
+    deliveryInfo: {
+      timeframe: '72hrs',
+      formats: ['PDF Portfolio'],
     },
   },
 }

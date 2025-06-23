@@ -243,7 +243,7 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
                     id={field.id}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm transition-all duration-300 focus:border-[#2563eb] focus:ring-2 focus:ring-[#9adbf4] focus:ring-opacity-50 focus:outline-none hover:border-gray-400 bg-gray-50 focus:bg-white"
                     required={field.required}
-                    placeholder={`Enter your ${field.label.toLowerCase()}`}
+                    placeholder={`${field.label.toLowerCase()}`}
                   />
                 </div>
               ))}

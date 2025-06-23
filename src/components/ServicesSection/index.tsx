@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import path from 'path'
+
 export default function ServicesSection() {
   const services = [
     {
@@ -10,6 +13,7 @@ export default function ServicesSection() {
       description:
         'Get a professionally written resume that beats Applicant Tracking Systems(ATS) and gets you shortlisted. Optimized with the right keywords, formatting, and structure.',
       bestFor: 'Recent graduates, career starters',
+      path: '/ats-resume-writing-service',
     },
     {
       id: 2,
@@ -21,6 +25,7 @@ export default function ServicesSection() {
       description:
         'Position yourself as a leader with a powerful, achievement-driven executive resume. Crafted for senior roles, it highlights your impact, vision, and executive presence.',
       bestFor: 'Mid-level professionals, career changers',
+      path: '/executive-resume-writing-service',
     },
     {
       id: 3,
@@ -32,10 +37,11 @@ export default function ServicesSection() {
       description:
         'The Jobseekers Combo is your all-in-one career branding kit—consisting of ATS/Executive CV, cover letter and email, an optimized LinkedIn profile, and a personalized career roadmap.',
       bestFor: 'Senior managers, executives, directors',
+      path: '/jobseekers-combo-service',
     },
     {
       id: 4,
-      name: 'Project Portfolio',
+      name: 'Career Portfolio',
       tagline: 'A visual journey through your projects',
       price: '$40',
       color: 'bg-blue-800',
@@ -43,6 +49,7 @@ export default function ServicesSection() {
       description:
         'Showcase your expertise with a polished project portfolio. Perfect for professionals in  construction, project management, architects, tech, design, and freelance.',
       bestFor: 'Serious job seekers, career transformation',
+      path: '/career-portfolio',
     },
   ]
 
@@ -101,11 +108,13 @@ export default function ServicesSection() {
                   </div>
 
                   {/* CTA Button */}
-                  <button
-                    className={`w-full py-3 px-4 rounded-lg font-semibold text-white transition-all duration-300 hover:opacity-90 ${service.color}`}
-                  >
-                    Get Started
-                  </button>
+                  <Link href={service.path} className="block w-full">
+                    <button
+                      className={`w-full py-3 px-4 rounded-lg font-semibold text-white transition-all duration-300 hover:opacity-90 ${service.color}`}
+                    >
+                      Get Started
+                    </button>
+                  </Link>
                 </div>
               </div>
             )
