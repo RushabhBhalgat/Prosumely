@@ -13,7 +13,6 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
       .then((res) => res.json())
       .then((data) => {
         setCmsForm(data)
-        console.log('cmsForm', data)
       })
       .catch((err) => {
         console.error('Error loading form:', err)
@@ -32,7 +31,6 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
     // get the file from the form data, if it exists
     const file = formData.get('file')
     if (file) {
-      console.log('file', file)
       // upload the file to payload
       const formDataToSend = new FormData()
       formDataToSend.append('file', file as File)
@@ -46,18 +44,13 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
         method: 'POST',
         body: formDataToSend,
       })
-      console.log('response', response)
       if (!response.ok) {
         throw new Error('Failed to upload file')
       }
       const data = await response.json()
-      console.log('data', data)
-      debugger
       fileUploadedId = data?.doc?.id
       // add the file id to the form data
     }
-
-    console.log('formData', Object.fromEntries(formData.entries()))
 
     // delete the file from the form data, so it's not sent to payload,
     // because it's already uploaded
@@ -85,7 +78,6 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
       })
 
       if (response.ok) {
-        console.log('Submission successful')
         // Set submitted state to true to show success message
         setIsSubmitted(true)
 
