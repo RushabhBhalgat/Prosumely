@@ -230,13 +230,22 @@ export async function Footer() {
             &copy; {currentYear} Prosumely. All rights reserved.
           </p>
           <div className="flex space-x-4 text-xs text-gray-500 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-[#9adaf3] transition-colors duration-200">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-[#9adaf3] transition-colors duration-200"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-[#9adaf3] transition-colors duration-200">
+            <Link
+              href="/terms-and-conditions"
+              className="hover:text-[#9adaf3] transition-colors duration-200"
+            >
               Terms & Conditions
             </Link>
-            <Link href="/refund" className="hover:text-[#9adaf3] transition-colors duration-200">
+            <Link
+              href="/cancellation-and-refund"
+              className="hover:text-[#9adaf3] transition-colors duration-200"
+            >
               Cancellation & Refund
             </Link>
           </div>
