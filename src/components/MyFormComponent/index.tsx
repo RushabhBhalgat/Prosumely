@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import DOMPurify from 'dompurify' // You'll need to install this package
+import { Check } from 'lucide-react' // Changed from CheckIcon to Check
 
 // Define proper TypeScript interfaces
 interface FormField {
@@ -21,9 +22,20 @@ interface CmsForm {
   hasAttachmentLabel?: string
   submitButtonLabel?: string
   redirect?: RedirectConfig
+  confirmationMessage?: string
 }
 
-const MyFormComponent = ({ formId }: { formId: string }) => {
+interface MyFormComponentProps {
+  formId: string
+  hideFormHeader?: boolean
+  preventRedirect?: boolean // Add this new prop
+}
+
+const MyFormComponent = ({
+  formId,
+  hideFormHeader = false,
+  preventRedirect = false,
+}: MyFormComponentProps) => {
   const [cmsForm, setCmsForm] = useState<CmsForm | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -197,12 +209,12 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
         // Reset the form
         formRef.current?.reset()
 
-        // Redirect after 2.5 seconds
-        setTimeout(() => {
-          if (cmsForm?.redirect?.url) {
-            window.location.href = cmsForm.redirect.url
-          }
-        }, 2500)
+        // Only redirect if not prevented and URL exists
+        if (!preventRedirect && cmsForm?.redirect?.url) {
+          setTimeout(() => {
+            window.location.href = cmsForm.redirect?.url ?? ''
+          }, 2500)
+        }
       } else {
         const errorData = await response.json()
         // Don't expose detailed errors to the client
@@ -217,6 +229,67 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
     } finally {
       setIsSubmitting(false)
     }
+  }
+
+  // Add this helper function to extract text from the confirmation message structure
+  const extractConfirmationText = (confirmationMessage: any): string => {
+    try {
+      // Navigate through the nested structure to get the text
+      if (confirmationMessage?.root?.children?.[0]?.children?.[0]?.text) {
+        return confirmationMessage.root.children[0].children[0].text
+      }
+      // Fallback message if structure isn't as expected
+      return 'Message sent successfully! We will get back to you soon!'
+    } catch (e) {
+      // Fallback if any errors occur during extraction
+      return 'Message sent successfully! We will get back to you soon!'
+    }
+  }
+
+  const renderSuccessMessage = () => {
+    if (!isSubmitted) return null
+
+    return (
+      <div className="p-8 text-center">
+        <div className="flex justify-center mb-4">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+            <Check className="w-8 h-8 text-green-500" /> {/* Changed from CheckIcon to Check */}
+          </div>
+        </div>
+
+        {preventRedirect ? (
+          // Show only the custom confirmation message from Payload
+          <div className="prose prose-blue mx-auto">
+            {cmsForm?.confirmationMessage ? (
+              <h3 className="text-xl font-medium text-gray-900 mb-2">
+                {extractConfirmationText(cmsForm.confirmationMessage)}
+              </h3>
+            ) : (
+              <h3 className="text-xl font-medium text-gray-900 mb-2">
+                Message sent successfully! We will get back to you soon!
+              </h3>
+            )}
+          </div>
+        ) : (
+          // Show redirect message with enhanced styling
+          <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 animate-fade-in">
+            <h3 className="text-xl font-bold text-[#2563eb] mb-3">Form Submitted Successfully!</h3>
+            <p className="text-gray-700 mb-3">Taking you to the payment page...</p>
+            <div className="flex items-center justify-center mt-2">
+              <div className="h-1 bg-gradient-to-r from-[#2563eb] to-[#9adbf4] rounded-full w-full max-w-[200px]">
+                <div
+                  className="h-1 bg-[#2563eb] rounded-full transition-all duration-300"
+                  style={{ width: `${(countdown / 25) * 100}%` }}
+                ></div>
+              </div>
+              <p className="text-sm text-gray-600 ml-3 min-w-[90px]">
+                {Math.ceil(countdown / 10)} seconds...
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+    )
   }
 
   if (!cmsForm) {
@@ -237,50 +310,7 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
 
   // Show success message if submitted
   if (isSubmitted) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 flex items-center justify-center p-4">
-        <div
-          className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center"
-          role="status"
-          aria-live="polite"
-        >
-          <div className="animate-bounce mb-6">
-            <div
-              className="mx-auto h-16 w-16 bg-gradient-to-r from-[#2563eb] to-[#9adbf4] rounded-full flex items-center justify-center"
-              aria-hidden="true"
-            >
-              <svg
-                className="h-8 w-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-          </div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4 animate-fade-in">
-            Form Submitted Successfully!
-          </h2>
-          <div className="space-y-4">
-            <p className="text-gray-600 animate-fade-in-delay">Taking you to the payment page...</p>
-            <div className="flex items-center justify-center space-x-2" aria-hidden="true">
-              <div className="h-2 w-2 bg-[#2563eb] rounded-full animate-pulse"></div>
-              <div className="h-2 w-2 bg-[#9adbf4] rounded-full animate-pulse delay-150"></div>
-              <div className="h-2 w-2 bg-[#2563eb] rounded-full animate-pulse delay-300"></div>
-            </div>
-            <div className="mt-4 text-sm text-gray-500">
-              Redirecting in {Math.ceil(countdown / 10)} seconds...
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+    return renderSuccessMessage()
   }
 
   return (
@@ -288,29 +318,31 @@ const MyFormComponent = ({ formId }: { formId: string }) => {
       <div className="max-w-2xl mx-auto">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header */}
-          <header className="bg-gradient-to-r from-[#2563eb] to-[#9adbf4] p-6 text-white">
-            <h1 className="text-2xl font-bold mb-4">CV Development Form</h1>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-2">
-                <span className="font-semibold">1.</span>
-                <p>
-                  <strong>
-                    Please submit your details so that we can understand your aspirations and
-                    requirements better to develop and design an excellent quality CV
-                  </strong>
-                </p>
+          {!hideFormHeader && (
+            <header className="bg-gradient-to-r from-[#2563eb] to-[#9adbf4] p-6 text-white">
+              <h1 className="text-2xl font-bold mb-4">CV Development Form</h1>
+              <div className="space-y-3 text-sm">
+                <div className="flex items-start space-x-2">
+                  <span className="font-semibold">1.</span>
+                  <p>
+                    <strong>
+                      Please submit your details so that we can understand your aspirations and
+                      requirements better to develop and design an excellent quality CV
+                    </strong>
+                  </p>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <span className="font-semibold">2.</span>
+                  <p>
+                    <strong>
+                      We will contact you on the following details while we design and develop your
+                      CV, hence kindly fill the details accurately
+                    </strong>
+                  </p>
+                </div>
               </div>
-              <div className="flex items-start space-x-2">
-                <span className="font-semibold">2.</span>
-                <p>
-                  <strong>
-                    We will contact you on the following details while we design and develop your
-                    CV, hence kindly fill the details accurately
-                  </strong>
-                </p>
-              </div>
-            </div>
-          </header>
+            </header>
+          )}
 
           {/* Form Content */}
           <main className="p-6 md:p-8">
