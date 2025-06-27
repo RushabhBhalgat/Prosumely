@@ -1,4 +1,4 @@
-import { ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
 const CancellationAndRefundPage = () => {
   return (
@@ -100,9 +100,11 @@ const CancellationAndRefundPage = () => {
       <div className="mt-8 border-t pt-6">
         <p className="mb-4">
           If you have any questions or concerns regarding our Cancellation & Refund Policy, please{' '}
-          <a href="/contact" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
-            Contact Us <ExternalLink className="ml-1 h-4 w-4" />
-          </a>
+          <Link href="/contact">
+            <span className="text-blue-600 hover:text-blue-800 inline-flex items-center">
+              Contact Us
+            </span>
+          </Link>
         </p>
         <p className="text-sm text-gray-600">
           This Cancellation & Refund Policy was last updated on 13-07-2023.
