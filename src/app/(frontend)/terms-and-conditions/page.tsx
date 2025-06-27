@@ -1,4 +1,4 @@
-import { Link as LucideLink, ExternalLink } from 'lucide-react'
+import Link from 'next/link'
 
 const TermsAndConditionsPage = () => {
   return (
@@ -192,9 +192,11 @@ const TermsAndConditionsPage = () => {
       <div className="mt-8 border-t pt-6">
         <p className="mb-4">
           If you have any questions or concerns regarding these Terms, please{' '}
-          <a href="/contact" className="text-blue-600 hover:text-blue-800 inline-flex items-center">
-            Contact Us <ExternalLink className="ml-1 h-4 w-4" />
-          </a>
+          <Link href="/contact/">
+            <span className="text-blue-600 hover:text-blue-800 inline-flex items-center">
+              Contact Us
+            </span>
+          </Link>
         </p>
         <p className="text-sm text-gray-600">
           These Terms and Conditions were last updated on 27-6-2025.
