@@ -7,6 +7,7 @@ import ClientReviews from '@/components/ClientReviews'
 import HowItWorksSection from '@/components/HowItWorks'
 import ServicesSection from '@/components/ServicesSection'
 import IcebergSection from '@/components/IcebergSection'
+import ResumeReviewCTA from '@/components/ResumeReviewCTA'
 
 export default function LandingPage() {
   return (
