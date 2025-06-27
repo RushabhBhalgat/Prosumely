@@ -16,7 +16,7 @@ import {
 } from 'lucide-react'
 
 const AboutPage = () => {
-  const [activeTab, setActiveTab] = useState('purpose')
+  const [activeTab, setActiveTab] = useState<keyof typeof tabContent>('purpose')
 
   const values = [
     {
@@ -175,12 +175,13 @@ const AboutPage = () => {
             <div className="flex border-b border-gray-100">
               {Object.entries(tabContent).map(([key, tab]) => {
                 const IconComponent = tab.icon
+                const tabKey = key as keyof typeof tabContent
                 return (
                   <button
                     key={key}
-                    onClick={() => setActiveTab(key)}
+                    onClick={() => setActiveTab(tabKey)}
                     className={`flex-1 px-8 py-6 text-left transition-all duration-300 relative group ${
-                      activeTab === key
+                      activeTab === tabKey
                         ? 'bg-blue-50 text-blue-600'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
@@ -188,7 +189,7 @@ const AboutPage = () => {
                     <div className="flex items-center space-x-3">
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
-                          activeTab === key
+                          activeTab === tabKey
                             ? 'bg-blue-600 text-white'
                             : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'
                         }`}
@@ -200,7 +201,7 @@ const AboutPage = () => {
                         <div className="text-sm opacity-70">Our {key}</div>
                       </div>
                     </div>
-                    {activeTab === key && (
+                    {activeTab === tabKey && (
                       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-400"></div>
                     )}
                   </button>
