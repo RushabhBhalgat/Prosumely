@@ -202,12 +202,6 @@ export async function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-[#9adaf3] mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">
-                  123 Career Street, Professional City, 10001
-                </span>
-              </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-[#9adaf3] flex-shrink-0" />
                 <a
