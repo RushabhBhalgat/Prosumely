@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import path from 'path'
 
 export default function ServicesSection() {
   const services = [
@@ -54,10 +53,10 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section className="bg-gray-50 py-20">
-      <div className="container mx-auto px-6">
+    <section className="bg-gray-50 py-6 md:py-10 lg:py-16">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6 md:mb-10 lg:mb-14">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Professional resume writing services tailored to your career level and goals
@@ -65,7 +64,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-2 md:mb-4 lg:mb-8">
           {services.map((service) => {
             return (
               <div
