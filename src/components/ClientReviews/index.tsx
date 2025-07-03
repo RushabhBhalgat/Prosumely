@@ -135,7 +135,7 @@ export default function ReviewsSection() {
   }
 
   return (
-    <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 overflow-hidden -mt-8 md:mt-0">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 bg-blue-300 rounded-full blur-3xl"></div>

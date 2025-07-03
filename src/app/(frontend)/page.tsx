@@ -7,12 +7,11 @@ import ClientReviews from '@/components/ClientReviews'
 import HowItWorksSection from '@/components/HowItWorks'
 import ServicesSection from '@/components/ServicesSection'
 import IcebergSection from '@/components/IcebergSection'
-import ResumeReviewCTA from '@/components/ResumeReviewCTA'
 
 export default function LandingPage() {
   return (
     <main>
-      <div className="relative h-[90vh] overflow-hidden">
+      <div className="relative h-[40vh] lg:h-[85vh] flex items-center overflow-hidden">
         {/* Background SVG Image - Full Coverage - Hidden on mobile/tablet */}
         <div className="absolute inset-0 hidden lg:block">
           <img
@@ -23,7 +22,7 @@ export default function LandingPage() {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 flex items-start justify-center lg:items-center lg:justify-start h-full pt-8 lg:pt-0">
+        <div className="relative z-10 flex items-start justify-center lg:items-center lg:justify-start h-full pt-4 pb-4 lg:pt-0 lg:pb-0 w-full">
           <div className="container mx-auto px-6 lg:px-8">
             <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-gray-800 leading-tight mb-6 tracking-normal">
