@@ -17,7 +17,9 @@ export default function TopNavbar() {
           <span className="cursor-pointer">Egypt</span>
           <span className="cursor-pointer font-medium">Select your Country</span>
         </div>
-        <button className="bg-black text-white px-4 py-1 rounded hover:opacity-90">BUY NOW</button>
+        <button className="bg-black text-white px-3 py-1 rounded text-xs md:text-sm whitespace-nowrap hover:opacity-90">
+          BUY NOW
+        </button>
       </div>
     </div>
   )

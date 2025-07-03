@@ -171,29 +171,29 @@ export default function HowItWorksSection() {
                 <div key={step.number} className="relative">
                   {/* Connecting Line */}
                   {index < steps.length - 1 && (
-                    <div className="absolute left-8 top-20 w-0.5 h-16 bg-gradient-to-b from-blue-200 to-transparent"></div>
+                    <div className="absolute left-8 top-12 w-0.5 h-12 bg-gradient-to-b from-blue-200 to-transparent"></div>
                   )}
 
-                  <div className="flex gap-6">
-                    {/* Step Circle */}
+                  <div className="flex gap-4">
+                    {/* Step Icon Only (No Number) */}
                     <div
-                      className={`flex-shrink-0 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-r ${step.color} text-white`}
+                      className={`flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-r ${step.color} text-white`}
                     >
-                      <span className="font-bold text-lg">{step.number}</span>
+                      <IconComponent className="w-6 h-6" />
                     </div>
 
                     {/* Content */}
-                    <div className="flex-1 bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 shadow-lg">
+                    <div className="flex-1 bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-4 shadow-lg">
                       {/* Icon & Title */}
-                      <div className="flex items-start gap-4 mb-4">
+                      <div className="flex items-start gap-3 mb-2">
                         <div
-                          className={`w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-r ${step.color}`}
+                          className={`w-8 h-8 rounded-xl flex items-center justify-center bg-gradient-to-r ${step.color}`}
                         >
-                          <IconComponent className="w-5 h-5 text-white" />
+                          <IconComponent className="w-4 h-4 text-white" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="font-bold text-lg text-gray-900 mb-1">{step.title}</h3>
-                          <p className="text-sm text-blue-600 font-medium">{step.subtitle}</p>
+                          <h3 className="font-bold text-base text-gray-900 mb-0.5">{step.title}</h3>
+                          <p className="text-xs text-blue-600 font-medium">{step.subtitle}</p>
                         </div>
                         <div className="flex items-center gap-1 text-xs text-gray-500">
                           <Clock className="w-3 h-3" />
@@ -201,7 +201,7 @@ export default function HowItWorksSection() {
                         </div>
                       </div>
 
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
                         {step.description}
                       </p>
 
@@ -210,7 +210,7 @@ export default function HowItWorksSection() {
                         {step.highlights.map((highlight, idx) => (
                           <span
                             key={idx}
-                            className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-medium"
+                            className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full text-xs font-medium"
                           >
                             {highlight}
                           </span>
