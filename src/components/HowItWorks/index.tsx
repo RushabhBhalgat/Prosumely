@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import { useState } from 'react'
 import { FileText, Users, Sparkles, ArrowRight, CheckCircle, Clock } from 'lucide-react'
 
@@ -9,12 +10,12 @@ export default function HowItWorksSection() {
     {
       number: 1,
       title: 'Share Your Story',
-      subtitle: 'Tell us about your goals',
+      subtitle: 'Tell us about your goal',
       description:
-        'Send us your current resume along with your career goals and target location—lets get started!',
+        'Send us your current resume along with your career goal and target location—lets get started!',
       icon: FileText,
       color: 'from-cyan-400 to-blue-500',
-      highlights: ['Current Resume', 'Career Goals', 'Target Location'],
+      highlights: ['Current Resume', 'Career Goal', 'Target Location'],
       time: '2 minutes',
     },
     {
@@ -67,14 +68,12 @@ export default function HowItWorksSection() {
             <Sparkles className="w-4 h-4" />
             <span>Simple & Effective Process</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            <span className="text-blue-600">How It Works</span> –
-            <span className="block text-gray-800">Resume Writing Made Simple</span>
+          <h2 className="  text-gray-900 mb-4">
+            <span className="text-4xl md:text-5xl text-blue-600 font-bold">How It Works</span>
+            <span className="text-xl block text-gray-800">
+              Resume Writing Made Simple in 4 Steps
+            </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From your story to your dream job – we make the journey seamless with our proven 4-step
-            process
-          </p>
         </div>
 
         {/* Desktop Steps - Interactive Timeline */}
@@ -233,9 +232,35 @@ export default function HowItWorksSection() {
             <p className="text-gray-600 mb-6">
               Join thousands who've landed their dream jobs with our expert resume writing service
             </p>
-            <button className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center gap-2">
-              Get Started Now <ArrowRight className="w-5 h-5" />
-            </button>
+            <Link href="/services">
+              <button className="group relative inline-flex items-center justify-center px-3 py-1.5 lg:px-4 lg:py-2 text-base lg:text-lg font-semibold text-slate-800 bg-gradient-to-br from-cyan-300 via-sky-200 to-blue-300 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/60 focus:outline-none focus:ring-4 focus:ring-cyan-300/60 border-2 border-cyan-400/40 backdrop-blur-sm hover:from-cyan-400 hover:via-sky-300 hover:to-blue-400">
+                {/* Crystalline shimmer effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+
+                {/* Ice crystal facet effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-200/60 via-transparent via-40% to-blue-400/30 opacity-70"></div>
+
+                {/* Frosted ice texture */}
+                <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent"></div>
+
+                <span className="relative z-10 flex items-center drop-shadow-sm">
+                  Get Started Now
+                  <svg
+                    className="ml-2 w-4 h-4 lg:w-5 lg:h-5 transform group-hover:translate-x-1 transition-transform duration-300 text-slate-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </Link>
           </div>
         </div>
       </div>
