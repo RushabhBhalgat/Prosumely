@@ -5,25 +5,25 @@ export default function ServicesSection() {
     {
       id: 1,
       name: 'ATS Resume ',
-      tagline: 'Perfect for entry-level professionals',
+      tagline: 'Get shortlisted. At speed!',
       price: '$20',
-      color: 'bg-blue-600',
+      color: 'bg-blue-800',
       popular: false,
       description:
         'Get a professionally written resume that beats Applicant Tracking Systems(ATS) and gets you shortlisted. Optimized with the right keywords, formatting, and structure.',
-      bestFor: 'Recent graduates, career starters',
+      bestFor: 'Junior and mid-level professionals',
       path: '/ats-resume-writing-service',
     },
     {
       id: 2,
       name: 'Executive Resume',
-      tagline: 'Most popular choice',
+      tagline: 'Land leadership interviews, faster!',
       price: '$30',
-      color: 'bg-blue-700',
+      color: 'bg-blue-800',
       popular: false,
       description:
         'Position yourself as a leader with a powerful, achievement-driven executive resume. Crafted for senior roles, it highlights your impact, vision, and executive presence.',
-      bestFor: 'Mid-level professionals, career changers',
+      bestFor: 'Senior-level professionals & leadership roles',
       path: '/executive-resume-writing-service',
     },
     {
@@ -31,24 +31,24 @@ export default function ServicesSection() {
       name: "Jobseekers's Combo",
       tagline: 'Everything you need to succeed',
       price: '$50',
-      color: 'bg-blue-700',
+      color: 'bg-blue-800',
       popular: true,
       description:
-        'The Jobseekers Combo is your all-in-one career branding kit—consisting of ATS/Executive CV, cover letter and email, an optimized LinkedIn profile, and a personalized career roadmap.',
-      bestFor: 'Senior managers, executives, directors',
+        'The Jobseekers Combo is your all-in-one career branding kit—consisting of ATS/Executive CV, cover letter, cover email, LinkedIn profile makeover, and a personalized career roadmap.',
+      bestFor: 'Mid/Senior level professionals and executives',
       path: '/jobseekers-combo-service',
     },
     {
       id: 4,
-      name: 'Career Portfolio',
+      name: 'Project Portfolio',
       tagline: 'A visual journey through your projects',
       price: '$40',
       color: 'bg-blue-800',
       popular: false,
       description:
-        'Showcase your expertise with a polished project portfolio. Perfect for professionals in  construction, project management, architects, tech, design, and freelance.',
-      bestFor: 'Serious job seekers, career transformation',
-      path: '/career-portfolio',
+        'Showcase your expertise with a polished project portfolio. Perfect for professionals in project/product management, architects, tech, design, and freelance.',
+      bestFor: 'Professionals with project based roles',
+      path: '/project-portfolio',
     },
   ]
 

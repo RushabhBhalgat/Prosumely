@@ -68,7 +68,7 @@ export default function LandingPage() {
         </div>
       </div>
       <ServicesSection />
-      <IcebergSection />
+      {/* <IcebergSection /> */}
       <HowItWorksSection />
       <ClientReviews />
     </main>
