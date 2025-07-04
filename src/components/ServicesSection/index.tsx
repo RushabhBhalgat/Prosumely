@@ -53,7 +53,7 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section className="bg-gray-50 py-6 md:py-10 lg:py-16">
+    <section className="bg-gray-50 py-6 md:py-10 lg:py-16 mt-16 md:mt-0">
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
         {/* Header */}
         <div className="text-center mb-6 md:mb-10 lg:mb-14">
