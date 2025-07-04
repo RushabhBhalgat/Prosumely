@@ -11,7 +11,7 @@ import IcebergSection from '@/components/IcebergSection'
 export default function LandingPage() {
   return (
     <main>
-      <div className="relative h-[40vh] lg:h-[85vh] flex items-center overflow-hidden">
+      <div className="relative h-[55vh] lg:h-[85vh] flex items-center overflow-hidden">
         {/* Background SVG Image - Full Coverage - Hidden on mobile/tablet */}
         <div className="absolute inset-0 hidden lg:block">
           <img
@@ -31,7 +31,7 @@ export default function LandingPage() {
               </h1>
 
               <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed font-normal max-w-xl">
-                Our team of professional designers, domain experts, HRs and industry veterans
+                Our team of professional resume designers, domain experts, HRs and industry veterans
                 collaborate together to build a professional Resume for you
               </p>
               <Link href="/services">
