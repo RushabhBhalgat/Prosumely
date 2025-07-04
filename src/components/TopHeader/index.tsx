@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 // components/TopNavbar.tsx
 export default function TopNavbar() {
   return (
@@ -17,9 +19,11 @@ export default function TopNavbar() {
           <span className="cursor-pointer">Egypt</span>
           <span className="cursor-pointer font-medium">Select your Country</span>
         </div>
-        <button className="bg-black text-white px-3 py-1 rounded text-xs md:text-sm whitespace-nowrap hover:opacity-90">
-          BUY NOW
-        </button>
+        <Link href="/pricing">
+          <button className="bg-black text-white px-3 py-1 rounded text-xs md:text-sm whitespace-nowrap hover:opacity-90">
+            BUY NOW
+          </button>
+        </Link>
       </div>
     </div>
   )

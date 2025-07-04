@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
-
+import Link from 'next/link'
 export default function ReviewsSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -263,11 +263,12 @@ export default function ReviewsSection() {
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
           <div className="text-center bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-            <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">98%</div>
-            <div className="text-gray-600 text-sm">Client Satisfaction</div>
-          </div>
-          <div className="text-center bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
             <div className="text-2xl md:text-3xl font-bold text-cyan-500 mb-2">3x</div>
+            <div className="text-gray-600 text-sm">More job offers</div>
+          </div>
+
+          <div className="text-center bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+            <div className="text-2xl md:text-3xl font-bold text-cyan-500 mb-2">4x</div>
             <div className="text-gray-600 text-sm">More Interviews</div>
           </div>
           <div className="text-center bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
@@ -275,16 +276,42 @@ export default function ReviewsSection() {
             <div className="text-gray-600 text-sm">Countries Served</div>
           </div>
           <div className="text-center bg-white/60 backdrop-blur-sm border border-blue-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
-            <div className="text-2xl md:text-3xl font-bold text-cyan-500 mb-2">2 Days</div>
-            <div className="text-gray-600 text-sm">Avg Turnaround</div>
+            <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-2">1.5x</div>
+            <div className="text-gray-600 text-sm">Average hike in salary</div>
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="text-center">
-          <button className="bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-            Explore our services →
-          </button>
+          <Link href="/services">
+            <button className="group relative inline-flex items-center justify-center px-3 py-1.5 lg:px-4 lg:py-2 text-base lg:text-lg font-semibold text-slate-800 bg-gradient-to-br from-cyan-300 via-sky-200 to-blue-300 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/60 focus:outline-none focus:ring-4 focus:ring-cyan-300/60 border-2 border-cyan-400/40 backdrop-blur-sm hover:from-cyan-400 hover:via-sky-300 hover:to-blue-400">
+              {/* Crystalline shimmer effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+
+              {/* Ice crystal facet effect */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-200/60 via-transparent via-40% to-blue-400/30 opacity-70"></div>
+
+              {/* Frosted ice texture */}
+              <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent"></div>
+
+              <span className="relative z-10 flex items-center drop-shadow-sm">
+                Explore services
+                <svg
+                  className="ml-2 w-4 h-4 lg:w-5 lg:h-5 transform group-hover:translate-x-1 transition-transform duration-300 text-slate-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </section>
