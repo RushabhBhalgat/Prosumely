@@ -164,8 +164,6 @@ export default function HowItWorksSection() {
         <div className="lg:hidden mb-16">
           <div className="max-w-2xl mx-auto space-y-8">
             {steps.map((step, index) => {
-              const IconComponent = step.icon
-
               return (
                 <div key={step.number} className="relative">
                   {/* Connecting Line */}
@@ -174,30 +172,23 @@ export default function HowItWorksSection() {
                   )}
 
                   <div className="flex gap-4">
-                    {/* Step Icon Only (No Number) */}
+                    {/* Step Number in Icon Design */}
                     <div
-                      className={`flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg bg-gradient-to-r ${step.color} text-white`}
+                      className={`flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center shadow-lg bg-gradient-to-r ${step.color} text-white font-bold text-base`}
                     >
-                      <IconComponent className="w-6 h-6" />
+                      {step.number}
                     </div>
 
                     {/* Content */}
                     <div className="flex-1 bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-4 shadow-lg">
-                      {/* Icon & Title */}
-                      <div className="flex items-start gap-3 mb-2">
-                        <div
-                          className={`w-8 h-8 rounded-xl flex items-center justify-center bg-gradient-to-r ${step.color}`}
-                        >
-                          <IconComponent className="w-4 h-4 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="font-bold text-base text-gray-900 mb-0.5">{step.title}</h3>
-                          <p className="text-xs text-blue-600 font-medium">{step.subtitle}</p>
-                        </div>
-                        <div className="flex items-center gap-1 text-xs text-gray-500">
-                          <Clock className="w-3 h-3" />
-                          <span>{step.time}</span>
-                        </div>
+                      {/* Title & Subtitle */}
+                      <div className="mb-2">
+                        <h3 className="font-bold text-base text-gray-900 mb-0.5">{step.title}</h3>
+                        <p className="text-xs text-blue-600 font-medium">{step.subtitle}</p>
+                      </div>
+                      <div className="flex items-center gap-1 text-xs text-gray-500 mb-2">
+                        <Clock className="w-3 h-3" />
+                        <span>{step.time}</span>
                       </div>
 
                       <p className="text-gray-600 text-xs leading-relaxed mb-2">
