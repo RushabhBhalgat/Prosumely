@@ -72,7 +72,7 @@ const services = [
     description:
       'We help you articulate your goals, experiences, and aspirations effectively. Includes a personalized SOP tailored to your academic and career objectives.',
     bestFor: 'Graduate school applicants, international students',
-    path: '/',
+    path: '/sop-writing-service',
   },
   {
     id: 7,
@@ -84,7 +84,7 @@ const services = [
     description:
       'Turn your ambition into an actionable career roadmap. We design step-by-step plans tailored to your long-term goals. Follow the roadmap—and move confidently toward your dream career.',
     bestFor: 'Mid-level professionals, career changers',
-    path: '/visual-resume-writing-service',
+    path: '/career-roadmap-service',
   },
   {
     id: 8,
@@ -96,7 +96,7 @@ const services = [
     description:
       'A well-crafted cover letter that complements your resume and highlights your unique qualifications and experiences. Tailored to the job you are applying for. ',
     bestFor: 'Job seekers looking to make a strong first impression',
-    path: '/',
+    path: '/cover-letter-writing-service',
   },
   {
     id: 9,
@@ -108,7 +108,7 @@ const services = [
     description:
       'Our personalized coaching helps you master answers, body language, and mindset. Stand out, stay sharp, and land your dream job with ease.',
     bestFor: 'Anyone preparing for job interviews',
-    path: '/',
+    path: '/interview-coaching-service',
   },
   {
     id: 10,
@@ -120,7 +120,7 @@ const services = [
     description:
       'We craft detailed, structured CVs tailored for research, grants, fellowships, and faculty roles. Position yourself as a credible scholar.',
     bestFor: 'Researchers, Professors and PHD candidates',
-    path: '/',
+    path: '/academic-cv-writing-service',
   },
   {
     id: 11,
@@ -132,7 +132,7 @@ const services = [
     description:
       'We craft applications for elite professional bodies, industry associations, & academic societies. We position you for acceptance.',
     bestFor: 'Candidates seeking membership in industry bodies.',
-    path: '/',
+    path: '/membership-application-service',
   },
 ]
 
