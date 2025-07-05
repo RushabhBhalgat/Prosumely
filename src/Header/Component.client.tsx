@@ -4,6 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { CMSLink } from '@/components/Link'
 import { ServicesDropdown } from '@/components/ServicesDropdown'
+import { ResourcesDropdown } from '@/components/ResourcesDropdown'
+import { PricingDropdown } from '@/components/PricingDropdown'
+import { CareerToolsDropdown } from '@/components/CareerToolsDropdown'
 import { useHeaderTheme } from '@/providers/HeaderTheme'
 
 import type { Header as HeaderType } from '@/payload-types'
@@ -36,8 +39,17 @@ export const HeaderClient: React.FC<{
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          {/* Add the Services dropdown here */}
+          {/* Pricing dropdown */}
+          <PricingDropdown />
+
+          {/* Services dropdown */}
           <ServicesDropdown />
+
+          {/* Career Tools dropdown */}
+          <CareerToolsDropdown />
+
+          {/* Resources dropdown */}
+          <ResourcesDropdown />
 
           {/* Regular nav items from CMS */}
           {navItems?.map(({ link }, i) => <CMSLink key={i} {...link} />)}
@@ -87,6 +99,13 @@ export const HeaderClient: React.FC<{
       {isMenuOpen && (
         <div className="md:hidden bg-white p-4 border-t border-gray-200">
           <div className="flex flex-col space-y-4">
+            {/* Pricing Link for mobile */}
+            <div className="py-1">
+              <Link href="/pricing" className="block w-full py-2 font-medium text-gray-800">
+                Pricing
+              </Link>
+            </div>
+
             {/* Services Dropdown for mobile */}
             <div className="py-1">
               <button
@@ -115,11 +134,94 @@ export const HeaderClient: React.FC<{
                 <Link href="/executive-resume-writing-service" className="py-1 text-gray-700">
                   Executive Resume
                 </Link>
-                <Link href="/visual-resume-writing-service" className="py-1 text-gray-700">
-                  Visual Resume
+                <Link href="/jobseekers-combo-service" className="py-1 text-gray-700">
+                  Jobseeker's Combo
                 </Link>
-                <Link href="/linkedin-profile-makeover" className="py-1 text-gray-700">
-                  LinkedIn Profile Makeover
+                <Link href="/project-portfolio" className="py-1 text-gray-700">
+                  Project Portfolio
+                </Link>
+              </div>
+            </div>
+
+            {/* Career Tools Dropdown for mobile */}
+            <div className="py-1">
+              <button
+                onClick={() => {}}
+                className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
+              >
+                Career Tools
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <div className="pl-4 flex flex-col space-y-2 mt-2">
+                <Link href="/tools/resume-analyzer" className="py-1 text-gray-700">
+                  Resume Analyzer
+                </Link>
+                <Link href="/tools/interview-simulator" className="py-1 text-gray-700">
+                  Interview Simulator
+                </Link>
+                <Link href="/tools/salary-calculator" className="py-1 text-gray-700">
+                  Salary Calculator
+                </Link>
+                <Link href="/tools/career-path-planner" className="py-1 text-gray-700">
+                  Career Path Planner
+                </Link>
+              </div>
+            </div>
+
+            {/* Resources Dropdown for mobile */}
+            <div className="py-1">
+              <button
+                onClick={() => {}}
+                className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
+              >
+                Resources
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <div className="pl-4 flex flex-col space-y-2 mt-2">
+                <Link href="/impact-stories" className="py-1 text-gray-700">
+                  Impact Stories
+                </Link>
+                <Link href="/blog" className="py-1 text-gray-700">
+                  Blog
+                </Link>
+                <Link href="/ebooks" className="py-1 text-gray-700">
+                  Ebooks
+                </Link>
+                <Link href="/newsroom" className="py-1 text-gray-700">
+                  Newsroom
+                </Link>
+                <Link href="/events" className="py-1 text-gray-700">
+                  Upcoming Events
+                </Link>
+                <Link href="/social-media" className="py-1 text-gray-700">
+                  Social Media
+                </Link>
+                <Link href="/testimonials" className="py-1 text-gray-700">
+                  Testimonials
                 </Link>
               </div>
             </div>

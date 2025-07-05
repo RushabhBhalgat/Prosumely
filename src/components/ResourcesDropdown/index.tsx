@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-export function ServicesDropdown() {
+export function ResourcesDropdown() {
   const [isOpen, setIsOpen] = useState(false)
 
   // For desktop: handle hover
@@ -19,7 +19,7 @@ export function ServicesDropdown() {
         onClick={handleClick}
         className="flex items-center gap-2 px-4 py-2 rounded-lg text-gray-900 font-medium dark:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
       >
-        <span className="font-medium">Services</span>
+        <span className="font-medium">Resources</span>
         <ChevronDown
           className={`h-4 w-4 transition-all duration-300 ease-in-out ${isOpen ? 'rotate-180' : ''}`}
         />
@@ -33,7 +33,7 @@ export function ServicesDropdown() {
         />
       )}
 
-      {/* Redesigned Dropdown menu - positioning adjusted to prevent overflow */}
+      {/* Dropdown menu */}
       <div
         className={`absolute right-0 mt-1 w-[90vw] max-w-[900px] rounded-xl shadow-2xl bg-white border border-gray-100 z-50 overflow-hidden transform transition-all duration-300 ease-out ${
           isOpen
@@ -45,190 +45,119 @@ export function ServicesDropdown() {
         <div className="h-1 bg-gradient-to-r from-[#9adaf3] to-[#2563eb]"></div>
 
         <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Resume Services Column */}
+          {/* Content Column 1 */}
           <div>
             <h3 className="font-bold text-[#2563eb] mb-3 text-sm uppercase tracking-wider border-b pb-2">
-              Resume Services
+              Learn & Grow
             </h3>
 
             <Link
-              href="/ats-resume-writing-service"
+              href="/impact-stories"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  ATS Resume
+                  Impact Stories
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
-                  Optimize for applicant tracking systems
+                  Real success stories from our clients
                 </span>
               </div>
             </Link>
 
             <Link
-              href="/executive-resume-writing-service"
+              href="/blog"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Executive Resume
+                  Blog
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
-                  Professional resumes for leadership roles
+                  Career insights and expert advice
                 </span>
               </div>
             </Link>
 
             <Link
-              href="/academic-cv-writing-service"
+              href="/ebooks"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Academic CV Writing
+                  Ebooks
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
-                  Reflect your scholarly excellence
-                </span>
-              </div>
-            </Link>
-
-            <Link
-              href="/project-portfolio"
-              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
-            >
-              <div className="flex flex-col">
-                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Project Portfolio
-                </span>
-                <span className="text-xs text-gray-500 mt-1">
-                  A visual journey through your projects
+                  In-depth career development guides
                 </span>
               </div>
             </Link>
           </div>
 
-          {/* Career Advancement Column */}
+          {/* Content Column 2 */}
           <div>
             <h3 className="font-bold text-[#2563eb] mb-3 text-sm uppercase tracking-wider border-b pb-2">
-              Career Advancement
+              Stay Updated
             </h3>
 
             <Link
-              href="/linkedin-profile-makeover"
+              href="/newsroom"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  LinkedIn Profile
+                  Newsroom
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
-                  SEO optimized profile enhancement
+                  Latest announcements and press releases
                 </span>
               </div>
             </Link>
 
             <Link
-              href="/jobseekers-combo-service"
+              href="/events"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Jobseeker's Combo
-                </span>
-                <span className="text-xs text-gray-500 mt-1">Everything you need to succeed</span>
-              </div>
-            </Link>
-
-            <Link
-              href="/cover-letter-writing-service"
-              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
-            >
-              <div className="flex flex-col">
-                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Cover Letter
+                  Upcoming Events
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
-                  Compelling letters that open doors
-                </span>
-              </div>
-            </Link>
-
-            <Link
-              href="/career-roadmap-service"
-              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
-            >
-              <div className="flex flex-col">
-                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Career Roadmap
-                </span>
-                <span className="text-xs text-gray-500 mt-1">
-                  Plan bold, Move smart. Achieve more
+                  Workshops, webinars, and career fairs
                 </span>
               </div>
             </Link>
           </div>
 
-          {/* Special Services Column */}
+          {/* Content Column 3 */}
           <div>
             <h3 className="font-bold text-[#2563eb] mb-3 text-sm uppercase tracking-wider border-b pb-2">
-              Special Services
+              Connect With Us
             </h3>
 
             <Link
-              href="/interview-coaching-service"
+              href="/social-media"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Interview Coaching
-                </span>
-                <span className="text-xs text-gray-500 mt-1">Crack interviews with confidence</span>
-              </div>
-            </Link>
-
-            <Link
-              href="/sop-writing-service"
-              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
-            >
-              <div className="flex flex-col">
-                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  SOP Writing
+                  Social Media
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
-                  Statement of Purpose for your applications
+                  Follow us for daily career insights
                 </span>
               </div>
             </Link>
 
             <Link
-              href="/membership-application-service"
+              href="/testimonials"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Membership Application
+                  Testimonials
                 </span>
-                <span className="text-xs text-gray-500 mt-1">
-                  Gateway to prestigious memberships
-                </span>
-              </div>
-            </Link>
-
-            <Link
-              href="/free-resume-review"
-              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3 bg-blue-50 rounded-md"
-            >
-              <div className="flex flex-col">
-                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200 flex items-center">
-                  Free Resume Review
-                  <span className="ml-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">
-                    FREE
-                  </span>
-                </span>
-                <span className="text-xs text-gray-500 mt-1">
-                  Professional feedback on your current resume
-                </span>
+                <span className="text-xs text-gray-500 mt-1">What our clients say about us</span>
               </div>
             </Link>
           </div>
