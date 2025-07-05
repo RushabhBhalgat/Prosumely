@@ -124,10 +124,10 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/career-portfolio"
+                  href="/project-portfolio"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
-                  Career Portfolio
+                  Project Portfolio
                 </Link>
               </li>
               <li>

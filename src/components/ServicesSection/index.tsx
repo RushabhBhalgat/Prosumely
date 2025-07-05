@@ -28,7 +28,7 @@ export default function ServicesSection() {
     },
     {
       id: 3,
-      name: "Jobseekers's Combo",
+      name: "Jobseeker's Combo",
       tagline: 'Everything you need to succeed',
       price: '$50',
       color: 'bg-blue-800',
