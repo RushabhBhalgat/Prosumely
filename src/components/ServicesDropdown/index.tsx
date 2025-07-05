@@ -118,7 +118,7 @@ export function ServicesDropdown() {
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Career Portfolio
+                  Project Portfolio
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
                   A visual journey through your projects
