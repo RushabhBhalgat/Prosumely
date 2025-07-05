@@ -140,4 +140,30 @@ export const servicesData = {
       formats: ['PDF Portfolio'],
     },
   },
+  jobseekersCombo: {
+    service: {
+      title: 'Jobseekers Combo',
+      price: '50',
+      currency: '$',
+      tagline: 'Your Complete Career Branding Kit',
+      description: `<strong style="color: #2563eb;">Stand out in every stage of your job hunt with our all-in-one Jobseekers Combo! 🚀</strong><br/><br/>This powerful package includes an ATS/Executive CV, tailored cover letter, attention-grabbing cover email, LinkedIn profile makeover, and a custom career roadmap. Perfect for professionals ready to take charge of their career journey. ✨`,
+      detailedDescription: `The Jobseekers Combo is a holistic branding solution designed for ambitious professionals who want to create a lasting impression on recruiters. <br/><br/>We combine the power of an <strong style="color: #2563eb;">ATS-optimized resume</strong>, a <strong style="color: #2563eb;">tailored cover letter & email</strong>, a fully revamped <strong style="color: #2563eb;">LinkedIn profile</strong>, and a <strong style="color: #2563eb;">personalized career roadmap</strong> to guide your professional growth.<br/><br/>This comprehensive kit ensures you’re not just ready for the job search—you’re unforgettable.`,
+    },
+    contact: {
+      whatsapp: '+91 7559112241',
+      email: 'contact@prosumely.com',
+      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+    },
+    redirectLink: '/jobseekers-combo-service/form',
+    features: [
+      { icon: CheckCircle, color: 'text-green-500', text: 'ATS/Executive Resume included' },
+      { icon: CheckCircle, color: 'text-green-500', text: 'Tailored Cover Letter & Email' },
+      { icon: CheckCircle, color: 'text-green-500', text: 'LinkedIn Profile Makeover' },
+      { icon: CheckCircle, color: 'text-green-500', text: 'Personalized Career Roadmap' },
+    ],
+    deliveryInfo: {
+      timeframe: '72hrs',
+      formats: ['PDF', 'Word'],
+    },
+  },
 }

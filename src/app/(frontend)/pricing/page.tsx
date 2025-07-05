@@ -39,7 +39,7 @@ const services = [
   },
   {
     id: 4,
-    name: "Jobseekers's Combo",
+    name: "Jobseeker's Combo",
     tagline: 'Everything you need to succeed',
     price: '$50',
     color: 'bg-blue-700',
@@ -51,7 +51,7 @@ const services = [
   },
   {
     id: 5,
-    name: 'Career Portfolio',
+    name: 'Project Portfolio',
     tagline: 'A visual journey through your projects',
     price: '$40',
     color: 'bg-blue-800',
@@ -59,7 +59,7 @@ const services = [
     description:
       'Showcase your expertise with a polished project portfolio. Perfect for professionals in  construction, project management, architects, tech, design, and freelance.',
     bestFor: 'Serious job seekers, career transformation',
-    path: '/career-portfolio',
+    path: '/project-portfolio',
   },
   {
     id: 6,
