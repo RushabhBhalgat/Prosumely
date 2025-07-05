@@ -6,7 +6,7 @@ const services = [
     name: 'ATS Resume ',
     tagline: 'Perfect for entry-level professionals',
     price: '$20',
-    color: 'bg-blue-600',
+    color: 'bg-blue-800',
     popular: false,
     description:
       'Get a professionally written resume that beats Applicant Tracking Systems (ATS) and gets you shortlisted. Optimized with the right keywords, formatting, and structure.',
@@ -18,31 +18,20 @@ const services = [
     name: 'Executive Resume',
     tagline: 'Most popular choice',
     price: '$30',
-    color: 'bg-blue-700',
+    color: 'bg-blue-800',
     popular: false,
     description:
       'Position yourself as a leader with a powerful, achievement-driven executive resume. Crafted for senior roles, it highlights your impact, vision, and executive presence.',
     bestFor: 'Mid-level professionals, career changers',
     path: '/executive-resume-writing-service',
   },
+
   {
     id: 3,
-    name: 'Visual Resume',
-    tagline: 'Resume for creative professionals',
-    price: '$25',
-    color: 'bg-blue-700',
-    popular: false,
-    description:
-      'This is a resume that is designed to be visually appealing and creative, showcasing your skills and experience in a unique way. Perfect for professionals in creative fields.',
-    bestFor: 'Mid-level professionals, career changers',
-    path: '/visual-resume-writing-service',
-  },
-  {
-    id: 4,
     name: "Jobseekers's Combo",
     tagline: 'Everything you need to succeed',
     price: '$50',
-    color: 'bg-blue-700',
+    color: 'bg-blue-800',
     popular: true,
     description:
       'The Jobseekers Combo is your all-in-one career branding kit—consisting of ATS/Executive CV, cover letter and email, an optimized LinkedIn profile, and a personalized career roadmap.',
@@ -50,8 +39,8 @@ const services = [
     path: '/jobseekers-combo-service',
   },
   {
-    id: 5,
-    name: 'Career Portfolio',
+    id: 4,
+    name: 'Project Portfolio',
     tagline: 'A visual journey through your projects',
     price: '$40',
     color: 'bg-blue-800',
@@ -59,10 +48,10 @@ const services = [
     description:
       'Showcase your expertise with a polished project portfolio. Perfect for professionals in  construction, project management, architects, tech, design, and freelance.',
     bestFor: 'Serious job seekers, career transformation',
-    path: '/career-portfolio',
+    path: '/project-portfolio',
   },
   {
-    id: 6,
+    id: 5,
     name: 'LinkedIn Profile',
     tagline: 'Optimize your professional presence',
     price: '$20',
@@ -74,7 +63,7 @@ const services = [
     path: '/linkedin-profile-makeover',
   },
   {
-    id: 7,
+    id: 6,
     name: 'SOP',
     tagline: 'Statement of Purpose Writing',
     price: '$25',
@@ -86,6 +75,18 @@ const services = [
     path: '/',
   },
   {
+    id: 7,
+    name: 'Career Roadmap',
+    tagline: 'Plan bold, Move smart. Achieve more.',
+    price: '$20',
+    color: 'bg-blue-800',
+    popular: false,
+    description:
+      'Turn your ambition into an actionable career roadmap. We design step-by-step plans tailored to your long-term goals. Follow the roadmap—and move confidently toward your dream career.',
+    bestFor: 'Mid-level professionals, career changers',
+    path: '/visual-resume-writing-service',
+  },
+  {
     id: 8,
     name: 'Cover Letter',
     tagline: 'Craft a compelling introduction',
@@ -95,6 +96,42 @@ const services = [
     description:
       'A well-crafted cover letter that complements your resume and highlights your unique qualifications and experiences. Tailored to the job you are applying for. ',
     bestFor: 'Job seekers looking to make a strong first impression',
+    path: '/',
+  },
+  {
+    id: 9,
+    name: 'Interview Coaching',
+    tagline: 'Crack interviews with confidence.',
+    price: '$20',
+    color: 'bg-blue-800',
+    popular: false,
+    description:
+      'Our personalized coaching helps you master answers, body language, and mindset. Stand out, stay sharp, and land your dream job with ease.',
+    bestFor: 'Anyone preparing for job interviews',
+    path: '/',
+  },
+  {
+    id: 10,
+    name: 'Academic CV Writing',
+    tagline: 'Reflect your scholarly excellence.',
+    price: '$30',
+    color: 'bg-blue-800',
+    popular: false,
+    description:
+      'We craft detailed, structured CVs tailored for research, grants, fellowships, and faculty roles. Position yourself as a credible scholar.',
+    bestFor: 'Researchers, Professors and PHD candidates',
+    path: '/',
+  },
+  {
+    id: 11,
+    name: 'Membership Application',
+    tagline: 'Gateway to prestigious memberships',
+    price: '$30',
+    color: 'bg-blue-800',
+    popular: false,
+    description:
+      'We craft applications for elite professional bodies, industry associations, & academic societies. We position you for acceptance.',
+    bestFor: 'Candidates seeking membership in industry bodies.',
     path: '/',
   },
 ]
