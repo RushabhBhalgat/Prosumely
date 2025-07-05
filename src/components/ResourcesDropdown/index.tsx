@@ -66,7 +66,7 @@ export function ResourcesDropdown() {
             </Link>
 
             <Link
-              href="/blog"
+              href="/posts"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
             >
               <div className="flex flex-col">
