@@ -1,12 +1,53 @@
-import { generateMetadata } from './[slug]/page'
 import Link from 'next/link'
-export { generateMetadata }
-
+import Image from 'next/image'
 import React from 'react'
 import ClientReviews from '@/components/ClientReviews'
 import HowItWorksSection from '@/components/HowItWorks'
 import ServicesSection from '@/components/ServicesSection'
-import IcebergSection from '@/components/IcebergSection'
+
+// --- SEO Metadata ---
+export const metadata = {
+  title: 'Prosumely | ATS-friendly resume wrting services',
+  description:
+    "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
+  keywords: [
+    'resume builder',
+    'professional resume',
+    'resume design',
+    'job application',
+    'career',
+    'Prosumely',
+  ],
+  openGraph: {
+    title: 'Prosumely | Resume wrting services',
+    description:
+      "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
+    url: 'https://prosumely.com/', // Replace with your actual domain
+    siteName: 'Prosumely',
+    images: [
+      {
+        url: '/prosumely-ats-resume-writing-opengraph.jpg', // Replace with your Open Graph image path
+        width: 1200,
+        height: 630,
+        alt: 'Prosumely Resume writing services',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Prosumely | Resume wrting services',
+    description:
+      "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
+    images: ['/prosumely-ats-resume-writing-opengraph.jpg'], // Replace with your Open Graph image path
+    site: '@prosumely', // Replace with your Twitter handle
+  },
+  alternates: {
+    canonical: 'https://prosumely.com/', // Replace with your actual domain
+  },
+}
+// --- End SEO Metadata ---
 
 export default function LandingPage() {
   return (
@@ -14,10 +55,12 @@ export default function LandingPage() {
       <div className="relative h-[55vh] lg:h-[85vh] flex items-center overflow-hidden">
         {/* Background SVG Image - Full Coverage - Hidden on mobile/tablet */}
         <div className="absolute inset-0 hidden lg:block">
-          <img
+          <Image
             src="/hero-section-banner2.svg"
             alt="Mountains Background"
+            fill
             className="w-full h-full object-cover object-center"
+            priority
           />
         </div>
 

@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import { Mail, Phone, Check, ChevronRight, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
-import Image from 'next/image'
 import Head from 'next/head'
 
 const ThankYouPage = () => {
