@@ -157,7 +157,7 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href="/posts"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
                   Blog

@@ -205,7 +205,7 @@ export const HeaderClient: React.FC<{
                 <Link href="/impact-stories" className="py-1 text-gray-700">
                   Impact Stories
                 </Link>
-                <Link href="/blog" className="py-1 text-gray-700">
+                <Link href="/posts" className="py-1 text-gray-700">
                   Blog
                 </Link>
                 <Link href="/ebooks" className="py-1 text-gray-700">
