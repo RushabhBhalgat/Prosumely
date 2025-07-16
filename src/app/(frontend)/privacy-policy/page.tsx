@@ -171,4 +171,46 @@ const PrivacyPolicyPage = () => {
   )
 }
 
+export const metadata = {
+  title: 'Privacy Policy | Prosumely Resume Writing Services',
+  description:
+    'Read the privacy policy for Prosumely’s resume writing services. Learn how we protect your data and ensure confidentiality for all job seekers and clients.',
+  keywords: [
+    'privacy policy',
+    'resume writing privacy',
+    'data protection',
+    'Prosumely',
+    'job seeker privacy',
+    'confidential resume writing',
+  ],
+  openGraph: {
+    title: 'Privacy Policy | Prosumely Resume Writing Services',
+    description:
+      'Read the privacy policy for Prosumely’s resume writing services. Learn how we protect your data and ensure confidentiality for all job seekers and clients.',
+    url: 'https://prosumely.com/privacy-policy',
+    siteName: 'Prosumely',
+    images: [
+      {
+        url: '/prosumely-ats-resume-writing-opengraph.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prosumely Privacy Policy',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Prosumely Resume Writing Services',
+    description:
+      'Read the privacy policy for Prosumely’s resume writing services. Learn how we protect your data and ensure confidentiality for all job seekers and clients.',
+    images: ['/prosumely-ats-resume-writing-opengraph.jpg'],
+    site: '@prosumely',
+  },
+  alternates: {
+    canonical: 'https://prosumely.com/privacy-policy',
+  },
+}
+
 export default PrivacyPolicyPage

@@ -11,6 +11,49 @@ import PageClient from './page.client'
 export const dynamic = 'force-static'
 export const revalidate = 600
 
+export const metadata = {
+  title: 'Career Blog & Resume Writing Tips | Prosumely',
+  description:
+    'Read expert articles on resume writing, job search strategies, and career growth from Prosumely. Stay ahead in your job hunt with actionable tips and industry insights.',
+  keywords: [
+    'career blog',
+    'resume writing tips',
+    'job search advice',
+    'career growth',
+    'Prosumely',
+    'ATS resume',
+    'professional resume',
+  ],
+  openGraph: {
+    title: 'Career Blog & Resume Writing Tips | Prosumely',
+    description:
+      'Read expert articles on resume writing, job search strategies, and career growth from Prosumely. Stay ahead in your job hunt with actionable tips and industry insights.',
+    url: 'https://prosumely.com/posts',
+    siteName: 'Prosumely',
+    images: [
+      {
+        url: '/prosumely-career-blogs.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prosumely Career Blog',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Career Blog & Resume Writing Tips | Prosumely',
+    description:
+      'Read expert articles on resume writing, job search strategies, and career growth from Prosumely. Stay ahead in your job hunt with actionable tips and industry insights.',
+    images: ['/prosumely-career-blogs.jpg'],
+    site: '@prosumely',
+  },
+  alternates: {
+    canonical: 'https://prosumely.com/posts',
+  },
+}
+
 export default async function Page() {
   const payload = await getPayload({ config: configPromise })
 

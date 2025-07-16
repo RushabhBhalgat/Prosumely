@@ -1,5 +1,47 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Terms and Conditions | Prosumely Resume Writing Services',
+  description:
+    'Review the terms and conditions for using Prosumely’s professional resume writing services. Understand your rights and responsibilities as a client.',
+  keywords: [
+    'terms and conditions',
+    'resume writing terms',
+    'Prosumely',
+    'service agreement',
+    'job seeker terms',
+    'professional resume',
+  ],
+  openGraph: {
+    title: 'Terms and Conditions | Prosumely Resume Writing Services',
+    description:
+      'Review the terms and conditions for using Prosumely’s professional resume writing services. Understand your rights and responsibilities as a client.',
+    url: 'https://prosumely.com/terms-and-conditions',
+    siteName: 'Prosumely',
+    images: [
+      {
+        url: '/prosumely-ats-resume-writing-opengraph.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prosumely Terms and Conditions',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms and Conditions | Prosumely Resume Writing Services',
+    description:
+      'Review the terms and conditions for using Prosumely’s professional resume writing services. Understand your rights and responsibilities as a client.',
+    images: ['/prosumely-ats-resume-writing-opengraph.jpg'],
+    site: '@prosumely',
+  },
+  alternates: {
+    canonical: 'https://prosumely.com/terms-and-conditions',
+  },
+}
+
 const TermsAndConditionsPage = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
