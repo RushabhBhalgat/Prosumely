@@ -1,7 +1,17 @@
-const SITE_URL =
+let SITE_URL =
   process.env.NEXT_PUBLIC_SERVER_URL ||
   process.env.VERCEL_PROJECT_PRODUCTION_URL ||
   'https://example.com'
+
+// Ensure production URL always uses www.prosumely.com for canonical consistency
+if (SITE_URL.includes('prosumely.com') && !SITE_URL.includes('www.')) {
+  SITE_URL = SITE_URL.replace('prosumely.com', 'www.prosumely.com')
+}
+
+// Add https if not present
+if (!SITE_URL.startsWith('http')) {
+  SITE_URL = `https://${SITE_URL}`
+}
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
