@@ -81,8 +81,45 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
   )
 }
 
-export function generateMetadata(): Metadata {
-  return {
-    title: `Payload Website Template Search`,
-  }
+export const metadata = {
+  title: 'Search Resumes & Career Resources | Prosumely',
+  description:
+    'Search Prosumely’s database for resume writing tips, career resources, and job search tools. Find the information you need to advance your career and land your dream job.',
+  keywords: [
+    'resume search',
+    'career resources',
+    'job search',
+    'resume writing',
+    'Prosumely',
+    'ATS resume',
+    'career advice',
+  ],
+  openGraph: {
+    title: 'Search Resumes & Career Resources | Prosumely',
+    description:
+      'Search Prosumely’s database for resume writing tips, career resources, and job search tools. Find the information you need to advance your career and land your dream job.',
+    url: 'https://prosumely.com/search',
+    siteName: 'Prosumely',
+    images: [
+      {
+        url: '/prosumely-ats-resume-writing-opengraph.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prosumely Search',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Search Resumes & Career Resources | Prosumely',
+    description:
+      "Search Prosumely's database for resume writing tips, career resources, and job search tools. Find the information you need to advance your career and land your dream job.",
+    images: ['/prosumely-ats-resume-writing-opengraph.jpg'],
+    site: '@prosumely',
+  },
+  alternates: {
+    canonical: 'https://prosumely.com/search',
+  },
 }
