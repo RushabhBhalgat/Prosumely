@@ -9,11 +9,7 @@ export default function TopNavbar() {
           <span className="cursor-pointer">UAE</span>
           <span className="cursor-pointer">Qatar</span>
           <span className="cursor-pointer">KSA</span>
-          <span className="cursor-pointer row">
-            {' '}
-            USA
-            {/* <img src="/country-flags/usa-flag.png" width="38" height="24" /> USA */}
-          </span>
+          <span className="cursor-pointer row"> USA</span>
           <span className="cursor-pointer">UK</span>
           <span className="cursor-pointer">India</span>
           <span className="cursor-pointer">Egypt</span>
