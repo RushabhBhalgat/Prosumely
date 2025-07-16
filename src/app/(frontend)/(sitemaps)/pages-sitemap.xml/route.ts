@@ -2,6 +2,7 @@ import { getServerSideSitemap } from 'next-sitemap'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
+import { getStaticRoutes } from '@/utilities/getStaticRoutes'
 
 const getPagesSitemap = unstable_cache(
   async () => {
@@ -31,18 +32,15 @@ const getPagesSitemap = unstable_cache(
 
     const dateFallback = new Date().toISOString()
 
-    const defaultSitemap = [
-      {
-        loc: `${SITE_URL}/search`,
-        lastmod: dateFallback,
-      },
-      {
-        loc: `${SITE_URL}/posts`,
-        lastmod: dateFallback,
-      },
-    ]
+    // Get static routes automatically
+    const staticRoutes = getStaticRoutes()
+    const staticSitemap = staticRoutes.map((route) => ({
+      loc: `${SITE_URL}${route}`,
+      lastmod: dateFallback,
+    }))
 
-    const sitemap = results.docs
+    // Add dynamic pages from Payload CMS
+    const dynamicSitemap = results.docs
       ? results.docs
           .filter((page) => Boolean(page?.slug))
           .map((page) => {
@@ -53,7 +51,13 @@ const getPagesSitemap = unstable_cache(
           })
       : []
 
-    return [...defaultSitemap, ...sitemap]
+    // Combine and deduplicate
+    const allSitemaps = [...staticSitemap, ...dynamicSitemap]
+    const uniqueSitemaps = allSitemaps.filter(
+      (sitemap, index, self) => index === self.findIndex((s) => s.loc === sitemap.loc),
+    )
+
+    return uniqueSitemaps
   },
   ['pages-sitemap'],
   {
