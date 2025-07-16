@@ -11,6 +11,11 @@ export const getServerSideURL = () => {
     url = 'http://localhost:3000'
   }
 
+  // Ensure production URL always uses www.prosumely.com for canonical consistency
+  if (url.includes('prosumely.com') && !url.includes('www.')) {
+    url = url.replace('prosumely.com', 'www.prosumely.com')
+  }
+
   return url
 }
 
@@ -24,8 +29,18 @@ export const getClientSideURL = () => {
   }
 
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    let url = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    // Ensure production URL always uses www.prosumely.com for canonical consistency
+    if (url.includes('prosumely.com') && !url.includes('www.')) {
+      url = url.replace('prosumely.com', 'www.prosumely.com')
+    }
+    return url
   }
 
-  return process.env.NEXT_PUBLIC_SERVER_URL || ''
+  let url = process.env.NEXT_PUBLIC_SERVER_URL || ''
+  // Ensure production URL always uses www.prosumely.com for canonical consistency
+  if (url.includes('prosumely.com') && !url.includes('www.')) {
+    url = url.replace('prosumely.com', 'www.prosumely.com')
+  }
+  return url
 }
