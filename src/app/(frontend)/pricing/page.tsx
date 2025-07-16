@@ -1,5 +1,49 @@
 import Link from 'next/link'
 
+export const metadata = {
+  title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
+  description:
+    'Discover transparent pricing for Prosumely’s professional resume writing services. Get ATS-optimized, keyword-rich resumes, cover letters, LinkedIn makeovers, and more at competitive rates. Boost your job search today!',
+  keywords: [
+    'resume writing pricing',
+    'ATS resume cost',
+    'professional resume services',
+    'cover letter pricing',
+    'LinkedIn profile pricing',
+    'Prosumely',
+    'affordable resume writing',
+    'job search',
+  ],
+  openGraph: {
+    title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
+    description:
+      "Discover transparent pricing for Prosumely's professional resume writing services. Get ATS-optimized, keyword-rich resumes, cover letters, LinkedIn makeovers, and more at competitive rates. Boost your job search today!",
+    url: 'https://prosumely.com/pricing',
+    siteName: 'Prosumely',
+    images: [
+      {
+        url: '/prosumely-pricing-and-services-opengraph.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Prosumely Resume Writing Pricing',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
+    description:
+      'Discover transparent pricing for Prosumely’s professional resume writing services. Get ATS-optimized, keyword-rich resumes, cover letters, LinkedIn makeovers, and more at competitive rates. Boost your job search today!',
+    images: ['/prosumely-pricing-and-services-opengraph.jpg'],
+    site: '@prosumely',
+  },
+  alternates: {
+    canonical: 'https://prosumely.com/pricing',
+  },
+}
+
 export default function PricingPage() {
   const services = [
     {

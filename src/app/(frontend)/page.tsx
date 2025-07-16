@@ -11,15 +11,17 @@ export const metadata = {
   description:
     "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
   keywords: [
-    'resume builder',
-    'professional resume',
-    'resume design',
-    'job application',
-    'career',
-    'Prosumely',
+    'resume writing services',
+    'professional resume writers',
+    'ATS resume',
+    'CV writing',
+    'cover letter',
+    'LinkedIn profile',
+    'job search',
+    'career services',
   ],
   openGraph: {
-    title: 'Prosumely | Resume wrting services',
+    title: 'Prosumely | Professional Resume Writing Services | ATS Resume Experts',
     description:
       "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
     url: 'https://prosumely.com/', // Replace with your actual domain
