@@ -1,6 +1,7 @@
 import React from 'react'
 import { Clock, FileText, MessageCircle, Mail } from 'lucide-react'
 import Link from 'next/link'
+import ServiceFAQ from '../ServiceFAQ'
 
 // Define interfaces for the props
 interface ServiceProps {
@@ -29,12 +30,18 @@ interface DeliveryInfoProps {
   formats?: string[]
 }
 
+interface FAQItem {
+  question: string
+  answer: string
+}
+
 interface ServiceProductPageProps {
   service?: ServiceProps
   contact?: ContactProps
   features?: FeatureProps[]
   deliveryInfo?: DeliveryInfoProps
   redirectLink?: string
+  faqs?: FAQItem[]
 }
 
 // Main reusable component
@@ -44,6 +51,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
   features = [],
   deliveryInfo = {},
   redirectLink = '',
+  faqs = [],
 }) => {
   const {
     title = 'Service Title',
@@ -172,6 +180,12 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
           </div>
         </div>
       </div>
+
+      {/* FAQ Section */}
+      {/* FAQ Section */}
+      {faqs && faqs.length > 0 && (
+        <ServiceFAQ title={`Frequently Asked Questions - ${title}`} faqs={faqs} />
+      )}
 
       {/* Floating background elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
