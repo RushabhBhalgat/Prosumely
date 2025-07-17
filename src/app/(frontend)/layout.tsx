@@ -34,7 +34,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               preview: isEnabled,
             }}
           />
-          <TopHeader />
+          {/* <TopHeader /> */}
           <Header />
           {children}
           <Footer />
