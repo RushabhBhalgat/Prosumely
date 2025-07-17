@@ -1,4 +1,5 @@
 import { CheckCircle, Eye, Award, Target, Briefcase, TrendingUp } from 'lucide-react'
+import { serviceFAQs } from './faqData'
 
 export const servicesData = {
   atsResume: {
@@ -25,6 +26,7 @@ export const servicesData = {
       timeframe: '48hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.atsResume,
   },
   visualResume: {
     service: {
@@ -50,6 +52,7 @@ export const servicesData = {
       timeframe: '48hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.visualResume,
   },
   executiveResume: {
     service: {
@@ -76,6 +79,7 @@ export const servicesData = {
       timeframe: '48hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.executiveResume,
   },
   linkedinProfile: {
     service: {
@@ -111,6 +115,7 @@ export const servicesData = {
       timeframe: '48hrs',
       formats: ['LinkedIn Direct Update', 'Document Guide'],
     },
+    faqs: serviceFAQs.linkedinProfile,
   },
   projectPortfolio: {
     service: {
@@ -139,6 +144,7 @@ export const servicesData = {
       timeframe: '72hrs',
       formats: ['PDF Portfolio'],
     },
+    faqs: serviceFAQs.projectPortfolio,
   },
   jobseekersCombo: {
     service: {
@@ -165,6 +171,7 @@ export const servicesData = {
       timeframe: '72hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.jobseekersCombo,
   },
   sopWriting: {
     service: {
@@ -194,6 +201,7 @@ export const servicesData = {
       timeframe: '72hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.sopWriting,
   },
   careerRoadmap: {
     service: {
@@ -223,6 +231,7 @@ export const servicesData = {
       timeframe: '48hrs',
       formats: ['PDF'],
     },
+    faqs: serviceFAQs.careerRoadmap,
   },
   coverLetter: {
     service: {
@@ -248,6 +257,7 @@ export const servicesData = {
       timeframe: '24hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.coverLetter,
   },
   interviewCoaching: {
     service: {
@@ -277,6 +287,7 @@ export const servicesData = {
       timeframe: 'Scheduled within 48hrs',
       formats: ['Video Call', 'PDF Notes (Optional)'],
     },
+    faqs: serviceFAQs.interviewCoaching,
   },
   academicCvWriting: {
     service: {
@@ -314,6 +325,7 @@ export const servicesData = {
       timeframe: '72hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.academicCvWriting,
   },
   membershipApplication: {
     service: {
@@ -351,5 +363,6 @@ export const servicesData = {
       timeframe: '72hrs',
       formats: ['PDF', 'Word'],
     },
+    faqs: serviceFAQs.membershipApplication,
   },
 }

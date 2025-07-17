@@ -1,3 +1,5 @@
+create a FAQs section. i want to add this FAQ component on all individual services page. so create a component and then reuse that component on all services page. There are 12 services total so add FAQ's to all services page.
+
 # Payload Website Template
 
 This is the official [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website). Use it to power websites, blogs, or portfolios from small to enterprise. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
