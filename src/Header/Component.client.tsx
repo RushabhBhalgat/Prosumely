@@ -101,7 +101,11 @@ export const HeaderClient: React.FC<{
           <div className="flex flex-col space-y-4">
             {/* Pricing Link for mobile */}
             <div className="py-1">
-              <Link href="/pricing" className="block w-full py-2 font-medium text-gray-800">
+              <Link
+                href="/pricing"
+                className="block w-full py-2 font-medium text-gray-800"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Pricing
               </Link>
             </div>
@@ -128,16 +132,32 @@ export const HeaderClient: React.FC<{
                 </svg>
               </button>
               <div className="pl-4 flex flex-col space-y-2 mt-2">
-                <Link href="/ats-resume-writing-service" className="py-1 text-gray-700">
+                <Link
+                  href="/ats-resume-writing-service"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   ATS Resume
                 </Link>
-                <Link href="/executive-resume-writing-service" className="py-1 text-gray-700">
+                <Link
+                  href="/executive-resume-writing-service"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Executive Resume
                 </Link>
-                <Link href="/jobseekers-combo-service" className="py-1 text-gray-700">
+                <Link
+                  href="/jobseekers-combo-service"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Jobseeker's Combo
                 </Link>
-                <Link href="/project-portfolio" className="py-1 text-gray-700">
+                <Link
+                  href="/project-portfolio"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Project Portfolio
                 </Link>
               </div>
@@ -165,16 +185,32 @@ export const HeaderClient: React.FC<{
                 </svg>
               </button>
               <div className="pl-4 flex flex-col space-y-2 mt-2">
-                <Link href="/tools/resume-analyzer" className="py-1 text-gray-700">
+                <Link
+                  href="/tools/resume-analyzer"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Resume Analyzer
                 </Link>
-                <Link href="/tools/interview-simulator" className="py-1 text-gray-700">
+                <Link
+                  href="/tools/interview-simulator"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Interview Simulator
                 </Link>
-                <Link href="/tools/salary-calculator" className="py-1 text-gray-700">
+                <Link
+                  href="/tools/salary-calculator"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Salary Calculator
                 </Link>
-                <Link href="/tools/career-path-planner" className="py-1 text-gray-700">
+                <Link
+                  href="/tools/career-path-planner"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Career Path Planner
                 </Link>
               </div>
@@ -202,25 +238,53 @@ export const HeaderClient: React.FC<{
                 </svg>
               </button>
               <div className="pl-4 flex flex-col space-y-2 mt-2">
-                <Link href="/impact-stories" className="py-1 text-gray-700">
+                <Link
+                  href="/impact-stories"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Impact Stories
                 </Link>
-                <Link href="/posts" className="py-1 text-gray-700">
+                <Link
+                  href="/posts"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Blog
                 </Link>
-                <Link href="/ebooks" className="py-1 text-gray-700">
+                <Link
+                  href="/ebooks"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Ebooks
                 </Link>
-                <Link href="/newsroom" className="py-1 text-gray-700">
+                <Link
+                  href="/newsroom"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Newsroom
                 </Link>
-                <Link href="/events" className="py-1 text-gray-700">
+                <Link
+                  href="/events"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Upcoming Events
                 </Link>
-                <Link href="/social-media" className="py-1 text-gray-700">
+                <Link
+                  href="/social-media"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Social Media
                 </Link>
-                <Link href="/testimonials" className="py-1 text-gray-700">
+                <Link
+                  href="/testimonials"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Testimonials
                 </Link>
               </div>
@@ -229,7 +293,9 @@ export const HeaderClient: React.FC<{
             {/* Regular nav items from CMS */}
             {navItems?.map(({ link }, i) => (
               <div key={i} className="py-1">
-                <CMSLink {...link} />
+                <div onClick={() => setIsMenuOpen(false)}>
+                  <CMSLink {...link} />
+                </div>
               </div>
             ))}
           </div>
