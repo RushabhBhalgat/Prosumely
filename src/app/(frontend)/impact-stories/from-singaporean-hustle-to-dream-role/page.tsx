@@ -14,13 +14,8 @@ import {
   Star,
   Target,
   Award,
-  Building,
   Users,
   Clock,
-  Search,
-  Eye,
-  Zap,
-  FileText,
 } from 'lucide-react'
 
 export const metadata = {
@@ -67,457 +62,353 @@ export const metadata = {
 
 export default function FromSingaporeanHustleToDreamRolePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-50 backdrop-blur-sm bg-white/90">
+      <div className="border-b bg-white sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link
             href="/impact-stories"
-            className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-200 group"
+            className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors"
           >
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform duration-200" />
+            <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Impact Stories
           </Link>
         </div>
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50 relative overflow-hidden">
+      <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600 opacity-5 rounded-full blur-3xl transform -translate-x-48 -translate-y-48"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400 opacity-5 rounded-full blur-3xl transform translate-x-48 translate-y-48"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600 opacity-5 rounded-full blur-3xl"></div>
         </div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center mb-8">
             <div className="inline-flex items-center bg-white/80 backdrop-blur-sm border border-gray-200 px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-sm">
               <Globe className="w-4 h-4 mr-2 text-blue-600" />
-              Singapore Tech Success Story
+              Singapore Tech Success
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              From Singaporean Hustle to Dream Role: A Resume Rewrite That Changed Everything
+
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+              From Singaporean Hustle to Dream Role
             </h1>
-            <div className="flex flex-wrap justify-center items-center gap-6 text-sm text-gray-600">
-              <div className="flex items-center">
-                <Calendar className="w-4 h-4 mr-2 text-blue-600" />
-                July 2025
+
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              A Resume Rewrite That Changed Everything for a Technology Professional in a
+              Competitive Market
+            </p>
+
+            <div className="text-sm text-gray-500 mt-4">
+              Client Impact Story by Prosumely | Technology Industry | July 2025
+            </div>
+          </div>
+
+          {/* Key Metrics */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm">
+              <Calendar className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+              <div className="text-2xl font-bold text-blue-600">~10 Years</div>
+              <div className="text-sm text-gray-600">Tech Experience</div>
+            </div>
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm">
+              <Clock className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+              <div className="text-2xl font-bold text-blue-600">10 Days</div>
+              <div className="text-sm text-gray-600">To First Shortlist</div>
+            </div>
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm">
+              <TrendingUp className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+              <div className="text-2xl font-bold text-blue-600">30%</div>
+              <div className="text-sm text-gray-600">Salary Hike</div>
+            </div>
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-sm">
+              <MapPin className="w-8 h-8 text-blue-500 mx-auto mb-2" />
+              <div className="text-2xl font-bold text-blue-600">Singapore</div>
+              <div className="text-sm text-gray-600">New Role Secured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Hero Image */}
+        <div className="mb-16 rounded-2xl overflow-hidden shadow-lg">
+          <Image
+            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?w=1200&h=600&fit=crop&crop=center"
+            alt="Singapore tech professionals collaborating"
+            width={1200}
+            height={600}
+            className="w-full h-64 md:h-80 object-cover"
+          />
+        </div>
+
+        {/* Starting Point */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+            <Star className="w-8 h-8 mr-3 text-blue-600" />
+            The Starting Point: Overlooked in a Competitive Market
+          </h2>
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-700 leading-relaxed mb-6">
+              In Singapore's competitive and fast-evolving job market, professionals often find
+              themselves overlooked despite strong credentials. For Deepak (name changed), a
+              mid-career technology professional with nearly a decade of experience, job hunting had
+              become a series of rejections.
+            </p>
+            <div className="bg-gray-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+              <Quote className="w-6 h-6 text-blue-600 mb-2" />
+              <p className="text-gray-700 italic">
+                "I kept asking myself—what am I doing wrong? My resume had all the details, but
+                somehow I just wasn't landing interviews."
+              </p>
+            </div>
+            <p className="text-gray-700 leading-relaxed mt-6">
+              Then, Deepak stumbled upon Prosumely's free resume review, and it marked the beginning
+              of a completely new career chapter.
+            </p>
+          </div>
+        </div>
+
+        {/* Resume Review */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+            <Target className="w-8 h-8 mr-3 text-gray-600" />
+            Resume Review: Missing the Mark
+          </h2>
+          <div className="bg-gray-50 rounded-2xl p-8 mb-8">
+            <h3 className="text-xl font-semibold text-gray-900 mb-6">
+              Our free audit revealed key issues holding him back:
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-start">
+                <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                  <span className="text-white text-sm">✗</span>
+                </div>
+                <span className="text-gray-800">Generic framing, not specific to Singapore</span>
               </div>
-              <div className="flex items-center">
-                <MapPin className="w-4 h-4 mr-2 text-blue-600" />
-                Singapore
+              <div className="flex items-start">
+                <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                  <span className="text-white text-sm">✗</span>
+                </div>
+                <span className="text-gray-800">Listed duties, not measurable achievements</span>
               </div>
-              <div className="flex items-center">
-                <Clock className="w-4 h-4 mr-2 text-blue-600" />7 min read
+              <div className="flex items-start">
+                <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                  <span className="text-white text-sm">✗</span>
+                </div>
+                <span className="text-gray-800">Low ATS visibility (Score: 42%)</span>
+              </div>
+              <div className="flex items-start">
+                <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                  <span className="text-white text-sm">✗</span>
+                </div>
+                <span className="text-gray-800">Lacked keywords for tech and innovation</span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <h4 className="font-semibold text-blue-900 mb-2 flex items-center">
+              <MapPin className="w-4 h-4 mr-2" />
+              Start with a free resume review now
+            </h4>
+            <a
+              href="https://www.prosumely.com/free-resume-review"
+              className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+            >
+              <Globe className="w-4 h-4 mr-2" />
+              www.prosumely.com/free-resume-review
+            </a>
+          </div>
+        </div>
+
+        {/* Transformation Process */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+            <CheckCircle className="w-8 h-8 mr-3 text-blue-600" />
+            The Transformation: A Singapore-Specific Strategy
+          </h2>
+          <div className="space-y-8">
+            <div className="bg-blue-50 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">
+                Step 1: Customized Brand Narrative
+              </h3>
+              <p className="text-blue-800">
+                We repositioned Deepak from a generalist to a strategic leader. For example, "Worked
+                on multiple projects" became "Led cross-functional delivery of 4 major IT
+                initiatives, cutting operational costs by 23% and improving platform uptime by
+                99.9%."
+              </p>
+            </div>
+            <div className="bg-blue-50 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">
+                Step 2: Keyword Optimization for Singapore's Tech Scene
+              </h3>
+              <p className="text-blue-800">
+                We embedded language from top local job portals (JobStreet, MyCareersFuture),
+                focusing on terms like "digital transformation," "APAC stakeholder alignment," and
+                "Smart Nation initiatives." The final ATS score jumped to 93%.
+              </p>
+            </div>
+            <div className="bg-gray-50 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Step 3: Sleek, Professional Layout
+              </h3>
+              <p className="text-gray-800">
+                The resume was redesigned to be visually clean, mobile-friendly, ATS-parsable, and
+                easy for a hiring manager to scan in under 8 seconds.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Results */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+            <TrendingUp className="w-8 h-8 mr-3 text-blue-600" />
+            The Results: Dream Job Secured in 3 Weeks
+          </h2>
+          <div className="bg-blue-50 rounded-2xl p-8 mb-8">
+            <p className="text-blue-800 mb-6 font-medium">
+              After circulating his new, strategic resume:
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <CheckCircle className="w-8 h-8 text-blue-500 mb-3" />
+                <p className="text-blue-800">Shortlisted by 2 fintech companies within 10 days.</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <CheckCircle className="w-8 h-8 text-blue-500 mb-3" />
+                <p className="text-blue-800">
+                  Received an offer from a global MNC headquartered in Singapore.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <CheckCircle className="w-8 h-8 text-blue-500 mb-3" />
+                <p className="text-blue-800">
+                  Landed his dream job with a significant 30% salary hike.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+            <Quote className="w-6 h-6 text-blue-600 mb-2" />
+            <p className="text-gray-700 italic">
+              "The new resume changed everything. The design was world-class. For the first time, I
+              saw my experience looking... strategic. Executive."
+            </p>
+          </div>
+        </div>
+
+        {/* Keywords Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+            <Target className="w-8 h-8 mr-3 text-blue-600" />
+            Key Singapore Tech Keywords We Used
+          </h2>
+          <div className="bg-blue-50 rounded-2xl p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <span className="font-medium text-blue-900">• "Smart Nation Initiatives"</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <span className="font-medium text-blue-900">• "APAC Stakeholder Alignment"</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <span className="font-medium text-blue-900">• "PDPA Compliance"</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <span className="font-medium text-blue-900">• "Agile / Scrum Methodology"</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <span className="font-medium text-blue-900">• "Scalable Architecture"</span>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <span className="font-medium text-blue-900">• "Fintech & Digital Platforms"</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Article Content */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Story Overview */}
-        <section className="mb-16">
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg mb-8">
-            <div className="flex items-start">
-              <Globe className="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-              <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-3">
-                  Overview: One Resume Away from a Life-Changing Opportunity
-                </h2>
-                <p className="text-gray-700 leading-relaxed">
-                  In Singapore's competitive and fast-evolving job market, professionals often find
-                  themselves overlooked despite strong credentials. For Deepak (name changed), a
-                  mid-career technology professional with nearly a decade of experience, job hunting
-                  had become a series of rejections.
-                </p>
-                <div className="bg-white p-4 rounded-lg mt-4 border-l-4 border-blue-300">
-                  <Quote className="w-5 h-5 text-blue-600 mb-2" />
-                  <p className="text-gray-800 italic">
-                    "I kept asking myself—what am I doing wrong? My resume had all the details, but
-                    somehow I just wasn't landing interviews."
-                  </p>
-                </div>
-                <p className="text-gray-700 leading-relaxed mt-4">
-                  Then, Deepak stumbled upon Prosumely's free resume review, and it marked the
-                  beginning of a completely new career chapter.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white border border-blue-200 rounded-lg p-6">
-            <div className="flex items-center mb-4">
-              <Eye className="w-5 h-5 text-blue-600 mr-2" />
-              <span className="font-semibold text-gray-900">
-                Want your resume reviewed for free?
-              </span>
-            </div>
-            <Link
-              href="/free-resume-review"
-              className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
-            >
-              <FileText className="w-4 h-4 mr-2" />
-              Free Resume Review
-            </Link>
-          </div>
-        </section>
-
-        {/* Objective Section */}
-        <section className="mb-16">
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <div className="flex items-start mb-4">
-              <Target className="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-              <h2 className="text-2xl font-bold text-gray-900">
-                Objective: Break Through in the Singapore Job Market
-              </h2>
-            </div>
-            <p className="text-gray-700 mb-4">
-              Deepak's dream was clear: work with a high-growth tech firm in Singapore. His goals
-              included:
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-700">
-                  Build a resume aligned with Singapore's hiring standards
-                </span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-700">
-                  Articulate his achievements in a results-oriented format
-                </span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-700">
-                  Integrate industry-specific keywords for tech and innovation
-                </span>
-              </div>
-              <div className="flex items-start">
-                <CheckCircle className="w-5 h-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-gray-700">
-                  Present a professional, polished first impression
-                </span>
-              </div>
-            </div>
-            <div className="bg-white p-4 rounded-lg mt-6 border-l-4 border-blue-300">
-              <Quote className="w-5 h-5 text-blue-600 mb-2" />
-              <p className="text-gray-800 italic">
-                "I needed a resume that made decision-makers stop and take notice."
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Challenges Section */}
-        <section className="mb-16">
-          <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
-            <div className="flex items-start mb-4">
-              <Search className="w-6 h-6 text-red-600 mr-3 mt-1 flex-shrink-0" />
-              <h2 className="text-2xl font-bold text-gray-900">
-                The Challenges: Missing the Mark in the Details
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-white p-4 rounded-lg border-l-4 border-red-400">
-                <h3 className="font-bold text-gray-900 mb-2">1. Lack of Market-Specific Framing</h3>
-                <p className="text-gray-700">
-                  The original resume was generic and globally focused. It didn't highlight
-                  Singapore-specific strengths like compliance with PDPA, familiarity with
-                  Agile/Scrum, or multicultural team collaboration.
-                </p>
-              </div>
-
-              <div className="bg-white p-4 rounded-lg border-l-4 border-red-400">
-                <h3 className="font-bold text-gray-900 mb-2">2. Weak Achievement Positioning</h3>
-                <p className="text-gray-700">
-                  Deepak's resume detailed his duties—but failed to show outcomes. It missed metrics
-                  like:
-                </p>
-                <div className="grid md:grid-cols-3 gap-2 mt-2">
-                  <div className="flex items-center">
-                    <TrendingUp className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">ROI improvement</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Delivery time reduction</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Users className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Headcount/budget management</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white p-4 rounded-lg border-l-4 border-red-400">
-                <h3 className="font-bold text-gray-900 mb-2">3. Low ATS Visibility</h3>
-                <p className="text-gray-700">With an ATS score of just 42%, the resume lacked:</p>
-                <div className="grid md:grid-cols-3 gap-2 mt-2">
-                  <div className="flex items-center">
-                    <Zap className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Digital transformation</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Users className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Cross-functional leadership</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Building className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">SaaS/Cloud infrastructure</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white border border-blue-200 rounded-lg p-6 mt-6">
-              <div className="flex items-center mb-4">
-                <Star className="w-5 h-5 text-blue-600 mr-2" />
-                <span className="font-semibold text-gray-900">
-                  Want a resume recruiters in Singapore will shortlist?
-                </span>
-              </div>
-              <Link
-                href="/ats-resume-writing-service"
-                className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
-              >
-                <Award className="w-4 h-4 mr-2" />
-                ATS Resume Writing Service
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Solution Section */}
-        <section className="mb-16">
-          <div className="bg-green-50 border border-green-200 p-6 rounded-lg">
-            <div className="flex items-start mb-4">
-              <Award className="w-6 h-6 text-green-600 mr-3 mt-1 flex-shrink-0" />
-              <h2 className="text-2xl font-bold text-gray-900">
-                The Solution: Singapore-Specific Resume Strategy by Prosumely
-              </h2>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg border-l-4 border-green-500">
-                <div className="flex items-start mb-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Step 1: Customized Brand Narrative</h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  We conducted a deep-dive discovery session to understand Deepak's goals, then
-                  crafted:
-                </p>
-                <div className="space-y-4">
-                  <div className="bg-gray-50 p-4 rounded border-l-4 border-blue-400">
-                    <p className="text-gray-700">A sharp, personalized headline</p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded border-l-4 border-blue-400">
-                    <p className="text-gray-700">
-                      An executive summary focused on strategic outcomes
-                    </p>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded border-l-4 border-blue-400">
-                    <p className="text-gray-700">Impact-led experience points</p>
-                  </div>
-                </div>
-                <div className="mt-4 space-y-2">
-                  <div className="bg-red-50 p-3 rounded">
-                    <p className="text-red-700 font-medium">Old:</p>
-                    <p className="text-red-700 italic">
-                      "Worked on multiple projects across departments."
-                    </p>
-                  </div>
-                  <div className="bg-green-50 p-3 rounded">
-                    <p className="text-green-700 font-medium">New:</p>
-                    <p className="text-green-700 italic">
-                      "Led cross-functional delivery of 4 major IT initiatives, cutting operational
-                      costs by 23% and improving platform uptime by 99.9%."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg border-l-4 border-green-500">
-                <div className="flex items-start mb-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">
-                    Step 2: Keyword Optimization for Singapore's Tech Ecosystem
-                  </h3>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  We embedded job-market language pulled from top Singaporean job portals:
-                </p>
-                <div className="grid md:grid-cols-2 gap-3">
-                  <div className="flex items-center">
-                    <Globe className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Smart nation initiatives</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Building className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">B2B/B2C digital platforms</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Zap className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Scalable architecture</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Users className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Stakeholder alignment across APAC</span>
-                  </div>
-                </div>
-                <p className="text-gray-700 mt-4 font-medium">Final ATS score: 93%</p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg border-l-4 border-green-500">
-                <div className="flex items-start mb-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                  <h3 className="font-bold text-gray-900">Step 3: Sleek, Professional Layout</h3>
-                </div>
-                <p className="text-gray-700 mb-4">His resume was redesigned to be:</p>
-                <div className="grid md:grid-cols-3 gap-3">
-                  <div className="flex items-center">
-                    <Eye className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Visually clean and mobile-friendly</span>
-                  </div>
-                  <div className="flex items-center">
-                    <FileText className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">ATS-parsable with clear headings</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="w-4 h-4 text-blue-600 mr-2" />
-                    <span className="text-gray-700">Easy to scan in 8 seconds or less</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white p-4 rounded-lg mt-6 border-l-4 border-blue-300">
-              <Quote className="w-5 h-5 text-blue-600 mb-2" />
-              <p className="text-gray-800 italic">
-                "The design was world-class. For the first time, I saw my experience looking...
-                strategic. Executive."
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Results Section */}
-        <section className="mb-16">
-          <div className="bg-blue-50 border border-blue-200 p-6 rounded-lg">
-            <div className="flex items-start mb-4">
-              <TrendingUp className="w-6 h-6 text-blue-600 mr-3 mt-1 flex-shrink-0" />
-              <h2 className="text-2xl font-bold text-gray-900">
-                The Results: Dream Job Secured in 3 Weeks
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-4 mb-6">
-              <div className="bg-white p-4 rounded-lg text-center">
-                <CheckCircle className="w-8 h-8 text-green-500 mx-auto mb-2" />
-                <p className="text-gray-700">
-                  Got shortlisted by 2 fintech companies within 10 days
-                </p>
-              </div>
-              <div className="bg-white p-4 rounded-lg text-center">
-                <Award className="w-8 h-8 text-blue-500 mx-auto mb-2" />
-                <p className="text-gray-700">
-                  Received an offer from a global MNC headquartered in Singapore
-                </p>
-              </div>
-              <div className="bg-white p-4 rounded-lg text-center">
-                <TrendingUp className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
-                <p className="text-gray-700">Landed his dream job with a 30% salary hike</p>
-              </div>
-            </div>
-            <div className="bg-white p-4 rounded-lg border-l-4 border-blue-300">
-              <Quote className="w-5 h-5 text-blue-600 mb-2" />
-              <p className="text-gray-800 italic">
-                "This resume changed everything. Within weeks, I moved from silence to success."
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Why It Worked */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-            <Star className="w-6 h-6 text-blue-600 mr-3" />
-            Why It Worked
+        {/* Why Prosumely Works */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+            <Award className="w-8 h-8 mr-3 text-blue-600" />
+            Why Prosumely Works for Tech Professionals
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-              <CheckCircle className="w-6 h-6 text-green-600 mb-3" />
-              <h3 className="font-bold text-gray-900 mb-2">Singapore Job Market Language</h3>
-              <p className="text-gray-700">
-                Included specific industry terms and regional expectations
-              </p>
-            </div>
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-              <TrendingUp className="w-6 h-6 text-green-600 mb-3" />
-              <h3 className="font-bold text-gray-900 mb-2">Metrics That Matter</h3>
-              <p className="text-gray-700">Every role quantified by business results</p>
-            </div>
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-              <Eye className="w-6 h-6 text-green-600 mb-3" />
-              <h3 className="font-bold text-gray-900 mb-2">Professional Visual Structure</h3>
-              <p className="text-gray-700">Design that stood out in digital and printed formats</p>
-            </div>
-            <div className="bg-green-50 p-6 rounded-lg border border-green-200">
-              <Star className="w-6 h-6 text-green-600 mb-3" />
-              <h3 className="font-bold text-gray-900 mb-2">Confidence-Boosting Storytelling</h3>
-              <p className="text-gray-700">His career trajectory was told like a success story</p>
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <p className="text-gray-800 mb-6">
+              Singapore's job market values precision, innovation, and clarity. Prosumely ensures
+              your resume reflects exactly that.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
+                <span className="text-gray-800">
+                  • We translate technical skills into business value.
+                </span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
+                <span className="text-gray-800">
+                  • We align your expertise with local market demand.
+                </span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
+                <span className="text-gray-800">
+                  • We optimize for local ATS like JobStreet and MyCareersFuture.
+                </span>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+
+        {/* About Prosumely */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+            <Globe className="w-8 h-8 mr-3 text-blue-600" />
+            About Prosumely
+          </h2>
+          <div className="bg-gray-50 rounded-2xl p-8">
+            <p className="text-gray-700 leading-relaxed mb-6">
+              A resume isn't just a document. It's your career story—engineered to get results. At
+              Prosumely, we combine deep regional hiring expertise, ATS optimization, and strategic
+              content writing to highlight your career wins.
+            </p>
+            <div className="mt-6">
+              <a
+                href="https://www.prosumely.com"
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+              >
+                <Globe className="w-4 h-4 mr-2" />
+                Learn more at www.prosumely.com
+              </a>
+            </div>
+          </div>
+        </div>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-blue-600 to-cyan-500 text-white p-8 rounded-lg text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to make your next move in Singapore?</h2>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-            Singapore's job market values precision, innovation, and clarity. And that's exactly
-            what your resume should reflect.
+        <div className="bg-gradient-to-r from-gray-900 to-blue-900 text-white rounded-2xl p-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Make Your Next Move in Singapore?</h2>
+          <p className="text-xl mb-8 text-gray-300">
+            Let our expert team help you break into your dream market.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/free-resume-review"
-              className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 inline-flex items-center"
-            >
-              <FileText className="w-4 h-4 mr-2" />
-              Free Resume Review
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/services" className="inline-block">
+              <button className="px-8 py-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center mx-auto sm:mx-0">
+                <Briefcase className="w-5 h-5 mr-2" />
+                View Our Services
+              </button>
             </Link>
-            <Link
-              href="/ats-resume-writing-service"
-              className="bg-blue-700 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-800 transition-colors duration-200 inline-flex items-center"
-            >
-              <Award className="w-4 h-4 mr-2" />
-              ATS Resume Service
+            <Link href="/contact" className="inline-block">
+              <button className="px-8 py-4 border border-white text-white rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors flex items-center justify-center mx-auto sm:mx-0">
+                <User className="w-5 h-5 mr-2" />
+                Contact Us
+              </button>
             </Link>
           </div>
-        </section>
-      </article>
-
-      {/* About Prosumely */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Globe className="w-12 h-12 text-blue-600 mx-auto mb-6" />
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">About Prosumely</h2>
-          <p className="text-gray-700 leading-relaxed max-w-3xl mx-auto mb-8">
-            A resume isn't just a document. It's your career story—engineered to get results. At
-            Prosumely, we combine deep regional hiring expertise, ATS optimization across platforms
-            like JobStreet, LinkedIn, and MyCareersFuture, and strategic content writing to
-            highlight your career wins.
-          </p>
-          <Link
-            href="/"
-            className="inline-flex items-center bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors duration-200"
-          >
-            <Globe className="w-5 h-5 mr-2" />
-            Learn more at Prosumely.com
-          </Link>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   )
 }

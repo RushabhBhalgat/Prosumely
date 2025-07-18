@@ -202,7 +202,7 @@ export const HeaderClient: React.FC<{
                 </svg>
               </button>
               <div className="pl-4 flex flex-col space-y-2 mt-2">
-                <Link href="/impact-stories" className="py-1 text-gray-700">
+                <Link href="/career-success-stories" className="py-1 text-gray-700">
                   Impact Stories
                 </Link>
                 <Link href="/posts" className="py-1 text-gray-700">
