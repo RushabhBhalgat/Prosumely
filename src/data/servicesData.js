@@ -14,7 +14,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/ats-resume-writing-service/form',
     features: [
@@ -40,7 +40,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through PayPal, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/visual-resume-writing-service/form',
     features: [
@@ -66,7 +66,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through PayPal, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/executive-resume-writing-service/form',
 
@@ -93,7 +93,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/linkedin-profile-makeover/form',
 
@@ -129,7 +129,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through PayPal, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/project-portfolio/form',
     features: [
@@ -158,7 +158,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/jobseekers-combo-service/form',
     features: [
@@ -185,7 +185,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/sop-writing-service/form',
     features: [
@@ -215,7 +215,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/career-roadmap-service/form',
     features: [
@@ -245,7 +245,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/cover-letter-writing-service/form',
     features: [
@@ -271,7 +271,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/interview-coaching-service/form',
     features: [
@@ -301,7 +301,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/academic-cv-writing-service/form',
     features: [
@@ -339,7 +339,7 @@ export const servicesData = {
     contact: {
       whatsapp: '+91 7559112241',
       email: 'contact@prosumely.com',
-      note: 'International payments can be made through Debit/Credit card, offering a convenient option for those without an Indian bank account.',
+      note: 'International payments can be made through Debit/Credit card.',
     },
     redirectLink: '/membership-application-service/form',
     features: [
