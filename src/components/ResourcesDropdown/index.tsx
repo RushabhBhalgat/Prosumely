@@ -54,6 +54,7 @@ export function ResourcesDropdown() {
             <Link
               href="/impact-stories"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -68,6 +69,7 @@ export function ResourcesDropdown() {
             <Link
               href="/posts"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -82,6 +84,7 @@ export function ResourcesDropdown() {
             <Link
               href="/ebooks"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -103,6 +106,7 @@ export function ResourcesDropdown() {
             <Link
               href="/newsroom"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -117,6 +121,7 @@ export function ResourcesDropdown() {
             <Link
               href="/events"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -138,6 +143,7 @@ export function ResourcesDropdown() {
             <Link
               href="/social-media"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -152,6 +158,7 @@ export function ResourcesDropdown() {
             <Link
               href="/testimonials"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
