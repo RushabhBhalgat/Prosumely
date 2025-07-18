@@ -54,6 +54,7 @@ export function ServicesDropdown() {
             <Link
               href="/ats-resume-writing-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -68,6 +69,7 @@ export function ServicesDropdown() {
             <Link
               href="/executive-resume-writing-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -82,6 +84,7 @@ export function ServicesDropdown() {
             <Link
               href="/academic-cv-writing-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -96,6 +99,7 @@ export function ServicesDropdown() {
             <Link
               href="/project-portfolio"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -117,6 +121,7 @@ export function ServicesDropdown() {
             <Link
               href="/linkedin-profile-makeover"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -131,6 +136,7 @@ export function ServicesDropdown() {
             <Link
               href="/jobseekers-combo-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -143,6 +149,7 @@ export function ServicesDropdown() {
             <Link
               href="/cover-letter-writing-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -157,6 +164,7 @@ export function ServicesDropdown() {
             <Link
               href="/career-roadmap-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -178,6 +186,7 @@ export function ServicesDropdown() {
             <Link
               href="/interview-coaching-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -190,6 +199,7 @@ export function ServicesDropdown() {
             <Link
               href="/sop-writing-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -204,6 +214,7 @@ export function ServicesDropdown() {
             <Link
               href="/membership-application-service"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -218,6 +229,7 @@ export function ServicesDropdown() {
             <Link
               href="/free-resume-review"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3 bg-blue-50 rounded-md"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200 flex items-center">

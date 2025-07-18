@@ -54,6 +54,7 @@ export function CareerToolsDropdown() {
             <Link
               href="/tools/resume-analyzer"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -68,6 +69,7 @@ export function CareerToolsDropdown() {
             <Link
               href="/tools/resume-templates"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -89,6 +91,7 @@ export function CareerToolsDropdown() {
             <Link
               href="/tools/interview-simulator"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -103,6 +106,7 @@ export function CareerToolsDropdown() {
             <Link
               href="/tools/question-library"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -124,6 +128,7 @@ export function CareerToolsDropdown() {
             <Link
               href="/tools/salary-calculator"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
@@ -136,6 +141,7 @@ export function CareerToolsDropdown() {
             <Link
               href="/tools/career-path-planner"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
