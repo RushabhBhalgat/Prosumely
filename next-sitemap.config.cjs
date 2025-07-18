@@ -32,7 +32,11 @@ module.exports = {
         disallow: ['/admin/*', '/api/*'],
       },
     ],
-    additionalSitemaps: [`${SITE_URL}/pages-sitemap.xml`, `${SITE_URL}/posts-sitemap.xml`],
+    additionalSitemaps: [
+      `${SITE_URL}/pages-sitemap.xml`,
+      `${SITE_URL}/posts-sitemap.xml`,
+      `${SITE_URL}/sitemap-0.xml`,
+    ],
   },
   transform: async (config, path) => {
     // Skip dynamic routes and sitemap files
