@@ -294,8 +294,20 @@ const MyFormComponent = ({
 
   if (!cmsForm) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+      <div
+        className={
+          hideFormHeader
+            ? 'flex items-center justify-center p-4'
+            : 'min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 flex items-center justify-center p-4'
+        }
+      >
+        <div
+          className={
+            hideFormHeader
+              ? 'p-6 max-w-md w-full'
+              : 'bg-white rounded-2xl shadow-xl p-8 max-w-md w-full'
+          }
+        >
           <div className="flex flex-col items-center space-y-4" aria-live="polite">
             <div
               className="animate-spin rounded-full h-12 w-12 border-4 border-[#9adbf4] border-t-[#2563eb]"
@@ -314,9 +326,13 @@ const MyFormComponent = ({
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 py-8 px-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div
+      className={
+        hideFormHeader ? '' : 'min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 py-8 px-4'
+      }
+    >
+      <div className={hideFormHeader ? '' : 'max-w-2xl mx-auto'}>
+        <div className={hideFormHeader ? '' : 'bg-white rounded-2xl shadow-xl overflow-hidden'}>
           {/* Header */}
           {!hideFormHeader && (
             <header className="bg-gradient-to-r from-[#2563eb] to-[#9adbf4] p-6 text-white">
@@ -345,7 +361,7 @@ const MyFormComponent = ({
           )}
 
           {/* Form Content */}
-          <main className="p-6 md:p-8">
+          <main className={hideFormHeader ? 'p-6' : 'p-6 md:p-8'}>
             {error && (
               <div
                 className="mb-6 bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg animate-shake"
