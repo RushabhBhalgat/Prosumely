@@ -3,8 +3,6 @@ import React from 'react'
 import Image from 'next/image'
 import {
   ArrowLeft,
-  Calendar,
-  MapPin,
   TrendingUp,
   CheckCircle,
   Quote,

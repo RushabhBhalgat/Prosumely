@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'From Rejection to Results: How a Great Resume Changes Everything | Prosumely',
@@ -47,21 +49,24 @@ export default function ResumeRejectionToSuccessArticle() {
     <main className="bg-white min-h-screen pb-16">
       <article className="max-w-3xl mx-auto px-4 py-12">
         <div className="mb-4">
-          <a
+          <Link
             href="/newsroom"
             className="inline-block text-blue-600 hover:underline text-sm px-2 py-1 rounded transition"
           >
             ← Back to Newsroom
-          </a>
+          </Link>
         </div>
         <header className="mb-10">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">
             From Rejection to Results: How a Great Resume Transforms Job Search Outcomes
           </h1>
-          <img
+          <Image
             src="/newsroom-images/resume-success.jpg"
             alt="Resume success and interview"
+            width={900}
+            height={256}
             className="rounded-xl shadow-lg w-full h-64 object-cover mb-6"
+            priority
           />
         </header>
         {/* Metrics Section */}

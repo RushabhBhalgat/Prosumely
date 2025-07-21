@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'Breaking into Tech: A Non-Tech Professional’s Journey to Product Management | Prosumely',
@@ -51,12 +52,12 @@ export default function BreakingIntoTechArticle() {
     <main className="bg-white min-h-screen pb-16">
       <article className="max-w-3xl mx-auto px-4 py-12">
         <div className="mb-4">
-          <a
+          <Link
             href="/newsroom"
             className="inline-block text-blue-600 hover:underline text-sm px-2 py-1 rounded transition"
           >
             ← Back to Newsroom
-          </a>
+          </Link>
         </div>
         <header className="mb-10">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">

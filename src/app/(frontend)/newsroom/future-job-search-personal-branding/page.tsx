@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata = {
   title: 'The Future of Job Search: Personal Branding Beyond the Resume | Prosumely',
@@ -49,12 +50,12 @@ export default function FutureJobSearchPersonalBrandingArticle() {
     <main className="bg-white min-h-screen pb-16">
       <article className="max-w-3xl mx-auto px-4 py-12">
         <div className="mb-4">
-          <a
+          <Link
             href="/newsroom"
             className="inline-block text-blue-600 hover:underline text-sm px-2 py-1 rounded transition"
           >
             ← Back to Newsroom
-          </a>
+          </Link>
         </div>
         <header className="mb-10">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">
@@ -233,11 +234,11 @@ export default function FutureJobSearchPersonalBrandingArticle() {
             Let Prosumely help you create a resume and online presence that gets noticed by
             recruiters and hiring managers.
           </p>
-          <a href="/services" className="inline-block">
+          <Link href="/services" className="inline-block">
             <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
               Get Started
             </button>
-          </a>
+          </Link>
         </section>
       </article>
     </main>

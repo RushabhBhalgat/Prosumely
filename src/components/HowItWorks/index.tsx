@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
-import { FileText, Users, Sparkles, ArrowRight, CheckCircle, Clock } from 'lucide-react'
+import { FileText, Users, Sparkles, CheckCircle, Clock } from 'lucide-react'
 
 export default function HowItWorksSection() {
   const [activeStep, setActiveStep] = useState(1)
