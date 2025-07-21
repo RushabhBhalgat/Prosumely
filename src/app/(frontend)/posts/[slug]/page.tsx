@@ -73,9 +73,9 @@ export default async function Post({ params: paramsPromise }: Args) {
                   if (typeof category === 'object' && category !== null) {
                     const { title: categoryTitle } = category
                     const titleToUse = categoryTitle || 'Untitled category'
-                    
+
                     return (
-                      <span 
+                      <span
                         key={index}
                         className="inline-block bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full uppercase tracking-wide"
                       >
@@ -95,12 +95,14 @@ export default async function Post({ params: paramsPromise }: Args) {
 
             {/* Author and Date */}
             <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm text-gray-600 border-b border-gray-200 pb-6">
-              {post.populatedAuthors && post.populatedAuthors.length > 0 && formatAuthors(post.populatedAuthors) !== '' && (
-                <div className="flex items-center gap-2">
-                  <span className="font-medium">By:</span>
-                  <span>{formatAuthors(post.populatedAuthors)}</span>
-                </div>
-              )}
+              {post.populatedAuthors &&
+                post.populatedAuthors.length > 0 &&
+                formatAuthors(post.populatedAuthors) !== '' && (
+                  <div className="flex items-center gap-2">
+                    <span className="font-medium">By:</span>
+                    <span>{formatAuthors(post.populatedAuthors)}</span>
+                  </div>
+                )}
               {post.publishedAt && (
                 <div className="flex items-center gap-2">
                   <span className="font-medium">Published:</span>
@@ -112,7 +114,7 @@ export default async function Post({ params: paramsPromise }: Args) {
 
           {/* Post Content */}
           <RichText data={post.content} enableGutter={false} />
-          
+
           {post.relatedPosts && post.relatedPosts.length > 0 && (
             <RelatedPosts
               className="mt-12"
