@@ -112,7 +112,7 @@ const config = {
           css: [
             {
               '--tw-prose-body': 'rgb(31 41 55)', // gray-800
-              '--tw-prose-headings': 'rgb(17 24 39)', // gray-900
+              '--tw-prose-headings': 'rgb(0 0 0)', // black for maximum contrast
               '--tw-prose-lead': 'rgb(75 85 99)', // gray-600
               '--tw-prose-links': 'rgb(37 99 235)', // blue-600
               '--tw-prose-bold': 'rgb(17 24 39)', // gray-900
