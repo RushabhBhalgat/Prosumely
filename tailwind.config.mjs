@@ -111,8 +111,22 @@ const config = {
         DEFAULT: {
           css: [
             {
-              '--tw-prose-body': 'var(--text)',
-              '--tw-prose-headings': 'var(--text)',
+              '--tw-prose-body': 'rgb(31 41 55)', // gray-800
+              '--tw-prose-headings': 'rgb(17 24 39)', // gray-900
+              '--tw-prose-lead': 'rgb(75 85 99)', // gray-600
+              '--tw-prose-links': 'rgb(37 99 235)', // blue-600
+              '--tw-prose-bold': 'rgb(17 24 39)', // gray-900
+              '--tw-prose-counters': 'rgb(107 114 128)', // gray-500
+              '--tw-prose-bullets': 'rgb(156 163 175)', // gray-400
+              '--tw-prose-hr': 'rgb(229 231 235)', // gray-200
+              '--tw-prose-quotes': 'rgb(17 24 39)', // gray-900
+              '--tw-prose-quote-borders': 'rgb(229 231 235)', // gray-200
+              '--tw-prose-captions': 'rgb(107 114 128)', // gray-500
+              '--tw-prose-code': 'rgb(17 24 39)', // gray-900
+              '--tw-prose-pre-code': 'rgb(229 231 235)', // gray-200
+              '--tw-prose-pre-bg': 'rgb(31 41 55)', // gray-800
+              '--tw-prose-th-borders': 'rgb(209 213 219)', // gray-300
+              '--tw-prose-td-borders': 'rgb(229 231 235)', // gray-200
               h1: {
                 fontWeight: 'normal',
                 marginBottom: '0.25em',

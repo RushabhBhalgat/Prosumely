@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --text: rgb(31 41 55); /* gray-800 for better readability */
+  }
+  
+  /* Ensure all text in articles has proper color */
+  .payload-richtext {
+    color: rgb(31 41 55); /* gray-800 */
+  }
+  
+  .payload-richtext p {
+    color: rgb(31 41 55); /* gray-800 */
+  }
+  
+  .payload-richtext h1,
+  .payload-richtext h2,
+  .payload-richtext h3,
+  .payload-richtext h4,
+  .payload-richtext h5,
+  .payload-richtext h6 {
+    color: rgb(17 24 39); /* gray-900 */
+  }
+  
+  .payload-richtext li {
+    color: rgb(31 41 55); /* gray-800 */
+  }
+}
