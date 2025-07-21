@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'From Manager to VP: Strategic Resume Transformation for Career Growth | Prosumely',
@@ -50,12 +52,12 @@ export default function StrategicResumeVPArticle() {
     <main className="bg-white min-h-screen pb-16">
       <article className="max-w-3xl mx-auto px-4 py-12">
         <div className="mb-4">
-          <a
+          <Link
             href="/newsroom"
             className="inline-block text-blue-600 hover:underline text-sm px-2 py-1 rounded transition"
           >
             ← Back to Newsroom
-          </a>
+          </Link>
         </div>
         <header className="mb-10">
           <h1 className="text-3xl md:text-5xl font-bold text-blue-900 mb-4">
@@ -71,10 +73,13 @@ export default function StrategicResumeVPArticle() {
               Tanvi Sharma, Senior Resume Strategist at Prosumely
             </span>
           </p>
-          <img
+          <Image
             src="/newsroom-images/vp-career-growth.jpg"
             alt="Resume transformation"
+            width={900}
+            height={256}
             className="rounded-xl shadow-lg w-full h-64 object-cover mb-6"
+            priority
           />
         </header>
         {/* Metrics Section */}
