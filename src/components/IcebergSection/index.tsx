@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 const IcebergSection = () => {
   return (
     <section className="bg-white py-12 lg:py-24 mt-10">
@@ -47,11 +48,14 @@ const IcebergSection = () => {
 
           {/* Right Image */}
           <div className="w-full lg:w-1/2 flex justify-center items-center">
-            <img
+            <Image
               src="/iceberg-why-choose-us.png"
               alt="Why Choose Us Iceberg"
+              width={643}
+              height={700}
               className="max-w-[340px] sm:max-w-[400px] md:max-w-[480px] lg:max-w-[520px] xl:max-w-[600px] 2xl:max-w-[643px] w-full h-auto rounded-xl shadow-lg object-contain"
               style={{ maxHeight: '700px' }}
+              priority
             />
           </div>
         </div>
