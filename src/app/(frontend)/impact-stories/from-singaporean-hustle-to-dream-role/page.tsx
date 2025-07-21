@@ -14,7 +14,6 @@ import {
   Star,
   Target,
   Award,
-  Users,
   Clock,
 } from 'lucide-react'
 

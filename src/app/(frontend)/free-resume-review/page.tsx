@@ -11,14 +11,11 @@ import {
   Upload,
   BarChart3,
   Award,
-  Users,
   Rocket,
   Star,
   Shield,
   Clock,
   TrendingUp,
-  ArrowRight,
-  Sparkles,
 } from 'lucide-react'
 import MyFormComponent from '@/components/MyFormComponent'
 

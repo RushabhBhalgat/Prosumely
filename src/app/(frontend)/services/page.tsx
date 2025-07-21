@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import path from 'path'
 const services = [
   {
     id: 1,

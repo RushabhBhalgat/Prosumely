@@ -4,12 +4,9 @@ import Image from 'next/image'
 import {
   ArrowLeft,
   Calendar,
-  MapPin,
   TrendingUp,
   CheckCircle,
   Quote,
-  User,
-  Briefcase,
   Globe,
   Star,
   Target,

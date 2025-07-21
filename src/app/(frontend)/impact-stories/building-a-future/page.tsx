@@ -14,7 +14,6 @@ import {
   Star,
   Target,
   Award,
-  AlertTriangle as Alert,
   Building,
   Users,
   Clock,

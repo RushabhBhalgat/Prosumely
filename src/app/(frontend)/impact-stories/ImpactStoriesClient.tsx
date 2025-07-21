@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import React, { useState } from 'react'
 import {
   TrendingUp,
@@ -12,9 +13,7 @@ import {
   MapPin,
   Award,
   Heart,
-  Target,
   Briefcase,
-  CheckCircle,
 } from 'lucide-react'
 
 const impactStories = [
@@ -354,9 +353,11 @@ export default function ImpactStoriesClient() {
               className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-blue-200"
             >
               <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 flex items-center justify-center">
-                <img
+                <Image
                   src={story.image}
                   alt={story.title}
+                  width={96}
+                  height={96}
                   className="w-24 h-24 object-cover rounded-lg shadow-md"
                 />
               </div>

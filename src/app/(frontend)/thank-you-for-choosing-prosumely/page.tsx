@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Mail, Phone, Check, ChevronRight, MessageCircle } from 'lucide-react'
+import { Mail, Check, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -25,7 +25,7 @@ const ThankYouPage = () => {
 
     try {
       showConfetti()
-    } catch (error) {
+    } catch (_error) {
       console.log('Confetti animation not loaded')
     }
   }, [])
