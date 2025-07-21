@@ -11,6 +11,50 @@ import {
   Youtube,
 } from 'lucide-react'
 
+export const metadata = {
+  title: 'Contact Us | Professional Resume Writing Services | Prosumely',
+  description:
+    'Get in touch with Prosumely for professional resume writing, CV services, and career consulting. Contact our expert team for personalized career assistance and support.',
+  keywords: [
+    'contact prosumely',
+    'resume writing contact',
+    'career services contact',
+    'professional CV writers',
+    'resume consultation',
+    'career coaching contact',
+    'job search assistance',
+    'resume help',
+  ],
+  openGraph: {
+    title: 'Contact Us | Professional Resume Writing Services | Prosumely',
+    description:
+      'Get in touch with Prosumely for professional resume writing, CV services, and career consulting. Contact our expert team for personalized career assistance.',
+    url: 'https://prosumely.com/contact',
+    siteName: 'Prosumely',
+    images: [
+      {
+        url: '/prosumely-ats-resume-writing-opengraph.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Prosumely',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Professional Resume Writing Services | Prosumely',
+    description:
+      'Get in touch with Prosumely for professional resume writing, CV services, and career consulting. Contact our expert team for personalized career assistance.',
+    images: ['/prosumely-ats-resume-writing-opengraph.jpg'],
+    site: '@prosumely',
+  },
+  alternates: {
+    canonical: 'https://prosumely.com/contact',
+  },
+}
+
 export default function ContactPage() {
   // Use the known form ID directly
   const formId = '68309c9ddb87b9482d0315bc'
