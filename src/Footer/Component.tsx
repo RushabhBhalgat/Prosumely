@@ -132,10 +132,10 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/sop"
+                  href="/sop-writing-service"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
-                  SOP
+                  SOP Writing Service
                 </Link>
               </li>
             </ul>

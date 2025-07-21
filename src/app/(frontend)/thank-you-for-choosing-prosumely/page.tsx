@@ -5,6 +5,13 @@ import { Mail, Check, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import Head from 'next/head'
 
+export const metadata = {
+  title: 'Thank You | Order Confirmation | Prosumely',
+  description:
+    'Thank you for choosing Prosumely for your resume writing needs. Your order has been confirmed and our expert writers will begin working on your professional resume.',
+  robots: 'noindex, nofollow',
+}
+
 const ThankYouPage = () => {
   const [animate, setAnimate] = useState(false)
 

@@ -186,12 +186,13 @@ export const HeaderClient: React.FC<{
               </button>
               <div className="pl-4 flex flex-col space-y-2 mt-2">
                 <Link
-                  href="/tools/resume-analyzer"
+                  href="/free-resume-review"
                   className="py-1 text-gray-700"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  Resume Analyzer
+                  Free Resume Review
                 </Link>
+                {/* Tools coming soon 
                 <Link
                   href="/tools/interview-simulator"
                   className="py-1 text-gray-700"
@@ -213,6 +214,7 @@ export const HeaderClient: React.FC<{
                 >
                   Career Path Planner
                 </Link>
+                */}
               </div>
             </div>
 
@@ -253,18 +255,19 @@ export const HeaderClient: React.FC<{
                   Blog
                 </Link>
                 <Link
-                  href="/ebooks"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Ebooks
-                </Link>
-                <Link
                   href="/newsroom"
                   className="py-1 text-gray-700"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Newsroom
+                </Link>
+                {/* Coming soon pages
+                <Link
+                  href="/ebooks"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Ebooks
                 </Link>
                 <Link
                   href="/events"
@@ -287,6 +290,7 @@ export const HeaderClient: React.FC<{
                 >
                   Testimonials
                 </Link>
+                */}
               </div>
             </div>
 
