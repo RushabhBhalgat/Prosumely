@@ -1,7 +1,7 @@
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import Link from 'next/link'
 import React from 'react'
-import { Mail, MapPin, Phone, Instagram, Twitter, Linkedin, Youtube, Facebook } from 'lucide-react'
+import { Mail, Phone, Instagram, Twitter, Linkedin, Youtube, Facebook } from 'lucide-react'
 
 import type { Footer } from '@/payload-types'
 

@@ -19,7 +19,6 @@ import {
   Clock,
   Search,
   Eye,
-  Zap,
   Settings,
 } from 'lucide-react'
 

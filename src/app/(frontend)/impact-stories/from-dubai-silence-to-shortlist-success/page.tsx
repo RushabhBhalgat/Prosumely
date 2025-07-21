@@ -3,7 +3,6 @@ import React from 'react'
 import Image from 'next/image'
 import {
   ArrowLeft,
-  Calendar,
   MapPin,
   TrendingUp,
   CheckCircle,
@@ -14,13 +13,9 @@ import {
   Star,
   Target,
   Award,
-  AlertTriangle as Alert,
   Building,
-  Users,
   Clock,
-  Search,
   Eye,
-  FileText,
   MessageCircle,
 } from 'lucide-react'
 

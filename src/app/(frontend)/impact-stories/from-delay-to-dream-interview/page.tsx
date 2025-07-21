@@ -18,7 +18,6 @@ import {
   Users,
   Clock,
   Search,
-  Eye,
 } from 'lucide-react'
 
 export const metadata = {

@@ -211,9 +211,11 @@ export default function NewsroomPage() {
                 <article className="group bg-white rounded-2xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer">
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={blog.image}
                       alt={blog.title}
+                      width={400}
+                      height={192}
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
