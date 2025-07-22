@@ -77,7 +77,7 @@ export default function LandingPage() {
 
               <p className="text-base md:text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed font-normal max-w-xl">
                 Our team of professional resume designers, domain experts, HRs and industry veterans
-                collaborate together to build a professional Resume for you
+                collaborate together to build a professional Resume for you.
               </p>
               <Link href="/services">
                 <button className="group relative inline-flex items-center justify-center px-3 py-1.5 lg:px-4 lg:py-2 text-base lg:text-lg font-semibold text-slate-800 bg-gradient-to-br from-cyan-300 via-sky-200 to-blue-300 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-400/60 focus:outline-none focus:ring-4 focus:ring-cyan-300/60 border-2 border-cyan-400/40 backdrop-blur-sm hover:from-cyan-400 hover:via-sky-300 hover:to-blue-400">
