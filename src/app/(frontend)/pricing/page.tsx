@@ -66,7 +66,7 @@ export default function PricingPage() {
       color: 'bg-blue-800',
       popular: false,
       description:
-        'Position yourself as a leader with a powerful, achievement-driven executive resume. Crafted for senior roles, it highlights your impact, vision, and executive presence.',
+        'Position yourself as a leader with a powerful, achievement-driven executive resume. Crafted for senior roles, it highlights your detailed impact, vision, and value proposition.',
       bestFor: 'Mid-level professionals, career changers',
       path: '/executive-resume-writing-service',
     },
@@ -79,8 +79,8 @@ export default function PricingPage() {
       color: 'bg-blue-800',
       popular: true,
       description:
-        'The Jobseekers Combo is your all-in-one career branding kit—consisting of ATS/Executive CV, cover letter and email, an optimized LinkedIn profile, and a personalized career roadmap.',
-      bestFor: 'Senior managers, executives, directors',
+        'The Jobseekers Combo is your all-in-one career branding kit—consisting of ATS friendly Executive CV, Cover letter, LinkedIn profile makeover, and a personalized career roadmap.',
+      bestFor: 'Mid/Senior level professionals & leadership roles',
       path: '/jobseekers-combo-service',
     },
     {
@@ -91,7 +91,7 @@ export default function PricingPage() {
       color: 'bg-blue-800',
       popular: false,
       description:
-        'Showcase your expertise with a polished project portfolio. Perfect for professionals in  construction, project management, architects, tech, design, and freelance.',
+        'Impressive and engaging design presenting each project with a visually compelling layout, highlighting key achievements and captivating viewers with infographics',
       bestFor: 'Serious job seekers, career transformation',
       path: '/project-portfolio',
     },

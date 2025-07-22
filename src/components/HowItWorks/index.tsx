@@ -42,7 +42,7 @@ export default function HowItWorksSection() {
     },
     {
       number: 4,
-      title: 'Get Your Final Resume',
+      title: 'Delivered in 48hrs',
       subtitle: 'Ready to impress employers',
       description: 'Get your final resume in Word and PDF—ATS-ready and employer-approved.',
       icon: CheckCircle,
