@@ -27,9 +27,11 @@ export async function Footer() {
             <Link className="inline-block mb-4" href="/">
               <span className="text-white text-2xl font-bold">Prosumely</span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              We help professionals stand out with expert resume writing services and career
-              advancement solutions.
+            <p className="text-gray-400 text-sm leading-relaxed text-justify">
+              Prosumely empowers professionals with expertly crafted resumes, executive CVs, cover
+              letters, LinkedIn profile enhancements, and impactful project portfolios. Our team of
+              resume specialists, HR professionals, and industry experts collaborates to create
+              tailored personal branding solutions that help you stand out and advance your career.
             </p>
             <div className="flex space-x-3 pt-4">
               {/* Social Media Links */}
@@ -76,18 +78,26 @@ export async function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Services */}
+          {/* Column 2: Resume Services */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
-              Our Services
+              Resume Services
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2">
               <li>
                 <Link
                   href="/ats-resume-writing-service"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
                   ATS Resume
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/free-resume-review"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  Free Resume Review
                 </Link>
               </li>
               <li>
@@ -100,18 +110,10 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/visual-resume-writing-service"
+                  href="/academic-cv-writing-service"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
-                  Visual Resume
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/linkedin-profile-makeover"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
-                >
-                  LinkedIn Profile
+                  Academic CV
                 </Link>
               </li>
               <li>
@@ -120,6 +122,31 @@ export async function Footer() {
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
                   Cover Letter
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/jobseekers-combo-service"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  Jobseeker's Combo
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Career Services */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+              Career Services
+            </h3>
+            <ul className="space-y-2 grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2">
+              <li>
+                <Link
+                  href="/linkedin-profile-makeover"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  LinkedIn Profile
                 </Link>
               </li>
               <li>
@@ -135,26 +162,42 @@ export async function Footer() {
                   href="/sop-writing-service"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
-                  SOP Writing Service
+                  SOP Writing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/career-roadmap-service"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  Career Roadmap
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/interview-coaching-service"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  Interview Coaching
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/membership-application-service"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  Membership Application
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Quick Links */}
+          {/* Column 4: Resources & Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
-              Quick Links
+              Resources & Links
             </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
-                >
-                  Home
-                </Link>
-              </li>
+            <ul className="space-y-2 grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2">
               <li>
                 <Link
                   href="/posts"
@@ -165,20 +208,20 @@ export async function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href="/impact-stories"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
-                  Services
+                  Impact Stories
                 </Link>
               </li>
-              {navItems.map(({ link }, i) => (
-                <li key={i}>
-                  <CMSLink
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
-                    {...link}
-                  />
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/pricing"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  Pricing
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/about"
@@ -195,32 +238,40 @@ export async function Footer() {
                   Contact
                 </Link>
               </li>
+              {navItems.map(({ link }, i) => (
+                <li key={i}>
+                  <CMSLink
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                    {...link}
+                  />
+                </li>
+              ))}
             </ul>
-          </div>
 
-          {/* Column 4: Contact */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-3">
-                <Phone size={18} className="text-[#9adaf3] flex-shrink-0" />
-                <a
-                  href="tel:+917559112241"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
-                >
-                  +91 7559112241
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail size={18} className="text-[#9adaf3] flex-shrink-0" />
-                <a
-                  href="mailto:contact@prosumely.com"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
-                >
-                  contact@prosumely.com
-                </a>
-              </li>
-            </ul>
+            {/* Contact Info */}
+            <div className="pt-4 border-t border-gray-800">
+              <h4 className="text-sm font-semibold text-white mb-3">Contact Us</h4>
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-[#9adaf3] flex-shrink-0" />
+                  <a
+                    href="tel:+917559112241"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-xs"
+                  >
+                    +91 7559112241
+                  </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail size={14} className="text-[#9adaf3] flex-shrink-0" />
+                  <a
+                    href="mailto:contact@prosumely.com"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-xs"
+                  >
+                    contact@prosumely.com
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
