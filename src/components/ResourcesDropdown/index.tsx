@@ -125,7 +125,7 @@ export function ResourcesDropdown() {
             >
               <div className="flex flex-col">
                 <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
-                  Upcoming Events
+                  Events
                 </span>
                 <span className="text-xs text-gray-500 mt-1">
                   Workshops, webinars, and career fairs
