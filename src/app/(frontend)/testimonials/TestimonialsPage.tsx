@@ -102,48 +102,6 @@ const testimonials: Testimonial[] = [
     results: 'Transitioned from startup to Fortune 500',
   },
   {
-    id: 6,
-    name: 'Chen Wei',
-    role: 'Research Scientist',
-    company: 'Huawei',
-    location: 'Shenzhen, China',
-    country: '🇨🇳',
-    experience: '8 years',
-    service: 'Academic CV + SOP',
-    rating: 5,
-    testimonial:
-      'Perfect for my transition from industry to academia. They highlighted my research publications and patent applications beautifully. The SOP for my PhD application was compelling and well-structured.',
-    results: 'Accepted into top-tier university program',
-  },
-  {
-    id: 7,
-    name: 'Maria Santos',
-    role: 'Operations Manager',
-    company: 'Banco do Brasil',
-    location: 'São Paulo, Brazil',
-    country: '🇧🇷',
-    experience: '9 years',
-    service: 'Executive Resume + Interview Coaching',
-    rating: 5,
-    testimonial:
-      'Prosumely helped me break through to C-level conversations. The interview coaching was invaluable - they prepared me for executive-level questions and helped me articulate my vision for operational excellence.',
-    results: 'Secured COO position at fintech startup',
-  },
-  {
-    id: 8,
-    name: 'David Kim',
-    role: 'UX Designer',
-    company: 'Samsung',
-    location: 'Seoul, South Korea',
-    country: '🇰🇷',
-    experience: '5 years',
-    service: 'Project Portfolio + LinkedIn',
-    rating: 5,
-    testimonial:
-      'The portfolio they created was stunning! It showcased my design process and user research skills beautifully. Combined with LinkedIn optimization, it attracted recruiters from major tech companies worldwide.',
-    results: 'Headhunted by FAANG companies',
-  },
-  {
     id: 9,
     name: 'Fatima Al-Zahra',
     role: 'Civil Engineer',
@@ -212,20 +170,6 @@ const testimonials: Testimonial[] = [
     testimonial:
       'Magnifique! The team captured my creative marketing campaigns and brand strategy expertise perfectly. The comprehensive approach with resume, LinkedIn, and career guidance was exactly what I needed for international roles.',
     results: 'Secured global brand manager role',
-  },
-  {
-    id: 14,
-    name: 'Carlos Mendoza',
-    role: 'Investment Banker',
-    company: 'BBVA',
-    location: 'Mexico City, Mexico',
-    country: '🇲🇽',
-    experience: '8 years',
-    service: 'Executive Resume + LinkedIn',
-    rating: 5,
-    testimonial:
-      'Prosumely elevated my profile to attract top-tier investment banking opportunities. They highlighted my deal structuring experience and client relationships in Latin America with impressive results.',
-    results: 'Headhunted by Wall Street firm',
   },
   {
     id: 15,
@@ -298,20 +242,6 @@ const testimonials: Testimonial[] = [
     results: 'Launched independent fashion label',
   },
   {
-    id: 20,
-    name: 'Alexander Petrov',
-    role: 'Energy Analyst',
-    company: 'Gazprom',
-    location: 'Moscow, Russia',
-    country: '🇷🇺',
-    experience: '8 years',
-    service: 'ATS Resume + Cover Letter',
-    rating: 5,
-    testimonial:
-      'Excellent understanding of the energy sector! They highlighted my market analysis and regulatory expertise perfectly. The cover letter template has been invaluable for multiple applications.',
-    results: 'Multiple offers from international energy firms',
-  },
-  {
     id: 21,
     name: 'Grace Chen',
     role: 'Pediatric Nurse',
@@ -366,20 +296,6 @@ const testimonials: Testimonial[] = [
     testimonial:
       'Perfect for my niche in sustainability! They highlighted my environmental impact initiatives and ESG strategy work beautifully. The comprehensive package positioned me perfectly for senior sustainability roles.',
     results: 'Headhunted by renewable energy company',
-  },
-  {
-    id: 25,
-    name: 'Diego Silva',
-    role: 'Business Analyst',
-    company: 'Petrobras',
-    location: 'Rio de Janeiro, Brazil',
-    country: '🇧🇷',
-    experience: '4 years',
-    service: 'ATS Resume + Interview Coaching',
-    rating: 5,
-    testimonial:
-      'Incredible support throughout my job search! The ATS resume helped me get through screening processes, while the interview coaching gave me confidence to discuss complex business transformation projects.',
-    results: 'Secured consulting role at Big 4 firm',
   },
   {
     id: 26,
@@ -492,34 +408,6 @@ const testimonials: Testimonial[] = [
     testimonial:
       'Excellent understanding of the energy transition landscape. They positioned my traditional oil & gas experience for renewable energy opportunities while mapping a clear transition path.',
     results: 'Leading solar energy development project',
-  },
-  {
-    id: 34,
-    name: 'Natasha Volkov',
-    role: 'Cybersecurity Analyst',
-    company: 'Kaspersky',
-    location: 'Moscow, Russia',
-    country: '🇷🇺',
-    experience: '6 years',
-    service: 'ATS Resume + Project Portfolio',
-    rating: 5,
-    testimonial:
-      'Impressive technical portfolio showcasing my threat detection and incident response projects. The ATS resume helped me navigate complex security clearance application processes.',
-    results: 'Headhunted by international security firm',
-  },
-  {
-    id: 35,
-    name: 'Isabella Costa',
-    role: 'Biomedical Engineer',
-    company: 'Medtronic',
-    location: 'São Paulo, Brazil',
-    country: '🇧🇷',
-    experience: '7 years',
-    service: 'Project Portfolio + LinkedIn',
-    rating: 5,
-    testimonial:
-      'Stunning portfolio showcasing my medical device development projects. The LinkedIn optimization helped me connect with global healthcare innovators and medical technology leaders.',
-    results: 'Multiple offers from MedTech startups',
   },
   {
     id: 36,
@@ -646,20 +534,6 @@ const testimonials: Testimonial[] = [
     testimonial:
       'Magnifique! They captured my luxury retail expertise and brand strategy accomplishments perfectly. The LinkedIn optimization helped me connect with global luxury brand leaders.',
     results: 'Promoted to Global Brand Director',
-  },
-  {
-    id: 45,
-    name: 'Sofia Reyes',
-    role: 'Agricultural Scientist',
-    company: 'Bayer',
-    location: 'Mexico City, Mexico',
-    country: '🇲🇽',
-    experience: '6 years',
-    service: 'Academic CV + SOP',
-    rating: 5,
-    testimonial:
-      'Outstanding work highlighting my sustainable agriculture research and crop optimization projects. The SOP for my PhD application beautifully articulated my research vision.',
-    results: 'Accepted into UC Davis PhD program',
   },
   {
     id: 46,
