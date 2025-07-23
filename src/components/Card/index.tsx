@@ -41,7 +41,9 @@ export const Card: React.FC<{
     >
       <div className="relative w-full ">
         {!imageToUse && <div className="">No image</div>}
-        {imageToUse && typeof imageToUse !== 'string' && <Media resource={imageToUse} size="33vw" />}
+        {imageToUse && typeof imageToUse !== 'string' && (
+          <Media resource={imageToUse} size="33vw" />
+        )}
       </div>
       <div className="p-4">
         {showCategories && hasCategories && (
