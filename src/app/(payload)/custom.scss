@@ -1,0 +1,34 @@
+// Custom branding for Payload CMS Admin Panel
+@import '~@payloadcms/ui/scss';
+
+// Replace Payload logo with Prosumely logo in admin panel
+.payload-logo svg {
+  display: none !important;
+}
+
+.payload-logo::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 40px;
+  background-image: url('/prosumely-logo-lg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// Alternative approach: hide the default logo and show custom text
+.nav__controls .logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2563eb !important;
+}
+
+.nav__controls .logo::before {
+  content: 'Prosumely Admin';
+  display: inline-block;
+}
+
+.nav__controls .logo svg {
+  display: none !important;
+}
