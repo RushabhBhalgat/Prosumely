@@ -57,7 +57,7 @@ const impactStories = [
     category: 'Construction Industry',
     readTime: '6 min read',
     image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop&crop=center',
     slug: 'building-a-future',
     author: 'Ahmed M.',
     date: 'December 15, 2024',
@@ -70,7 +70,7 @@ const impactStories = [
     category: 'International Career',
     readTime: '8 min read',
     image:
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&crop=center',
     slug: 'from-cairo-to-career-growth',
     author: 'Fatima A.',
     date: 'December 10, 2024',
@@ -98,7 +98,7 @@ const impactStories = [
     category: 'Oil & Gas',
     readTime: '6 min read',
     image:
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600&h=400&fit=crop&crop=center',
     slug: 'from-generic-to-global',
     author: 'Omar S.',
     date: 'December 5, 2024',
@@ -138,7 +138,7 @@ const impactStories = [
     category: 'Global Career Moves',
     readTime: '5 min read',
     image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop&crop=center',
     slug: 'from-local-job-hunt-to-uae-dream-role',
     author: 'Arjun P.',
     date: 'November 28, 2024',
@@ -152,7 +152,7 @@ const impactStories = [
     category: 'UAE Careers',
     readTime: '6 min read',
     image:
-      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&h=400&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=600&h=400&fit=crop&crop=center',
     slug: 'from-dubai-silence-to-shortlist-success',
     author: 'Rakesh M.',
     date: 'November 25, 2024',
