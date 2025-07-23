@@ -7,6 +7,8 @@ import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from '@/components/RichText'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 
 import type { Post } from '@/payload-types'
 
@@ -61,6 +63,19 @@ export default async function Post({ params: paramsPromise }: Args) {
       {draft && <LivePreviewListener />}
 
       <PostHero post={post} />
+
+      {/* Back to Posts Navigation */}
+      <div className="border-b bg-white sticky top-0 z-10">
+        <div className="container max-w-[48rem] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <Link
+            href="/posts"
+            className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Posts
+          </Link>
+        </div>
+      </div>
 
       <div className="flex flex-col items-center gap-4 pt-8">
         <div className="container max-w-[48rem] mx-auto">
