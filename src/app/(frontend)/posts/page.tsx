@@ -23,7 +23,12 @@ export default async function Page() {
       title: true,
       slug: true,
       categories: true,
-      meta: true,
+      meta: {
+        title: true,
+        description: true,
+        image: true,
+      },
+      heroImage: true,
     },
   })
 
