@@ -52,7 +52,9 @@ export const HeaderClient: React.FC<{
           <ResourcesDropdown />
 
           {/* Regular nav items from CMS */}
-          {navItems?.map(({ link }, i) => <CMSLink key={i} {...link} />)}
+          {navItems?.map(({ link }, i) => (
+            <CMSLink key={i} {...link} />
+          ))}
         </nav>
 
         {/* Mobile menu button */}
@@ -261,6 +263,13 @@ export const HeaderClient: React.FC<{
                 >
                   Newsroom
                 </Link>
+                <Link
+                  href="/testimonials"
+                  className="py-1 text-gray-700"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonials
+                </Link>
                 {/* Coming soon pages
                 <Link
                   href="/ebooks"
@@ -282,13 +291,6 @@ export const HeaderClient: React.FC<{
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Social Media
-                </Link>
-                <Link
-                  href="/testimonials"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Testimonials
                 </Link>
                 */}
               </div>

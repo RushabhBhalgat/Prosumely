@@ -216,6 +216,14 @@ export async function Footer() {
               </li>
               <li>
                 <Link
+                  href="/testimonials"
+                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/pricing"
                   className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm"
                 >
