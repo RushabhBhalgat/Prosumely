@@ -1,8 +1,14 @@
 import ServiceProductPage from '../../../components/ServiceProductPage'
 import { servicesData } from '../../../data/servicesData'
+import { Suspense } from 'react'
+import ATSResumePageContent from '../../../components/industry-content/ATSResumePageContent'
 
 const ATSResumePage = () => {
-  return <ServiceProductPage {...servicesData.atsResume} />
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ATSResumePageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {

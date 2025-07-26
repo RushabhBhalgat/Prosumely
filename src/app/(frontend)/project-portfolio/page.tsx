@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import ProjectPortfolioPageContent from '../../../components/industry-content/ProjectPortfolioPageContent'
+import { Suspense } from 'react'
 
-const careerPortfolioPage = () => {
-  return <ServiceProductPage {...servicesData.projectPortfolio} />
+const ProjectPortfolioPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ProjectPortfolioPageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -48,4 +52,4 @@ export const metadata = {
   },
 }
 
-export default careerPortfolioPage
+export default ProjectPortfolioPage

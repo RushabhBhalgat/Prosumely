@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import { Suspense } from 'react'
+import ExecutiveResumePageContent from '../../../components/industry-content/ExecutiveResumePageContent'
 
-const ATSResumePage = () => {
-  return <ServiceProductPage {...servicesData.executiveResume} />
+const ExecutiveResumePage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ExecutiveResumePageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -48,4 +52,4 @@ export const metadata = {
   },
 }
 
-export default ATSResumePage
+export default ExecutiveResumePage

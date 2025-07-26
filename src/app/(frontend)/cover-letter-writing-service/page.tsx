@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import CoverLetterWritingPageContent from '../../../components/industry-content/CoverLetterWritingPageContent'
+import { Suspense } from 'react'
 
-const coverLetterPage = () => {
-  return <ServiceProductPage {...servicesData.coverLetter} />
+const CoverLetterPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CoverLetterWritingPageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -48,4 +52,4 @@ export const metadata = {
   },
 }
 
-export default coverLetterPage
+export default CoverLetterPage
