@@ -1,17 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import React from 'react'
-import {
-  ArrowLeft,
-  Calendar,
-  Clock,
-  Users,
-  Play,
-  Download,
-  Shield,
-  Search,
-  CheckCircle,
-} from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, Users, Play, Shield, Search, CheckCircle } from 'lucide-react'
 
 export const metadata = {
   title: 'The Invisible Advantage: Why ATS Optimization Is Your Secret Weapon | Prosumely Webinar',

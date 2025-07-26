@@ -234,7 +234,7 @@ export default function EventsPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event, index) => (
+            {upcomingEvents.map((event) => (
               <div
                 key={event.id}
                 className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
@@ -306,7 +306,7 @@ export default function EventsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {pastWebinars.map((webinar, index) => (
+            {pastWebinars.map((webinar) => (
               <Link
                 key={webinar.id}
                 href={`/events/webinars/${webinar.slug}`}
