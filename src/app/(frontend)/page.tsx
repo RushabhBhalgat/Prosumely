@@ -4,6 +4,7 @@ import React from 'react'
 import ClientReviews from '@/components/ClientReviews'
 import HowItWorksSection from '@/components/HowItWorks'
 import ServicesSection from '@/components/ServicesSection'
+import IndustryLinksSection from '@/components/IndustryLinksSection'
 
 // --- SEO Metadata ---
 export const metadata = {
@@ -113,6 +114,7 @@ export default function LandingPage() {
         </div>
       </div>
       <ServicesSection />
+      <IndustryLinksSection />
       {/* <IcebergSection /> */}
       <HowItWorksSection />
       <ClientReviews />

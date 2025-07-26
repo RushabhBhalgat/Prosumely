@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import { Suspense } from 'react'
+import LinkedInProfilePageContent from '../../../components/industry-content/LinkedInProfilePageContent'
 
-const ATSResumePage = () => {
-  return <ServiceProductPage {...servicesData.linkedinProfile} />
+const LinkedInProfilePage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LinkedInProfilePageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -48,4 +52,4 @@ export const metadata = {
   },
 }
 
-export default ATSResumePage
+export default LinkedInProfilePage

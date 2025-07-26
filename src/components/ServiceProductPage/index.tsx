@@ -42,6 +42,7 @@ interface ServiceProductPageProps {
   deliveryInfo?: DeliveryInfoProps
   redirectLink?: string
   faqs?: FAQItem[]
+  industrySubtitle?: string
 }
 
 // Main reusable component
@@ -52,6 +53,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
   deliveryInfo = {},
   redirectLink = '',
   faqs = [],
+  industrySubtitle = '',
 }) => {
   const {
     title = 'Service Title',
@@ -71,9 +73,26 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
           {/* Left Column - Product Description - Order 2 on mobile */}
           <div className="space-y-8 order-2 lg:order-1">
             <div className="space-y-6">
-              <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-                {title}
-              </h1>
+              <div className="space-y-3">
+                <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                  {title}
+                </h1>
+                {industrySubtitle && (
+                  <div className="flex items-center space-x-3">
+                    <div className="h-px bg-gradient-to-r from-blue-400 to-cyan-400 flex-1"></div>
+                    <div className="relative">
+                      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 px-4 py-2 rounded-full border border-blue-200/50 shadow-sm">
+                        <span className="text-blue-700 font-semibold text-sm lg:text-base flex items-center">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></div>
+                          {industrySubtitle}
+                        </span>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-cyan-400/10 rounded-full blur-xl"></div>
+                    </div>
+                    <div className="h-px bg-gradient-to-r from-cyan-400 to-blue-400 flex-1"></div>
+                  </div>
+                )}
+              </div>
 
               <div className="bg-white/70 backdrop-blur-sm border border-blue-100 p-6 rounded-2xl shadow-sm">
                 <div
