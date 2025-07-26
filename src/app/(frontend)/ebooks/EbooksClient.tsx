@@ -526,21 +526,28 @@ export default function EbooksClient() {
             className={`transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Need Personalized Interview Coaching?
+              Ready to Take Your Career to the Next Level?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              While our free guides provide excellent preparation, personalized coaching can give
-              you the confidence and edge you need to succeed.
+              While our free interview guides provide excellent preparation, a professionally
+              crafted resume and LinkedIn profile can give you the competitive edge you need to land
+              your dream job.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2">
+              <a
+                href="/free-resume-review"
+                className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 no-underline"
+              >
+                <Star className="w-5 h-5" />
+                Get Free Resume Review
+              </a>
+              <a
+                href="/services"
+                className="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2 no-underline"
+              >
                 <Briefcase className="w-5 h-5" />
-                Interview Coaching Services
-              </button>
-              <button className="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2">
-                <Target className="w-5 h-5" />
-                Get Free Consultation
-              </button>
+                Explore All Services
+              </a>
             </div>
           </div>
         </div>
