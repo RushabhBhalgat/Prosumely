@@ -23,6 +23,20 @@ export const HeaderClient: React.FC<{
     setHeaderTheme('light')
   }, [setHeaderTheme])
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-white text-gray-800">
       <div className="container mx-auto px-4 flex justify-between items-center py-4">
@@ -99,102 +113,104 @@ export const HeaderClient: React.FC<{
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white p-4 border-t border-gray-200">
-          <div className="flex flex-col space-y-4">
-            {/* Pricing Link for mobile */}
-            <div className="py-1">
-              <Link
-                href="/pricing"
-                className="block w-full py-2 font-medium text-gray-800"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-            </div>
-
-            {/* Services Dropdown for mobile */}
-            <div className="py-1">
-              <button
-                onClick={() => {}}
-                className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
-              >
-                Services
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
-              </button>
-              <div className="pl-4 flex flex-col space-y-2 mt-2">
+        <div className="md:hidden bg-white border-t border-gray-200 fixed inset-x-0 top-[73px] bottom-0 z-50 overflow-y-auto">
+          <div className="p-4">
+            <div className="flex flex-col space-y-4 pb-20">
+              {/* Added bottom padding for safe scrolling */}
+              {/* Pricing Link for mobile */}
+              <div className="py-1">
                 <Link
-                  href="/ats-resume-writing-service"
-                  className="py-1 text-gray-700"
+                  href="/pricing"
+                  className="block w-full py-2 font-medium text-gray-800"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  ATS Resume
-                </Link>
-                <Link
-                  href="/executive-resume-writing-service"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Executive Resume
-                </Link>
-                <Link
-                  href="/jobseekers-combo-service"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Jobseeker's Combo
-                </Link>
-                <Link
-                  href="/project-portfolio"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Project Portfolio
+                  Pricing
                 </Link>
               </div>
-            </div>
 
-            {/* Career Tools Dropdown for mobile */}
-            <div className="py-1">
-              <button
-                onClick={() => {}}
-                className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
-              >
-                Career Tools
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+              {/* Services Dropdown for mobile */}
+              <div className="py-1">
+                <button
+                  onClick={() => {}}
+                  className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
                 >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
-              </button>
-              <div className="pl-4 flex flex-col space-y-2 mt-2">
-                <Link
-                  href="/free-resume-review"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
+                  Services
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div className="pl-4 flex flex-col space-y-2 mt-2">
+                  <Link
+                    href="/ats-resume-writing-service"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    ATS Resume
+                  </Link>
+                  <Link
+                    href="/executive-resume-writing-service"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Executive Resume
+                  </Link>
+                  <Link
+                    href="/jobseekers-combo-service"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Jobseeker's Combo
+                  </Link>
+                  <Link
+                    href="/project-portfolio"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Project Portfolio
+                  </Link>
+                </div>
+              </div>
+
+              {/* Career Tools Dropdown for mobile */}
+              <div className="py-1">
+                <button
+                  onClick={() => {}}
+                  className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
                 >
-                  Free Resume Review
-                </Link>
-                {/* Tools coming soon 
+                  Career Tools
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div className="pl-4 flex flex-col space-y-2 mt-2">
+                  <Link
+                    href="/free-resume-review"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Free Resume Review
+                  </Link>
+                  {/* Tools coming soon 
                 <Link
                   href="/tools/interview-simulator"
                   className="py-1 text-gray-700"
@@ -217,67 +233,67 @@ export const HeaderClient: React.FC<{
                   Career Path Planner
                 </Link>
                 */}
+                </div>
               </div>
-            </div>
 
-            {/* Resources Dropdown for mobile */}
-            <div className="py-1">
-              <button
-                onClick={() => {}}
-                className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
-              >
-                Resources
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+              {/* Resources Dropdown for mobile */}
+              <div className="py-1">
+                <button
+                  onClick={() => {}}
+                  className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
                 >
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
-              </button>
-              <div className="pl-4 flex flex-col space-y-2 mt-2">
-                <Link
-                  href="/impact-stories"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Impact Stories
-                </Link>
-                <Link
-                  href="/posts"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/newsroom"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Newsroom
-                </Link>
-                <Link
-                  href="/testimonials"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Testimonials
-                </Link>
-                {/* Coming soon pages
-                <Link
-                  href="/ebooks"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Ebooks
-                </Link>
+                  Resources
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <div className="pl-4 flex flex-col space-y-2 mt-2">
+                  <Link
+                    href="/impact-stories"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Impact Stories
+                  </Link>
+                  <Link
+                    href="/posts"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    href="/newsroom"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Newsroom
+                  </Link>
+                  <Link
+                    href="/testimonials"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Testimonials
+                  </Link>
+                  <Link
+                    href="/ebooks"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Ebooks
+                  </Link>
+                  {/* Coming soon pages
                 <Link
                   href="/events"
                   className="py-1 text-gray-700"
@@ -293,17 +309,18 @@ export const HeaderClient: React.FC<{
                   Social Media
                 </Link>
                 */}
-              </div>
-            </div>
-
-            {/* Regular nav items from CMS */}
-            {navItems?.map(({ link }, i) => (
-              <div key={i} className="py-1">
-                <div onClick={() => setIsMenuOpen(false)}>
-                  <CMSLink {...link} />
                 </div>
               </div>
-            ))}
+
+              {/* Regular nav items from CMS */}
+              {navItems?.map(({ link }, i) => (
+                <div key={i} className="py-1">
+                  <div onClick={() => setIsMenuOpen(false)}>
+                    <CMSLink {...link} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
