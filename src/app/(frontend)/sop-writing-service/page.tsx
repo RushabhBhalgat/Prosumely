@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import SOPWritingPageContent from '../../../components/industry-content/SOPWritingPageContent'
+import { Suspense } from 'react'
 
-const jobseekersComboPage = () => {
-  return <ServiceProductPage {...servicesData.sopWriting} />
+const SOPWritingPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SOPWritingPageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -48,4 +52,4 @@ export const metadata = {
   },
 }
 
-export default jobseekersComboPage
+export default SOPWritingPage

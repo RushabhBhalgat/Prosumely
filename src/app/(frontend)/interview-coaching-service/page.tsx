@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import InterviewCoachingPageContent from '../../../components/industry-content/InterviewCoachingPageContent'
+import { Suspense } from 'react'
 
-const interviewCoachingPage = () => {
-  return <ServiceProductPage {...servicesData.interviewCoaching} />
+const InterviewCoachingPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <InterviewCoachingPageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -48,4 +52,4 @@ export const metadata = {
   },
 }
 
-export default interviewCoachingPage
+export default InterviewCoachingPage

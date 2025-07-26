@@ -14,7 +14,7 @@ const ServicesPage = () => {
 export const metadata = {
   title: 'Resume Writing Services | ATS-Optimized CVs & Career Tools | Prosumely',
   description:
-    "Explore Prosumely's full suite of resume writing services: ATS resumes, executive CVs, cover letters, LinkedIn makeovers, SOPs, and more. Get expert help to land your dream job faster!",
+    'Explore Prosumely's full suite of resume writing services: ATS resumes, executive CVs, cover letters, LinkedIn makeovers, SOPs, and more. Get expert help to land your dream job faster!',
   keywords: [
     'resume writing services',
     'ATS resume',

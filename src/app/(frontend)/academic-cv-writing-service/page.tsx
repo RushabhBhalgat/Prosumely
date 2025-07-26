@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import AcademicCVWritingPageContent from '../../../components/industry-content/AcademicCVWritingPageContent'
+import { Suspense } from 'react'
 
-const academicCvWritingPage = () => {
-  return <ServiceProductPage {...servicesData.academicCvWriting} />
+const AcademicCVPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AcademicCVWritingPageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -48,4 +52,4 @@ export const metadata = {
   },
 }
 
-export default academicCvWritingPage
+export default AcademicCVPage

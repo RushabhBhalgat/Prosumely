@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import { Suspense } from 'react'
+import JobseekersComboPageContent from '../../../components/industry-content/JobseekersComboPageContent'
 
-const jobseekersComboPage = () => {
-  return <ServiceProductPage {...servicesData.jobseekersCombo} />
+const JobseekersComboPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <JobseekersComboPageContent />
+    </Suspense>
+  )
 }
 
 export const metadata = {
@@ -51,4 +55,4 @@ export const metadata = {
   },
 }
 
-export default jobseekersComboPage
+export default JobseekersComboPage

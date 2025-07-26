@@ -1,8 +1,12 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
+import { Suspense } from 'react'
+import CareerRoadmapPageContent from '../../../components/industry-content/CareerRoadmapPageContent'
 
-const careerRoadmapPage = () => {
-  return <ServiceProductPage {...servicesData.careerRoadmap} />
+const CareerRoadmapPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CareerRoadmapPageContent />
+    </Suspense>
+  )
 }
 
-export default careerRoadmapPage
+export default CareerRoadmapPage
