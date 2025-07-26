@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
 @layer base {
   :root {
     --text: rgb(31 41 55); /* gray-800 for better readability */
   }
-  
+
   /* Ensure all text in articles has proper color */
   .payload-richtext {
     color: rgb(31 41 55); /* gray-800 */
   }
-  
+
   .payload-richtext p {
     color: rgb(31 41 55); /* gray-800 */
   }
-  
+
   .payload-richtext h1,
   .payload-richtext h2,
   .payload-richtext h3,
@@ -25,41 +35,41 @@
     color: rgb(0 0 0) !important; /* black for maximum contrast */
     font-weight: 700 !important;
   }
-  
+
   .payload-richtext li {
     color: rgb(31 41 55); /* gray-800 */
   }
-  
+
   /* Fix bold text visibility */
   .payload-richtext strong,
   .payload-richtext b {
     color: rgb(17 24 39) !important; /* gray-900 - darker for emphasis */
     font-weight: 700 !important;
   }
-  
+
   /* Fix italic text visibility */
   .payload-richtext em,
   .payload-richtext i {
     color: rgb(31 41 55) !important; /* gray-800 */
     font-style: italic !important;
   }
-  
+
   /* Fix underlined text visibility */
   .payload-richtext u {
     color: rgb(31 41 55) !important; /* gray-800 */
     text-decoration: underline !important;
   }
-  
+
   /* Fix link text visibility */
   .payload-richtext a {
     color: rgb(37 99 235) !important; /* blue-600 */
     text-decoration: underline;
   }
-  
+
   .payload-richtext a:hover {
     color: rgb(29 78 216) !important; /* blue-700 */
   }
-  
+
   /* Fix code text visibility */
   .payload-richtext code {
     color: rgb(239 68 68) !important; /* red-500 */
@@ -68,7 +78,7 @@
     border-radius: 0.25rem;
     font-size: 0.875em;
   }
-  
+
   /* Fix blockquote text visibility */
   .payload-richtext blockquote {
     color: rgb(75 85 99) !important; /* gray-600 */
@@ -77,23 +87,23 @@
     margin: 1rem 0;
     font-style: italic;
   }
-  
+
   /* Prose-specific bold text fixes */
   .prose strong,
   .prose b {
     color: rgb(17 24 39) !important; /* gray-900 */
     font-weight: 700 !important;
   }
-  
+
   .prose em,
   .prose i {
     color: rgb(31 41 55) !important; /* gray-800 */
   }
-  
+
   .prose a {
     color: rgb(37 99 235) !important; /* blue-600 */
   }
-  
+
   /* Prose heading fixes */
   .prose h1,
   .prose h2,
@@ -104,13 +114,16 @@
     color: rgb(0 0 0) !important; /* black for maximum contrast */
     font-weight: 700 !important;
   }
-  
+
   /* Override any white text that might be applied */
   .payload-richtext * {
     color: inherit !important;
   }
-  
-  .payload-richtext *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(b):not(em):not(i):not(a):not(code):not(blockquote) {
+
+  .payload-richtext
+    *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(b):not(em):not(i):not(a):not(
+      code
+    ):not(blockquote) {
     color: rgb(31 41 55) !important; /* gray-800 */
   }
 }
