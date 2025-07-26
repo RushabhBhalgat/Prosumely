@@ -1,12 +1,11 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {
   Star,
   Quote,
   MapPin,
   Briefcase,
-  Calendar,
   ArrowRight,
   Users,
   TrendingUp,

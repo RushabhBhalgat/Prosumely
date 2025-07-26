@@ -1,21 +1,18 @@
 'use client'
 
 import React, { useState, useEffect, useMemo } from 'react'
-import Image from 'next/image'
+import Link from 'next/link'
 import {
   Search,
   Download,
   BookOpen,
   FileText,
   Filter,
-  Calendar,
   User,
   Star,
   Eye,
-  TrendingUp,
   Users,
   Briefcase,
-  Target,
   Award,
   ArrowRight,
   ChevronDown,
@@ -534,20 +531,20 @@ export default function EbooksClient() {
               your dream job.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
+              <Link
                 href="/free-resume-review"
                 className="bg-white text-blue-600 font-semibold py-3 px-8 rounded-lg hover:bg-blue-50 transition-all duration-300 flex items-center justify-center gap-2 no-underline"
               >
                 <Star className="w-5 h-5" />
                 Get Free Resume Review
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/services"
                 className="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center gap-2 no-underline"
               >
                 <Briefcase className="w-5 h-5" />
                 Explore All Services
-              </a>
+              </Link>
             </div>
           </div>
         </div>

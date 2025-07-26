@@ -9,7 +9,7 @@ interface PDFThumbnailProps {
   className?: string
 }
 
-export const PDFThumbnail: React.FC<PDFThumbnailProps> = ({ pdfUrl, title, className = '' }) => {
+export const PDFThumbnail: React.FC<PDFThumbnailProps> = ({ className = '' }) => {
   return (
     <div
       className={`flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 ${className}`}
