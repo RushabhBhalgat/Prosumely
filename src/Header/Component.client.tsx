@@ -293,14 +293,15 @@ export const HeaderClient: React.FC<{
                   >
                     Ebooks
                   </Link>
+
+                  <Link
+                    href="/events"
+                    className="py-1 text-gray-700"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Upcoming Events
+                  </Link>
                   {/* Coming soon pages
-                <Link
-                  href="/events"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Upcoming Events
-                </Link>
                 <Link
                   href="/social-media"
                   className="py-1 text-gray-700"
