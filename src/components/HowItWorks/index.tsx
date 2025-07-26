@@ -90,7 +90,6 @@ export default function HowItWorksSection() {
             {/* Step Cards */}
             <div className="grid grid-cols-4 gap-8">
               {steps.map((step) => {
-                const IconComponent = step.icon
                 const isActive = activeStep >= step.number
 
                 return (

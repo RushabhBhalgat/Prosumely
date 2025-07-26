@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import React from 'react'
-import { ArrowLeft, Calendar, Clock, Users, Play, Download, Share2 } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, Users, Play } from 'lucide-react'
 
 export const metadata = {
   title:

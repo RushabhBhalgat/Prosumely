@@ -41,7 +41,6 @@ const MyFormComponent = ({
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false) // Rate limiting
   const formRef = useRef<HTMLFormElement>(null)
-  const [success, setSuccess] = useState<boolean>(false)
   const [countdown, setCountdown] = useState(0)
 
   // Get the form from payload
@@ -216,7 +215,6 @@ const MyFormComponent = ({
           }, 2500)
         }
       } else {
-        const errorData = await response.json()
         // Don't expose detailed errors to the client
         setError('Form submission failed. Please try again.')
       }
@@ -240,7 +238,7 @@ const MyFormComponent = ({
       }
       // Fallback message if structure isn't as expected
       return 'Message sent successfully! We will get back to you soon!'
-    } catch (e) {
+    } catch {
       // Fallback if any errors occur during extraction
       return 'Message sent successfully! We will get back to you soon!'
     }

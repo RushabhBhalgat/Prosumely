@@ -57,12 +57,9 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
     title = 'Service Title',
     price = '0',
     currency = '$',
-    tagline = 'Professional Service',
     description = 'Service description goes here...',
     detailedDescription = 'Detailed service information...',
   } = service
-
-  const { whatsapp = '', email = '', note = '' } = contact
 
   const { timeframe = '48hrs', formats = ['PDF', 'Word'] } = deliveryInfo
 

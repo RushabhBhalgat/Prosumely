@@ -15,7 +15,6 @@ export const Logo = (props: Props) => {
   const priority = priorityFromProps || 'low'
 
   return (
-    /* eslint-disable @next/next/no-img-element */
     <Image
       alt="Prosumely Logo"
       width={193}
