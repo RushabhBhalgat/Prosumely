@@ -456,17 +456,6 @@ export default function EbooksClient() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                    {/* Preview Button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <button
-                        onClick={() => handlePreview(ebook)}
-                        className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-lg font-medium flex items-center gap-2 hover:bg-white transition-colors duration-300"
-                      >
-                        <Eye className="w-4 h-4" />
-                        Preview
-                      </button>
-                    </div>
                   </div>
 
                   {/* Content */}
@@ -513,13 +502,13 @@ export default function EbooksClient() {
                       </div>
                     </div>
 
-                    {/* Open PDF Button */}
+                    {/* View PDF Button */}
                     <button
-                      onClick={() => handleDownload(ebook)}
+                      onClick={() => handlePreview(ebook)}
                       className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn"
                     >
                       <Eye className="w-5 h-5 group-hover/btn:animate-bounce" />
-                      Open PDF
+                      View PDF
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                     </button>
                   </div>
