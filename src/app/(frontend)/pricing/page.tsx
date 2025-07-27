@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { PageHeading } from '@/components/SEO/PageHeading'
 
 export const metadata = {
   title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
@@ -184,11 +183,10 @@ export default function PricingPage() {
 
   return (
     <section className="bg-gray-50 py-2 md:py-10 lg:py-16 mt-8 md:mt-0">
-      <PageHeading as="h1">Pricing & Packages</PageHeading>
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
         {/* Header */}
         <div className="text-center mb-6 md:mb-10 lg:mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Pricing</h2>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Pricing</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Professional resume writing services tailored to your career level and goals
           </p>
