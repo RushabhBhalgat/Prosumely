@@ -187,7 +187,7 @@ export const metadata = {
     title: 'Privacy Policy | Prosumely Resume Writing Services',
     description:
       'Read the privacy policy for Prosumely’s resume writing services. Learn how we protect your data and ensure confidentiality for all job seekers and clients.',
-    url: 'https://prosumely.com/privacy-policy',
+    url: 'https://www.prosumely.com/privacy-policy',
     siteName: 'Prosumely',
     images: [
       {
@@ -209,7 +209,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/privacy-policy',
+    canonical: 'https://www.prosumely.com/privacy-policy',
   },
 }
 

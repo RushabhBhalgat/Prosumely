@@ -21,7 +21,7 @@ export const metadata = {
     title: 'From Manager to VP: Strategic Resume Transformation for Career Growth | Prosumely',
     description:
       'Learn how a mid-level manager leveraged a strategic resume rewrite to land VP interviews and transform her career trajectory. Discover the power of metrics, storytelling, and professional branding in resume writing.',
-    url: 'https://prosumely.com/newsroom/strategic-resume-vp-career-growth',
+    url: 'https://www.prosumely.com/newsroom/strategic-resume-vp-career-growth',
     siteName: 'Prosumely',
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/strategic-resume-vp-career-growth',
+    canonical: 'https://www.prosumely.com/newsroom/strategic-resume-vp-career-growth',
   },
 }
 
@@ -222,7 +222,7 @@ export default function StrategicResumeVPArticle() {
               Let Prosumely help you unlock your career potential with a strategic, professionally
               written resume.
             </p>
-            <a href="https://prosumely.com/free-resume-review" className="inline-block">
+            <a href="https://www.prosumely.com/free-resume-review" className="inline-block">
               <button className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                 Get Free Resume Review
               </button>

@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     title: 'Prosumely | Professional Resume Writing Services',
     description:
       'Professional resume writing services and career consulting to help you land your dream job with ATS-optimized resumes.',
-    url: 'https://prosumely.com',
+    url: 'https://www.prosumely.com',
     siteName: 'Prosumely',
     images: [
       {

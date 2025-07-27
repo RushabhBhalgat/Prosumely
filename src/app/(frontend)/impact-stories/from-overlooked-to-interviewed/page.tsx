@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: 'From Overlooked to Interviewed | UK Finance Executive Success | Prosumely',
     description: 'How a UK Finance Resume Got Executive-Ready and Delivered Results',
-    url: 'https://prosumely.com/impact-stories/from-overlooked-to-interviewed',
+    url: 'https://www.prosumely.com/impact-stories/from-overlooked-to-interviewed',
     siteName: 'Prosumely',
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/impact-stories/from-overlooked-to-interviewed',
+    canonical: 'https://www.prosumely.com/impact-stories/from-overlooked-to-interviewed',
   },
 }
 

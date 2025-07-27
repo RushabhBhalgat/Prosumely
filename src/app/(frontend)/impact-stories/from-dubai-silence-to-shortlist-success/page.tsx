@@ -36,7 +36,7 @@ export const metadata = {
   openGraph: {
     title: 'From Dubai Silence to Shortlist Success | UAE Resume Success | Prosumely',
     description: 'How a UAE Resume Makeover Delivered Interview Calls in Just a Week',
-    url: 'https://prosumely.com/impact-stories/from-dubai-silence-to-shortlist-success',
+    url: 'https://www.prosumely.com/impact-stories/from-dubai-silence-to-shortlist-success',
     siteName: 'Prosumely',
     images: [
       {

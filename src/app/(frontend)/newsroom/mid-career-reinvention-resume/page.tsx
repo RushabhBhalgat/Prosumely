@@ -19,7 +19,7 @@ export const metadata = {
     title: 'Mid-Career Reinvention: Using Your Resume as a Tool for Clarity | Prosumely',
     description:
       'Find out how mid-career professionals can use resume strategy to reposition themselves, highlight transferable skills, and regain career momentum. Actionable tips for career clarity and reinvention.',
-    url: 'https://prosumely.com/newsroom/mid-career-reinvention-resume',
+    url: 'https://www.prosumely.com/newsroom/mid-career-reinvention-resume',
     siteName: 'Prosumely',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/mid-career-reinvention-resume',
+    canonical: 'https://www.prosumely.com/newsroom/mid-career-reinvention-resume',
   },
 }
 

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { PageHeading } from '@/components/SEO/PageHeading'
 
 export const metadata = {
   title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
@@ -18,7 +19,7 @@ export const metadata = {
     title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
     description:
       "Discover transparent pricing for Prosumely's professional resume writing services. Get ATS-optimized, keyword-rich resumes, cover letters, LinkedIn makeovers, and more at competitive rates. Boost your job search today!",
-    url: 'https://prosumely.com/pricing',
+    url: 'https://www.prosumely.com/pricing',
     siteName: 'Prosumely',
     images: [
       {
@@ -40,7 +41,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/pricing',
+    canonical: 'https://www.prosumely.com/pricing',
   },
 }
 
@@ -183,6 +184,7 @@ export default function PricingPage() {
 
   return (
     <section className="bg-gray-50 py-2 md:py-10 lg:py-16 mt-8 md:mt-0">
+      <PageHeading as="h1">Pricing & Packages</PageHeading>
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
         {/* Header */}
         <div className="text-center mb-6 md:mb-10 lg:mb-14">

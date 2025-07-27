@@ -1,9 +1,11 @@
 import VisualResumePageContent from '../../../components/industry-content/VisualResumePageContent'
 import { Suspense } from 'react'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 const VisualResumePage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Visual Resume Design Service</PageHeading>Loading...</div>}>
       <VisualResumePageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: 'Visual Resume Writing Service | ATS-Optimized CVs | Prosumely',
     description:
       'Get a visually impactful, ATS-friendly resume designed by Prosumely experts. Stand out to recruiters with a modern, keyword-rich CV that gets you noticed and shortlisted.',
-    url: 'https://prosumely.com/visual-resume-writing-service',
+    url: 'https://www.prosumely.com/visual-resume-writing-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/visual-resume-writing-service',
+    canonical: 'https://www.prosumely.com/visual-resume-writing-service',
   },
 }
 

@@ -20,7 +20,7 @@ export const metadata = {
     title: 'Client Testimonials | Success Stories | Prosumely',
     description:
       'Read real success stories from professionals worldwide who transformed their careers with Prosumely resume writing, LinkedIn optimization, and career coaching services.',
-    url: 'https://prosumely.com/testimonials',
+    url: 'https://www.prosumely.com/testimonials',
     siteName: 'Prosumely',
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/testimonials',
+    canonical: 'https://www.prosumely.com/testimonials',
   },
 }
 

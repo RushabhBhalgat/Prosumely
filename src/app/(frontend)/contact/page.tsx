@@ -29,7 +29,7 @@ export const metadata = {
     title: 'Contact Us | Professional Resume Writing Services | Prosumely',
     description:
       'Get in touch with Prosumely for professional resume writing, CV services, and career consulting. Contact our expert team for personalized career assistance.',
-    url: 'https://prosumely.com/contact',
+    url: 'https://www.prosumely.com/contact',
     siteName: 'Prosumely',
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/contact',
+    canonical: 'https://www.prosumely.com/contact',
   },
 }
 

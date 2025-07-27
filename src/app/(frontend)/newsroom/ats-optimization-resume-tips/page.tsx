@@ -19,7 +19,7 @@ export const metadata = {
     title: 'ATS Optimization: The Secret to Getting Your Resume Seen | Prosumely',
     description:
       'Discover how Applicant Tracking Systems (ATS) work and how to optimize your resume for both machines and humans to maximize interview opportunities. Actionable tips for ATS-friendly resumes.',
-    url: 'https://prosumely.com/newsroom/ats-optimization-resume-tips',
+    url: 'https://www.prosumely.com/newsroom/ats-optimization-resume-tips',
     siteName: 'Prosumely',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/ats-optimization-resume-tips',
+    canonical: 'https://www.prosumely.com/newsroom/ats-optimization-resume-tips',
   },
 }
 

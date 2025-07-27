@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Prosumely',
-    url: 'https://prosumely.com/impact-stories',
+    url: 'https://www.prosumely.com/impact-stories',
     images: [
       {
         url: '/prosumely-career-blogs.jpg',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     images: ['/prosumely-career-blogs.jpg'],
   },
   alternates: {
-    canonical: 'https://prosumely.com/impact-stories',
+    canonical: 'https://www.prosumely.com/impact-stories',
   },
 }
 

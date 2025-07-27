@@ -22,11 +22,11 @@ export const metadata = {
     title: 'Events & Webinars | Professional Development by Prosumely',
     description:
       "Join Prosumely's exclusive webinars and events. Learn from industry experts, improve your resume, and accelerate your career growth with our professional development programs.",
-    url: 'https://prosumely.com/events',
+    url: 'https://www.prosumely.com/events',
     siteName: 'Prosumely',
     images: [
       {
-        url: 'https://prosumely.com/prosumely-career-blogs.jpg',
+        url: 'https://www.prosumely.com/prosumely-career-blogs.jpg',
         width: 1200,
         height: 630,
         alt: 'Prosumely Events & Webinars',
@@ -39,7 +39,7 @@ export const metadata = {
     title: 'Events & Webinars | Professional Development by Prosumely',
     description:
       "Join Prosumely's exclusive webinars and events. Learn from industry experts, improve your resume, and accelerate your career growth with our professional development programs.",
-    images: ['https://prosumely.com/prosumely-career-blogs.jpg'],
+    images: ['https://www.prosumely.com/prosumely-career-blogs.jpg'],
   },
 }
 

@@ -93,8 +93,7 @@ const CareerRoadmapPageContent = () => {
   const searchParams = useSearchParams()
   const industry = searchParams.get('industry')
 
-  const content =
-    industry && industryContent[industry as keyof typeof industryContent]
+  const content = industry && industryContent[industry as keyof typeof industryContent]
 
   const serviceData = {
     ...servicesData.careerRoadmap,

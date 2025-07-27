@@ -1,9 +1,11 @@
 import { Suspense } from 'react'
+import { PageHeading } from '@/components/SEO/PageHeading'
 import JobseekersComboPageContent from '../../../components/industry-content/JobseekersComboPageContent'
 
 const JobseekersComboPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Job Seekers Combo Package</PageHeading>Loading...</div>}>
       <JobseekersComboPageContent />
     </Suspense>
   )
@@ -29,7 +31,7 @@ export const metadata = {
     title: 'Jobseekers Combo Service | Complete Career Kit | Prosumely',
     description:
       "Get the ultimate jobseekers combo: ATS resume, executive CV, cover letter, LinkedIn profile, and a personalized career roadmap. Prosumely's all-in-one package for job search success.",
-    url: 'https://prosumely.com/jobseekers-combo-service',
+    url: 'https://www.prosumely.com/jobseekers-combo-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -51,7 +53,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/jobseekers-combo-service',
+    canonical: 'https://www.prosumely.com/jobseekers-combo-service',
   },
 }
 

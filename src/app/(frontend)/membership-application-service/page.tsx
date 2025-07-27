@@ -1,9 +1,11 @@
 import MembershipApplicationPageContent from '../../../components/industry-content/MembershipApplicationPageContent'
 import { Suspense } from 'react'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 const MembershipApplicationPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Membership Application Service</PageHeading>Loading...</div>}>
       <MembershipApplicationPageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: 'Membership Application Service | Professional Associations | Prosumely',
     description:
       'Get expert help with your membership application for elite professional bodies, industry associations, and academic societies. Prosumely positions you for acceptance and career growth.',
-    url: 'https://prosumely.com/membership-application-service',
+    url: 'https://www.prosumely.com/membership-application-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/membership-application-service',
+    canonical: 'https://www.prosumely.com/membership-application-service',
   },
 }
 

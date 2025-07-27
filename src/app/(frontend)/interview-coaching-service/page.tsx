@@ -1,9 +1,11 @@
 import InterviewCoachingPageContent from '../../../components/industry-content/InterviewCoachingPageContent'
 import { Suspense } from 'react'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 const InterviewCoachingPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Interview Coaching Service</PageHeading>Loading...</div>}>
       <InterviewCoachingPageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: "Interview Coaching Service | Crack Job Interviews | Prosumely's",
     description:
       "Master your next job interview with Prosumely's personalized interview coaching. Get expert tips, mock interviews, and confidence-boosting strategies to land your dream job.",
-    url: 'https://prosumely.com/interview-coaching-service',
+    url: 'https://www.prosumely.com/interview-coaching-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/interview-coaching-service',
+    canonical: 'https://www.prosumely.com/interview-coaching-service',
   },
 }
 

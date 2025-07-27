@@ -1,9 +1,11 @@
 import SOPWritingPageContent from '../../../components/industry-content/SOPWritingPageContent'
 import { Suspense } from 'react'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 const SOPWritingPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Statement of Purpose Writing</PageHeading>Loading...</div>}>
       <SOPWritingPageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: 'SOP Writing Service | Statement of Purpose Experts | Prosumely',
     description:
       "Get a compelling Statement of Purpose (SOP) written by Prosumely's expert writers. Perfect for university, visa, and job applications. Stand out with a personalized, impactful SOP.",
-    url: 'https://prosumely.com/sop-writing-service',
+    url: 'https://www.prosumely.com/sop-writing-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/sop-writing-service',
+    canonical: 'https://www.prosumely.com/sop-writing-service',
   },
 }
 

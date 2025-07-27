@@ -39,7 +39,7 @@ export const metadata = {
   openGraph: {
     title: 'From Generic to Global | Saudi Arabia Oil & Gas Success | Prosumely',
     description: "How a Resume Revamp Opened Doors in Saudi Arabia's Oil & Gas Sector",
-    url: 'https://prosumely.com/impact-stories/from-generic-to-global',
+    url: 'https://www.prosumely.com/impact-stories/from-generic-to-global',
     siteName: 'Prosumely',
     images: [
       {

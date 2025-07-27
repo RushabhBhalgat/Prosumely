@@ -1,9 +1,11 @@
 import CoverLetterWritingPageContent from '../../../components/industry-content/CoverLetterWritingPageContent'
 import { Suspense } from 'react'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 const CoverLetterPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Cover Letter Writing Service</PageHeading>Loading...</div>}>
       <CoverLetterWritingPageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: "Cover Letter Writing Service | Professional Cover Letters | Prosumely's",
     description:
       "Get a custom, job-winning cover letter written by Prosumely's experts. Make a strong first impression and complement your resume with a tailored, impactful cover letter.",
-    url: 'https://prosumely.com/cover-letter-writing-service',
+    url: 'https://www.prosumely.com/cover-letter-writing-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/cover-letter-writing-service',
+    canonical: 'https://www.prosumely.com/cover-letter-writing-service',
   },
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { allFAQs } from '@/data/faqData'
+import { PageHeading } from '@/components/SEO/PageHeading'
 import PageClient from './page.client'
 import FAQPageContent from './FAQPageContent'
 
@@ -19,7 +20,7 @@ export const metadata = {
     title: 'Frequently Asked Questions | Prosumely',
     description:
       "Find answers to all your questions about Prosumely's professional resume writing, career coaching, and job search services.",
-    url: 'https://prosumely.com/faqs',
+    url: 'https://www.prosumely.com/faqs',
     siteName: 'Prosumely',
     images: [
       {
@@ -41,7 +42,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/faqs',
+    canonical: 'https://www.prosumely.com/faqs',
   },
 }
 
