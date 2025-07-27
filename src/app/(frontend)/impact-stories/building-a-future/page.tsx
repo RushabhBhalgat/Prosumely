@@ -37,7 +37,7 @@ export const metadata = {
     title: 'Building a Future | Construction Career Success | Prosumely',
     description:
       'How a Resume Overhaul Helped a Mid-Level Professional Break into the UAE Construction Sector',
-    url: 'https://prosumely.com/impact-stories/building-a-future',
+    url: 'https://www.prosumely.com/impact-stories/building-a-future',
     siteName: 'Prosumely',
     images: [
       {

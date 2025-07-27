@@ -96,7 +96,7 @@ export const metadata = {
     title: 'Search Resumes & Career Resources | Prosumely',
     description:
       'Search Prosumely’s database for resume writing tips, career resources, and job search tools. Find the information you need to advance your career and land your dream job.',
-    url: 'https://prosumely.com/search',
+    url: 'https://www.prosumely.com/search',
     siteName: 'Prosumely',
     images: [
       {
@@ -118,6 +118,6 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/search',
+    canonical: 'https://www.prosumely.com/search',
   },
 }

@@ -18,7 +18,7 @@ export const metadata = {
     title: 'Free Resume Review | Expert CV Analysis & ATS Check | Prosumely',
     description:
       'Get a 100% free, expert resume review from Prosumely. Instantly discover how your CV performs with ATS, keyword optimization, and recruiter insights. Boost your job search with actionable feedback—no cost, no obligation.',
-    url: 'https://prosumely.com/free-resume-review',
+    url: 'https://www.prosumely.com/free-resume-review',
     siteName: 'Prosumely',
     images: [
       {
@@ -40,6 +40,6 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/free-resume-review',
+    canonical: 'https://www.prosumely.com/free-resume-review',
   },
 }

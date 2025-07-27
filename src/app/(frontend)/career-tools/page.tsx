@@ -1,8 +1,10 @@
 import React from 'react'
+import { PageHeading } from '@/components/SEO/PageHeading'
 
 const CareerTools = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#9adbf4]/10 to-white p-4">
+      <PageHeading as="h1">Career Tools</PageHeading>
       <div className="max-w-md w-full bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition duration-500">
         <div className="h-2 bg-gradient-to-r from-[#2563eb] to-[#9adbf4]"></div>
         <div className="p-8">

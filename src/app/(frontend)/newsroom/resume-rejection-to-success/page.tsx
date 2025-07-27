@@ -19,7 +19,7 @@ export const metadata = {
     title: 'From Rejection to Results: How a Great Resume Changes Everything | Prosumely',
     description:
       'See how a professionally crafted resume can turn job search rejection into interview success, with real stories and proven strategies from Prosumely experts. Actionable tips for resume transformation and career growth.',
-    url: 'https://prosumely.com/newsroom/resume-rejection-to-success',
+    url: 'https://www.prosumely.com/newsroom/resume-rejection-to-success',
     siteName: 'Prosumely',
     images: [
       {
@@ -40,7 +40,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/resume-rejection-to-success',
+    canonical: 'https://www.prosumely.com/newsroom/resume-rejection-to-success',
   },
 }
 
@@ -197,7 +197,7 @@ export default function ResumeRejectionToSuccessArticle() {
               Let Prosumely help you craft a resume that gets results and opens new career
               opportunities.
             </p>
-            <a href="https://prosumely.com/free-resume-review" className="inline-block">
+            <a href="https://www.prosumely.com/free-resume-review" className="inline-block">
               <button className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                 Get Free Resume Review
               </button>

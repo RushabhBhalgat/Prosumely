@@ -5,8 +5,8 @@ export const StructuredData = () => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Prosumely',
-    url: 'https://prosumely.com',
-    logo: 'https://prosumely.com/prosumely-logo-lg.png',
+    url: 'https://www.prosumely.com',
+    logo: 'https://www.prosumely.com/prosumely-logo-lg.png',
     description:
       'Professional resume writing services and career consulting to help you land your dream job with ATS-optimized resumes.',
     contactPoint: {
@@ -40,11 +40,11 @@ export const StructuredData = () => {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Prosumely',
-    url: 'https://prosumely.com',
+    url: 'https://www.prosumely.com',
     description: 'Professional resume writing services and career consulting',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://prosumely.com/search?q={search_term_string}',
+      target: 'https://www.prosumely.com/search?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   }

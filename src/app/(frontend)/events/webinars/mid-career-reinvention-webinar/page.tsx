@@ -21,11 +21,11 @@ export const metadata = {
     title: 'From Mid-Career Crisis to Career Clarity: The Resume as a Reinvention Tool',
     description:
       'Navigate mid-career transitions with confidence. Learn how to reinvent your career and position yourself for new opportunities with strategic resume writing.',
-    url: 'https://prosumely.com/events/webinars/mid-career-reinvention-webinar',
+    url: 'https://www.prosumely.com/events/webinars/mid-career-reinvention-webinar',
     siteName: 'Prosumely',
     images: [
       {
-        url: 'https://prosumely.com/prosumely-execuitve-resume-writing-opengraph.jpg',
+        url: 'https://www.prosumely.com/prosumely-execuitve-resume-writing-opengraph.jpg',
         width: 1200,
         height: 630,
         alt: 'Mid-Career Reinvention Webinar by Prosumely',
@@ -38,7 +38,7 @@ export const metadata = {
     title: 'From Mid-Career Crisis to Career Clarity: The Resume as a Reinvention Tool',
     description:
       'Navigate mid-career transitions with confidence. Learn how to reinvent your career and position yourself for new opportunities with strategic resume writing.',
-    images: ['https://prosumely.com/prosumely-execuitve-resume-writing-opengraph.jpg'],
+    images: ['https://www.prosumely.com/prosumely-execuitve-resume-writing-opengraph.jpg'],
   },
 }
 

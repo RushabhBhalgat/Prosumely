@@ -21,7 +21,7 @@ export const metadata = {
     title: 'Impact Stories | Real Success Stories from Prosumely Clients',
     description:
       'Read inspiring career transformation stories from Prosumely clients who landed their dream jobs with our professional resume writing services. Real results, real success stories.',
-    url: 'https://prosumely.com/impact-stories',
+    url: 'https://www.prosumely.com/impact-stories',
     siteName: 'Prosumely',
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/impact-stories',
+    canonical: 'https://www.prosumely.com/impact-stories',
   },
 }
 // --- End SEO Metadata ---

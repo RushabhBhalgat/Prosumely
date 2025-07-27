@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { PageHeading } from '@/components/SEO/PageHeading'
 import ServicesPageContent from '@/components/ServicesPageContent'
 
 const ServicesPage = () => {
@@ -30,7 +31,7 @@ export const metadata = {
     title: 'Resume Writing Services | ATS-Optimized CVs & Career Tools | Prosumely',
     description:
       "Explore Prosumely's full suite of resume writing services: ATS resumes, executive CVs, cover letters, LinkedIn makeovers, SOPs, and more. Get expert help to land your dream job faster!",
-    url: 'https://prosumely.com/services',
+    url: 'https://www.prosumely.com/services',
     siteName: 'Prosumely',
     images: [
       {
@@ -52,7 +53,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/services',
+    canonical: 'https://www.prosumely.com/services',
   },
 }
 

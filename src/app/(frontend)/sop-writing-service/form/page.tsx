@@ -1,4 +1,15 @@
+import { Metadata } from 'next'
 import MyFormComponent from '@/components/MyFormComponent'
+
+
+export const metadata: Metadata = {
+  title: 'SOP Writing Service Form | Prosumely',
+  description: 'Complete your sop writing service request form.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default async function ATSForm() {
   return (

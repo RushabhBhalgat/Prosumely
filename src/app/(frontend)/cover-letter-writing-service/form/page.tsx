@@ -1,4 +1,15 @@
+import { Metadata } from 'next'
 import MyFormComponent from '@/components/MyFormComponent'
+
+
+export const metadata: Metadata = {
+  title: 'Cover Letter Writing Service Form | Prosumely',
+  description: 'Complete your cover letter writing service request form.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default async function CoverLetterPage() {
   return (

@@ -20,7 +20,7 @@ export const metadata = {
     title: "Why Your Resume Isn't Getting You Interviews – And What to Do About It | Prosumely",
     description:
       'Uncover the common reasons resumes fail to get noticed and learn actionable strategies to optimize your resume for today’s competitive job market. Expert tips for ATS, keywords, and modern formatting.',
-    url: 'https://prosumely.com/newsroom/why-resume-not-getting-interviews',
+    url: 'https://www.prosumely.com/newsroom/why-resume-not-getting-interviews',
     siteName: 'Prosumely',
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/why-resume-not-getting-interviews',
+    canonical: 'https://www.prosumely.com/newsroom/why-resume-not-getting-interviews',
   },
 }
 
@@ -226,7 +226,7 @@ export default function WhyResumeNotGettingInterviewsArticle() {
               first step toward your dream job today!
             </p>
             <a
-              href="https://prosumely.com/free-resume-review"
+              href="https://www.prosumely.com/free-resume-review"
               className="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-50 transition"
             >
               Get Free Resume Review

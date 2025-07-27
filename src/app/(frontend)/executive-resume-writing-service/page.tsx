@@ -1,9 +1,11 @@
 import { Suspense } from 'react'
+import { PageHeading } from '@/components/SEO/PageHeading'
 import ExecutiveResumePageContent from '../../../components/industry-content/ExecutiveResumePageContent'
 
 const ExecutiveResumePage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Executive Resume Writing Service</PageHeading>Loading...</div>}>
       <ExecutiveResumePageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: 'Executive Resume Writing Service | Leadership CVs | Prosumely',
     description:
       'Position yourself as a leader with a powerful, achievement-driven executive resume from Prosumely. Highlight your impact, vision, and executive presence for senior roles.',
-    url: 'https://prosumely.com/executive-resume-writing-service',
+    url: 'https://www.prosumely.com/executive-resume-writing-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/executive-resume-writing-service',
+    canonical: 'https://www.prosumely.com/executive-resume-writing-service',
   },
 }
 

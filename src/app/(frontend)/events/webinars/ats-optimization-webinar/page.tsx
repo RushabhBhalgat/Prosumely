@@ -20,11 +20,11 @@ export const metadata = {
     title: 'The Invisible Advantage: Why ATS Optimization Is Your Secret Weapon',
     description:
       'Master ATS optimization and beat applicant tracking systems. Learn the secrets to making your resume visible to human recruiters in the digital age.',
-    url: 'https://prosumely.com/events/webinars/ats-optimization-webinar',
+    url: 'https://www.prosumely.com/events/webinars/ats-optimization-webinar',
     siteName: 'Prosumely',
     images: [
       {
-        url: 'https://prosumely.com/prosumely-ats-resume-writing-opengraph.jpg',
+        url: 'https://www.prosumely.com/prosumely-ats-resume-writing-opengraph.jpg',
         width: 1200,
         height: 630,
         alt: 'ATS Optimization Webinar by Prosumely',
@@ -37,7 +37,7 @@ export const metadata = {
     title: 'The Invisible Advantage: Why ATS Optimization Is Your Secret Weapon',
     description:
       'Master ATS optimization and beat applicant tracking systems. Learn the secrets to making your resume visible to human recruiters in the digital age.',
-    images: ['https://prosumely.com/prosumely-ats-resume-writing-opengraph.jpg'],
+    images: ['https://www.prosumely.com/prosumely-ats-resume-writing-opengraph.jpg'],
   },
 }
 

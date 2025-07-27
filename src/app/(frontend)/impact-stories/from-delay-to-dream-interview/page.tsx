@@ -37,7 +37,7 @@ export const metadata = {
   openGraph: {
     title: 'From Delay to Dream Interview | Qatar Project Manager Success | Prosumely',
     description: 'How a Qatar Project Manager Landed a Career Breakthrough with Prosumely',
-    url: 'https://prosumely.com/impact-stories/from-delay-to-dream-interview',
+    url: 'https://www.prosumely.com/impact-stories/from-delay-to-dream-interview',
     siteName: 'Prosumely',
     images: [
       {

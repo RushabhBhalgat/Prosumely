@@ -20,7 +20,7 @@ export const metadata = {
     title: 'Newsroom | Interview Insights & Thought Leadership by Prosumely',
     description:
       'Explore expert interview tips, career advice, and thought leadership articles from Prosumely. Stay ahead in your job search with actionable insights and inspiring stories.',
-    url: 'https://prosumely.com/newsroom',
+    url: 'https://www.prosumely.com/newsroom',
     siteName: 'Prosumely',
     images: [
       {

@@ -1,9 +1,11 @@
 import ProjectPortfolioPageContent from '../../../components/industry-content/ProjectPortfolioPageContent'
 import { Suspense } from 'react'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 const ProjectPortfolioPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Project Portfolio Development</PageHeading>Loading...</div>}>
       <ProjectPortfolioPageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: 'Project Portfolio Service | Showcase Your Work | Prosumely',
     description:
       'Showcase your expertise with a professional project portfolio from Prosumely. Perfect for tech, design, construction, and freelance professionals. Boost your career with a standout portfolio.',
-    url: 'https://prosumely.com/project-portfolio',
+    url: 'https://www.prosumely.com/project-portfolio',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/project-portfolio',
+    canonical: 'https://www.prosumely.com/project-portfolio',
   },
 }
 

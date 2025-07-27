@@ -1,11 +1,13 @@
 import ServiceProductPage from '../../../components/ServiceProductPage'
 import { servicesData } from '../../../data/servicesData'
+import { PageHeading } from '@/components/SEO/PageHeading'
 import { Suspense } from 'react'
 import ATSResumePageContent from '../../../components/industry-content/ATSResumePageContent'
 
 const ATSResumePage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">ATS Resume Writing Service</PageHeading>Loading...</div>}>
       <ATSResumePageContent />
     </Suspense>
   )
@@ -28,7 +30,7 @@ export const metadata = {
     title: "ATS Resume Writing Service | Beat the Bots | Prosumely's",
     description:
       "Get an ATS-optimized resume written by Prosumely's experts. Increase your chances of getting shortlisted with keyword-rich, professionally formatted resumes that pass applicant tracking systems.",
-    url: 'https://prosumely.com/ats-resume-writing-service',
+    url: 'https://www.prosumely.com/ats-resume-writing-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -50,7 +52,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/ats-resume-writing-service',
+    canonical: 'https://www.prosumely.com/ats-resume-writing-service',
   },
 }
 
