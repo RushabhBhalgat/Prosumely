@@ -1,4 +1,15 @@
+import { Metadata } from 'next'
 import MyFormComponent from '@/components/MyFormComponent'
+
+
+export const metadata: Metadata = {
+  title: 'Interview Coaching Service Form | Prosumely',
+  description: 'Complete your interview coaching service request form.',
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default async function InterviewCoachingForm() {
   return (

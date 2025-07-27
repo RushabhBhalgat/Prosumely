@@ -8,7 +8,7 @@ import IndustryLinksSection from '@/components/IndustryLinksSection'
 
 // --- SEO Metadata ---
 export const metadata = {
-  title: 'Prosumely | ATS-friendly resume wrting services',
+  title: 'Prosumely | ATS-friendly Resume Writing Services',
   description:
     "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata = {
     title: 'Prosumely | Professional Resume Writing Services | ATS Resume Experts',
     description:
       "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
-    url: 'https://prosumely.com/', // Replace with your actual domain
+    url: 'https://www.prosumely.com/', // Replace with your actual domain
     siteName: 'Prosumely',
     images: [
       {
@@ -40,14 +40,14 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prosumely | Resume wrting services',
+    title: 'Prosumely | Resume Writing Services',
     description:
       "Boost your job search with Prosumely's expert resume writing service. ATS-optimized, keyword-rich, high-impact resumes that help you land your dream job faster.",
     images: ['/prosumely-ats-resume-writing-opengraph.jpg'], // Replace with your Open Graph image path
     site: '@prosumely', // Replace with your Twitter handle
   },
   alternates: {
-    canonical: 'https://prosumely.com/', // Replace with your actual domain
+    canonical: 'https://www.prosumely.com/', // Replace with your actual domain
   },
 }
 // --- End SEO Metadata ---

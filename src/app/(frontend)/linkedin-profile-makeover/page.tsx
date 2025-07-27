@@ -1,9 +1,11 @@
 import { Suspense } from 'react'
+import { PageHeading } from '@/components/SEO/PageHeading'
 import LinkedInProfilePageContent from '../../../components/industry-content/LinkedInProfilePageContent'
 
 const LinkedInProfilePage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">LinkedIn Profile Optimization</PageHeading>Loading...</div>}>
       <LinkedInProfilePageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: 'LinkedIn Profile Makeover | Professional Branding | Prosumely',
     description:
       "Transform your LinkedIn profile with Prosumely's expert makeover service. Attract recruiters, boost your professional presence, and get noticed for top job opportunities.",
-    url: 'https://prosumely.com/linkedin-profile-makeover',
+    url: 'https://www.prosumely.com/linkedin-profile-makeover',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/linkedin-profile-makeover',
+    canonical: 'https://www.prosumely.com/linkedin-profile-makeover',
   },
 }
 

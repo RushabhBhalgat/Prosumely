@@ -20,7 +20,7 @@ export const metadata = {
     title: 'Career Comeback: Returning to Work After a Break with Confidence | Prosumely',
     description:
       'Explore the inspiring journey of a professional who re-entered the workforce after a career break, using resume strategy and personal storytelling to rebuild confidence and credibility. Learn how to position career gaps and upskilling for success.',
-    url: 'https://prosumely.com/newsroom/career-comeback-after-break',
+    url: 'https://www.prosumely.com/newsroom/career-comeback-after-break',
     siteName: 'Prosumely',
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/career-comeback-after-break',
+    canonical: 'https://www.prosumely.com/newsroom/career-comeback-after-break',
   },
 }
 
@@ -214,7 +214,7 @@ export default function CareerComebackArticle() {
               free resume review or book a consultation today!
             </p>
             <a
-              href="https://prosumely.com/free-resume-review"
+              href="https://www.prosumely.com/free-resume-review"
               className="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-50 transition"
             >
               Get Free Resume Review

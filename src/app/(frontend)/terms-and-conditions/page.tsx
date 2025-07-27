@@ -16,7 +16,7 @@ export const metadata = {
     title: 'Terms and Conditions | Prosumely Resume Writing Services',
     description:
       'Review the terms and conditions for using Prosumely’s professional resume writing services. Understand your rights and responsibilities as a client.',
-    url: 'https://prosumely.com/terms-and-conditions',
+    url: 'https://www.prosumely.com/terms-and-conditions',
     siteName: 'Prosumely',
     images: [
       {
@@ -38,7 +38,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/terms-and-conditions',
+    canonical: 'https://www.prosumely.com/terms-and-conditions',
   },
 }
 

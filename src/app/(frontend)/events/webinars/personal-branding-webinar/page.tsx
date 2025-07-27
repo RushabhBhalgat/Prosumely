@@ -20,11 +20,11 @@ export const metadata = {
     title: 'The Future of Job Search: Why Personal Branding is the New Resume',
     description:
       'Discover why personal branding has become more important than your resume in 2025. Learn how to build a compelling personal brand across LinkedIn, social media, and beyond.',
-    url: 'https://prosumely.com/events/webinars/personal-branding-webinar',
+    url: 'https://www.prosumely.com/events/webinars/personal-branding-webinar',
     siteName: 'Prosumely',
     images: [
       {
-        url: 'https://prosumely.com/prosumely-linkedin-profile-makeover-opengraph.jpg',
+        url: 'https://www.prosumely.com/prosumely-linkedin-profile-makeover-opengraph.jpg',
         width: 1200,
         height: 630,
         alt: 'Personal Branding Webinar by Prosumely',
@@ -37,7 +37,7 @@ export const metadata = {
     title: 'The Future of Job Search: Why Personal Branding is the New Resume',
     description:
       'Discover why personal branding has become more important than your resume in 2025. Learn how to build a compelling personal brand across LinkedIn, social media, and beyond.',
-    images: ['https://prosumely.com/prosumely-linkedin-profile-makeover-opengraph.jpg'],
+    images: ['https://www.prosumely.com/prosumely-linkedin-profile-makeover-opengraph.jpg'],
   },
 }
 

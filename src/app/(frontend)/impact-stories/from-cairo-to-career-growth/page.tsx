@@ -36,7 +36,7 @@ export const metadata = {
   openGraph: {
     title: 'From Cairo to Career Growth | Middle East Success | Prosumely',
     description: 'How a Resume & LinkedIn Makeover Got One Egyptian Professional Noticed Fast',
-    url: 'https://prosumely.com/impact-stories/from-cairo-to-career-growth',
+    url: 'https://www.prosumely.com/impact-stories/from-cairo-to-career-growth',
     siteName: 'Prosumely',
     images: [
       {

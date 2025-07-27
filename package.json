@@ -17,7 +17,14 @@
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
-    "test:sitemap": "node scripts/test-sitemap.js"
+    "test:sitemap": "node scripts/test-sitemap.js",
+    "seo:audit": "node scripts/seo-audit.js",
+    "seo:sitemap-cleanup": "node scripts/sitemap-cleanup.js",
+    "seo:fix-canonical": "node scripts/fix-canonical-urls.js",
+    "seo:fix-industry-titles": "node scripts/fix-industry-titles.js",
+    "seo:add-h1-tags": "node scripts/add-h1-tags.js",
+    "seo:check-images": "node scripts/check-images.js",
+    "seo:analyze-links": "node scripts/analyze-internal-links.js"
   },
   "dependencies": {
     "@payloadcms/admin-bar": "3.39.1",

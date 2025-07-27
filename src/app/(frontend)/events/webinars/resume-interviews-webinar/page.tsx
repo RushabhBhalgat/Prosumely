@@ -3,10 +3,9 @@ import React from 'react'
 import { ArrowLeft, Calendar, Clock, Users, Play } from 'lucide-react'
 
 export const metadata = {
-  title:
-    "Why Your Resume Isn't Getting You Interviews — And What to Do About It | Prosumely Webinar",
+  title: 'Resume to Interview Success Webinar | Master Your Job Application Strategy | Prosumely',
   description:
-    "Learn why your resume isn't getting interviews and discover actionable strategies to fix it. Expert insights on ATS optimization, formatting, and results-driven content.",
+    'Join our live webinar to learn why resumes get rejected and discover proven strategies to land more interviews. Expert insights on ATS optimization, formatting, and results-driven content.',
   keywords: [
     'resume not getting interviews',
     'resume optimization',
@@ -18,14 +17,14 @@ export const metadata = {
     'prosumely webinar',
   ],
   openGraph: {
-    title: "Why Your Resume Isn't Getting You Interviews — And What to Do About It",
+    title: 'Resume to Interview Success Webinar | Master Your Job Application Strategy',
     description:
-      "Learn why your resume isn't getting interviews and discover actionable strategies to fix it. Expert insights on ATS optimization, formatting, and results-driven content.",
-    url: 'https://prosumely.com/events/webinars/resume-interviews-webinar',
+      'Join our live webinar to learn why resumes get rejected and discover proven strategies to land more interviews. Expert insights on ATS optimization, formatting, and results-driven content.',
+    url: 'https://www.prosumely.com/events/webinars/resume-interviews-webinar',
     siteName: 'Prosumely',
     images: [
       {
-        url: 'https://prosumely.com/prosumely-ats-resume-writing-opengraph.jpg',
+        url: 'https://www.prosumely.com/prosumely-ats-resume-writing-opengraph.jpg',
         width: 1200,
         height: 630,
         alt: 'Resume Interview Tips Webinar by Prosumely',
@@ -35,10 +34,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Why Your Resume Isn't Getting You Interviews — And What to Do About It",
+    title: 'Resume to Interview Success Webinar | Master Your Job Application Strategy',
     description:
-      "Learn why your resume isn't getting interviews and discover actionable strategies to fix it. Expert insights on ATS optimization, formatting, and results-driven content.",
-    images: ['https://prosumely.com/prosumely-ats-resume-writing-opengraph.jpg'],
+      'Join our live webinar to learn why resumes get rejected and discover proven strategies to land more interviews. Expert insights on ATS optimization, formatting, and results-driven content.',
+    images: ['https://www.prosumely.com/prosumely-ats-resume-writing-opengraph.jpg'],
   },
 }
 

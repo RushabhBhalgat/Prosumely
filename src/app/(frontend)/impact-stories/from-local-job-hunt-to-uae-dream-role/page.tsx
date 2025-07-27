@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     title: 'From Local Job Hunt to UAE Dream Role | Global Career Success | Prosumely',
     description: 'A Resume Rewrite That Opened New Doors for UAE job market',
-    url: 'https://prosumely.com/impact-stories/from-local-job-hunt-to-uae-dream-role',
+    url: 'https://www.prosumely.com/impact-stories/from-local-job-hunt-to-uae-dream-role',
     siteName: 'Prosumely',
     images: [
       {
@@ -56,7 +56,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/impact-stories/from-local-job-hunt-to-uae-dream-role',
+    canonical: 'https://www.prosumely.com/impact-stories/from-local-job-hunt-to-uae-dream-role',
   },
 }
 

@@ -1,9 +1,11 @@
 import AcademicCVWritingPageContent from '../../../components/industry-content/AcademicCVWritingPageContent'
 import { Suspense } from 'react'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 const AcademicCVPage = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div>
+      <PageHeading as="h1">Academic CV Writing Service</PageHeading>Loading...</div>}>
       <AcademicCVWritingPageContent />
     </Suspense>
   )
@@ -26,7 +28,7 @@ export const metadata = {
     title: "Academic CV Writing Service | Scholarly Resume Experts | Prosumely's",
     description:
       "Get a detailed, structured academic CV written by Prosumely's experts. Perfect for researchers, professors, and PhD candidates seeking grants, fellowships, or faculty roles.",
-    url: 'https://prosumely.com/academic-cv-writing-service',
+    url: 'https://www.prosumely.com/academic-cv-writing-service',
     siteName: 'Prosumely',
     images: [
       {
@@ -48,7 +50,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/academic-cv-writing-service',
+    canonical: 'https://www.prosumely.com/academic-cv-writing-service',
   },
 }
 

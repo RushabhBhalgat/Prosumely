@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     title: 'Breaking Through Barriers | Toronto Canada Career Success | Prosumely',
     description: "How One Resume Helped Land Opportunities in Toronto's Tough Job Market",
-    url: 'https://prosumely.com/impact-stories/breaking-through-barriers',
+    url: 'https://www.prosumely.com/impact-stories/breaking-through-barriers',
     siteName: 'Prosumely',
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/impact-stories/breaking-through-barriers',
+    canonical: 'https://www.prosumely.com/impact-stories/breaking-through-barriers',
   },
 }
 

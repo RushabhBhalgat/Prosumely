@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { PageHeading } from '@/components/SEO/PageHeading'
 import EbooksClient from './EbooksClient'
 
 export const metadata: Metadata = {
@@ -21,11 +22,11 @@ export const metadata: Metadata = {
     title: 'Free Interview Question Ebooks | Professional Career Resources - Prosumely',
     description:
       'Download free interview question ebooks for various professions including engineering, construction, healthcare, and management. Get expert-crafted questions and answers to ace your next interview.',
-    url: 'https://prosumely.com/ebooks',
+    url: 'https://www.prosumely.com/ebooks',
     siteName: 'Prosumely',
     images: [
       {
-        url: 'https://prosumely.com/prosumely-interview-coaching-service-opengraph.jpg',
+        url: 'https://www.prosumely.com/prosumely-interview-coaching-service-opengraph.jpg',
         width: 1200,
         height: 630,
         alt: 'Prosumely Free Interview Question Ebooks & Career Resources',
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title: 'Free Interview Question Ebooks | Professional Career Resources - Prosumely',
     description:
       'Download free interview question ebooks for various professions including engineering, construction, healthcare, and management. Get expert-crafted questions and answers to ace your next interview.',
-    images: ['https://prosumely.com/prosumely-interview-coaching-service-opengraph.jpg'],
+    images: ['https://www.prosumely.com/prosumely-interview-coaching-service-opengraph.jpg'],
   },
 }
 

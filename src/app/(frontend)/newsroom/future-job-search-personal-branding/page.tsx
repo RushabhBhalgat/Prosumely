@@ -20,7 +20,7 @@ export const metadata = {
     title: 'The Future of Job Search: Personal Branding Beyond the Resume | Prosumely',
     description:
       'Learn why personal branding is now essential for job seekers and how to build a cohesive professional identity across your resume, LinkedIn, and online presence. Discover actionable tips for branding and career growth.',
-    url: 'https://prosumely.com/newsroom/future-job-search-personal-branding',
+    url: 'https://www.prosumely.com/newsroom/future-job-search-personal-branding',
     siteName: 'Prosumely',
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/future-job-search-personal-branding',
+    canonical: 'https://www.prosumely.com/newsroom/future-job-search-personal-branding',
   },
 }
 

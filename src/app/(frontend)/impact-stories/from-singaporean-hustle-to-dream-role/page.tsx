@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     title: 'From Singaporean Hustle to Dream Role | Singapore Tech Success | Prosumely',
     description: 'A Resume Rewrite That Changed Everything for a technology professional',
-    url: 'https://prosumely.com/impact-stories/from-singaporean-hustle-to-dream-role',
+    url: 'https://www.prosumely.com/impact-stories/from-singaporean-hustle-to-dream-role',
     siteName: 'Prosumely',
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/impact-stories/from-singaporean-hustle-to-dream-role',
+    canonical: 'https://www.prosumely.com/impact-stories/from-singaporean-hustle-to-dream-role',
   },
 }
 

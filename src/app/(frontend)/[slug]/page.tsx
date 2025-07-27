@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 
+import { PageHeading } from '@/components/SEO/PageHeading'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload, type RequiredDataFromCollectionSlug } from 'payload'
@@ -67,6 +68,7 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   return (
     <article className="pt-16 pb-24">
+      <PageHeading as="h1">Dynamic Page</PageHeading>
       <PageClient />
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />

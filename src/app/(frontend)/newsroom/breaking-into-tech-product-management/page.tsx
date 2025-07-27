@@ -21,7 +21,7 @@ export const metadata = {
       'Breaking into Tech: A Non-Tech Professional’s Journey to Product Management | Prosumely',
     description:
       'Discover how a retail operations expert pivoted to tech product management with a resume makeover focused on transferable skills, storytelling, and career transition strategy. Learn actionable tips for career pivots and resume writing.',
-    url: 'https://prosumely.com/newsroom/breaking-into-tech-product-management',
+    url: 'https://www.prosumely.com/newsroom/breaking-into-tech-product-management',
     siteName: 'Prosumely',
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata = {
     site: '@prosumely',
   },
   alternates: {
-    canonical: 'https://prosumely.com/newsroom/breaking-into-tech-product-management',
+    canonical: 'https://www.prosumely.com/newsroom/breaking-into-tech-product-management',
   },
 }
 
@@ -226,7 +226,7 @@ export default function BreakingIntoTechArticle() {
               Let Prosumely help you showcase your transferable skills and land your dream role in
               tech or any industry.
             </p>
-            <a href="https://prosumely.com/free-resume-review" className="inline-block">
+            <a href="https://www.prosumely.com/free-resume-review" className="inline-block">
               <button className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                 Get Free Resume Review
               </button>

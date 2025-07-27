@@ -24,6 +24,9 @@ module.exports = {
     '/api/*',
     '/_next/*',
     '/next/*',
+    '/*/form',
+    '/*/form/*',
+    '/thank-you-for-choosing-prosumely',
   ],
   robotsTxtOptions: {
     policies: [
