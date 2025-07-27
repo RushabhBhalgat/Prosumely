@@ -138,20 +138,21 @@ Our aerospace writing experts understand the precision and innovation requiremen
 
 const JobseekersComboPageContent = () => {
   const searchParams = useSearchParams()
-  const industry = searchParams.get('industry') || 'information-technology'
+  const industry = searchParams.get('industry')
 
   const content =
-    industryContent[industry as keyof typeof industryContent] ||
-    industryContent['information-technology']
+    industry && industryContent[industry as keyof typeof industryContent]
 
   // Create modified service data with industry-specific content
   const serviceData = {
     ...servicesData.jobseekersCombo,
     service: {
       ...servicesData.jobseekersCombo.service,
-      title: content.title,
-      description: content.description,
-      detailedDescription: content.detailedDescription,
+      ...(content && {
+        title: content.title,
+        description: content.description,
+        detailedDescription: content.detailedDescription,
+      }),
     },
   }
 
