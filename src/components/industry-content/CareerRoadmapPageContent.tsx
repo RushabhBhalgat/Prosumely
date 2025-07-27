@@ -7,152 +7,103 @@ import { servicesData } from '../../data/servicesData'
 
 // Industry-specific content for Career Roadmap Service
 const industryContent = {
-  'information-technology': {
-    title: 'IT Career Roadmap',
-    description:
-      'Strategic career planning for technology professionals navigating the digital future.',
-    detailedDescription: `The IT Career Roadmap is specifically designed for technology professionals who want to strategically navigate their career growth in the rapidly evolving tech industry. This personalized roadmap takes into account your current technical skills, experience level, and career aspirations to create a clear path for advancement in software development, DevOps, data science, cybersecurity, cloud computing, or emerging technologies like AI and machine learning.
-
-Our IT career strategists understand the unique demands and opportunities in the technology sector, helping you identify key certifications, skill development priorities, and strategic career moves that will maximize your earning potential and job satisfaction in the competitive tech landscape.`,
-  },
-  healthcare: {
-    title: 'Healthcare Career Roadmap',
-    description:
-      'Comprehensive career planning for healthcare professionals dedicated to healing and wellness.',
-    detailedDescription: `The Healthcare Career Roadmap is tailored for medical professionals, nurses, healthcare administrators, and allied health workers who want to strategically advance their careers in the healthcare industry. This personalized roadmap considers your clinical experience, educational background, and professional goals to create a clear path for advancement in patient care, healthcare leadership, specialization tracks, or healthcare innovation.
-
-Our healthcare career strategists understand the complex pathways available in healthcare, helping you navigate continuing education requirements, certification opportunities, and strategic career moves that will enhance your impact on patient care while achieving your professional and financial goals in the rewarding healthcare field.`,
-  },
-  finance: {
-    title: 'Finance Career Roadmap',
-    description:
-      'Strategic career planning for finance professionals maximizing wealth creation opportunities.',
-    detailedDescription: `The Finance Career Roadmap is designed for banking professionals, financial analysts, accountants, and investment specialists who want to strategically advance their careers in the financial services industry. This personalized roadmap takes into account your analytical skills, financial expertise, and career ambitions to create a clear path for advancement in investment banking, corporate finance, wealth management, fintech innovation, or financial leadership roles.
-
-Our finance career strategists understand the competitive landscape of the financial industry, helping you identify key certifications like CFA or FRM, skill development priorities, and strategic career moves that will maximize your earning potential and professional recognition in the lucrative finance sector.`,
-  },
-  construction: {
+  'construction-industry': {
     title: 'Construction Career Roadmap',
-    description:
-      'Comprehensive career planning for construction professionals building successful careers.',
-    detailedDescription: `The Construction Career Roadmap is specifically crafted for construction workers, project managers, engineers, and supervisors who want to strategically advance their careers in the construction and infrastructure industry. This personalized roadmap considers your hands-on experience, safety certifications, and professional goals to create a clear path for advancement in project management, construction supervision, specialty trades, or construction business ownership.
-
-Our construction career strategists understand the unique pathways available in the construction industry, helping you navigate certification requirements, skill development opportunities, and strategic career moves that will enhance your project leadership capabilities while achieving your professional and financial goals in the rewarding construction field.`,
+    description: `<strong style="color: #2563eb;">Build your career foundation with strategic planning! Let our Career Roadmap service construct your path to construction leadership success! 🏗️📋</strong><br/><br/>Our construction-focused strategists create comprehensive career roadmaps for construction professionals—mapping technical advancement and leadership development pathways. 🚧🎯 Strategic planning engineered for construction career excellence.`,
+    detailedDescription: `Construction career advancement requires strategic planning that balances technical expertise with leadership development. Our Career Roadmap service creates personalized pathways for construction professionals, considering your current skills, certifications, and career aspirations to map clear advancement routes in project management, construction supervision, specialty trades, or construction business ownership.<br/><br/>Whether you're advancing from field work to supervision, pursuing project management roles, or aiming for construction executive positions, our roadmaps identify key certifications like PMP, OSHA credentials, trade specializations, and leadership development opportunities that will accelerate your construction career growth.<br/><br/>Our construction career roadmaps emphasize the unique progression pathways in construction, helping you navigate from technical expertise to management roles while maintaining industry credibility and maximizing your earning potential in the dynamic construction sector.`,
   },
-  education: {
-    title: 'Education Career Roadmap',
-    description:
-      'Strategic career planning for educators and academic professionals shaping future generations.',
-    detailedDescription: `The Education Career Roadmap is designed for teachers, administrators, curriculum specialists, and educational support staff who want to strategically advance their careers in educational institutions. This personalized roadmap takes into account your teaching experience, educational achievements, and professional aspirations to create a clear path for advancement in classroom leadership, educational administration, curriculum development, or specialized education roles.
-
-Our education career strategists understand the unique opportunities available in the education sector, helping you identify advanced degree requirements, certification opportunities, and strategic career moves that will enhance your impact on student learning while achieving your professional growth and job satisfaction goals in the fulfilling education field.`,
-  },
-  engineering: {
-    title: 'Engineering Career Roadmap',
-    description:
-      'Comprehensive career planning for engineers ready to innovate and lead technical solutions.',
-    detailedDescription: `The Engineering Career Roadmap is tailored for mechanical, electrical, civil, software, and other engineering professionals who want to strategically advance their careers in technical and leadership roles. This personalized roadmap considers your technical expertise, project experience, and career ambitions to create a clear path for advancement in design engineering, project management, technical leadership, or engineering consultancy.
-
-Our engineering career strategists understand the diverse pathways available in engineering disciplines, helping you navigate professional engineering licensure, advanced certifications, and strategic career moves that will maximize your technical impact and earning potential in the innovative engineering field.`,
-  },
-  manufacturing: {
-    title: 'Manufacturing Career Roadmap',
-    description:
-      'Strategic career planning for manufacturing professionals driving operational excellence.',
-    detailedDescription: `The Manufacturing Career Roadmap is designed for production workers, quality engineers, plant managers, and manufacturing specialists who want to strategically advance their careers in the manufacturing and industrial sector. This personalized roadmap takes into account your production experience, quality achievements, and professional goals to create a clear path for advancement in production management, quality assurance, lean manufacturing, or operations leadership.
-
-Our manufacturing career strategists understand the operational focus of manufacturing environments, helping you identify lean manufacturing certifications, leadership development opportunities, and strategic career moves that will enhance your operational impact while achieving your professional and financial goals in the dynamic manufacturing industry.`,
-  },
-  retail: {
-    title: 'Retail Career Roadmap',
-    description:
-      'Comprehensive career planning for retail professionals excelling in customer experience and sales.',
-    detailedDescription: `The Retail Career Roadmap is crafted for sales associates, store managers, buyers, and retail specialists who want to strategically advance their careers in the retail and customer service industry. This personalized roadmap considers your customer service achievements, sales performance, and career aspirations to create a clear path for advancement in store management, regional leadership, merchandising, or retail operations.
-
-Our retail career strategists understand the customer-focused nature of retail environments, helping you identify retail management certifications, leadership development programs, and strategic career moves that will maximize your sales impact and career growth potential in the evolving retail landscape.`,
-  },
-  hospitality: {
-    title: 'Hospitality Career Roadmap',
-    description:
-      'Strategic career planning for hospitality professionals delivering exceptional guest experiences.',
-    detailedDescription: `The Hospitality Career Roadmap is designed for hotel staff, restaurant professionals, event coordinators, and hospitality managers who want to strategically advance their careers in the hospitality and tourism industry. This personalized roadmap takes into account your guest service experience, hospitality skills, and professional goals to create a clear path for advancement in hotel management, food service leadership, event planning, or hospitality operations.
-
-Our hospitality career strategists understand the service-oriented culture of the hospitality industry, helping you identify hospitality management certifications, international opportunities, and strategic career moves that will enhance your guest service impact while achieving your professional and financial goals in the rewarding hospitality field.`,
-  },
-  marketing: {
-    title: 'Marketing Career Roadmap',
-    description:
-      'Comprehensive career planning for marketing professionals ready to amplify their impact.',
-    detailedDescription: `The Marketing Career Roadmap is tailored for digital marketers, brand managers, content creators, and marketing specialists who want to strategically advance their careers in the dynamic marketing and advertising industry. This personalized roadmap considers your campaign achievements, creative projects, and career ambitions to create a clear path for advancement in digital marketing, brand management, content strategy, or marketing leadership.
-
-Our marketing career strategists understand the creative and analytical nature of marketing roles, helping you identify digital marketing certifications, emerging technology skills, and strategic career moves that will maximize your marketing impact and career growth potential in the evolving marketing landscape.`,
-  },
-  consulting: {
-    title: 'Consulting Career Roadmap',
-    description:
-      'Strategic career planning for consultants ready to solve complex challenges and drive transformation.',
-    detailedDescription: `The Consulting Career Roadmap is designed for management consultants, strategy advisors, and specialized consultants who want to strategically advance their careers in the competitive consulting industry. This personalized roadmap takes into account your problem-solving achievements, client impact, and professional aspirations to create a clear path for advancement in strategy consulting, specialized practice areas, or consulting leadership roles.
-
-Our consulting career strategists understand the analytical and client-focused nature of consulting work, helping you identify industry certifications, thought leadership opportunities, and strategic career moves that will enhance your consulting impact while achieving your professional and financial goals in the prestigious consulting field.`,
-  },
-  logistics: {
-    title: 'Logistics Career Roadmap',
-    description:
-      'Comprehensive career planning for logistics professionals optimizing global supply chains.',
-    detailedDescription: `The Logistics Career Roadmap is crafted for supply chain coordinators, warehouse managers, transportation specialists, and logistics professionals who want to strategically advance their careers in the logistics and supply chain industry. This personalized roadmap considers your operational efficiency achievements, supply chain improvements, and career goals to create a clear path for advancement in supply chain management, logistics operations, transportation planning, or logistics leadership.
-
-Our logistics career strategists understand the operational complexity of supply chain environments, helping you identify supply chain certifications, technology adoption skills, and strategic career moves that will maximize your logistics impact and career growth potential in the critical logistics industry.`,
-  },
-  'real-estate': {
-    title: 'Real Estate Career Roadmap',
-    description:
-      'Strategic career planning for real estate professionals building successful property careers.',
-    detailedDescription: `The Real Estate Career Roadmap is designed for real estate agents, property managers, real estate analysts, and real estate professionals who want to strategically advance their careers in the property and real estate industry. This personalized roadmap takes into account your sales achievements, property management experience, and professional aspirations to create a clear path for advancement in real estate sales, property management, real estate development, or real estate investment.
-
-Our real estate career strategists understand the relationship-driven nature of the real estate industry, helping you identify real estate certifications, market specialization opportunities, and strategic career moves that will enhance your real estate impact while achieving your professional and financial goals in the lucrative real estate field.`,
-  },
-  energy: {
+  'energy-oil-gas': {
     title: 'Energy Career Roadmap',
-    description:
-      'Comprehensive career planning for energy professionals powering sustainable futures.',
-    detailedDescription: `The Energy Career Roadmap is tailored for renewable energy specialists, oil and gas professionals, power plant operators, and energy industry workers who want to strategically advance their careers in the evolving energy sector. This personalized roadmap considers your technical expertise, safety achievements, and career ambitions to create a clear path for advancement in renewable energy, traditional energy operations, energy consulting, or energy project management.
-
-Our energy career strategists understand the technical and safety-critical nature of energy operations, helping you identify energy industry certifications, emerging technology skills, and strategic career moves that will maximize your energy impact and career growth potential in the transforming energy landscape.`,
+    description: `<strong style="color: #2563eb;">Power your career trajectory with strategic energy planning! Let our Career Roadmap service fuel your path to energy sector leadership! ⚡🛢️</strong><br/><br/>Our energy-focused strategists create dynamic career roadmaps for oil, gas, and renewable energy professionals—mapping technical advancement and executive development pathways. 🏭🎯 Strategic energy for career acceleration.`,
+    detailedDescription: `Energy sector careers require strategic navigation of complex technical and commercial pathways. Our Career Roadmap service creates personalized advancement plans considering your technical expertise, safety certifications, and leadership aspirations to map clear routes in upstream operations, downstream processing, renewable energy development, or energy executive leadership.<br/><br/>Whether you're advancing from field operations to engineering roles, pursuing energy project management, or aiming for energy executive positions, our roadmaps identify key certifications, safety credentials, and leadership development opportunities that will accelerate your energy career growth.<br/><br/>Our energy career roadmaps emphasize both traditional and renewable energy pathways, helping you navigate the evolving energy landscape while maximizing your technical expertise and leadership potential in the dynamic energy sector.`,
   },
-  automotive: {
-    title: 'Automotive Career Roadmap',
-    description:
-      'Strategic career planning for automotive professionals driving innovation in mobility.',
-    detailedDescription: `The Automotive Career Roadmap is designed for automotive engineers, manufacturing specialists, sales professionals, and automotive industry workers who want to strategically advance their careers in the dynamic automotive sector. This personalized roadmap takes into account your technical skills, manufacturing experience, and professional goals to create a clear path for advancement in automotive engineering, manufacturing operations, automotive sales, or automotive technology development.
-
-Our automotive career strategists understand the innovation-driven culture of the automotive industry, helping you identify automotive certifications, emerging technology skills like electric vehicles and autonomous systems, and strategic career moves that will enhance your automotive impact while achieving your professional and financial goals in the exciting automotive field.`,
+  'tech-it': {
+    title: 'Technology Career Roadmap',
+    description: `<strong style="color: #2563eb;">Debug your career path with strategic technology planning! Let our Career Roadmap service program your route to tech leadership success! 💻🚀</strong><br/><br/>Our tech-savvy strategists create cutting-edge career roadmaps for software engineers, data scientists, and IT professionals—mapping technical advancement and innovation leadership pathways. 🔧🎯 Digital strategy engineered for tech career acceleration.`,
+    detailedDescription: `Technology careers require strategic navigation of rapidly evolving technical landscapes and leadership opportunities. Our Career Roadmap service creates personalized advancement plans considering your coding skills, technical certifications, and innovation goals to map clear routes in software development, data science, cybersecurity, cloud computing, or technology executive leadership.<br/><br/>Whether you're advancing from junior developer to senior engineer, pursuing technical leadership roles, or aiming for CTO positions, our roadmaps identify key certifications like AWS, Azure, Google Cloud, programming specializations, and leadership development opportunities that will accelerate your tech career growth.<br/><br/>Our technology career roadmaps emphasize both technical depth and leadership breadth, helping you navigate from individual contributor to team leadership while maintaining technical credibility and maximizing your innovation impact in the competitive technology sector.`,
   },
-  aerospace: {
-    title: 'Aerospace Career Roadmap',
-    description:
-      'Comprehensive career planning for aerospace professionals reaching new heights in aviation and space.',
-    detailedDescription: `The Aerospace Career Roadmap is crafted for aerospace engineers, aviation professionals, defense contractors, and aerospace industry specialists who want to strategically advance their careers in the high-tech aerospace and defense sector. This personalized roadmap considers your technical expertise, project achievements, and career aspirations to create a clear path for advancement in aerospace engineering, aircraft manufacturing, space technology, or aerospace program management.
-
-Our aerospace career strategists understand the precision and innovation requirements of the aerospace industry, helping you identify aerospace certifications, security clearance opportunities, and strategic career moves that will maximize your aerospace impact and career growth potential in the cutting-edge aerospace field.`,
+  'healthcare-pharma': {
+    title: 'Healthcare Career Roadmap',
+    description: `<strong style="color: #2563eb;">Prescribe strategic career planning for healthcare excellence! Let our Career Roadmap service diagnose your path to medical leadership success! 🏥💊</strong><br/><br/>Our healthcare-focused strategists create comprehensive career roadmaps for medical professionals and pharmaceutical experts—mapping clinical advancement and healthcare leadership pathways. 🩺🎯 Medical strategy for healthcare career advancement.`,
+    detailedDescription: `Healthcare careers require strategic navigation of complex clinical, administrative, and research pathways. Our Career Roadmap service creates personalized advancement plans considering your clinical experience, medical certifications, and healthcare leadership aspirations to map clear routes in patient care specialization, healthcare administration, medical research, or pharmaceutical leadership.<br/><br/>Whether you're advancing from general practice to specialty medicine, pursuing healthcare management roles, or aiming for pharmaceutical executive positions, our roadmaps identify key medical certifications, continuing education requirements, and leadership development opportunities that will accelerate your healthcare career growth.<br/><br/>Our healthcare career roadmaps emphasize both clinical excellence and administrative leadership, helping you navigate from patient care to healthcare leadership while maintaining medical credibility and maximizing your impact on healthcare outcomes and organizational success.`,
+  },
+  'banking-financial-services-insurance': {
+    title: 'Finance Career Roadmap',
+    description: `<strong style="color: #2563eb;">Invest in strategic career planning for financial success! Let our Career Roadmap service calculate your path to finance leadership excellence! 💰📈</strong><br/><br/>Our finance-focused strategists create sophisticated career roadmaps for banking, financial services, and insurance professionals—mapping analytical advancement and executive leadership pathways. 🏦🎯 Financial strategy for career investment.`,
+    detailedDescription: `Financial services careers require strategic navigation of complex analytical, regulatory, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your financial expertise, professional certifications, and executive aspirations to map clear routes in investment banking, wealth management, insurance leadership, or financial executive positions.<br/><br/>Whether you're advancing from financial analyst to portfolio manager, pursuing financial leadership roles, or aiming for CFO positions, our roadmaps identify key certifications like CFA, FRM, CPA, and leadership development opportunities that will accelerate your finance career growth.<br/><br/>Our finance career roadmaps emphasize both technical financial expertise and strategic leadership, helping you navigate from individual contributor to executive leadership while maintaining financial credibility and maximizing your impact on organizational financial success.`,
+  },
+  'sales-marketing': {
+    title: 'Sales & Marketing Career Roadmap',
+    description: `<strong style="color: #2563eb;">Market your career potential with strategic sales planning! Let our Career Roadmap service sell your path to commercial leadership success! 📊🎯</strong><br/><br/>Our results-driven strategists create compelling career roadmaps for sales and marketing professionals—mapping revenue advancement and commercial leadership pathways. 📈🎯 Commercial strategy for sales career acceleration.`,
+    detailedDescription: `Sales and marketing careers require strategic navigation of complex commercial, digital, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your sales achievements, marketing expertise, and commercial leadership aspirations to map clear routes in account management, marketing leadership, business development, or commercial executive positions.<br/><br/>Whether you're advancing from sales representative to sales manager, pursuing marketing leadership roles, or aiming for Chief Revenue Officer positions, our roadmaps identify key certifications, digital marketing specializations, and leadership development opportunities that will accelerate your commercial career growth.<br/><br/>Our sales and marketing career roadmaps emphasize both revenue generation and strategic marketing, helping you navigate from individual contributor to commercial leadership while maintaining market credibility and maximizing your impact on organizational growth and market success.`,
+  },
+  'engineering-manufacturing': {
+    title: 'Engineering & Manufacturing Career Roadmap',
+    description: `<strong style="color: #2563eb;">Engineer your career trajectory with precision planning! Let our Career Roadmap service manufacture your path to engineering leadership success! ⚙️🏭</strong><br/><br/>Our technical strategists create robust career roadmaps for engineering and manufacturing professionals—mapping technical advancement and operational leadership pathways. 🔧🎯 Engineering strategy for manufacturing career excellence.`,
+    detailedDescription: `Engineering and manufacturing careers require strategic navigation of complex technical, operational, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your engineering expertise, manufacturing experience, and leadership aspirations to map clear routes in design engineering, operations management, quality leadership, or engineering executive positions.<br/><br/>Whether you're advancing from design engineer to engineering manager, pursuing manufacturing leadership roles, or aiming for Chief Technology Officer positions, our roadmaps identify key certifications like PE license, Six Sigma, and leadership development opportunities that will accelerate your engineering career growth.<br/><br/>Our engineering and manufacturing career roadmaps emphasize both technical excellence and operational leadership, helping you navigate from individual contributor to executive leadership while maintaining engineering credibility and maximizing your impact on product innovation and manufacturing success.`,
+  },
+  'strategy-consulting': {
+    title: 'Strategy & Consulting Career Roadmap',
+    description: `<strong style="color: #2563eb;">Strategize your career advancement with consulting precision! Let our Career Roadmap service consult on your path to strategic leadership success! 🎯📊</strong><br/><br/>Our strategy-focused experts create analytical career roadmaps for consulting and strategy professionals—mapping advisory advancement and strategic leadership pathways. 📈🎯 Strategic consulting for career transformation.`,
+    detailedDescription: `Strategy and consulting careers require strategic navigation of complex analytical, client management, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your consulting experience, analytical capabilities, and strategic leadership aspirations to map clear routes in management consulting, strategy development, practice leadership, or consulting executive positions.<br/><br/>Whether you're advancing from business analyst to senior consultant, pursuing strategy leadership roles, or aiming for Managing Partner positions, our roadmaps identify key certifications, industry specializations, and leadership development opportunities that will accelerate your consulting career growth.<br/><br/>Our strategy and consulting career roadmaps emphasize both analytical excellence and client leadership, helping you navigate from individual contributor to practice leadership while maintaining consulting credibility and maximizing your impact on client transformation and business success.`,
+  },
+  'logistics-supply-chain': {
+    title: 'Logistics & Supply Chain Career Roadmap',
+    description: `<strong style="color: #2563eb;">Deliver career excellence with optimized planning! Let our Career Roadmap service optimize your path to logistics leadership success! 🚚📦</strong><br/><br/>Our operations-focused strategists create efficient career roadmaps for logistics and supply chain professionals—mapping operational advancement and leadership pathways. ⚡🎯 Operational strategy for supply chain career optimization.`,
+    detailedDescription: `Logistics and supply chain careers require strategic navigation of complex operational, technological, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your logistics experience, supply chain expertise, and operational leadership aspirations to map clear routes in logistics management, supply chain optimization, operations leadership, or supply chain executive positions.<br/><br/>Whether you're advancing from logistics coordinator to operations manager, pursuing supply chain leadership roles, or aiming for Chief Operations Officer positions, our roadmaps identify key certifications like CPIM, CSCP, and leadership development opportunities that will accelerate your logistics career growth.<br/><br/>Our logistics and supply chain career roadmaps emphasize both operational excellence and strategic leadership, helping you navigate from individual contributor to executive leadership while maintaining operational credibility and maximizing your impact on supply chain efficiency and organizational success.`,
+  },
+  'hospitality-tourism': {
+    title: 'Hospitality & Tourism Career Roadmap',
+    description: `<strong style="color: #2563eb;">Create exceptional career journeys with hospitality planning! Let our Career Roadmap service host your path to hospitality leadership success! 🏨✈️</strong><br/><br/>Our service-focused strategists create welcoming career roadmaps for hospitality and tourism professionals—mapping service advancement and hospitality leadership pathways. 🌟🎯 Hospitality strategy for tourism career excellence.`,
+    detailedDescription: `Hospitality and tourism careers require strategic navigation of complex service, operational, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your hospitality experience, service excellence, and leadership aspirations to map clear routes in hotel management, tourism operations, event leadership, or hospitality executive positions.<br/><br/>Whether you're advancing from front desk to hotel manager, pursuing tourism leadership roles, or aiming for Regional Director positions, our roadmaps identify key certifications, service specializations, and leadership development opportunities that will accelerate your hospitality career growth.<br/><br/>Our hospitality and tourism career roadmaps emphasize both service excellence and operational leadership, helping you navigate from individual contributor to executive leadership while maintaining hospitality credibility and maximizing your impact on guest satisfaction and business success.`,
+  },
+  'media-entertainment': {
+    title: 'Media & Entertainment Career Roadmap',
+    description: `<strong style="color: #2563eb;">Direct your career spotlight with creative planning! Let our Career Roadmap service produce award-worthy advancement paths for media success! 🎬🎭</strong><br/><br/>Our creative strategists craft captivating career roadmaps for media and entertainment professionals—mapping creative advancement and industry leadership pathways. 🎨🎯 Creative strategy for entertainment career storytelling.`,
+    detailedDescription: `Media and entertainment careers require strategic navigation of complex creative, technical, and business pathways. Our Career Roadmap service creates personalized advancement plans considering your creative experience, technical skills, and industry leadership aspirations to map clear routes in content creation, media production, entertainment management, or creative executive positions.<br/><br/>Whether you're advancing from production assistant to director, pursuing media leadership roles, or aiming for Studio Executive positions, our roadmaps identify key skills development, industry networking opportunities, and leadership development that will accelerate your media career growth.<br/><br/>Our media and entertainment career roadmaps emphasize both creative excellence and business leadership, helping you navigate from individual contributor to executive leadership while maintaining creative credibility and maximizing your impact on content creation and entertainment success.`,
+  },
+  'human-resources': {
+    title: 'Human Resources Career Roadmap',
+    description: `<strong style="color: #2563eb;">Develop exceptional career narratives with HR planning! Let our Career Roadmap service recruit success for your people leadership journey! 👥💼</strong><br/><br/>Our people-focused strategists create strategic career roadmaps for HR professionals—mapping people development advancement and organizational leadership pathways. 🎯🎯 People strategy for HR career advancement.`,
+    detailedDescription: `Human resources careers require strategic navigation of complex people, organizational, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your HR experience, people development expertise, and organizational leadership aspirations to map clear routes in talent management, organizational development, HR leadership, or Chief People Officer positions.<br/><br/>Whether you're advancing from HR coordinator to HR manager, pursuing people leadership roles, or aiming for CHRO positions, our roadmaps identify key certifications like SHRM, PHR, and leadership development opportunities that will accelerate your HR career growth.<br/><br/>Our human resources career roadmaps emphasize both people expertise and strategic leadership, helping you navigate from individual contributor to executive leadership while maintaining HR credibility and maximizing your impact on organizational culture and people success.`,
+  },
+  'fmcg-retail': {
+    title: 'FMCG & Retail Career Roadmap',
+    description: `<strong style="color: #2563eb;">Stock your career future with market-ready planning! Let our Career Roadmap service retail your potential for consumer leadership success! 🛒🏪</strong><br/><br/>Our consumer-focused strategists create compelling career roadmaps for FMCG and retail professionals—mapping commercial advancement and retail leadership pathways. 📊🎯 Consumer strategy for retail career marketing.`,
+    detailedDescription: `FMCG and retail careers require strategic navigation of complex consumer, commercial, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your retail experience, consumer insights, and commercial leadership aspirations to map clear routes in brand management, retail operations, merchandising leadership, or retail executive positions.<br/><br/>Whether you're advancing from sales associate to store manager, pursuing brand leadership roles, or aiming for Chief Commercial Officer positions, our roadmaps identify key certifications, consumer insights training, and leadership development opportunities that will accelerate your retail career growth.<br/><br/>Our FMCG and retail career roadmaps emphasize both consumer understanding and commercial leadership, helping you navigate from individual contributor to executive leadership while maintaining retail credibility and maximizing your impact on consumer satisfaction and business success.`,
+  },
+  'legal-compliance': {
+    title: 'Legal & Compliance Career Roadmap',
+    description: `<strong style="color: #2563eb;">Build compelling career cases with legal planning! Let our Career Roadmap service advocate for your path to legal leadership excellence! ⚖️📋</strong><br/><br/>Our legally-focused strategists create authoritative career roadmaps for legal and compliance professionals—mapping legal advancement and regulatory leadership pathways. 🏛️🎯 Legal strategy for compliance career advocacy.`,
+    detailedDescription: `Legal and compliance careers require strategic navigation of complex legal, regulatory, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your legal experience, compliance expertise, and leadership aspirations to map clear routes in legal practice, compliance management, regulatory leadership, or legal executive positions.<br/><br/>Whether you're advancing from paralegal to attorney, pursuing compliance leadership roles, or aiming for General Counsel positions, our roadmaps identify key certifications, bar requirements, and leadership development opportunities that will accelerate your legal career growth.<br/><br/>Our legal and compliance career roadmaps emphasize both legal expertise and strategic leadership, helping you navigate from individual contributor to executive leadership while maintaining legal credibility and maximizing your impact on organizational compliance and legal success.`,
+  },
+  'public-sector-government': {
+    title: 'Public Sector & Government Career Roadmap',
+    description: `<strong style="color: #2563eb;">Serve career distinction with public sector planning! Let our Career Roadmap service govern your path to public administration excellence! 🏛️🌟</strong><br/><br/>Our public service-focused strategists create impactful career roadmaps for government professionals—mapping public service advancement and civic leadership pathways. 📋🎯 Public strategy for government career service.`,
+    detailedDescription: `Public sector and government careers require strategic navigation of complex policy, administrative, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your public service experience, policy expertise, and civic leadership aspirations to map clear routes in public administration, policy development, government leadership, or public sector executive positions.<br/><br/>Whether you're advancing from public administrator to department manager, pursuing policy leadership roles, or aiming for Director positions, our roadmaps identify key certifications, policy training, and leadership development opportunities that will accelerate your public sector career growth.<br/><br/>Our public sector and government career roadmaps emphasize both public service excellence and administrative leadership, helping you navigate from individual contributor to executive leadership while maintaining public trust and maximizing your impact on community service and civic success.`,
+  },
+  'chemicals-materials': {
+    title: 'Chemicals & Materials Career Roadmap',
+    description: `<strong style="color: #2563eb;">Formulate career success with scientific planning! Let our Career Roadmap service engineer compelling advancement paths for chemistry excellence! ⚗️🧪</strong><br/><br/>Our science-focused strategists create precise career roadmaps for chemistry and materials professionals—mapping scientific advancement and research leadership pathways. 🔬🎯 Scientific strategy for chemical career formulation.`,
+    detailedDescription: `Chemicals and materials careers require strategic navigation of complex scientific, technical, and leadership pathways. Our Career Roadmap service creates personalized advancement plans considering your scientific expertise, research experience, and leadership aspirations to map clear routes in chemical research, materials development, process engineering, or scientific executive positions.<br/><br/>Whether you're advancing from research chemist to team leader, pursuing materials leadership roles, or aiming for Chief Scientific Officer positions, our roadmaps identify key certifications, technical specializations, and leadership development opportunities that will accelerate your scientific career growth.<br/><br/>Our chemicals and materials career roadmaps emphasize both scientific excellence and research leadership, helping you navigate from individual contributor to executive leadership while maintaining scientific credibility and maximizing your impact on innovation and technological advancement.`,
   },
 }
 
 const CareerRoadmapPageContent = () => {
   const searchParams = useSearchParams()
-  const industry = searchParams.get('industry') || 'information-technology'
+  const industry = searchParams.get('industry')
 
   const content =
-    industryContent[industry as keyof typeof industryContent] ||
-    industryContent['information-technology']
+    industry && industryContent[industry as keyof typeof industryContent]
 
-  // Create modified service data with industry-specific content
   const serviceData = {
     ...servicesData.careerRoadmap,
     service: {
       ...servicesData.careerRoadmap.service,
-      title: content.title,
-      description: content.description,
-      detailedDescription: content.detailedDescription,
+      ...(content && {
+        description: content.description,
+        detailedDescription: content.detailedDescription,
+      }),
     },
   }
 
