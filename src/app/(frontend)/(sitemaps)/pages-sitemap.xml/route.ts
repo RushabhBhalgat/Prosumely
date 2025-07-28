@@ -3,6 +3,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
 import { getStaticRoutes } from '@/utilities/getStaticRoutes'
+import { getIndustryRoutes } from '@/utilities/getIndustryRoutes'
 
 const getPagesSitemap = unstable_cache(
   async () => {
@@ -39,6 +40,13 @@ const getPagesSitemap = unstable_cache(
       lastmod: dateFallback,
     }))
 
+    // Get industry-specific routes
+    const industryRoutes = getIndustryRoutes()
+    const industrySitemap = industryRoutes.map((route) => ({
+      loc: `${SITE_URL}${route}`,
+      lastmod: dateFallback,
+    }))
+
     // Add dynamic pages from Payload CMS
     const dynamicSitemap = results.docs
       ? results.docs
@@ -52,7 +60,7 @@ const getPagesSitemap = unstable_cache(
       : []
 
     // Combine and deduplicate
-    const allSitemaps = [...staticSitemap, ...dynamicSitemap]
+    const allSitemaps = [...staticSitemap, ...industrySitemap, ...dynamicSitemap]
     const uniqueSitemaps = allSitemaps.filter(
       (sitemap, index, self) => index === self.findIndex((s) => s.loc === sitemap.loc),
     )
