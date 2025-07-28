@@ -17,6 +17,7 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
 
       revalidatePath(path)
       revalidateTag('posts-sitemap')
+      revalidateTag('industry-sitemap')
     }
 
     // If the post was previously published, we need to revalidate the old path
@@ -27,6 +28,7 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
 
       revalidatePath(oldPath)
       revalidateTag('posts-sitemap')
+      revalidateTag('industry-sitemap')
     }
   }
   return doc

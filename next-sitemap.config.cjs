@@ -20,6 +20,7 @@ module.exports = {
   exclude: [
     '/posts-sitemap.xml',
     '/pages-sitemap.xml',
+    '/industry-sitemap.xml',
     '/admin/*',
     '/api/*',
     '/_next/*',
@@ -38,7 +39,7 @@ module.exports = {
     additionalSitemaps: [
       `${SITE_URL}/pages-sitemap.xml`,
       `${SITE_URL}/posts-sitemap.xml`,
-      `${SITE_URL}/sitemap-0.xml`,
+      `${SITE_URL}/industry-sitemap.xml`,
     ],
   },
   transform: async (config, path) => {
