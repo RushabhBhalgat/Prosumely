@@ -15,6 +15,9 @@ export const HeaderClient: React.FC<{
   data: HeaderType
 }> = ({ data }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileCareerToolsOpen, setMobileCareerToolsOpen] = useState(false)
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const { navItems } = data || {}
   const { setHeaderTheme } = useHeaderTheme()
 
@@ -34,6 +37,15 @@ export const HeaderClient: React.FC<{
     // Cleanup function to reset overflow when component unmounts
     return () => {
       document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
+
+  // Close all mobile dropdowns when main menu closes
+  useEffect(() => {
+    if (!isMenuOpen) {
+      setMobileServicesOpen(false)
+      setMobileCareerToolsOpen(false)
+      setMobileResourcesOpen(false)
     }
   }, [isMenuOpen])
 
@@ -117,11 +129,12 @@ export const HeaderClient: React.FC<{
           <div className="p-4">
             <div className="flex flex-col space-y-4 pb-20">
               {/* Added bottom padding for safe scrolling */}
+
               {/* Pricing Link for mobile */}
               <div className="py-1">
                 <Link
                   href="/pricing"
-                  className="block w-full py-2 font-medium text-gray-800"
+                  className="block w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Pricing
@@ -129,10 +142,10 @@ export const HeaderClient: React.FC<{
               </div>
 
               {/* Services Dropdown for mobile */}
-              <div className="py-1">
+              <div className="py-1 border-b border-gray-100">
                 <button
-                  onClick={() => {}}
-                  className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
                 >
                   Services
                   <svg
@@ -145,47 +158,125 @@ export const HeaderClient: React.FC<{
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className={`transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`}
                   >
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
-                <div className="pl-4 flex flex-col space-y-2 mt-2">
-                  <Link
-                    href="/ats-resume-writing-service"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    ATS Resume
-                  </Link>
-                  <Link
-                    href="/executive-resume-writing-service"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Executive Resume
-                  </Link>
-                  <Link
-                    href="/jobseekers-combo-service"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Jobseeker's Combo
-                  </Link>
-                  <Link
-                    href="/project-portfolio"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Project Portfolio
-                  </Link>
-                </div>
+                {mobileServicesOpen && (
+                  <div className="pl-4 pb-2 space-y-1">
+                    <div className="mb-3">
+                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Resume Services</h4>
+                      <div className="space-y-1">
+                        <Link
+                          href="/ats-resume-writing-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          ATS Resume Writing
+                        </Link>
+                        <Link
+                          href="/executive-resume-writing-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Executive Resume Writing
+                        </Link>
+                        <Link
+                          href="/academic-cv-writing-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Academic CV Writing
+                        </Link>
+                        <Link
+                          href="/project-portfolio"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Project Portfolio
+                        </Link>
+                      </div>
+                    </div>
+                    <div className="mb-3">
+                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">
+                        Career Advancement
+                      </h4>
+                      <div className="space-y-1">
+                        <Link
+                          href="/linkedin-profile-makeover"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          LinkedIn Profile Makeover
+                        </Link>
+                        <Link
+                          href="/jobseekers-combo-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Jobseeker's Combo
+                        </Link>
+                        <Link
+                          href="/cover-letter-writing-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Cover Letter Writing
+                        </Link>
+                        <Link
+                          href="/career-roadmap-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Career Roadmap
+                        </Link>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">
+                        Additional Services
+                      </h4>
+                      <div className="space-y-1">
+                        <Link
+                          href="/interview-coaching-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Interview Coaching
+                        </Link>
+                        <Link
+                          href="/sop-writing-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          SOP Writing
+                        </Link>
+                        <Link
+                          href="/membership-application-service"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Membership Application
+                        </Link>
+                        <Link
+                          href="/free-resume-review"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Free Resume Review
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Career Tools Dropdown for mobile */}
-              <div className="py-1">
+              <div className="py-1 border-b border-gray-100">
                 <button
-                  onClick={() => {}}
-                  className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
+                  onClick={() => setMobileCareerToolsOpen(!mobileCareerToolsOpen)}
+                  className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
                 >
                   Career Tools
                   <svg
@@ -198,49 +289,67 @@ export const HeaderClient: React.FC<{
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className={`transition-transform duration-200 ${mobileCareerToolsOpen ? 'rotate-180' : ''}`}
                   >
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
-                <div className="pl-4 flex flex-col space-y-2 mt-2">
-                  <Link
-                    href="/free-resume-review"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Free Resume Review
-                  </Link>
-                  {/* Tools coming soon 
-                <Link
-                  href="/tools/interview-simulator"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Interview Simulator
-                </Link>
-                <Link
-                  href="/tools/salary-calculator"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Salary Calculator
-                </Link>
-                <Link
-                  href="/tools/career-path-planner"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Career Path Planner
-                </Link>
-                */}
-                </div>
+                {mobileCareerToolsOpen && (
+                  <div className="pl-4 pb-2 space-y-1">
+                    <div className="mb-3">
+                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Resume Tools</h4>
+                      <div className="space-y-1">
+                        <Link
+                          href="/career-tools/job-description-keyword-finder"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Job Description Keyword Finder
+                        </Link>
+                        <Link
+                          href="/tools/resume-analyzer"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Resume Analyzer
+                        </Link>
+                        <Link
+                          href="/tools/resume-templates"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Resume Templates
+                        </Link>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Interview Prep</h4>
+                      <div className="space-y-1">
+                        <Link
+                          href="/tools/interview-simulator"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Interview Simulator
+                        </Link>
+                        <Link
+                          href="/tools/question-library"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Question Library
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Resources Dropdown for mobile */}
-              <div className="py-1">
+              <div className="py-1 border-b border-gray-100">
                 <button
-                  onClick={() => {}}
-                  className="flex items-center justify-between w-full py-2 font-medium text-gray-800"
+                  onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
+                  className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
                 >
                   Resources
                   <svg
@@ -253,71 +362,77 @@ export const HeaderClient: React.FC<{
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    className={`transition-transform duration-200 ${mobileResourcesOpen ? 'rotate-180' : ''}`}
                   >
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
-                <div className="pl-4 flex flex-col space-y-2 mt-2">
-                  <Link
-                    href="/impact-stories"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Impact Stories
-                  </Link>
-                  <Link
-                    href="/posts"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    href="/newsroom"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Newsroom
-                  </Link>
-                  <Link
-                    href="/testimonials"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Testimonials
-                  </Link>
-                  <Link
-                    href="/ebooks"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Ebooks
-                  </Link>
-
-                  <Link
-                    href="/events"
-                    className="py-1 text-gray-700"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    Upcoming Events
-                  </Link>
-                  {/* Coming soon pages
-                <Link
-                  href="/social-media"
-                  className="py-1 text-gray-700"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Social Media
-                </Link>
-                */}
-                </div>
+                {mobileResourcesOpen && (
+                  <div className="pl-4 pb-2 space-y-1">
+                    <div className="mb-3">
+                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Learn & Grow</h4>
+                      <div className="space-y-1">
+                        <Link
+                          href="/impact-stories"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Impact Stories
+                        </Link>
+                        <Link
+                          href="/posts"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Blog
+                        </Link>
+                        <Link
+                          href="/ebooks"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Ebooks
+                        </Link>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Stay Updated</h4>
+                      <div className="space-y-1">
+                        <Link
+                          href="/newsroom"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Newsroom
+                        </Link>
+                        <Link
+                          href="/events"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Events
+                        </Link>
+                        <Link
+                          href="/testimonials"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          Testimonials
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Regular nav items from CMS */}
               {navItems?.map(({ link }, i) => (
                 <div key={i} className="py-1">
                   <div onClick={() => setIsMenuOpen(false)}>
-                    <CMSLink {...link} />
+                    <CMSLink
+                      {...link}
+                      className="block w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
+                    />
                   </div>
                 </div>
               ))}
