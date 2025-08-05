@@ -1,0 +1,213 @@
+/**
+ * MongoDB-based Rate Limiter using Payload Collections
+ * Production-ready rate limiting with persistent database storage
+ */
+
+import { NextRequest } from 'next/server'
+import { getPayload } from 'payload'
+import config from '@/payload.config'
+
+interface RateLimitConfig {
+  free: { requests: number; windowMs: number }
+  burst: { requests: number; windowMs: number }
+  minute: { requests: number; windowMs: number }
+}
+
+export class MongoRateLimiter {
+  private payload: any = null
+  private readonly config: RateLimitConfig = {
+    free: { requests: 5, windowMs: 60 * 60 * 1000 }, // 5 requests per hour
+    burst: { requests: 2, windowMs: 10 * 1000 }, // 2 requests per 10 seconds
+    minute: { requests: 10, windowMs: 60 * 1000 }, // 10 requests per minute
+  }
+
+  private async getPayloadInstance() {
+    if (!this.payload) {
+      try {
+        this.payload = await getPayload({ config })
+      } catch (error) {
+        console.error('Failed to initialize Payload for rate limiting:', error)
+        throw error
+      }
+    }
+    return this.payload
+  }
+
+  private getClientIP(request: NextRequest): string {
+    // Check for various IP headers in order of preference
+    const headers = [
+      'cf-connecting-ip', // Cloudflare
+      'x-client-ip', // Load balancers
+      'x-real-ip', // Nginx
+      'x-forwarded-for', // Standard proxy header
+    ]
+
+    for (const header of headers) {
+      const value = request.headers.get(header)
+      if (value) {
+        // x-forwarded-for can contain multiple IPs, get the first one
+        const firstIP = value.split(',')[0]?.trim()
+        if (firstIP && firstIP !== 'unknown') {
+          return firstIP
+        }
+      }
+    }
+
+    // For localhost development, use a default IP
+    if (process.env.NODE_ENV === 'development') {
+      return '127.0.0.1'
+    }
+
+    return 'unknown'
+  }
+
+  async checkRateLimit(
+    request: NextRequest,
+    endpoint: string = '/api/keyword-extract',
+  ): Promise<{
+    allowed: boolean
+    remaining: number
+    resetTime: Date
+    message?: string
+    retryAfter?: number
+    tier?: string
+  }> {
+    try {
+      const payload = await this.getPayloadInstance()
+      const ip = this.getClientIP(request)
+      const now = new Date()
+
+      // Check all tiers (burst is most restrictive, then minute, then free)
+      const tiers = ['burst', 'minute', 'free'] as const
+
+      for (const tier of tiers) {
+        const tierConfig = this.config[tier]
+
+        // Find existing rate limit record for this IP, endpoint, and tier
+        const rateLimitQuery = {
+          identifier: { equals: ip },
+          endpoint: { equals: endpoint },
+          tier: { equals: tier },
+        }
+
+        try {
+          // First, find any existing record for this IP/endpoint/tier combo
+          const rateLimitDocs = await payload.find({
+            collection: 'rate-limits',
+            where: rateLimitQuery,
+            limit: 1,
+          })
+
+          let rateLimitDoc = rateLimitDocs.docs[0]
+
+          if (!rateLimitDoc || new Date(rateLimitDoc.resetTime) <= now) {
+            // Create new rate limit record or reset expired one
+            if (rateLimitDoc) {
+              // Update existing expired record
+              rateLimitDoc = await payload.update({
+                collection: 'rate-limits',
+                id: rateLimitDoc.id,
+                data: {
+                  count: 1,
+                  resetTime: new Date(now.getTime() + tierConfig.windowMs),
+                  firstRequest: now,
+                  lastRequest: now,
+                },
+              })
+            } else {
+              // Create completely new record
+              rateLimitDoc = await payload.create({
+                collection: 'rate-limits',
+                data: {
+                  identifier: ip,
+                  endpoint,
+                  tier,
+                  count: 1,
+                  resetTime: new Date(now.getTime() + tierConfig.windowMs),
+                  firstRequest: now,
+                  lastRequest: now,
+                },
+              })
+            }
+            // This is the first request in the window, so it's allowed
+            continue
+          }
+
+          // Check if we're still within the rate limit
+          if (rateLimitDoc.count >= tierConfig.requests) {
+            const resetTime = new Date(rateLimitDoc.resetTime)
+            const retryAfter = Math.ceil((resetTime.getTime() - now.getTime()) / 1000)
+
+            return {
+              allowed: false,
+              remaining: 0,
+              resetTime,
+              retryAfter,
+              tier,
+              message: `Rate limit exceeded for ${tier} tier. ${rateLimitDoc.count}/${tierConfig.requests} requests used.`,
+            }
+          }
+
+          // Update the count
+          await payload.update({
+            collection: 'rate-limits',
+            id: rateLimitDoc.id,
+            data: {
+              count: rateLimitDoc.count + 1,
+              lastRequest: now,
+            },
+          })
+        } catch (dbError) {
+          console.error(`Rate limiting database error for tier ${tier}:`, dbError)
+          // Continue to next tier or fail open
+          continue
+        }
+      }
+
+      // If we get here, all tiers are within limits
+      return {
+        allowed: true,
+        remaining: Math.min(
+          this.config.free.requests - 1,
+          this.config.minute.requests - 1,
+          this.config.burst.requests - 1,
+        ),
+        resetTime: new Date(now.getTime() + this.config.free.windowMs),
+        tier: 'allowed',
+      }
+    } catch (error) {
+      console.error('Rate limiting error:', error)
+
+      // Fail open - allow request if rate limiting fails
+      return {
+        allowed: true,
+        remaining: this.config.free.requests - 1,
+        resetTime: new Date(Date.now() + this.config.free.windowMs),
+        message: 'Rate limiting service temporarily unavailable',
+      }
+    }
+  }
+
+  async cleanup(): Promise<number> {
+    try {
+      const payload = await this.getPayloadInstance()
+      const now = new Date()
+
+      // Clean up old rate limit records (older than their reset time)
+      const result = await payload.delete({
+        collection: 'rate-limits',
+        where: {
+          resetTime: { less_than: now.toISOString() },
+        },
+      })
+
+      return result.docs?.length || 0
+    } catch (error) {
+      console.error('Error during cleanup:', error)
+      return 0
+    }
+  }
+}
+
+// Export singleton instance
+export const mongoRateLimiter = new MongoRateLimiter()
