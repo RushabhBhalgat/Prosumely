@@ -9,6 +9,110 @@
     }
   }
 
+  &__analytics-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: base(1.5);
+    margin-bottom: base(1.5);
+
+    & h3 {
+      color: #1e293b;
+      margin: 0 0 base(0.5) 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    & p {
+      color: #64748b;
+      margin: 0 0 base(1) 0;
+      font-size: 0.95rem;
+    }
+  }
+
+  &__analytics-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: base(0.75);
+    margin-bottom: base(1);
+  }
+
+  &__quick-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: base(1);
+    padding-top: base(1);
+    border-top: 1px solid #e2e8f0;
+  }
+
+  &__stat {
+    font-size: 0.875rem;
+    color: #475569;
+    padding: base(0.5) base(0.75);
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+  }
+
+  &__analytics-button {
+    display: flex;
+    flex-direction: column;
+    padding: base(1);
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background: white;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    &.primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      color: white;
+      border-color: #3b82f6;
+      font-weight: 600;
+
+      & span {
+        color: #bfdbfe;
+      }
+
+      &:hover {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      }
+    }
+
+    &.secondary {
+      color: #374151;
+
+      &:hover {
+        border-color: #3b82f6;
+        background: #f8fafc;
+      }
+
+      & span {
+        color: #6b7280;
+      }
+    }
+
+    & span {
+      font-size: 0.875rem;
+      margin-top: 4px;
+      font-weight: normal;
+    }
+  }
+
+  &__divider {
+    border: none;
+    height: 1px;
+    background: #e2e8f0;
+    margin: base(1.5) 0;
+  }
+
   &__instructions {
     list-style: decimal;
     margin-bottom: base(0.5);
