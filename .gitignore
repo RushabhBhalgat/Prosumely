@@ -6,6 +6,9 @@ node_modules
 .next
 .vercel
 
+# Rate limiting data file
+.rate-limit-data.json
+
 # Payload default media upload directory
 public/media/
 

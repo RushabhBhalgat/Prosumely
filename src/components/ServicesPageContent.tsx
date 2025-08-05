@@ -404,7 +404,7 @@ const services = [
 
 const ProfilesSection = ({
   profiles,
-  industryName,
+  industryName: _industryName,
 }: {
   profiles: string[]
   industryName?: string
