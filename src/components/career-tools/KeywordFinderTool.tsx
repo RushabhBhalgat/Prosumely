@@ -6,6 +6,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import Link from 'next/link'
 
 interface Keywords {
   actionVerbs: string[]
@@ -326,12 +327,12 @@ Example: We're looking for a skilled Software Engineer with experience in React,
                             <li>Save your job description and come back later</li>
                             <li>
                               Consider our{' '}
-                              <a
+                              <Link
                                 href="/ats-resume-writing-service"
                                 className="text-amber-600 underline hover:text-amber-500"
                               >
                                 professional resume writing service
-                              </a>
+                              </Link>
                               .
                             </li>
                           </ul>
@@ -499,7 +500,7 @@ Example: We're looking for a skilled Software Engineer with experience in React,
                   can seamlessly integrate these ATS-friendly keywords into your resume while
                   maintaining natural flow and readability.
                 </p>
-                <a
+                <Link
                   href="/ats-resume-writing-service"
                   className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-200"
                 >
@@ -517,7 +518,7 @@ Example: We're looking for a skilled Software Engineer with experience in React,
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
 

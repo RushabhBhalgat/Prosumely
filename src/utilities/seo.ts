@@ -105,7 +105,7 @@ export function generateSEOMeta(config: SEOConfig): Metadata {
 // Utility to generate structured data for different page types
 export function generateStructuredData(config: {
   type: 'Organization' | 'Article' | 'Service' | 'FAQPage' | 'BreadcrumbList'
-  data: any
+  data: Record<string, unknown>
 }) {
   const baseUrl = getServerSideURL()
 
