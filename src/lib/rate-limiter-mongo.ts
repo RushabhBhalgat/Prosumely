@@ -4,7 +4,7 @@
  */
 
 import { NextRequest } from 'next/server'
-import { getPayload } from 'payload'
+import { getPayload, type BasePayload } from 'payload'
 import config from '@/payload.config'
 
 interface RateLimitConfig {
@@ -14,7 +14,7 @@ interface RateLimitConfig {
 }
 
 export class MongoRateLimiter {
-  private payload: any = null
+  private payload: BasePayload | null = null
   private readonly config: RateLimitConfig = {
     free: { requests: 5, windowMs: 60 * 60 * 1000 }, // 5 requests per hour
     burst: { requests: 2, windowMs: 10 * 1000 }, // 2 requests per 10 seconds
@@ -104,16 +104,17 @@ export class MongoRateLimiter {
             // Create new rate limit record or reset expired one
             if (rateLimitDoc) {
               // Update existing expired record
-              rateLimitDoc = await payload.update({
+              await payload.update({
                 collection: 'rate-limits',
                 id: rateLimitDoc.id,
                 data: {
                   count: 1,
-                  resetTime: new Date(now.getTime() + tierConfig.windowMs),
-                  firstRequest: now,
-                  lastRequest: now,
+                  resetTime: new Date(now.getTime() + tierConfig.windowMs).toISOString(),
                 },
               })
+              // Update rateLimitDoc for later use
+              rateLimitDoc.count = 1
+              rateLimitDoc.resetTime = new Date(now.getTime() + tierConfig.windowMs).toISOString()
             } else {
               // Create completely new record
               rateLimitDoc = await payload.create({
@@ -123,9 +124,7 @@ export class MongoRateLimiter {
                   endpoint,
                   tier,
                   count: 1,
-                  resetTime: new Date(now.getTime() + tierConfig.windowMs),
-                  firstRequest: now,
-                  lastRequest: now,
+                  resetTime: new Date(now.getTime() + tierConfig.windowMs).toISOString(),
                 },
               })
             }
@@ -154,7 +153,6 @@ export class MongoRateLimiter {
             id: rateLimitDoc.id,
             data: {
               count: rateLimitDoc.count + 1,
-              lastRequest: now,
             },
           })
         } catch (dbError) {
