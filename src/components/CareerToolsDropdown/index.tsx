@@ -52,6 +52,21 @@ export function CareerToolsDropdown() {
             </h3>
 
             <Link
+              href="/career-tools/job-description-keyword-finder"
+              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex flex-col">
+                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
+                  Keyword Finder
+                </span>
+                <span className="text-xs text-gray-500 mt-1">
+                  Extract keywords from job descriptions
+                </span>
+              </div>
+            </Link>
+
+            <Link
               href="/tools/resume-analyzer"
               className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
               onClick={() => setIsOpen(false)}
