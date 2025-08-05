@@ -21,7 +21,7 @@ export interface SecurityViolation {
   userAgent: string
   timestamp: Date
   severity: 'low' | 'medium' | 'high'
-  details: Record<string, any>
+  details: Record<string, unknown>
 }
 
 class SecurityManager {
