@@ -12,6 +12,14 @@ export const Categories: CollectionConfig = {
     read: anyone,
     update: authenticated,
   },
+  indexes: [
+    {
+      fields: ['slug'],
+    },
+    {
+      fields: ['title'],
+    },
+  ],
   admin: {
     useAsTitle: 'title',
   },

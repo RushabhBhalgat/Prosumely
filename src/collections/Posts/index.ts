@@ -35,6 +35,31 @@ export const Posts: CollectionConfig<'posts'> = {
     read: authenticatedOrPublished,
     update: authenticated,
   },
+  indexes: [
+    // Single field indexes for common queries
+    {
+      fields: ['slug'],
+    },
+    {
+      fields: ['_status'],
+    },
+    {
+      fields: ['publishedAt'],
+    },
+    // Compound indexes for complex queries
+    {
+      fields: ['_status', 'publishedAt'],
+    },
+    {
+      fields: ['_status', 'slug'],
+    },
+    {
+      fields: ['categories'],
+    },
+    {
+      fields: ['updatedAt'],
+    },
+  ],
   // This config controls what's populated by default when a post is referenced
   // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
   // Type safe if the collection slug generic is passed to `CollectionConfig` - `CollectionConfig<'posts'>

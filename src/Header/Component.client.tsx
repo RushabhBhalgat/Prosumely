@@ -59,6 +59,7 @@ export const HeaderClient: React.FC<{
             alt="Prosumely Logo"
             width={150}
             height={40}
+            sizes="150px"
             priority
           />
         </Link>

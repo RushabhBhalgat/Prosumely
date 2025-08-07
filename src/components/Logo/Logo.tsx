@@ -22,6 +22,7 @@ export const Logo = (props: Props) => {
       loading={loading}
       fetchPriority={priority}
       decoding="async"
+      sizes="(max-width: 768px) 150px, 193px"
       className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
       src="/prosumely-logo-lg.png"
     />

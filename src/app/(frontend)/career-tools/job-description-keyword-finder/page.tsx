@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: 'https://prosumely.com/career-tools/job-description-keyword-finder',
     images: [
       {
-        url: '/prosumely-career-tools-keyword-finder-og.jpg', // You'll need to create this image
+        url: '/prosumely-ats-resume-writing-opengraph.jpg',
         width: 1200,
         height: 630,
         alt: 'Prosumely Job Description Keyword Finder Tool',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: 'Free Job Description Keyword Finder - Beat ATS',
     description:
       'Extract key keywords from job descriptions to optimize your resume for ATS systems.',
-    images: ['/prosumely-career-tools-keyword-finder-og.jpg'],
+    images: ['/prosumely-ats-resume-writing-opengraph.jpg'],
   },
   alternates: {
     canonical: 'https://prosumely.com/career-tools/job-description-keyword-finder',

@@ -74,6 +74,7 @@ export default function CareerComebackArticle() {
             alt="Professional career comeback"
             width={900}
             height={256}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 900px"
             className="rounded-xl shadow-lg w-full h-64 object-cover mb-6"
             priority
           />

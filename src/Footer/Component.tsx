@@ -416,7 +416,7 @@ export async function Footer() {
           <p className="text-gray-500 text-xs">
             &copy; {currentYear} Prosumely. All rights reserved.
           </p>
-          
+
           <div className="flex items-center space-x-4 text-xs text-gray-500 mt-4 md:mt-0">
             <Link
               href="/privacy-policy"
@@ -436,13 +436,18 @@ export async function Footer() {
             >
               Cancellation & Refund
             </Link>
-            
+
             {/* Payment Badge */}
-            <a href="https://razorpay.com/" target="_blank" rel="noopener noreferrer" className="ml-4">
-              <img 
-                referrerPolicy="origin" 
-                src="https://badges.razorpay.com/badge-dark.png" 
-                style={{ height: '45px', width: '113px' }} 
+            <a
+              href="https://razorpay.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-4"
+            >
+              <img
+                referrerPolicy="origin"
+                src="https://badges.razorpay.com/badge-dark.png"
+                style={{ height: '45px', width: '113px' }}
                 alt="Razorpay | Payment Gateway | Neobank"
                 className="hover:opacity-90 transition-opacity duration-200"
               />

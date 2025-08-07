@@ -22,6 +22,17 @@ export const Media: CollectionConfig = {
     read: anyone,
     update: authenticated,
   },
+  indexes: [
+    {
+      fields: ['filename'],
+    },
+    {
+      fields: ['mimeType'],
+    },
+    {
+      fields: ['alt'],
+    },
+  ],
   fields: [
     {
       name: 'alt',

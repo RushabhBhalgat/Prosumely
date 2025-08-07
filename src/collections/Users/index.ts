@@ -11,6 +11,14 @@ export const Users: CollectionConfig = {
     read: authenticated,
     update: authenticated,
   },
+  indexes: [
+    {
+      fields: ['email'],
+    },
+    {
+      fields: ['name'],
+    },
+  ],
   admin: {
     defaultColumns: ['name', 'email'],
     useAsTitle: 'name',
