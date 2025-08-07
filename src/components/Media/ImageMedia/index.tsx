@@ -11,7 +11,7 @@ import type { Props as MediaProps } from '../types'
 import { cssVariables } from '@/cssVariables'
 import { getMediaUrl } from '@/utilities/getMediaUrl'
 
-const { breakpoints } = cssVariables
+const { breakpoints: _breakpoints } = cssVariables
 
 // A base64 encoded image to use as a placeholder while the image is loading
 const placeholderBlur =

@@ -1,6 +1,5 @@
 import React from 'react'
 import { allFAQs } from '@/data/faqData'
-import { PageHeading } from '@/components/SEO/PageHeading'
 import PageClient from './page.client'
 import FAQPageContent from './FAQPageContent'
 

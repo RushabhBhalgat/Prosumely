@@ -6,8 +6,8 @@ import { Check } from 'lucide-react' // Changed from CheckIcon to Check
 let DOMPurify: any = null
 const loadDOMPurify = async () => {
   if (!DOMPurify && typeof window !== 'undefined') {
-    const module = await import('dompurify')
-    DOMPurify = module.default
+    const domPurifyModule = await import('dompurify')
+    DOMPurify = domPurifyModule.default
   }
   return DOMPurify
 }

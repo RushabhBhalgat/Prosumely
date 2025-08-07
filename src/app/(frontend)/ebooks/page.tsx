@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { PageHeading } from '@/components/SEO/PageHeading'
 import EbooksClient from './EbooksClient'
 
 export const metadata: Metadata = {

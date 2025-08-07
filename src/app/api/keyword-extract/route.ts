@@ -26,12 +26,12 @@ export async function OPTIONS(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   const startTime = Date.now()
-  let success = false
-  let rateLimited = false
-  let securityViolations: string[] = []
+  let _success = false
+  let _rateLimited = false
+  let _securityViolations: string[] = []
   let errorInfo: { type: string; message: string } | null = null
   let cleanJobDescription = ''
-  let extractedKeywords: any = null
+  let _extractedKeywords: any = null
 
   try {
     console.log('🚀 Enhanced keyword extraction API called with MongoDB storage')
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     // Step 1: Security validation
     const securityResult = await securityManager.validateRequest(request)
     if (!securityResult.valid) {
-      securityViolations = securityResult.violations.map((v) => v.type)
+      _securityViolations = securityResult.violations.map((v) => v.type)
 
       return (
         securityResult.response ||
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
     // Step 2: Rate limiting with MongoDB
     const rateLimitResult = await mongoRateLimiter.checkRateLimit(request)
     if (!rateLimitResult.allowed) {
-      rateLimited = true
+      _rateLimited = true
       errorInfo = {
         type: 'RATE_LIMIT_EXCEEDED',
         message: rateLimitResult.message || 'Rate limit exceeded',
@@ -237,8 +237,8 @@ export async function POST(request: NextRequest) {
       }
     })
 
-    extractedKeywords = keywords
-    success = true
+    _extractedKeywords = keywords
+    _success = true
 
     console.log('✅ Keywords extracted successfully:', {
       actionVerbs: keywords.actionVerbs.length,
