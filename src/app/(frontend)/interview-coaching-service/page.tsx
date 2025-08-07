@@ -1,11 +1,29 @@
-import InterviewCoachingPageContent from '../../../components/industry-content/InterviewCoachingPageContent'
+import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
 import { PageHeading } from '@/components/SEO/PageHeading'
+
+// Dynamic import for large content component
+const InterviewCoachingPageContent = dynamic(
+  () => import('../../../components/industry-content/InterviewCoachingPageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
+
 const InterviewCoachingPage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">Interview Coaching Service</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">Interview Coaching Service</PageHeading>Loading...
+        </div>
+      }
+    >
       <InterviewCoachingPageContent />
     </Suspense>
   )

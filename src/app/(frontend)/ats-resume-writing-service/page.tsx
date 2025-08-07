@@ -2,12 +2,29 @@ import ServiceProductPage from '../../../components/ServiceProductPage'
 import { servicesData } from '../../../data/servicesData'
 import { PageHeading } from '@/components/SEO/PageHeading'
 import { Suspense } from 'react'
-import ATSResumePageContent from '../../../components/industry-content/ATSResumePageContent'
+import dynamic from 'next/dynamic'
+
+// Dynamic import for large content component
+const ATSResumePageContent = dynamic(
+  () => import('../../../components/industry-content/ATSResumePageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
 
 const ATSResumePage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">ATS Resume Writing Service</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">ATS Resume Writing Service</PageHeading>Loading...
+        </div>
+      }
+    >
       <ATSResumePageContent />
     </Suspense>
   )

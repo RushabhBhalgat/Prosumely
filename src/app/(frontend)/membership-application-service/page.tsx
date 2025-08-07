@@ -1,11 +1,29 @@
-import MembershipApplicationPageContent from '../../../components/industry-content/MembershipApplicationPageContent'
+import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
 import { PageHeading } from '@/components/SEO/PageHeading'
+
+// Dynamic import for large content component
+const MembershipApplicationPageContent = dynamic(
+  () => import('../../../components/industry-content/MembershipApplicationPageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
+
 const MembershipApplicationPage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">Membership Application Service</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">Membership Application Service</PageHeading>Loading...
+        </div>
+      }
+    >
       <MembershipApplicationPageContent />
     </Suspense>
   )

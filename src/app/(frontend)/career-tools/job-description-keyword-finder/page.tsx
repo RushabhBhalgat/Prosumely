@@ -1,6 +1,16 @@
 import { Metadata } from 'next'
-import KeywordFinderTool from '@/components/career-tools/KeywordFinderTool'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
+
+// Dynamic import for KeywordFinderTool with loading state
+const KeywordFinderTool = dynamic(() => import('@/components/career-tools/KeywordFinderTool'), {
+  loading: () => (
+    <div className="min-h-96 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+    </div>
+  ),
+  ssr: false, // This tool is interactive and doesn't need SSR
+})
 
 export const metadata: Metadata = {
   title: 'Free Job Description Keyword Finder - Beat ATS | Prosumely',

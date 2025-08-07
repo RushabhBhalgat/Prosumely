@@ -1,11 +1,28 @@
 import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import { PageHeading } from '@/components/SEO/PageHeading'
-import LinkedInProfilePageContent from '../../../components/industry-content/LinkedInProfilePageContent'
+
+// Dynamic import for large content component
+const LinkedInProfilePageContent = dynamic(
+  () => import('../../../components/industry-content/LinkedInProfilePageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
 
 const LinkedInProfilePage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">LinkedIn Profile Optimization</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">LinkedIn Profile Optimization</PageHeading>Loading...
+        </div>
+      }
+    >
       <LinkedInProfilePageContent />
     </Suspense>
   )

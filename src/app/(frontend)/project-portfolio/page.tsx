@@ -1,11 +1,29 @@
-import ProjectPortfolioPageContent from '../../../components/industry-content/ProjectPortfolioPageContent'
+import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
 import { PageHeading } from '@/components/SEO/PageHeading'
+
+// Dynamic import for large content component
+const ProjectPortfolioPageContent = dynamic(
+  () => import('../../../components/industry-content/ProjectPortfolioPageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
+
 const ProjectPortfolioPage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">Project Portfolio Development</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">Project Portfolio Development</PageHeading>Loading...
+        </div>
+      }
+    >
       <ProjectPortfolioPageContent />
     </Suspense>
   )

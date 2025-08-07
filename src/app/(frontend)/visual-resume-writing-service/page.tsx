@@ -1,11 +1,29 @@
-import VisualResumePageContent from '../../../components/industry-content/VisualResumePageContent'
+import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
 import { PageHeading } from '@/components/SEO/PageHeading'
+
+// Dynamic import for large content component
+const VisualResumePageContent = dynamic(
+  () => import('../../../components/industry-content/VisualResumePageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
+
 const VisualResumePage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">Visual Resume Design Service</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">Visual Resume Design Service</PageHeading>Loading...
+        </div>
+      }
+    >
       <VisualResumePageContent />
     </Suspense>
   )
