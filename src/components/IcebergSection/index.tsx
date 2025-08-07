@@ -53,6 +53,7 @@ const IcebergSection = () => {
               alt="Why Choose Us Iceberg"
               width={643}
               height={700}
+              sizes="(max-width: 640px) 340px, (max-width: 768px) 400px, (max-width: 1024px) 480px, (max-width: 1280px) 520px, (max-width: 1536px) 600px, 643px"
               className="max-w-[340px] sm:max-w-[400px] md:max-w-[480px] lg:max-w-[520px] xl:max-w-[600px] 2xl:max-w-[643px] w-full h-auto rounded-xl shadow-lg object-contain"
               style={{ maxHeight: '700px' }}
               priority

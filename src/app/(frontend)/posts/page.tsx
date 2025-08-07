@@ -8,8 +8,7 @@ import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
 
-export const dynamic = 'force-static'
-export const revalidate = 600
+// Pure on-demand revalidation - relies entirely on revalidatePost hook
 
 export default async function Page() {
   const payload = await getPayload({ config: configPromise })

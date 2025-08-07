@@ -23,7 +23,7 @@ export function OptimizedImage({
   priority = false,
   className,
   sizes,
-  fallbackSrc = '/placeholder-image.jpg',
+  fallbackSrc = '/website-template-OG.webp',
   onError,
   ...props
 }: OptimizedImageProps) {
@@ -44,7 +44,9 @@ export function OptimizedImage({
     onError: handleError,
     className,
     priority,
-    sizes: sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+    sizes:
+      sizes ||
+      '(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 60vw, (max-width: 1280px) 50vw, 40vw',
     ...props,
   }
 
