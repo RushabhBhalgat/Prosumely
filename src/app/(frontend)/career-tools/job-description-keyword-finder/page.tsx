@@ -9,7 +9,6 @@ const KeywordFinderTool = dynamic(() => import('@/components/career-tools/Keywor
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
     </div>
   ),
-  ssr: false, // This tool is interactive and doesn't need SSR
 })
 
 export const metadata: Metadata = {
