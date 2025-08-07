@@ -23,8 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
       <head>
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7M3JGGZZM"></script>
+        {/* Optimized Google Analytics - load after user interaction */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -32,12 +31,43 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-Z7M3JGGZZM');
+              
+              // Load GA script only after user interaction for better performance
+              let gaLoaded = false;
+              function loadGA() {
+                if (!gaLoaded) {
+                  const script = document.createElement('script');
+                  script.async = true;
+                  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z7M3JGGZZM';
+                  document.head.appendChild(script);
+                  gaLoaded = true;
+                }
+              }
+              
+              // Load GA on first user interaction
+              ['mousedown', 'touchstart', 'scroll', 'keydown'].forEach(event => {
+                document.addEventListener(event, loadGA, { once: true, passive: true });
+              });
+              
+              // Fallback: load after 3 seconds
+              setTimeout(loadGA, 3000);
             `,
           }}
         />
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+
+        {/* Performance optimization: Resource hints */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Preload critical assets */}
+        <link rel="preload" href="/website-template-OG.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/prosumely-logo-lg.png" as="image" type="image/png" />
+
         <StructuredData />
       </head>
       <body>

@@ -1,11 +1,29 @@
-import CoverLetterWritingPageContent from '../../../components/industry-content/CoverLetterWritingPageContent'
+import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
 import { PageHeading } from '@/components/SEO/PageHeading'
+
+// Dynamic import for large content component
+const CoverLetterWritingPageContent = dynamic(
+  () => import('../../../components/industry-content/CoverLetterWritingPageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
+
 const CoverLetterPage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">Cover Letter Writing Service</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">Cover Letter Writing Service</PageHeading>Loading...
+        </div>
+      }
+    >
       <CoverLetterWritingPageContent />
     </Suspense>
   )

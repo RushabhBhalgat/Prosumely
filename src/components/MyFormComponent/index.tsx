@@ -1,7 +1,16 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
-import DOMPurify from 'dompurify' // You'll need to install this package
 import { Check } from 'lucide-react' // Changed from CheckIcon to Check
+
+// Lazy load DOMPurify for better performance
+let DOMPurify: any = null
+const loadDOMPurify = async () => {
+  if (!DOMPurify && typeof window !== 'undefined') {
+    const module = await import('dompurify')
+    DOMPurify = module.default
+  }
+  return DOMPurify
+}
 
 // Define proper TypeScript interfaces
 interface FormField {
@@ -113,8 +122,9 @@ const MyFormComponent = ({
   }
 
   // Sanitize input values
-  const sanitizeValue = (value: string): string => {
-    return DOMPurify.sanitize(value)
+  const sanitizeValue = async (value: string): Promise<string> => {
+    const purify = await loadDOMPurify()
+    return purify ? purify.sanitize(value) : value
   }
 
   // Handle form submission

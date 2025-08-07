@@ -1,11 +1,28 @@
 import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import { PageHeading } from '@/components/SEO/PageHeading'
-import ExecutiveResumePageContent from '../../../components/industry-content/ExecutiveResumePageContent'
+
+// Dynamic import for large content component
+const ExecutiveResumePageContent = dynamic(
+  () => import('../../../components/industry-content/ExecutiveResumePageContent'),
+  {
+    loading: () => (
+      <div className="min-h-96 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    ),
+  },
+)
 
 const ExecutiveResumePage = () => {
   return (
-    <Suspense fallback={<div>
-      <PageHeading as="h1">Executive Resume Writing Service</PageHeading>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div>
+          <PageHeading as="h1">Executive Resume Writing Service</PageHeading>Loading...
+        </div>
+      }
+    >
       <ExecutiveResumePageContent />
     </Suspense>
   )

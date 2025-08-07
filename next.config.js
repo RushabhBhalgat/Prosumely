@@ -36,9 +36,31 @@ const nextConfig = {
         hostname: 'localhost',
       },
     ],
+    // Add image optimization settings
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 86400, // Cache images for 24 hours
   },
   reactStrictMode: true,
   redirects,
+  // Add performance optimizations
+  experimental: {
+    optimizePackageImports: ['lucide-react', '@radix-ui/react-select'],
+  },
+  // Optimize bundle
+  webpack: (config, { isServer }) => {
+    // Optimize for client-side bundle
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      }
+    }
+    return config
+  },
+  // Add compression
+  compress: true,
+  // Optimize fonts
+  optimizeFonts: true,
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
