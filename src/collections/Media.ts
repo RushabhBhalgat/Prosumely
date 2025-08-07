@@ -24,9 +24,6 @@ export const Media: CollectionConfig = {
   },
   indexes: [
     {
-      fields: ['filename'],
-    },
-    {
       fields: ['mimeType'],
     },
     {
