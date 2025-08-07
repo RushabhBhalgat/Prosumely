@@ -14,9 +14,6 @@ export const Categories: CollectionConfig = {
   },
   indexes: [
     {
-      fields: ['slug'],
-    },
-    {
       fields: ['title'],
     },
   ],

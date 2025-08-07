@@ -36,13 +36,7 @@ export const Posts: CollectionConfig<'posts'> = {
     update: authenticated,
   },
   indexes: [
-    // Single field indexes for common queries
-    {
-      fields: ['slug'],
-    },
-    {
-      fields: ['_status'],
-    },
+    // Only define indexes that aren't automatically created by Payload
     {
       fields: ['publishedAt'],
     },
@@ -55,9 +49,6 @@ export const Posts: CollectionConfig<'posts'> = {
     },
     {
       fields: ['categories'],
-    },
-    {
-      fields: ['updatedAt'],
     },
   ],
   // This config controls what's populated by default when a post is referenced

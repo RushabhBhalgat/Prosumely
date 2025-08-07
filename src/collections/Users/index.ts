@@ -13,9 +13,6 @@ export const Users: CollectionConfig = {
   },
   indexes: [
     {
-      fields: ['email'],
-    },
-    {
       fields: ['name'],
     },
   ],

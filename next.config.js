@@ -59,8 +59,6 @@ const nextConfig = {
   },
   // Add compression
   compress: true,
-  // Optimize fonts
-  optimizeFonts: true,
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
