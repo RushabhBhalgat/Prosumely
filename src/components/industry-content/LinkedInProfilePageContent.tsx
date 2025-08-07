@@ -7,7 +7,7 @@ import { servicesData } from '@/data/servicesData'
 // Industry-specific content for LinkedIn Profile
 const industrySpecificContent = {
   'construction-industry': {
-    industrySubtitle: 'For Marketing & Sales Professionals',
+    industrySubtitle: 'For Construction Industry Professionals',
     description: `<strong style="color: #2563eb;">Transform your construction career with a LinkedIn profile that builds opportunities! Let our LinkedIn Profile Makeover service construct your path to success! 🏗️💼</strong><br/><br/>Our specialists craft powerful LinkedIn profiles tailored for construction professionals—optimized to attract recruiters, clients, and industry connections. 🚧🔗 Professional networking elevated for the construction sector.`,
     detailedDescription: `In the construction industry, your LinkedIn profile is your digital business card and professional showcase. Whether you're a Project Manager, Site Supervisor, Construction Engineer, or Skilled Tradesperson, a well-optimized LinkedIn profile can open doors to lucrative opportunities and establish you as a trusted professional in your field.<br/><br/>Our LinkedIn profile makeover service understands the unique networking dynamics of the construction industry. We craft profiles that showcase your technical expertise, safety record, project successes, and leadership capabilities in a way that resonates with construction recruiters, project owners, and industry peers.<br/><br/>From highlighting major projects and certifications to showcasing your expertise in specific construction methodologies, sustainable building practices, or project management systems, we ensure your LinkedIn profile positions you as the go-to professional in your construction specialty.`,
   },
