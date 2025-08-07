@@ -84,7 +84,7 @@ export function NavLink({
   href,
   children,
   className,
-  activeClassName,
+  activeClassName: _activeClassName,
   ...props
 }: {
   href: string

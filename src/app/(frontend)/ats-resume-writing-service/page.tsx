@@ -1,5 +1,3 @@
-import ServiceProductPage from '../../../components/ServiceProductPage'
-import { servicesData } from '../../../data/servicesData'
 import { PageHeading } from '@/components/SEO/PageHeading'
 import { Suspense } from 'react'
 import dynamic from 'next/dynamic'

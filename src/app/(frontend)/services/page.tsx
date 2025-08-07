@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import { PageHeading } from '@/components/SEO/PageHeading'
 import ServicesPageContent from '@/components/ServicesPageContent'
 
 const ServicesPage = () => {
