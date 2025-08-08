@@ -180,7 +180,7 @@ export default async function Post({ params: paramsPromise }: Args) {
                 prose-h2:text-3xl prose-h2:font-bold prose-h2:text-slate-900 prose-h2:mb-6 prose-h2:mt-12 prose-h2:first:mt-0
                 prose-h3:text-xl prose-h3:font-semibold prose-h3:text-slate-800 prose-h3:mb-4 prose-h3:mt-8
                 prose-p:text-slate-700 prose-p:leading-relaxed prose-p:mb-6
-                prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-700 hover:prose-a:underline
+                prose-a:text-blue-600 prose-a:font-medium prose-a:underline prose-a:decoration-blue-300 prose-a:decoration-2 prose-a:underline-offset-2 hover:prose-a:text-blue-700 hover:prose-a:decoration-blue-500 prose-a:transition-all prose-a:duration-200
                 prose-strong:text-slate-900 prose-strong:font-semibold
                 prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:bg-blue-50 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:my-8
                 prose-code:text-blue-700 prose-code:bg-blue-50 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:font-medium

@@ -46,7 +46,8 @@ export const MediaBlock: React.FC<Props> = (props) => {
     } else if (linkType === 'internal' && internalLink && typeof internalLink === 'object') {
       // Handle internal links to pages or posts
       const collection = internalLink.relationTo || 'pages'
-      const slug = typeof internalLink.value === 'object' ? internalLink.value.slug : internalLink.value
+      const slug =
+        typeof internalLink.value === 'object' ? internalLink.value.slug : internalLink.value
       linkUrl = collection === 'posts' ? `/posts/${slug}` : `/${slug}`
     }
   }
@@ -58,7 +59,7 @@ export const MediaBlock: React.FC<Props> = (props) => {
         {
           'hover:shadow-lg hover:scale-[1.02] cursor-pointer': enableLink && linkUrl,
         },
-        imgClassName
+        imgClassName,
       )}
       resource={media}
       src={staticImage}
