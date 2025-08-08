@@ -124,7 +124,7 @@ export default async function Post({ params: paramsPromise }: Args) {
                 )}
 
                 {/* Title */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8 leading-tight">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-8 leading-tight">
                   {post.title}
                 </h1>
 
