@@ -491,6 +491,19 @@ export interface ContentBlock {
  */
 export interface MediaBlock {
   media: string | Media;
+  enableLink?: boolean | null;
+  linkType?: ('custom' | 'internal') | null;
+  customUrl?: string | null;
+  internalLink?:
+    | ({
+        relationTo: 'pages';
+        value: string | Page;
+      } | null)
+    | ({
+        relationTo: 'posts';
+        value: string | Post;
+      } | null);
+  newTab?: boolean | null;
   id?: string | null;
   blockName?: string | null;
   blockType: 'mediaBlock';
@@ -1118,6 +1131,11 @@ export interface ContentBlockSelect<T extends boolean = true> {
  */
 export interface MediaBlockSelect<T extends boolean = true> {
   media?: T;
+  enableLink?: T;
+  linkType?: T;
+  customUrl?: T;
+  internalLink?: T;
+  newTab?: T;
   id?: T;
   blockName?: T;
 }

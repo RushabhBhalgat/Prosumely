@@ -11,6 +11,14 @@
     line-clamp: 3;
   }
 
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out forwards;
   }
@@ -25,6 +33,36 @@
 
   .animation-delay-600 {
     animation-delay: 600ms;
+  }
+
+  /* Smooth scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgb(203 213 225); /* slate-300 */
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(148 163 184); /* slate-400 */
+  }
+
+  /* Force sticky positioning */
+  .toc-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 6rem;
+    z-index: 30;
   }
 
   @keyframes fade-in-up {
@@ -42,6 +80,20 @@
 @layer base {
   :root {
     --text: rgb(31 41 55); /* gray-800 for better readability */
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* Account for sticky header */
+  }
+
+  /* Sticky positioning support */
+  .sticky-toc {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    z-index: 30;
   }
 
   /* Ensure all text in articles has proper color */
