@@ -32,15 +32,17 @@ export const MediaBlock: Block = {
         },
       ],
       admin: {
-        condition: (data) => Boolean(data?.enableLink),
+        condition: (data, siblingData) => Boolean(siblingData?.enableLink),
       },
     },
     {
       name: 'customUrl',
       type: 'text',
       label: 'Custom URL',
+      required: true,
       admin: {
-        condition: (data) => Boolean(data?.enableLink && data?.linkType === 'custom'),
+        condition: (data, siblingData) =>
+          Boolean(siblingData?.enableLink && siblingData?.linkType === 'custom'),
       },
     },
     {
@@ -48,8 +50,10 @@ export const MediaBlock: Block = {
       type: 'relationship',
       label: 'Internal Page',
       relationTo: ['pages', 'posts'],
+      required: true,
       admin: {
-        condition: (data) => Boolean(data?.enableLink && data?.linkType === 'internal'),
+        condition: (data, siblingData) =>
+          Boolean(siblingData?.enableLink && siblingData?.linkType === 'internal'),
       },
     },
     {
@@ -58,7 +62,7 @@ export const MediaBlock: Block = {
       label: 'Open in New Tab',
       defaultValue: false,
       admin: {
-        condition: (data) => Boolean(data?.enableLink),
+        condition: (data, siblingData) => Boolean(siblingData?.enableLink),
       },
     },
   ],
