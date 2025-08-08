@@ -21,6 +21,7 @@ import type {
 import { BannerBlock } from '@/blocks/Banner/Component'
 import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { cn } from '@/utilities/ui'
+import { slugify } from '@/utilities/slugify'
 
 type NodeTypes =
   | DefaultNodeTypes
@@ -78,4 +79,36 @@ export default function RichText(props: Props) {
       {...rest}
     />
   )
+}
+
+// Helper to extract h2 headings from a Lexical rich text state
+export function extractH2Headings(state: DefaultTypedEditorState): { id: string; text: string }[] {
+  try {
+    const children = (state as any)?.root?.children || []
+    const headings: { id: string; text: string }[] = []
+    const walk = (nodes: any[]) => {
+      for (const n of nodes) {
+        if (!n) continue
+        if (n.type === 'heading' && n.tag === 'h2') {
+          const text = (n.children || [])
+            .map((c: any) =>
+              c?.text ? c.text : c?.children?.map((cc: any) => cc?.text).join('') || '',
+            )
+            .join('')
+            .trim()
+          if (text) headings.push({ id: slugify(text), text })
+        }
+        if (Array.isArray(n.children) && n.children.length) walk(n.children)
+        if (n.type === 'block' && n.fields && Array.isArray(n.fields?.content?.root?.children)) {
+          walk(n.fields.content.root.children)
+        }
+      }
+    }
+    walk(children)
+    // Deduplicate by id
+    const seen = new Set<string>()
+    return headings.filter((h) => (seen.has(h.id) ? false : (seen.add(h.id), true)))
+  } catch (e) {
+    return []
+  }
 }

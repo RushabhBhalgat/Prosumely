@@ -25,6 +25,10 @@ const config = {
     'bg-success/30',
     'border-warning',
     'bg-warning/30',
+    'scrollbar-thin',
+    'scrollbar-thumb-slate-300',
+    'scrollbar-track-transparent',
+    'line-clamp-2',
   ],
   theme: {
     container: {
@@ -49,6 +53,8 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        fadeInUp: 'fadeInUp 0.6s ease-out forwards',
+        slideInLeft: 'slideInLeft 0.6s ease-out forwards',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -105,6 +111,26 @@ const config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
+        },
+        fadeInUp: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
+        slideInLeft: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(-20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+          },
         },
       },
       typography: () => ({
