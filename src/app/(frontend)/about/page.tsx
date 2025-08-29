@@ -163,17 +163,17 @@ const AboutPage = () => {
       </section>
 
       {/* Purpose, Vision, Mission - Creative Tab Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-12 md:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What Drives Us Forward</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-8 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Drives Us Forward</h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Our foundation is built on three core pillars that guide every decision we make
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div className="flex border-b border-gray-100">
+          <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
+            <div className="flex flex-col sm:flex-row border-b border-gray-100">
               {Object.entries(tabContent).map(([key, tab]) => {
                 const IconComponent = tab.icon
                 const tabKey = key as keyof typeof tabContent
@@ -181,25 +181,25 @@ const AboutPage = () => {
                   <button
                     key={key}
                     onClick={() => setActiveTab(tabKey)}
-                    className={`flex-1 px-8 py-6 text-left transition-all duration-300 relative group ${
+                    className={`flex-1 px-4 sm:px-6 md:px-8 py-4 sm:py-6 text-left transition-all duration-300 relative group ${
                       activeTab === tabKey
                         ? 'bg-blue-50 text-blue-600'
                         : 'text-gray-600 hover:bg-gray-50'
                     }`}
                   >
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2 sm:space-x-3">
                       <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
+                        className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${
                           activeTab === tabKey
                             ? 'bg-blue-600 text-white'
                             : 'bg-gray-100 text-gray-400 group-hover:bg-gray-200'
                         }`}
                       >
-                        <IconComponent className="w-5 h-5" />
+                        <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
-                      <div>
-                        <div className="font-semibold">{tab.title}</div>
-                        <div className="text-sm opacity-70">Our {key}</div>
+                      <div className="min-w-0">
+                        <div className="font-semibold text-sm sm:text-base truncate">{tab.title}</div>
+                        <div className="text-xs sm:text-sm opacity-70 hidden sm:block">Our {key}</div>
                       </div>
                     </div>
                     {activeTab === tabKey && (
@@ -210,19 +210,19 @@ const AboutPage = () => {
               })}
             </div>
 
-            <div className="p-12">
+            <div className="p-4 sm:p-6 md:p-8 lg:p-12">
               <div className="transition-all duration-500 ease-in-out">
-                <div className="flex items-start space-x-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-400 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-600 to-cyan-400 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0">
                     {React.createElement(tabContent[activeTab].icon, {
-                      className: 'w-8 h-8 text-white',
+                      className: 'w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white',
                     })}
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  <div className="flex-1 text-left">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
                       {tabContent[activeTab].title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-gray-600 leading-relaxed text-base sm:text-lg max-w-none">
                       {tabContent[activeTab].content}
                     </p>
                   </div>
@@ -289,7 +289,17 @@ const AboutPage = () => {
                     </p>
                   </div>
 
-                  <div className="mt-8 flex flex-wrap gap-3">
+                  <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <div className="text-xs text-gray-700 leading-tight">
+                      <div className="font-semibold text-gray-900 mb-1">Contact:</div>
+                      <div className="space-y-0.5">
+                        <div><strong>Email:</strong> malgarrington@hotmail.com</div>
+                        <div><strong>Mobile:</strong> Egypt: +20 122 69 555 00 | Indonesia: +62 812 705 3859 | UAE: +971 58 564 8899</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
                     <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
                       40+ Years Experience
                     </span>
