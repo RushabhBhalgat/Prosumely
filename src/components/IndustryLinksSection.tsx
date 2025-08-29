@@ -132,8 +132,35 @@ const IndustryLinksSection = ({ servicesMode = 'full' }: IndustryLinksSectionPro
         >
           {industries.map((industry, index) => {
             const isClickable = servicesMode === 'full'
-            const CardWrapper = isClickable ? Link : 'div'
-            const cardProps = isClickable ? { href: industry.queryUrl } : {}
+
+            const cardContent = (
+              <>
+                {/* Gradient overlay on hover - only for clickable items */}
+                {isClickable && (
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-cyan-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                )}
+
+                {/* Shimmer effect - only for clickable items */}
+                {isClickable && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                )}
+
+                <div className="relative z-10 flex items-center justify-center">
+                  <span className={`text-sm md:text-base font-semibold leading-tight text-center ${
+                    isClickable 
+                      ? 'text-gray-800 group-hover:text-blue-700 transition-colors duration-300' 
+                      : 'text-gray-800'
+                  }`}>
+                    {industry.name}
+                  </span>
+                </div>
+
+                {/* Bottom accent line - only for clickable items */}
+                {isClickable && (
+                  <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-blue-600 to-cyan-600 group-hover:w-full transition-all duration-500 ease-out"></div>
+                )}
+              </>
+            )
 
             return (
               <motion.div
@@ -145,39 +172,20 @@ const IndustryLinksSection = ({ servicesMode = 'full' }: IndustryLinksSectionPro
                 whileHover={isClickable ? { y: -5 } : {}}
                 className="group"
               >
-                <CardWrapper
-                  {...cardProps}
-                  className={`block relative p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg overflow-hidden ${
-                    isClickable
-                      ? 'hover:shadow-2xl hover:bg-white hover:border-blue-200/50 cursor-pointer transition-all duration-300'
-                      : 'cursor-default'
-                  }`}
-                >
-                  {/* Gradient overlay on hover - only for clickable items */}
-                  {isClickable && (
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-cyan-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  )}
-
-                  {/* Shimmer effect - only for clickable items */}
-                  {isClickable && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
-                  )}
-
-                  <div className="relative z-10 flex items-center justify-center">
-                    <span className={`text-sm md:text-base font-semibold leading-tight text-center ${
-                      isClickable 
-                        ? 'text-gray-800 group-hover:text-blue-700 transition-colors duration-300' 
-                        : 'text-gray-800'
-                    }`}>
-                      {industry.name}
-                    </span>
+                {isClickable ? (
+                  <Link
+                    href={industry.queryUrl}
+                    className={`block relative p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg overflow-hidden hover:shadow-2xl hover:bg-white hover:border-blue-200/50 cursor-pointer transition-all duration-300`}
+                  >
+                    {cardContent}
+                  </Link>
+                ) : (
+                  <div
+                    className={`block relative p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg overflow-hidden cursor-default`}
+                  >
+                    {cardContent}
                   </div>
-
-                  {/* Bottom accent line - only for clickable items */}
-                  {isClickable && (
-                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-blue-600 to-cyan-600 group-hover:w-full transition-all duration-500 ease-out"></div>
-                  )}
-                </CardWrapper>
+                )}
               </motion.div>
             )
           })}
