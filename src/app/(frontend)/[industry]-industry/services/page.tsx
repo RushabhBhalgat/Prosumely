@@ -1,37 +1,14 @@
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
 import IndustryServicesPageContent from '@/components/IndustryServicesPageContent'
 import { getServicesMode } from '@/utilities/getSettings'
+import { notFound } from 'next/navigation'
 
-// Define valid industries
-const validIndustries = [
-  'construction',
-  'energy-oil-gas',
-  'hospitality-tourism',
-  'engineering-manufacturing',
-  'logistics-supply-chain',
-  'tech-it',
-  'banking-financial-services-insurance',
-  'healthcare-pharma',
-  'strategy-consulting',
-  'sales-marketing',
-  'media-entertainment',
-  'human-resources',
-  'fmcg-retail',
-  'legal-compliance',
-  'public-sector-government',
-  'chemicals-materials',
-]
-
-// Industry display names
-const industryDisplayNames: Record<string, string> = {
-  construction: 'Construction Industry',
-  'energy-oil-gas': 'Energy - Oil and Gas',
+// Industry mapping
+const industryMapping: Record<string, string> = {
   'hospitality-tourism': 'Hospitality & Tourism',
   'engineering-manufacturing': 'Engineering & Manufacturing',
   'logistics-supply-chain': 'Logistics & Supply Chain',
-  'tech-it': 'Tech & IT',
-  'banking-financial-services-insurance': 'Banking, Financial Services & Insurance',
+  'banking-financial-services-insurance': 'BFSI',
   'healthcare-pharma': 'Healthcare & Pharma',
   'strategy-consulting': 'Strategy & Consulting',
   'sales-marketing': 'Sales & Marketing',
@@ -43,35 +20,35 @@ const industryDisplayNames: Record<string, string> = {
   'chemicals-materials': 'Chemicals & Materials',
 }
 
-type Params = {
+interface Params {
   industry: string
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { industry } = await params
-
-  if (!validIndustries.includes(industry)) {
+  const industryDisplayName = industryMapping[industry]
+  
+  if (!industryDisplayName) {
     return {
-      title: 'Industry Not Found',
+      title: 'Industry Not Found | Prosumely',
     }
   }
 
-  const industryName = industryDisplayNames[industry] || industry
   const servicesMode = await getServicesMode()
   const serviceCount = servicesMode === 'limited' ? '3' : '11'
 
   return {
-    title: `${industryName} Services | Professional Resume Writing | Prosumely`,
-    description: `Specialized resume writing and career services for ${industryName} professionals. ${serviceCount} services tailored to help you advance your career in ${industryName.toLowerCase()}.`,
+    title: `${industryDisplayName} Services | Professional Resume Writing | Prosumely`,
+    description: `Specialized resume writing and career services for ${industryDisplayName} professionals. ${serviceCount} services tailored to help you advance your career in ${industryDisplayName.toLowerCase()}.`,
     openGraph: {
-      title: `${industryName} Services | Prosumely`,
-      description: `Professional resume writing services for ${industryName} professionals`,
+      title: `${industryDisplayName} Services | Prosumely`,
+      description: `Professional resume writing services for ${industryDisplayName} professionals`,
       images: [
         {
           url: '/prosumely-pricing-and-services-opengraph.jpg',
           width: 1200,
           height: 630,
-          alt: `Prosumely ${industryName} Services`,
+          alt: `Prosumely ${industryDisplayName} Services`,
         },
       ],
       locale: 'en_US',
@@ -79,8 +56,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${industryName} Services | Prosumely`,
-      description: `Professional resume writing services for ${industryName} professionals`,
+      title: `${industryDisplayName} Services | Prosumely`,
+      description: `Professional resume writing services for ${industryDisplayName} professionals`,
       images: ['/prosumely-pricing-and-services-opengraph.jpg'],
       site: '@prosumely',
     },
@@ -92,14 +69,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 export default async function IndustryServicesPage({ params }: { params: Promise<Params> }) {
   const { industry } = await params
-
-  // Validate industry
-  if (!validIndustries.includes(industry)) {
+  const industryDisplayName = industryMapping[industry]
+  
+  if (!industryDisplayName) {
     notFound()
   }
 
   const servicesMode = await getServicesMode()
-  const industryDisplayName = industryDisplayNames[industry] || industry
 
   return (
     <IndustryServicesPageContent
@@ -108,11 +84,4 @@ export default async function IndustryServicesPage({ params }: { params: Promise
       servicesMode={servicesMode}
     />
   )
-}
-
-// Generate static params for build time
-export async function generateStaticParams() {
-  return validIndustries.map((industry) => ({
-    industry,
-  }))
 }
