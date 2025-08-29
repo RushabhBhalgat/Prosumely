@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import React, { useState } from 'react'
 import {
@@ -224,6 +225,80 @@ const AboutPage = () => {
                     <p className="text-gray-600 leading-relaxed text-lg">
                       {tabContent[activeTab].content}
                     </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: Advisor Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Meet Our{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
+                  Advisor
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Our advisory team brings decades of experience in career development and
+                professional growth.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200/50">
+              <div className="grid lg:grid-cols-2 gap-0">
+                {/* Image Section */}
+                <div className="relative h-96 lg:h-auto">
+                  <Image
+                    src="/Malcolm Garrington Advisor.jpeg"
+                    alt="Malcolm Garrington - Career Strategy Advisor"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent lg:hidden"></div>
+                </div>
+
+                {/* Content Section */}
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="mb-6">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                      Malcolm Garrington
+                    </h3>
+                    <p className="text-lg text-blue-600 font-semibold mb-4">
+                      Career Strategy Advisor
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 text-gray-600 leading-relaxed">
+                    <p>
+                      Malcolm Garrington is a trusted authority in personal branding, career
+                      strategy, and professional growth. With 40+ years of experience in coaching
+                      leaders, entrepreneurs, and ambitious professionals, he has helped countless
+                      individuals unlock their potential and position themselves for success.
+                    </p>
+                    <p>
+                      As an advisor to Prosumely, Malcolm brings deep expertise in career
+                      development and branding, guiding our mission to empower people in building
+                      impactful careers and standing out in an ever-changing professional landscape.
+                    </p>
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium">
+                      40+ Years Experience
+                    </span>
+                    <span className="px-4 py-2 bg-cyan-50 text-cyan-700 rounded-full text-sm font-medium">
+                      Personal Branding Expert
+                    </span>
+                    <span className="px-4 py-2 bg-purple-50 text-purple-700 rounded-full text-sm font-medium">
+                      Career Strategy
+                    </span>
                   </div>
                 </div>
               </div>

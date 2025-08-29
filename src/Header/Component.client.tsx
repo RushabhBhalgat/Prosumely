@@ -79,6 +79,14 @@ export const HeaderClient: React.FC<{
           {/* Resources dropdown */}
           <ResourcesDropdown />
 
+          {/* About Us link */}
+          <Link
+            href="/about"
+            className="px-4 py-2 rounded-lg text-gray-900 font-medium dark:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
+            About Us
+          </Link>
+
           {/* Regular nav items from CMS */}
           {navItems?.map(({ link }, i) => (
             <CMSLink key={i} {...link} />
@@ -426,6 +434,17 @@ export const HeaderClient: React.FC<{
                     </div>
                   </div>
                 )}
+              </div>
+
+              {/* About Us Link for mobile */}
+              <div className="py-1">
+                <Link
+                  href="/about"
+                  className="block w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About Us
+                </Link>
               </div>
 
               {/* Regular nav items from CMS */}
