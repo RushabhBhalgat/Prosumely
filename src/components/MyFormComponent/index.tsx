@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Check } from 'lucide-react' // Changed from CheckIcon to Check
 
 // Lazy load DOMPurify for better performance
-let DOMPurify: any = null
+let DOMPurify: typeof import('dompurify').default | null = null
 const loadDOMPurify = async () => {
   if (!DOMPurify && typeof window !== 'undefined') {
     const domPurifyModule = await import('dompurify')
@@ -281,10 +281,26 @@ const MyFormComponent = ({
   }
 
   // Add this helper function to extract text from the confirmation message structure
-  const extractConfirmationText = (confirmationMessage: any): string => {
+  const extractConfirmationText = (confirmationMessage: unknown): string => {
     try {
-      // Navigate through the nested structure to get the text
-      if (confirmationMessage?.root?.children?.[0]?.children?.[0]?.text) {
+      // Type guard to check if the message has the expected structure
+      if (
+        confirmationMessage &&
+        typeof confirmationMessage === 'object' &&
+        'root' in confirmationMessage &&
+        confirmationMessage.root &&
+        typeof confirmationMessage.root === 'object' &&
+        'children' in confirmationMessage.root &&
+        Array.isArray(confirmationMessage.root.children) &&
+        confirmationMessage.root.children[0] &&
+        typeof confirmationMessage.root.children[0] === 'object' &&
+        'children' in confirmationMessage.root.children[0] &&
+        Array.isArray(confirmationMessage.root.children[0].children) &&
+        confirmationMessage.root.children[0].children[0] &&
+        typeof confirmationMessage.root.children[0].children[0] === 'object' &&
+        'text' in confirmationMessage.root.children[0].children[0] &&
+        typeof confirmationMessage.root.children[0].children[0].text === 'string'
+      ) {
         return confirmationMessage.root.children[0].children[0].text
       }
       // Fallback message if structure isn't as expected

@@ -1,4 +1,4 @@
-import { CheckCircle, Clock, FileText, Target, Briefcase, TrendingUp, Zap } from 'lucide-react'
+import { CheckCircle, Target, TrendingUp, Zap } from 'lucide-react'
 import { serviceFAQs } from './faqData'
 
 // New limited services data
