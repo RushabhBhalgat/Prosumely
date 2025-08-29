@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 }
 
 export default async function PostPage({ params }: { params: Promise<Params> }) {
-  const { slug } = await params
+  const { slug: _slug } = await params
 
   // For now, return not found for dynamic post pages
   // This should be implemented with proper CMS integration

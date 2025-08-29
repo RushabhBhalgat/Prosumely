@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 }
 
 export default async function PostsPageNumber({ params }: { params: Promise<Params> }) {
-  const { pageNumber } = await params
+  const { pageNumber: _pageNumber } = await params
 
   // For now, return not found for paginated post pages
   // This should be implemented with proper CMS integration

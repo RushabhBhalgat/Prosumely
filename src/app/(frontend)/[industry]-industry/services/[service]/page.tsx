@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getServicesMode } from '@/utilities/getSettings'
+import Link from 'next/link'
 
 // Industry mapping
 const industryMapping: Record<string, string> = {
@@ -89,8 +89,6 @@ export default async function IndustryServicePage({ params }: { params: Promise<
     notFound()
   }
 
-  const servicesMode = await getServicesMode()
-
   return (
     <div className="container mx-auto px-6 py-20">
       <div className="max-w-4xl mx-auto text-center">
@@ -106,12 +104,12 @@ export default async function IndustryServicePage({ params }: { params: Promise<
           </p>
         </div>
         <div className="mt-8">
-          <a
+          <Link
             href="/services"
             className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-cyan-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             View All Services
-          </a>
+          </Link>
         </div>
       </div>
     </div>

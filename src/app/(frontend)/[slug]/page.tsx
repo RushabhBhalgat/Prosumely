@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 }
 
 export default async function SlugPage({ params }: { params: Promise<Params> }) {
-  const { slug } = await params
+  const { slug: _slug } = await params
 
   // For now, return not found for dynamic slug pages
   // This can be implemented later with proper content management
