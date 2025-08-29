@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { getServicesMode } from '@/utilities/getSettings'
+import { limitedServices } from '@/data/limitedServicesData'
 
 export const metadata = {
   title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
@@ -44,8 +46,10 @@ export const metadata = {
   },
 }
 
-export default function PricingPage() {
-  const services = [
+export default async function PricingPage() {
+  const servicesMode = await getServicesMode()
+
+  const fullServices = [
     {
       id: 1,
       name: 'ATS Resume ',
@@ -180,6 +184,8 @@ export default function PricingPage() {
       path: '/membership-application-service',
     },
   ]
+
+  const services = servicesMode === 'limited' ? limitedServices : fullServices
 
   return (
     <section className="bg-gray-50 py-2 md:py-10 lg:py-16 mt-8 md:mt-0">

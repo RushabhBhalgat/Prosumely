@@ -5,6 +5,7 @@ import ClientReviews from '@/components/ClientReviews'
 import HowItWorksSection from '@/components/HowItWorks'
 import ServicesSection from '@/components/ServicesSection'
 import IndustryLinksSection from '@/components/IndustryLinksSection'
+import { getServicesMode } from '@/utilities/getSettings'
 
 // --- SEO Metadata ---
 export const metadata = {
@@ -52,7 +53,9 @@ export const metadata = {
 }
 // --- End SEO Metadata ---
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const servicesMode = await getServicesMode()
+
   return (
     <main>
       <div className="relative h-[55vh] lg:h-[85vh] flex items-center overflow-hidden">
@@ -114,7 +117,7 @@ export default function LandingPage() {
         </div>
       </div>
       <ServicesSection />
-      <IndustryLinksSection />
+      <IndustryLinksSection servicesMode={servicesMode} />
       {/* <IcebergSection /> */}
       <HowItWorksSection />
       <ClientReviews />

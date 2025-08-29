@@ -155,6 +155,7 @@ const MyFormComponent = ({
 
       // Get and validate the file from the form data, if it exists
       const file = formData.get('file') as File
+
       if (file && file.size > 0) {
         if (!validateFile(file)) {
           setIsSubmitting(false)
@@ -167,7 +168,7 @@ const MyFormComponent = ({
         formDataToSend.append(
           '_payload',
           JSON.stringify({
-            alt: sanitizeValue(file.name),
+            alt: await sanitizeValue(file.name),
           }),
         )
 
@@ -179,11 +180,24 @@ const MyFormComponent = ({
         })
 
         if (!response.ok) {
-          throw new Error('Failed to upload file')
+          const errorText = await response.text()
+          console.error('File upload failed:', {
+            status: response.status,
+            statusText: response.statusText,
+            error: errorText,
+          })
+          throw new Error(
+            `Failed to upload file: ${response.status} ${response.statusText} - ${errorText}`,
+          )
         }
 
         const data = await response.json()
-        fileUploadedId = data?.doc?.id
+        // File upload successful, extract ID
+        fileUploadedId = data?.id || data?.doc?.id || data?._id
+
+        if (!fileUploadedId) {
+          console.error('Could not extract file ID from response:', data)
+        }
       }
 
       // Delete the file from the form data, so it's not sent to payload
@@ -192,19 +206,46 @@ const MyFormComponent = ({
       }
 
       // Convert the form data to a JSON object and sanitize values
-      const dataToSend = Array.from(formData.entries()).map(([name, value]) => ({
-        field: name,
-        value: sanitizeValue(value.toString()),
-      }))
+      const dataToSend = await Promise.all(
+        Array.from(formData.entries()).map(async ([name, value]) => {
+          // Skip file fields as they're handled separately
+          if (value instanceof File) {
+            return null
+          }
+
+          // Convert value to string safely
+          const stringValue = typeof value === 'string' ? value : String(value)
+
+          return {
+            field: name,
+            value: await sanitizeValue(stringValue),
+          }
+        }),
+      )
+
+      // Filter out null values (file fields)
+      const filteredDataToSend = dataToSend.filter((item) => item !== null)
+
+      // Prepare submission data
+      const submissionPayload = {
+        form: formId,
+        submissionData: filteredDataToSend,
+        ...(cmsForm?.hasAttachment && fileUploadedId ? { file: fileUploadedId } : {}),
+      }
+
+      // Debug logging
+      console.log('🔍 Form submission debug:')
+      console.log('📋 Form has attachment?', cmsForm?.hasAttachment)
+      console.log('📎 File uploaded ID:', fileUploadedId)
+      console.log('� File from form:', file)
+      console.log('📎 File size:', file?.size)
+      console.log('🔧 CMS Form object:', cmsForm)
+      console.log('�📦 Complete submission payload:', submissionPayload)
 
       // Send data to payload API
       const response = await fetch(`/api/form-submissions`, {
         method: 'POST',
-        body: JSON.stringify({
-          form: formId,
-          submissionData: dataToSend,
-          ...(cmsForm?.hasAttachment && fileUploadedId ? { file: fileUploadedId } : {}),
-        }),
+        body: JSON.stringify(submissionPayload),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -258,44 +299,84 @@ const MyFormComponent = ({
     if (!isSubmitted) return null
 
     return (
-      <div className="p-8 text-center">
-        <div className="flex justify-center mb-4">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-            <Check className="w-8 h-8 text-green-500" /> {/* Changed from CheckIcon to Check */}
-          </div>
-        </div>
+      <div className="fixed inset-0 bg-gradient-to-br from-emerald-50 via-white to-blue-50 flex items-center justify-center p-4 z-50">
+        <div className="w-full max-w-2xl mx-auto">
+          {/* Main Success Card */}
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 p-8 md:p-12 text-center">
+            {/* Success Icon with Animation */}
+            <div className="flex justify-center mb-8">
+              <div className="relative">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                  <Check className="w-10 h-10 md:w-12 md:h-12 text-white" />
+                </div>
+                {/* Ripple Effect */}
+                <div className="absolute inset-0 w-20 h-20 md:w-24 md:h-24 bg-emerald-400/30 rounded-full animate-ping"></div>
+                <div className="absolute inset-0 w-20 h-20 md:w-24 md:h-24 bg-emerald-400/20 rounded-full animate-ping animation-delay-75"></div>
+              </div>
+            </div>
 
-        {preventRedirect ? (
-          // Show only the custom confirmation message from Payload
-          <div className="prose prose-blue mx-auto">
-            {cmsForm?.confirmationMessage ? (
-              <h3 className="text-xl font-medium text-gray-900 mb-2">
-                {extractConfirmationText(cmsForm.confirmationMessage)}
-              </h3>
+            {preventRedirect ? (
+              // Show only the custom confirmation message from Payload
+              <div className="space-y-4">
+                <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                  {cmsForm?.confirmationMessage
+                    ? extractConfirmationText(cmsForm.confirmationMessage)
+                    : 'Message Sent Successfully!'}
+                </h1>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  We have received your submission and will get back to you soon.
+                </p>
+              </div>
             ) : (
-              <h3 className="text-xl font-medium text-gray-900 mb-2">
-                Message sent successfully! We will get back to you soon!
-              </h3>
+              // Show redirect message with enhanced styling
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h1 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                    Form Submitted Successfully!
+                  </h1>
+                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    Thank you for your submission. You're being redirected to our secure payment
+                    page.
+                  </p>
+                </div>
+
+                {/* Progress Section */}
+                <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border border-blue-100 rounded-2xl p-6 space-y-4">
+                  <div className="flex items-center justify-center space-x-3">
+                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce"></div>
+                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce animation-delay-100"></div>
+                    <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce animation-delay-200"></div>
+                  </div>
+
+                  <p className="text-blue-700 font-medium">Redirecting to payment page...</p>
+
+                  {/* Progress Bar */}
+                  <div className="w-full bg-blue-200 rounded-full h-2 overflow-hidden">
+                    <div
+                      className="h-2 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full transition-all duration-300 ease-out"
+                      style={{ width: `${((25 - countdown) / 25) * 100}%` }}
+                    ></div>
+                  </div>
+
+                  <p className="text-sm text-blue-600 font-mono">
+                    {Math.ceil(countdown / 10)} seconds remaining
+                  </p>
+                </div>
+
+                {/* Additional Info */}
+                <div className="text-sm text-gray-500 space-y-2">
+                  <p>🔒 Your payment will be processed securely through Razorpay</p>
+                  <p>📧 A confirmation email will be sent to your registered email address</p>
+                </div>
+              </div>
             )}
           </div>
-        ) : (
-          // Show redirect message with enhanced styling
-          <div className="bg-blue-50 border border-blue-100 rounded-xl p-6 animate-fade-in">
-            <h3 className="text-xl font-bold text-[#2563eb] mb-3">Form Submitted Successfully!</h3>
-            <p className="text-gray-700 mb-3">Taking you to the payment page...</p>
-            <div className="flex items-center justify-center mt-2">
-              <div className="h-1 bg-gradient-to-r from-[#2563eb] to-[#9adbf4] rounded-full w-full max-w-[200px]">
-                <div
-                  className="h-1 bg-[#2563eb] rounded-full transition-all duration-300"
-                  style={{ width: `${(countdown / 25) * 100}%` }}
-                ></div>
-              </div>
-              <p className="text-sm text-gray-600 ml-3 min-w-[90px]">
-                {Math.ceil(countdown / 10)} seconds...
-              </p>
-            </div>
-          </div>
-        )}
+
+          {/* Background Decorative Elements */}
+          <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-200/30 rounded-full blur-xl"></div>
+          <div className="absolute bottom-10 right-10 w-32 h-32 bg-blue-200/30 rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-200/20 rounded-full blur-lg"></div>
+        </div>
       </div>
     )
   }
@@ -428,7 +509,7 @@ const MyFormComponent = ({
                     maxLength={field.blockType === 'text' ? 255 : undefined}
                     pattern={
                       field.blockType === 'email'
-                        ? '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'
+                        ? '[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$'
                         : undefined
                     }
                     autoComplete={

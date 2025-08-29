@@ -13,7 +13,8 @@ import type { Header as HeaderType } from '@/payload-types'
 
 export const HeaderClient: React.FC<{
   data: HeaderType
-}> = ({ data }) => {
+  servicesMode?: 'full' | 'limited'
+}> = ({ data, servicesMode = 'full' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [mobileCareerToolsOpen, setMobileCareerToolsOpen] = useState(false)
@@ -70,7 +71,7 @@ export const HeaderClient: React.FC<{
           <PricingDropdown />
 
           {/* Services dropdown */}
-          <ServicesDropdown />
+          <ServicesDropdown servicesMode={servicesMode} />
 
           {/* Career Tools dropdown */}
           <CareerToolsDropdown />
@@ -166,109 +167,146 @@ export const HeaderClient: React.FC<{
                 </button>
                 {mobileServicesOpen && (
                   <div className="pl-4 pb-2 space-y-1">
-                    <div className="mb-3">
-                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Resume Services</h4>
+                    {servicesMode === 'limited' ? (
+                      // Limited services for mobile
                       <div className="space-y-1">
                         <Link
-                          href="/ats-resume-writing-service"
+                          href="/services/jobseeker-cv-combo"
                           className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          ATS Resume Writing
+                          Jobseeker's CV Combo
                         </Link>
                         <Link
-                          href="/executive-resume-writing-service"
+                          href="/services/jobseeker-personal-website"
                           className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
                           onClick={() => setIsMenuOpen(false)}
                         >
-                          Executive Resume Writing
-                        </Link>
-                        <Link
-                          href="/academic-cv-writing-service"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Academic CV Writing
-                        </Link>
-                        <Link
-                          href="/project-portfolio"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Project Portfolio
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="mb-3">
-                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">
-                        Career Advancement
-                      </h4>
-                      <div className="space-y-1">
-                        <Link
-                          href="/linkedin-profile-makeover"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          LinkedIn Profile Makeover
-                        </Link>
-                        <Link
-                          href="/jobseekers-combo-service"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Jobseeker's Combo
-                        </Link>
-                        <Link
-                          href="/cover-letter-writing-service"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Cover Letter Writing
-                        </Link>
-                        <Link
-                          href="/career-roadmap-service"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Career Roadmap
-                        </Link>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">
-                        Additional Services
-                      </h4>
-                      <div className="space-y-1">
-                        <Link
-                          href="/interview-coaching-service"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Interview Coaching
-                        </Link>
-                        <Link
-                          href="/sop-writing-service"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          SOP Writing
-                        </Link>
-                        <Link
-                          href="/membership-application-service"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Membership Application
+                          Jobseeker's Personal Website
                         </Link>
                         <Link
                           href="/free-resume-review"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200 bg-blue-50 rounded-md px-2"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           Free Resume Review
                         </Link>
+                        <Link
+                          href="/services/cv-personal-website-combo"
+                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          CV + Personal Website Combo
+                        </Link>
                       </div>
-                    </div>
+                    ) : (
+                      // Full services for mobile
+                      <>
+                        <div className="mb-3">
+                          <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Resume Services</h4>
+                          <div className="space-y-1">
+                            <Link
+                              href="/ats-resume-writing-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              ATS Resume Writing
+                            </Link>
+                            <Link
+                              href="/executive-resume-writing-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Executive Resume Writing
+                            </Link>
+                            <Link
+                              href="/academic-cv-writing-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Academic CV Writing
+                            </Link>
+                            <Link
+                              href="/project-portfolio"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Project Portfolio
+                            </Link>
+                          </div>
+                        </div>
+                        <div className="mb-3">
+                          <h4 className="text-sm font-semibold text-[#2563eb] mb-2">
+                            Career Advancement
+                          </h4>
+                          <div className="space-y-1">
+                            <Link
+                              href="/linkedin-profile-makeover"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              LinkedIn Profile Makeover
+                            </Link>
+                            <Link
+                              href="/jobseekers-combo-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Jobseeker's Combo
+                            </Link>
+                            <Link
+                              href="/cover-letter-writing-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Cover Letter Writing
+                            </Link>
+                            <Link
+                              href="/career-roadmap-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Career Roadmap
+                            </Link>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-[#2563eb] mb-2">
+                            Additional Services
+                          </h4>
+                          <div className="space-y-1">
+                            <Link
+                              href="/interview-coaching-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Interview Coaching
+                            </Link>
+                            <Link
+                              href="/sop-writing-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              SOP Writing
+                            </Link>
+                            <Link
+                              href="/membership-application-service"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Membership Application
+                            </Link>
+                            <Link
+                              href="/free-resume-review"
+                              className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              Free Resume Review
+                            </Link>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </div>
                 )}
               </div>
@@ -297,50 +335,14 @@ export const HeaderClient: React.FC<{
                 </button>
                 {mobileCareerToolsOpen && (
                   <div className="pl-4 pb-2 space-y-1">
-                    <div className="mb-3">
-                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Resume Tools</h4>
-                      <div className="space-y-1">
-                        <Link
-                          href="/career-tools/job-description-keyword-finder"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Job Description Keyword Finder
-                        </Link>
-                        <Link
-                          href="/tools/resume-analyzer"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Resume Analyzer
-                        </Link>
-                        <Link
-                          href="/tools/resume-templates"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Resume Templates
-                        </Link>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Interview Prep</h4>
-                      <div className="space-y-1">
-                        <Link
-                          href="/tools/interview-simulator"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Interview Simulator
-                        </Link>
-                        <Link
-                          href="/tools/question-library"
-                          className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          Question Library
-                        </Link>
-                      </div>
+                    <div className="space-y-1">
+                      <Link
+                        href="/career-tools/job-description-keyword-finder"
+                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Keyword Finder
+                      </Link>
                     </div>
                   </div>
                 )}

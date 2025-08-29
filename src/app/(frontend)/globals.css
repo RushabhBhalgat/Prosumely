@@ -35,6 +35,14 @@
     animation-delay: 600ms;
   }
 
+  .animation-delay-75 {
+    animation-delay: 75ms;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
   /* Smooth scrollbar */
   .scrollbar-thin {
     scrollbar-width: thin;

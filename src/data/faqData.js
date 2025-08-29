@@ -1061,4 +1061,114 @@ export const allFAQs = {
         "We provide unlimited revisions until you're satisfied. Even after final delivery, we're available for minor adjustments and guidance on effectively using your materials.",
     },
   ],
+
+  // New Limited Services FAQs
+  jobseekerCvCombo: [
+    {
+      question: "What exactly is included in the Jobseeker's CV Combo?",
+      answer:
+        "The Jobseeker's CV Combo is a comprehensive 4-in-1 package that includes: <br/>• <strong>Executive CV</strong>: Achievement-driven resume highlighting your responsibilities, impact, vision, and competencies<br/>• <strong>Professional Cover Letter</strong>: Tailored letter showcasing your unique qualifications<br/>• <strong>LinkedIn Profile Makeover</strong>: Complete optimization for recruiter visibility<br/>• <strong>Project Portfolio</strong>: Visual showcase with infographics highlighting your key projects and achievements",
+    },
+    {
+      question: 'Who is this combo package best suited for?',
+      answer:
+        "This package is ideal for mid to senior-level professionals and executives who want a complete career branding solution. It's perfect for those targeting leadership roles, career changers, or anyone who wants to ensure every aspect of their professional brand is aligned and impactful.",
+    },
+    {
+      question: "How is this different from your original jobseeker's combo?",
+      answer:
+        "This enhanced version focuses on executive-level positioning with a detailed project portfolio instead of a career roadmap. It's designed for professionals who want to showcase their work visually and position themselves for leadership roles with a premium executive CV.",
+    },
+    {
+      question: 'What makes the Executive CV different from a regular resume?',
+      answer:
+        'The Executive CV goes beyond listing duties to showcase your leadership impact, strategic vision, and value proposition. It includes detailed competency sections (Technical, Core, and Personal), quantified achievements, and positioning that speaks to C-level and senior management roles.',
+    },
+    {
+      question: 'Can I use the portfolio for different types of roles?',
+      answer:
+        "Absolutely! The project portfolio is designed to be versatile and can be customized to highlight different aspects of your experience depending on the role you're targeting. We create it with multiple use cases in mind.",
+    },
+    {
+      question: 'How long does it take to complete the entire combo?',
+      answer:
+        "The complete Jobseeker's CV Combo is delivered within 5-7 business days. We work systematically through each component to ensure consistency and quality across all materials.",
+    },
+  ],
+
+  jobseekerPersonalWebsite: [
+    {
+      question: 'Why do I need a personal website in addition to LinkedIn?',
+      answer:
+        'A personal website gives you complete control over your professional narrative. While LinkedIn has formatting constraints, your website allows for unlimited content, custom design, and detailed project showcases. It positions you as a thought leader and gives you a professional edge that most candidates lack.',
+    },
+    {
+      question: "What's included in the $300 package?",
+      answer:
+        'The package includes: <br/>• Personal domain registration (www.yourname.com)<br/>• Professional website design and development<br/>• SEO optimization for Google searchability<br/>• Professional content creation<br/>• Security and SSL certificates<br/>• Website deployment and setup<br/>• Initial maintenance and support',
+    },
+    {
+      question: 'Tell me about the $10 monthly maintenance fee',
+      answer:
+        'The $10 monthly fee covers ongoing website maintenance, security updates, hosting, SEO blog content creation, and technical support. This ensures your website remains current, secure, and continues to rank well in search results.',
+    },
+    {
+      question: 'Can I update the website content myself?',
+      answer:
+        'Yes! We build user-friendly websites that allow you to make basic content updates. We also provide training on how to manage your content. For major updates or design changes, our maintenance service includes support.',
+    },
+    {
+      question: 'How does the website help with my job search?',
+      answer:
+        'Your personal website serves as your 24/7 digital business card. Recruiters and employers can easily find and learn about you online. It showcases your expertise, builds credibility, and differentiates you from other candidates who only have traditional resumes.',
+    },
+    {
+      question: 'What if I already have a domain name?',
+      answer:
+        "If you already own a domain, we can use that instead and adjust the package accordingly. We'll work with your existing domain to create your professional website.",
+    },
+    {
+      question: 'Do you provide analytics and tracking?',
+      answer:
+        'Yes, we set up Google Analytics and other tracking tools so you can monitor website visitors, popular content, and overall performance. This helps you understand how your online presence is performing.',
+    },
+  ],
+
+  cvPersonalWebsiteCombo: [
+    {
+      question: 'What makes this the "ultimate" personal branding package?',
+      answer:
+        "This combo combines everything from our CV Combo (Executive CV, Cover Letter, LinkedIn makeover, Project Portfolio) PLUS a complete professional website. It's the most comprehensive personal branding solution available, giving you both traditional job search materials and a powerful digital presence.",
+    },
+    {
+      question: 'How much do I save compared to buying services separately?',
+      answer:
+        'The combo offers significant savings compared to purchasing each service individually. You get our most comprehensive package at a bundled price, representing excellent value for complete career transformation.',
+    },
+    {
+      question: 'Is this overkill for my career level?',
+      answer:
+        "This package is designed for ambitious professionals who are serious about their career advancement. If you're targeting senior roles, making a career change, or want to establish yourself as an industry leader, this comprehensive approach will give you a significant competitive advantage.",
+    },
+    {
+      question: 'How do all the components work together?',
+      answer:
+        "All components are designed with a consistent personal brand strategy. Your website reinforces your CV messaging, your LinkedIn profile drives traffic to your website, and your portfolio showcases the same achievements highlighted in your CV. It's a cohesive, integrated approach to personal branding.",
+    },
+    {
+      question: "What's the timeline for this comprehensive package?",
+      answer:
+        'The complete CV and Personal Website Combo is delivered within 14-21 business days. We work systematically through each component, starting with your CV and portfolio, then building your website to complement these materials perfectly.',
+    },
+    {
+      question: 'Can I prioritize certain components if I need them faster?',
+      answer:
+        'Yes, we can adjust the delivery schedule based on your needs. For example, if you have immediate interviews, we can prioritize your CV and cover letter first, then complete the website and other components.',
+    },
+    {
+      question: 'Do you provide training on how to use all these materials effectively?',
+      answer:
+        'Absolutely! We provide comprehensive guidance on how to use each component strategically in your job search, including tips for website promotion, LinkedIn optimization, and portfolio presentation during interviews.',
+    },
+  ],
 }

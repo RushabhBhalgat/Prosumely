@@ -1,11 +1,14 @@
 import { Suspense } from 'react'
 import ServicesPageContent from '@/components/ServicesPageContent'
+import { getServicesMode } from '@/utilities/getSettings'
 
-const ServicesPage = () => {
+const ServicesPage = async () => {
+  const servicesMode = await getServicesMode()
+
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <ServicesPageContent />
+        <ServicesPageContent servicesMode={servicesMode} />
       </Suspense>
     </>
   )

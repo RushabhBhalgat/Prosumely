@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
+import { limitedServices } from '@/data/limitedServicesData'
 
 // Industry-specific data
 const industryData = {
@@ -266,7 +267,7 @@ const industryData = {
   },
 }
 
-const services = [
+const fullServices = [
   {
     id: 1,
     name: 'ATS Resume ',
@@ -436,9 +437,12 @@ const ProfilesSection = ({
   )
 }
 
-const ServicesPageContent = () => {
+const ServicesPageContent = ({ servicesMode = 'full' }: { servicesMode?: 'full' | 'limited' }) => {
   const searchParams = useSearchParams()
   const industry = searchParams.get('industry')
+
+  // Get services based on mode
+  const services = servicesMode === 'limited' ? limitedServices : fullServices
 
   // Get industry-specific data
   const industryInfo = industry ? industryData[industry as keyof typeof industryData] : null
@@ -508,7 +512,11 @@ const ServicesPageContent = () => {
         )}
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+        <div className={`grid gap-6 max-w-7xl mx-auto mb-12 ${
+          servicesMode === 'limited' 
+            ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center' 
+            : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
+        }`}>
           {services.map((service) => {
             // Create service URL with query parameters if industry is present
             const serviceUrl = industry ? `${service.path}?industry=${industry}` : service.path
