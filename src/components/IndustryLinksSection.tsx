@@ -4,26 +4,6 @@ import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 
-// Define the mapping for industry keys to URLs
-const industryUrlMapping: Record<string, string> = {
-  'Construction Industry': 'construction',
-  'Energy - Oil and Gas': 'energy-oil-gas',
-  'Hospitality & Tourism': 'hospitality-tourism',
-  'Engineering & Manufacturing': 'engineering-manufacturing',
-  'Logistics & Supply Chain': 'logistics-supply-chain',
-  'Tech & IT': 'tech-it',
-  BFSI: 'banking-financial-services-insurance',
-  'Healthcare & Pharma': 'healthcare-pharma',
-  'Strategy & Consulting': 'strategy-consulting',
-  'Sales & Marketing': 'sales-marketing',
-  'Media & Entertainment': 'media-entertainment',
-  'Human Resources': 'human-resources',
-  'FMCG & Retail': 'fmcg-retail',
-  'Legal & Compliance': 'legal-compliance',
-  'Public Sector & Government': 'public-sector-government',
-  'Chemicals & Materials': 'chemicals-materials',
-}
-
 // Industry data with both URL formats
 const industries = [
   {
