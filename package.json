@@ -24,7 +24,8 @@
     "seo:fix-industry-titles": "node scripts/fix-industry-titles.js",
     "seo:add-h1-tags": "node scripts/add-h1-tags.js",
     "seo:check-images": "node scripts/check-images.js",
-    "seo:analyze-links": "node scripts/analyze-internal-links.js"
+    "seo:analyze-links": "node scripts/analyze-internal-links.js",
+    "revalidate:cache": "node scripts/revalidate-cache.js"
   },
   "dependencies": {
     "@payloadcms/admin-bar": "3.39.1",
