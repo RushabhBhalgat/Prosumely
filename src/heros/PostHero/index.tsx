@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { formatDateTime } from '@/utilities/formatDateTime'
 import type { Post } from '@/payload-types'
 import { Media } from '@/components/Media'
@@ -21,7 +22,7 @@ export const PostHero: React.FC<{
         <div className="max-w-4xl mx-auto">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-slate-600 mb-8">
-            <a href="/blogs" className="hover:text-blue-600 transition-colors">Blog</a>
+            <Link href="/blogs" className="hover:text-blue-600 transition-colors">Blog</Link>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
