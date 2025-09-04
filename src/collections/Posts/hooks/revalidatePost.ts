@@ -11,23 +11,33 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
 }) => {
   if (!context.disableRevalidate) {
     if (doc._status === 'published') {
-      const path = `/posts/${doc.slug}`
+      const blogPath = `/blogs/${doc.slug}`
+      const postPath = `/posts/${doc.slug}`
 
-      payload.logger.info(`Revalidating post at path: ${path}`)
+      payload.logger.info(`Revalidating post at paths: ${blogPath} and ${postPath}`)
 
-      revalidatePath(path)
+      revalidatePath(blogPath)
+      revalidatePath(postPath)
+      revalidatePath('/blogs')
+      revalidatePath('/posts')
       revalidateTag('posts-sitemap')
+      revalidateTag('blogs-sitemap')
       revalidateTag('industry-sitemap')
     }
 
-    // If the post was previously published, we need to revalidate the old path
+    // If the post was previously published, we need to revalidate the old paths
     if (previousDoc._status === 'published' && doc._status !== 'published') {
-      const oldPath = `/posts/${previousDoc.slug}`
+      const oldBlogPath = `/blogs/${previousDoc.slug}`
+      const oldPostPath = `/posts/${previousDoc.slug}`
 
-      payload.logger.info(`Revalidating old post at path: ${oldPath}`)
+      payload.logger.info(`Revalidating old post at paths: ${oldBlogPath} and ${oldPostPath}`)
 
-      revalidatePath(oldPath)
+      revalidatePath(oldBlogPath)
+      revalidatePath(oldPostPath)
+      revalidatePath('/blogs')
+      revalidatePath('/posts')
       revalidateTag('posts-sitemap')
+      revalidateTag('blogs-sitemap')
       revalidateTag('industry-sitemap')
     }
   }
@@ -36,10 +46,15 @@ export const revalidatePost: CollectionAfterChangeHook<Post> = ({
 
 export const revalidateDelete: CollectionAfterDeleteHook<Post> = ({ doc, req: { context } }) => {
   if (!context.disableRevalidate) {
-    const path = `/posts/${doc?.slug}`
+    const blogPath = `/blogs/${doc?.slug}`
+    const postPath = `/posts/${doc?.slug}`
 
-    revalidatePath(path)
+    revalidatePath(blogPath)
+    revalidatePath(postPath)
+    revalidatePath('/blogs')
+    revalidatePath('/posts')
     revalidateTag('posts-sitemap')
+    revalidateTag('blogs-sitemap')
   }
 
   return doc
