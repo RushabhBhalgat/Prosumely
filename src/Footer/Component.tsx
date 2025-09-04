@@ -22,72 +22,73 @@ export async function Footer() {
       <div className="h-1 bg-gradient-to-r from-[#9adaf3] to-[#2563eb]"></div>
 
       <div className="container py-12">
-        {/* Main footer content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1: About */}
-          <div className="space-y-4 lg:col-span-1">
-            <Link className="inline-block mb-4" href="/">
-              <span className="text-white text-2xl font-bold">Prosumely</span>
-            </Link>
-            <p className="text-gray-400 text-sm leading-relaxed text-justify">
-              Prosumely empowers professionals with expertly crafted resumes, executive CVs, cover
-              letters, LinkedIn profile enhancements, and impactful project portfolios. Our team of
-              resume specialists, HR professionals, and industry experts collaborates to create
-              tailored personal branding solutions that help you stand out and advance your career.
-            </p>
-            <div className="flex space-x-3 pt-4">
-              {/* Social Media Links */}
-              <a
-                href="https://www.facebook.com/prosumely.cv.5/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
-              >
-                <Facebook size={16} />
-              </a>
-              <a
-                href="https://x.com/prosumely"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
-              >
-                <Twitter size={16} />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
-              >
-                <Instagram size={16} />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/prosumely/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
-              >
-                <Linkedin size={16} />
-              </a>
-              <a
-                href="https://www.youtube.com/@prosumely8704"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
-              >
-                <Youtube size={16} />
-              </a>
-            </div>
-          </div>
+        {servicesMode === 'limited' ? (
+          /* Limited Mode Layout */
+          <>
+            {/* First row: Prosumely, Resume Services, Contact Us */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Column 1: About */}
+              <div className="space-y-4">
+                <Link className="inline-block mb-4" href="/">
+                  <span className="text-white text-2xl font-bold">Prosumely</span>
+                </Link>
+                <p className="text-gray-400 text-sm leading-relaxed text-justify">
+                  Prosumely empowers professionals with expertly crafted resumes, executive CVs, cover
+                  letters, LinkedIn profile enhancements, and impactful project portfolios. Our team of
+                  resume specialists, HR professionals, and industry experts collaborates to create
+                  tailored personal branding solutions that help you stand out and advance your career.
+                </p>
+                <div className="flex space-x-3 pt-4">
+                  {/* Social Media Links */}
+                  <a
+                    href="https://www.facebook.com/prosumely.cv.5/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Facebook size={16} />
+                  </a>
+                  <a
+                    href="https://x.com/prosumely"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Twitter size={16} />
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Instagram size={16} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/prosumely/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Linkedin size={16} />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@prosumely8704"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Youtube size={16} />
+                  </a>
+                </div>
+              </div>
 
-          {/* Column 2: Resume Services */}
-          <div className="space-y-4 mt-8 md:mt-0">
-            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
-              Resume Services
-            </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-1">
-              {servicesMode === 'limited' ? (
-                <>
+              {/* Column 2: Resume Services */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Resume Services
+                </h3>
+                <div className="grid grid-cols-1 gap-y-1">
                   <Link
                     href="/services/jobseeker-cv-combo"
                     className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
@@ -112,220 +113,135 @@ export async function Footer() {
                   >
                     CV + Personal Website Combo
                   </Link>
-                </>
-              ) : (
-                <>
-                  {/* ...existing code for full mode... */}
-                  <Link
-                    href="/ats-resume-writing-service"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                  >
-                    ATS Resume
-                  </Link>
-                  <Link
-                    href="/free-resume-review"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                  >
-                    Free Resume Review
-                  </Link>
-                  <Link
-                    href="/executive-resume-writing-service"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                  >
-                    Executive Resume
-                  </Link>
-                  <Link
-                    href="/academic-cv-writing-service"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                  >
-                    Academic CV
-                  </Link>
-                  <Link
-                    href="/cover-letter-writing-service"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                  >
-                    Cover Letter
-                  </Link>
-                  <Link
-                    href="/jobseekers-combo-service"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                  >
-                    Jobseeker's Combo
-                  </Link>
-                </>
-              )}
-            </div>
-          </div>
-
-          {/* Column 3: Career Services - Only show in full mode */}
-          {servicesMode === 'full' && (
-            <div className="space-y-4 mt-8 md:mt-0">
-              <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
-                Career Services
-              </h3>
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-1">
-                <Link
-                  href="/linkedin-profile-makeover"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                >
-                  LinkedIn Profile
-                </Link>
-                <Link
-                  href="/project-portfolio"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                >
-                  Project Portfolio
-                </Link>
-                <Link
-                  href="/sop-writing-service"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                >
-                  SOP Writing
-                </Link>
-                <Link
-                  href="/career-roadmap-service"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                >
-                  Career Roadmap
-                </Link>
-                <Link
-                  href="/interview-coaching-service"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                >
-                  Interview Coaching
-                </Link>
-                <Link
-                  href="/membership-application-service"
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                >
-                  Membership Application
-                </Link>
-              </div>
-            </div>
-          )}
-
-          {/* Column 4: Career Tools (NEW) */}
-          <div className="space-y-4 mt-8 md:mt-0">
-            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
-              Career Tools
-            </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-1">
-              <Link
-                href="/career-tools/job-description-keyword-finder"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Keyword Finder
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Second row: Resources & Links and Industries */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
-          {/* Column: Resources & Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
-              Resources & Links
-            </h3>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-              <Link
-                href="/posts"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/impact-stories"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Impact Stories
-              </Link>
-              <Link
-                href="/testimonials"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Testimonials
-              </Link>
-              <Link
-                href="/ebooks"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Ebooks
-              </Link>
-              <Link
-                href="/newsroom"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Newsroom
-              </Link>
-              <Link
-                href="/events"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Events
-              </Link>
-              <Link
-                href="/pricing"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Pricing
-              </Link>
-              <Link
-                href="/about"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                About Us
-              </Link>
-              <Link
-                href="/contact"
-                className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-              >
-                Contact
-              </Link>
-              {navItems.map(({ link }, i) => (
-                <CMSLink
-                  key={i}
-                  className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
-                  {...link}
-                />
-              ))}
-            </div>
-
-            {/* Contact Info */}
-            <div className="pt-4 border-t border-gray-800">
-              <h4 className="text-sm font-semibold text-white mb-3">Contact Us</h4>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <Phone size={14} className="text-[#9adaf3] flex-shrink-0" />
-                  <a
-                    href="tel:+917559112241"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-xs"
-                  >
-                    +91 7559112241
-                  </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail size={14} className="text-[#9adaf3] flex-shrink-0" />
-                  <a
-                    href="mailto:contact@prosumely.com"
-                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-xs"
-                  >
-                    contact@prosumely.com
-                  </a>
+              </div>
+
+              {/* Column 3: Contact Us */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Contact Us
+                </h3>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <Phone size={14} className="text-[#9adaf3] flex-shrink-0" />
+                    <div className="text-gray-400 text-xs">
+                      <div className="font-medium text-gray-300 mb-1">Prosumely</div>
+                      <a
+                        href="tel:+917559112241"
+                        className="hover:text-[#9adaf3] transition-colors duration-200 block"
+                      >
+                        +91 7559112241
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Phone size={14} className="text-[#9adaf3] flex-shrink-0 mt-0.5" />
+                    <div className="text-gray-400 text-xs">
+                      <div className="font-medium text-gray-300 mb-1">Advisor Malcolm Garrington:</div>
+                      <div className="space-y-0.5">
+                        <a href="tel:+201226955500" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                          Egypt: +20 122 69 555 00
+                        </a>
+                        <a href="tel:+6281270538590" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                          Indonesia: +62 812 705 3859
+                        </a>
+                        <a href="tel:+971585648899" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                          UAE: +971 58 564 8899
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Mail size={14} className="text-[#9adaf3] flex-shrink-0" />
+                    <a
+                      href="mailto:contact@prosumely.com"
+                      className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-xs"
+                    >
+                      contact@prosumely.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Column: Industries */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
-              Industries We Serve
-            </h3>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-              {servicesMode === 'limited' ? (
-                // Unclickable industries in limited mode
-                <>
+            {/* Second row: Resources & Links and Industries We Serve */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+              {/* Column: Resources & Quick Links */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Resources & Links
+                </h3>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                  <Link
+                    href="/posts"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    href="/impact-stories"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Impact Stories
+                  </Link>
+                  <Link
+                    href="/testimonials"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Testimonials
+                  </Link>
+                  <Link
+                    href="/ebooks"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Ebooks
+                  </Link>
+                  <Link
+                    href="/newsroom"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Newsroom
+                  </Link>
+                  <Link
+                    href="/events"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Events
+                  </Link>
+                  <Link
+                    href="/pricing"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Contact
+                  </Link>
+                  {navItems.map(({ link }, i) => (
+                    <CMSLink
+                      key={i}
+                      className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                      {...link}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* Column: Industries We Serve */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Industries We Serve
+                </h3>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                   <span className="text-gray-500 text-sm py-1 block cursor-default">
                     Construction Industry
                   </span>
@@ -374,10 +290,297 @@ export async function Footer() {
                   <span className="text-gray-500 text-sm py-1 block cursor-default">
                     Chemicals & Materials
                   </span>
-                </>
-              ) : (
-                // Clickable industries in full mode
-                <>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          /* Full Mode Layout */
+          <>
+            {/* Main footer content */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Column 1: About */}
+              <div className="space-y-4">
+                <Link className="inline-block mb-4" href="/">
+                  <span className="text-white text-2xl font-bold">Prosumely</span>
+                </Link>
+                <p className="text-gray-400 text-sm leading-relaxed text-justify">
+                  Prosumely empowers professionals with expertly crafted resumes, executive CVs, cover
+                  letters, LinkedIn profile enhancements, and impactful project portfolios. Our team of
+                  resume specialists, HR professionals, and industry experts collaborates to create
+                  tailored personal branding solutions that help you stand out and advance your career.
+                </p>
+                <div className="flex space-x-3 pt-4">
+                  {/* Social Media Links */}
+                  <a
+                    href="https://www.facebook.com/prosumely.cv.5/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Facebook size={16} />
+                  </a>
+                  <a
+                    href="https://x.com/prosumely"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Twitter size={16} />
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Instagram size={16} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/prosumely/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Linkedin size={16} />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@prosumely8704"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-blue-600 hover:bg-blue-500 flex items-center justify-center transition-colors duration-300"
+                  >
+                    <Youtube size={16} />
+                  </a>
+                </div>
+              </div>
+
+              {/* Column 2: Resume Services */}
+              <div className="space-y-4 mt-8 md:mt-0">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Resume Services
+                </h3>
+                <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-1">
+                  <Link
+                    href="/ats-resume-writing-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    ATS Resume
+                  </Link>
+                  <Link
+                    href="/free-resume-review"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Free Resume Review
+                  </Link>
+                  <Link
+                    href="/executive-resume-writing-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Executive Resume
+                  </Link>
+                  <Link
+                    href="/academic-cv-writing-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Academic CV
+                  </Link>
+                  <Link
+                    href="/cover-letter-writing-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Cover Letter
+                  </Link>
+                  <Link
+                    href="/jobseekers-combo-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Jobseeker's Combo
+                  </Link>
+                </div>
+              </div>
+
+              {/* Column 3: Career Services */}
+              <div className="space-y-4 mt-8 md:mt-0">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Career Services
+                </h3>
+                <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-1">
+                  <Link
+                    href="/linkedin-profile-makeover"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    LinkedIn Profile
+                  </Link>
+                  <Link
+                    href="/project-portfolio"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Project Portfolio
+                  </Link>
+                  <Link
+                    href="/sop-writing-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    SOP Writing
+                  </Link>
+                  <Link
+                    href="/career-roadmap-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Career Roadmap
+                  </Link>
+                  <Link
+                    href="/interview-coaching-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Interview Coaching
+                  </Link>
+                  <Link
+                    href="/membership-application-service"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Membership Application
+                  </Link>
+                </div>
+              </div>
+
+              {/* Column 4: Career Tools */}
+              <div className="space-y-4 mt-8 md:mt-0">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Career Tools
+                </h3>
+                <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-1">
+                  <Link
+                    href="/career-tools/job-description-keyword-finder"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Keyword Finder
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Second row: Resources & Links and Industries */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+              {/* Column: Resources & Quick Links */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Resources & Links
+                </h3>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                  <Link
+                    href="/posts"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    href="/impact-stories"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Impact Stories
+                  </Link>
+                  <Link
+                    href="/testimonials"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Testimonials
+                  </Link>
+                  <Link
+                    href="/ebooks"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Ebooks
+                  </Link>
+                  <Link
+                    href="/newsroom"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Newsroom
+                  </Link>
+                  <Link
+                    href="/events"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Events
+                  </Link>
+                  <Link
+                    href="/pricing"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Pricing
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Contact
+                  </Link>
+                  {navItems.map(({ link }, i) => (
+                    <CMSLink
+                      key={i}
+                      className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                      {...link}
+                    />
+                  ))}
+                </div>
+
+                {/* Contact Info */}
+                <div className="pt-4 border-t border-gray-800">
+                  <h4 className="text-sm font-semibold text-white mb-3">Contact Us</h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <Phone size={14} className="text-[#9adaf3] flex-shrink-0" />
+                      <a
+                        href="tel:+917559112241"
+                        className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-xs"
+                      >
+                        +91 7559112241
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Phone size={14} className="text-[#9adaf3] flex-shrink-0" />
+                      <div className="text-gray-400 text-xs">
+                        <div className="font-medium text-gray-300 mb-1">Advisor Malcolm:</div>
+                        <div className="space-y-0.5">
+                          <a href="tel:+201226955500" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                            Egypt: +20 122 69 555 00
+                          </a>
+                          <a href="tel:+6281270538590" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                            Indonesia: +62 812 705 3859
+                          </a>
+                          <a href="tel:+971585648899" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                            UAE: +971 58 564 8899
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Mail size={14} className="text-[#9adaf3] flex-shrink-0" />
+                      <a
+                        href="mailto:contact@prosumely.com"
+                        className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-xs"
+                      >
+                        contact@prosumely.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Column: Industries */}
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-gray-800">
+                  Industries We Serve
+                </h3>
+                <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                   <Link
                     href="/services?industry=construction-industry"
                     className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
@@ -474,11 +677,11 @@ export async function Footer() {
                   >
                     Chemicals & Materials
                   </Link>
-                </>
-              )}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </>
+        )}
 
         {/* Bottom Copyright Bar */}
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">

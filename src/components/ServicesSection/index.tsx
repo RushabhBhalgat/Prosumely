@@ -70,25 +70,25 @@ export default async function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div
-          className={
-            servicesMode === 'limited'
-              ? 'grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 justify-center items-center max-w-4xl mx-auto mb-2 md:mb-4 lg:mb-8'
-              : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-2 md:mb-4 lg:mb-8'
-          }
-        >
+        <div className={`max-w-7xl mx-auto mb-2 md:mb-4 lg:mb-8 ${
+          servicesMode === 'limited' 
+            ? 'flex flex-wrap justify-center gap-6 px-4' 
+            : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'
+        }`}>
           {services.map((service) => {
             return (
               <div
                 key={service.id}
-                className={`relative bg-white border rounded-xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between ${
+                className={`relative bg-white border rounded-xl shadow-sm hover:shadow-md transition-all duration-300 ${
+                  servicesMode === 'limited' ? 'w-full max-w-sm min-w-[280px] mt-4' : ''
+                } ${
                   service.popular ? 'border-blue-300 ring-1 ring-blue-200' : 'border-gray-200'
-                } ${servicesMode === 'limited' ? 'min-h-[480px]' : ''}`}
+                }`}
               >
                 {/* Popular Badge */}
                 {service.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <div className="bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-medium">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
+                    <div className="bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-medium shadow-lg whitespace-nowrap">
                       Most Popular
                     </div>
                   </div>

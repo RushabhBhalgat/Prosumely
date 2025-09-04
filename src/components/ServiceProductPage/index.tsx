@@ -115,7 +115,7 @@ const ServiceProductPage: React.FC<ServiceProductPageProps> = ({
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 lg:p-8 shadow-lg border border-blue-100 sticky top-24">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-800">{title}</h2>
-                <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                <div className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent whitespace-nowrap">
                   {currency} {price}
                 </div>
               </div>
