@@ -18,14 +18,23 @@ export async function GET(request: NextRequest) {
       success: true,
       count: result.totalDocs,
       data: result.docs,
-      message: `Found ${result.totalDocs} consultations`
+      message: `Found ${result.totalDocs} consultations`,
     })
   } catch (error) {
     console.error('Error fetching consultations:', error)
-    return NextResponse.json({
-      success: false,
-      error: error.message,
-      message: 'Failed to fetch consultations'
-    }, { status: 500 })
+    let errorMessage = 'Unknown error'
+    if (error instanceof Error) {
+      errorMessage = error.message
+    } else if (typeof error === 'string') {
+      errorMessage = error
+    }
+    return NextResponse.json(
+      {
+        success: false,
+        error: errorMessage,
+        message: 'Failed to fetch consultations',
+      },
+      { status: 500 },
+    )
   }
 }
