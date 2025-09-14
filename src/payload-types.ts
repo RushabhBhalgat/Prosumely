@@ -73,6 +73,7 @@ export interface Config {
     categories: Category;
     users: User;
     'rate-limits': RateLimit;
+    consultations: Consultation;
     redirects: Redirect;
     forms: Form;
     'form-submissions': FormSubmission;
@@ -90,6 +91,7 @@ export interface Config {
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'rate-limits': RateLimitsSelect<false> | RateLimitsSelect<true>;
+    consultations: ConsultationsSelect<false> | ConsultationsSelect<true>;
     redirects: RedirectsSelect<false> | RedirectsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
@@ -767,6 +769,40 @@ export interface RateLimit {
   updatedAt: string;
 }
 /**
+ * Manage consultation requests and their status
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "consultations".
+ */
+export interface Consultation {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+  /**
+   * Australian and New Zealand Standard Classification of Occupations Code
+   */
+  anzsoCode?: string | null;
+  /**
+   * The service page where this consultation was requested
+   */
+  servicePage?: string | null;
+  /**
+   * Customer message or consultation details
+   */
+  message?: string | null;
+  /**
+   * Current status of the consultation request
+   */
+  status: 'pending' | 'in-progress' | 'contacted' | 'completed' | 'cancelled';
+  /**
+   * Internal notes for tracking consultation progress
+   */
+  notes?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
@@ -963,6 +999,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'rate-limits';
         value: string | RateLimit;
+      } | null)
+    | ({
+        relationTo: 'consultations';
+        value: string | Consultation;
       } | null)
     | ({
         relationTo: 'redirects';
@@ -1338,6 +1378,22 @@ export interface RateLimitsSelect<T extends boolean = true> {
   resetTime?: T;
   createdAt?: T;
   updatedAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "consultations_select".
+ */
+export interface ConsultationsSelect<T extends boolean = true> {
+  name?: T;
+  phone?: T;
+  email?: T;
+  anzsoCode?: T;
+  servicePage?: T;
+  message?: T;
+  status?: T;
+  notes?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
