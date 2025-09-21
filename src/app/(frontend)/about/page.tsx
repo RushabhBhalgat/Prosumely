@@ -166,7 +166,9 @@ const AboutPage = () => {
       <section className="py-12 md:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Drives Us Forward</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              What Drives Us Forward
+            </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Our foundation is built on three core pillars that guide every decision we make
             </p>
@@ -198,8 +200,12 @@ const AboutPage = () => {
                         <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                       <div className="min-w-0">
-                        <div className="font-semibold text-sm sm:text-base truncate">{tab.title}</div>
-                        <div className="text-xs sm:text-sm opacity-70 hidden sm:block">Our {key}</div>
+                        <div className="font-semibold text-sm sm:text-base truncate">
+                          {tab.title}
+                        </div>
+                        <div className="text-xs sm:text-sm opacity-70 hidden sm:block">
+                          Our {key}
+                        </div>
                       </div>
                     </div>
                     {activeTab === tabKey && (
@@ -293,8 +299,13 @@ const AboutPage = () => {
                     <div className="text-xs text-gray-700 leading-tight">
                       <div className="font-semibold text-gray-900 mb-1">Contact:</div>
                       <div className="space-y-0.5">
-                        <div><strong>Email:</strong> malgarrington@hotmail.com</div>
-                        <div><strong>Mobile:</strong> Egypt: +20 122 69 555 00 | Indonesia: +62 812 705 3859 | UAE: +971 58 564 8899</div>
+                        <div>
+                          <strong>Email:</strong> malgarrington@hotmail.com
+                        </div>
+                        <div>
+                          <strong>Mobile:</strong> UK: +44 7352006578 | Egypt: +20 122 69 555 00 |
+                          Indonesia: +62 812 705 3859 | UAE: +971 58 564 8899
+                        </div>
                       </div>
                     </div>
                   </div>

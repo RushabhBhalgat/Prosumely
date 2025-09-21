@@ -33,10 +33,11 @@ export async function Footer() {
                   <span className="text-white text-2xl font-bold">Prosumely</span>
                 </Link>
                 <p className="text-gray-400 text-sm leading-relaxed text-justify">
-                  Prosumely empowers professionals with expertly crafted resumes, executive CVs, cover
-                  letters, LinkedIn profile enhancements, and impactful project portfolios. Our team of
-                  resume specialists, HR professionals, and industry experts collaborates to create
-                  tailored personal branding solutions that help you stand out and advance your career.
+                  Prosumely empowers professionals with expertly crafted resumes, executive CVs,
+                  cover letters, LinkedIn profile enhancements, and impactful project portfolios.
+                  Our team of resume specialists, HR professionals, and industry experts
+                  collaborates to create tailored personal branding solutions that help you stand
+                  out and advance your career.
                 </p>
                 <div className="flex space-x-3 pt-4">
                   {/* Social Media Links */}
@@ -137,16 +138,15 @@ export async function Footer() {
                   <div className="flex items-start gap-2">
                     <Phone size={14} className="text-[#9adaf3] flex-shrink-0 mt-0.5" />
                     <div className="text-gray-400 text-xs">
-                      <div className="font-medium text-gray-300 mb-1">Advisor Malcolm Garrington:</div>
+                      <div className="font-medium text-gray-300 mb-1">
+                        Advisor Malcolm Garrington:
+                      </div>
                       <div className="space-y-0.5">
-                        <a href="tel:+201226955500" className="hover:text-[#9adaf3] transition-colors duration-200 block">
-                          Egypt: +20 122 69 555 00
-                        </a>
-                        <a href="tel:+6281270538590" className="hover:text-[#9adaf3] transition-colors duration-200 block">
-                          Indonesia: +62 812 705 3859
-                        </a>
-                        <a href="tel:+971585648899" className="hover:text-[#9adaf3] transition-colors duration-200 block">
-                          UAE: +971 58 564 8899
+                        <a
+                          href="tel:+201226955500"
+                          className="hover:text-[#9adaf3] transition-colors duration-200 block"
+                        >
+                          UK: +44 7352006578
                         </a>
                       </div>
                     </div>
@@ -257,12 +257,8 @@ export async function Footer() {
                   <span className="text-gray-500 text-sm py-1 block cursor-default">
                     Logistics & Supply Chain
                   </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Tech & IT
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    BFSI
-                  </span>
+                  <span className="text-gray-500 text-sm py-1 block cursor-default">Tech & IT</span>
+                  <span className="text-gray-500 text-sm py-1 block cursor-default">BFSI</span>
                   <span className="text-gray-500 text-sm py-1 block cursor-default">
                     Healthcare & Pharma
                   </span>
@@ -305,10 +301,11 @@ export async function Footer() {
                   <span className="text-white text-2xl font-bold">Prosumely</span>
                 </Link>
                 <p className="text-gray-400 text-sm leading-relaxed text-justify">
-                  Prosumely empowers professionals with expertly crafted resumes, executive CVs, cover
-                  letters, LinkedIn profile enhancements, and impactful project portfolios. Our team of
-                  resume specialists, HR professionals, and industry experts collaborates to create
-                  tailored personal branding solutions that help you stand out and advance your career.
+                  Prosumely empowers professionals with expertly crafted resumes, executive CVs,
+                  cover letters, LinkedIn profile enhancements, and impactful project portfolios.
+                  Our team of resume specialists, HR professionals, and industry experts
+                  collaborates to create tailored personal branding solutions that help you stand
+                  out and advance your career.
                 </p>
                 <div className="flex space-x-3 pt-4">
                   {/* Social Media Links */}
@@ -550,13 +547,22 @@ export async function Footer() {
                       <div className="text-gray-400 text-xs">
                         <div className="font-medium text-gray-300 mb-1">Advisor Malcolm:</div>
                         <div className="space-y-0.5">
-                          <a href="tel:+201226955500" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                          <a
+                            href="tel:+201226955500"
+                            className="hover:text-[#9adaf3] transition-colors duration-200 block"
+                          >
                             Egypt: +20 122 69 555 00
                           </a>
-                          <a href="tel:+6281270538590" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                          <a
+                            href="tel:+6281270538590"
+                            className="hover:text-[#9adaf3] transition-colors duration-200 block"
+                          >
                             Indonesia: +62 812 705 3859
                           </a>
-                          <a href="tel:+971585648899" className="hover:text-[#9adaf3] transition-colors duration-200 block">
+                          <a
+                            href="tel:+971585648899"
+                            className="hover:text-[#9adaf3] transition-colors duration-200 block"
+                          >
                             UAE: +971 58 564 8899
                           </a>
                         </div>

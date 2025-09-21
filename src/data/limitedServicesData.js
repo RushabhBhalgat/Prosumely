@@ -13,7 +13,7 @@ export const limitedServicesData = {
       detailedDescription: `The Jobseeker's CV Combo is the ultimate career transformation package designed for ambitious professionals ready to dominate their job search.<br/><br/>🎯 <strong style="color: #2563eb;">Executive CV</strong>: Position yourself as a leader with a powerful, achievement-driven executive resume. Crafted for impactful roles, the executive CV highlights your job responsibilities with detailed impact, vision, competencies (Technical, Core and Personal) and value proposition.<br/><br/>💼 <strong style="color: #2563eb;">Professional Cover Letter</strong>: A well-crafted cover letter that complements your resume and highlights your unique qualifications and experiences. Tailored to the job you are applying for.<br/><br/>🔗 <strong style="color: #2563eb;">LinkedIn Profile makeover</strong>: We optimize your profile to attract recruiters. This service includes a complete profile review, keyword optimization, and content enhancement.<br/><br/>📊 <strong style="color: #2563eb;">Project Portfolio</strong>: Impressive and engaging document presenting each project with a visually compelling page layout, highlighting project details, Job responsibilities, key achievements and captivating viewers with infographics.`,
     },
     contact: {
-      whatsapp: '+91 7559112241',
+      whatsapp: 'Malcolm Garrington: +44 7352006578 ',
       email: 'contact@prosumely.com',
       note: 'International payments can be made through Debit/Credit card.',
     },
@@ -42,7 +42,7 @@ export const limitedServicesData = {
       detailedDescription: `In today's digital-first world, your website is more than just an online presence—it's your personal brand, a platform that works for you around the clock. The website shall help you position yourself as an emerging leader in Industry.<br/><br/>🌟 <strong style="color: #2563eb;">Personal Domain</strong>: Buying personal domain e.g., www.yourname.com<br/><br/>🎨 <strong style="color: #2563eb;">Personal Website design development</strong>: Professional design that reflects your personal brand<br/><br/>🔍 <strong style="color: #2563eb;">Google Searchability and SEO</strong>: Optimized for search engines to enhance discoverability<br/><br/>📝 <strong style="color: #2563eb;">Website content creation</strong>: Compelling content that tells your professional story<br/><br/>🔒 <strong style="color: #2563eb;">Website Security and certifications</strong>: SSL certificates and security measures<br/><br/>🚀 <strong style="color: #2563eb;">Website deployment and maintenance</strong>: Complete setup with ongoing support<br/><br/>The personal website shall highlight your story, career timeline, skills, experience, projects and accomplishments, making it easy for employers, clients, recruiters or collaborators to connect with you.`,
     },
     contact: {
-      whatsapp: '+91 7559112241',
+      whatsapp: 'Malcolm Garrington: +44 7352006578',
       email: 'contact@prosumely.com',
       note: 'International payments can be made through Debit/Credit card.',
     },
@@ -80,7 +80,7 @@ export const limitedServicesData = {
       detailedDescription: `This all-in-one solution includes a professionally crafted executive CV that highlights your achievements, a tailored cover letter that makes a lasting impression, and a complete LinkedIn profile makeover to boost your visibility with recruiters. We go further by building a polished project portfolio that showcases your expertise, and a modern, fully responsive personal website—your 24/7 digital brand hub—equipped with all the features jobseekers need to stand out.<br/><br/>🎯 <strong style="color: #2563eb;">Executive CV</strong>: Achievement-driven executive resume with detailed impact and value proposition<br/><br/>💼 <strong style="color: #2563eb;">Professional Cover Letter</strong>: Tailored cover letter highlighting your unique qualifications<br/><br/>🔗 <strong style="color: #2563eb;">LinkedIn Profile makeover</strong>: Complete optimization for maximum recruiter visibility<br/><br/>📊 <strong style="color: #2563eb;">Project Portfolio</strong>: Visual showcase of your projects with compelling infographics<br/><br/>🌐 <strong style="color: #2563eb;">Personal Website</strong>: All features included as mentioned in jobseeker's personal website<br/><br/>Together, these tools create a powerful, cohesive personal brand that communicates your value with impact and confidence, ensuring you shine in every opportunity.`,
     },
     contact: {
-      whatsapp: '+91 7559112241',
+      whatsapp: 'Malcolm Garrington: +44 7352006578',
       email: 'contact@prosumely.com',
       note: 'International payments can be made through Debit/Credit card.',
     },
