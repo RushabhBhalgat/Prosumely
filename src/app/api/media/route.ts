@@ -123,6 +123,13 @@ export async function POST(request: Request) {
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
+    console.log('Uploading file to Payload with Vercel Blob storage:', {
+      fileName: file.name,
+      fileSize: file.size,
+      mimeType: file.type,
+      blobToken: process.env.BLOB_READ_WRITE_TOKEN ? 'present' : 'missing',
+    })
+
     // Create the media document in Payload
     const result = await payload.create({
       collection: 'media',
@@ -135,6 +142,13 @@ export async function POST(request: Request) {
         name: file.name,
         size: file.size,
       },
+    })
+
+    console.log('Upload result:', {
+      id: result.id,
+      filename: result.filename,
+      url: result.url,
+      sizes: result.sizes ? Object.keys(result.sizes) : 'none',
     })
 
     return Response.json(result)

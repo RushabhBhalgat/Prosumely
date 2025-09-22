@@ -10,6 +10,8 @@ import { fileURLToPath } from 'url'
 
 import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
+import { adminOnly } from '../access/adminOnly'
+import { adminOrFormCreate } from '../access/adminOrFormCreate'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -17,10 +19,10 @@ const dirname = path.dirname(filename)
 export const Media: CollectionConfig = {
   slug: 'media',
   access: {
-    create: anyone,
-    delete: authenticated,
-    read: anyone,
-    update: authenticated,
+    create: adminOrFormCreate, // Allow form uploads from public + admin access
+    delete: adminOnly,
+    read: adminOnly, // Only admins can read media metadata
+    update: adminOnly,
   },
   indexes: [
     {
@@ -47,8 +49,8 @@ export const Media: CollectionConfig = {
     },
   ],
   upload: {
-    // Upload to the public/media directory in Next.js making them publicly accessible even outside of Payload
-    staticDir: path.resolve(dirname, '../../public/media'),
+    // Remove staticDir to use Vercel Blob storage instead of local storage
+    // staticDir: path.resolve(dirname, '../../public/media'),
     adminThumbnail: 'thumbnail',
     focalPoint: true,
     imageSizes: [

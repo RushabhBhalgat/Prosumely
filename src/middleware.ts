@@ -5,6 +5,18 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   const hostname = request.headers.get('host') || ''
 
+  // Allow internal proxy requests to pass through
+  if (request.headers.get('User-Agent')?.includes('Internal-File-Proxy')) {
+    return NextResponse.next()
+  }
+
+  // Block direct access to Payload's built-in media file routes for public users
+  if (url.pathname.match(/^\/(payload|admin)\/api\/media\/file\//)) {
+    return new NextResponse('Forbidden: Use /api/media/file/ instead', {
+      status: 403,
+    })
+  }
+
   // Create response object to add headers to
   const response = NextResponse.next()
 
@@ -99,12 +111,11 @@ export const config = {
   matcher: [
     /*
      * Match all request paths except for the ones starting with:
-     * - api (API routes)
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
-     * - admin (Payload admin)
+     * Include payload/admin API routes for media protection
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|admin).*)',
+    '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 }
