@@ -1,6 +1,7 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { NextRequest, NextResponse } from 'next/server'
+import { getCachedBlobUrl } from '@/lib/blobCache'
 
 export async function GET(
   request: NextRequest,
@@ -46,7 +47,9 @@ export async function GET(
     // Get the filename from the URL
     const filename = decodeURIComponent(rawFilename)
 
-    // Find the media document by filename
+    console.log(`[MediaFile] Serving file: ${filename}`)
+
+    // Find the media document by filename for validation and metadata
     const mediaResult = await payload.find({
       collection: 'media',
       where: {
@@ -58,155 +61,67 @@ export async function GET(
     })
 
     if (!mediaResult.docs || mediaResult.docs.length === 0) {
+      console.log(`[MediaFile] Media document not found: ${filename}`)
       return new NextResponse('File not found or access denied', { status: 404 })
     }
 
     const mediaDoc = mediaResult.docs[0]
 
     if (!mediaDoc) {
-      return new NextResponse('Media document not found', { status: 404 })
+      console.log(`[MediaFile] Media document not found: ${filename}`)
+      return new NextResponse('File not found or access denied', { status: 404 })
     }
 
-    // Debug: Log the media document structure
-    console.log('Media document:', {
-      id: mediaDoc.id,
-      filename: mediaDoc.filename,
-      url: mediaDoc.url,
-      mimeType: mediaDoc.mimeType,
-      sizes: mediaDoc.sizes ? Object.keys(mediaDoc.sizes) : 'none',
+    // Try to get the blob URL efficiently using cache
+    let blobUrl: string | null = null
+
+    // First, check if Payload has a proper blob URL
+    if (
+      mediaDoc.url &&
+      !mediaDoc.url.startsWith('/') &&
+      !mediaDoc.url.includes('/api/media/file/')
+    ) {
+      blobUrl = mediaDoc.url
+      console.log(`[MediaFile] Using Payload URL: ${blobUrl}`)
+    } else {
+      // Use our efficient cached blob lookup
+      blobUrl = await getCachedBlobUrl(filename)
+      console.log(`[MediaFile] Using cached blob URL: ${blobUrl}`)
+    }
+
+    if (!blobUrl) {
+      console.log(`[MediaFile] Blob URL not found for: ${filename}`)
+      return new NextResponse('File not found in storage', { status: 404 })
+    }
+
+    // Fetch the file from the blob URL
+    const fileResponse = await fetch(blobUrl)
+
+    if (!fileResponse.ok) {
+      console.error(`[MediaFile] Failed to fetch from blob: ${fileResponse.status}`)
+      return new NextResponse('File not accessible from storage', { status: 503 })
+    }
+
+    // Get the file content as array buffer
+    const fileArrayBuffer = await fileResponse.arrayBuffer()
+
+    console.log(
+      `[MediaFile] Successfully served: ${filename} (${fileArrayBuffer.byteLength} bytes)`,
+    )
+
+    // Return the file with appropriate headers
+    return new NextResponse(fileArrayBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': mediaDoc.mimeType || 'application/octet-stream',
+        'Content-Disposition': `inline; filename="${filename}"`,
+        'Cache-Control': 'private, no-cache',
+        'X-Content-Type-Options': 'nosniff',
+        'X-Frame-Options': 'DENY',
+      },
     })
-
-    // Debug: Log actual size URLs to understand the structure
-    if (mediaDoc.sizes) {
-      console.log('Size variants:')
-      for (const [sizeName, sizeData] of Object.entries(mediaDoc.sizes)) {
-        console.log(`  ${sizeName}:`, sizeData)
-      }
-    }
-
-    // Debug: Log all fields to find where Vercel Blob URL might be stored
-    console.log('All media document fields:', Object.keys(mediaDoc))
-    const docAny = mediaDoc as any
-    if (docAny.file) {
-      console.log('File field:', docAny.file)
-    }
-    if (docAny.fileURL) {
-      console.log('FileURL field:', docAny.fileURL)
-    }
-    if (docAny.storage) {
-      console.log('Storage field:', docAny.storage)
-    }
-
-    // For Vercel Blob storage, we need to access the file directly from Blob
-    // The mediaDoc should have file information we can use
-    let fileUrl = mediaDoc.url
-
-    // If the URL is relative, access the file through Payload's internal API
-    if (fileUrl && fileUrl.startsWith('/')) {
-      // IMPORTANT: Check if the URL points to our own route to prevent infinite loops
-      if (fileUrl.includes('/api/media/file/')) {
-        console.log('Detected potential infinite loop - URL points to our own route:', fileUrl)
-
-        // Use Vercel Blob list to find the actual file
-        try {
-          console.log('Querying Vercel Blob storage for file:', filename)
-
-          // Import Vercel Blob list function to find the actual blob URL
-          const { list } = await import('@vercel/blob')
-
-          const { blobs } = await list({ token: process.env.BLOB_READ_WRITE_TOKEN })
-
-          // Find the blob that matches our filename
-          const matchingBlob = blobs.find((blob) => {
-            const blobFilename = decodeURIComponent(blob.pathname)
-            const targetFilename = decodeURIComponent(filename)
-            console.log('Comparing blob:', blobFilename, 'with target:', targetFilename)
-            return blobFilename === targetFilename
-          })
-
-          if (matchingBlob) {
-            console.log('Found matching blob URL:', matchingBlob.url)
-
-            // Fetch the file directly from Vercel Blob storage
-            const blobResponse = await fetch(matchingBlob.url)
-
-            if (!blobResponse.ok) {
-              console.error(
-                'Failed to fetch file from blob URL:',
-                matchingBlob.url,
-                blobResponse.status,
-              )
-              throw new Error(`Blob fetch failed with status ${blobResponse.status}`)
-            }
-
-            // Get the file content as array buffer
-            const fileArrayBuffer = await blobResponse.arrayBuffer()
-
-            // Return the file with appropriate headers
-            return new NextResponse(fileArrayBuffer, {
-              status: 200,
-              headers: {
-                'Content-Type': mediaDoc.mimeType || 'application/octet-stream',
-                'Content-Disposition': `inline; filename="${filename}"`,
-                'Cache-Control': 'private, no-cache',
-                'X-Content-Type-Options': 'nosniff',
-                'X-Frame-Options': 'DENY',
-              },
-            })
-          } else {
-            console.error('No matching blob found for filename:', filename)
-            console.log(
-              'Available blobs (first 10):',
-              blobs.slice(0, 10).map((b) => decodeURIComponent(b.pathname)),
-            )
-            throw new Error('File not found in blob storage')
-          }
-        } catch (blobError) {
-          console.error('Error accessing Vercel Blob storage:', blobError)
-
-          // If blob access fails, return error
-          return new NextResponse(
-            'File not accessible from storage. This may indicate a configuration issue.',
-            {
-              status: 503,
-              headers: {
-                'Content-Type': 'text/plain',
-              },
-            },
-          )
-        }
-      }
-    }
-
-    // If we have a full URL (Vercel Blob URL), fetch it directly
-    if (fileUrl && !fileUrl.startsWith('/')) {
-      const fileResponse = await fetch(fileUrl)
-
-      if (!fileResponse.ok) {
-        console.error('Failed to fetch file from URL:', fileUrl, fileResponse.status)
-        return new NextResponse('File not accessible from storage', { status: 404 })
-      }
-
-      // Get the file content
-      const fileBuffer = await fileResponse.arrayBuffer()
-
-      // Return the file with appropriate headers
-      return new NextResponse(fileBuffer, {
-        status: 200,
-        headers: {
-          'Content-Type': mediaDoc.mimeType || 'application/octet-stream',
-          'Content-Disposition': `inline; filename="${filename}"`,
-          'Cache-Control': 'private, no-cache',
-          'X-Content-Type-Options': 'nosniff',
-          'X-Frame-Options': 'DENY',
-        },
-      })
-    }
-
-    // If we don't have a URL at all
-    return new NextResponse('File URL not available', { status: 404 })
   } catch (error) {
-    console.error('Error serving protected media file:', error)
+    console.error('[MediaFile] Error serving file:', error)
     return new NextResponse('Internal Server Error', { status: 500 })
   }
 }

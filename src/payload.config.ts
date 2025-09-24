@@ -82,7 +82,9 @@ export default buildConfig({
     // storage-adapter-placeholder
     vercelBlobStorage({
       collections: {
-        [Media.slug]: true,
+        [Media.slug]: {
+          prefix: 'media',
+        },
       },
       token: process.env.BLOB_READ_WRITE_TOKEN || '',
     }),
