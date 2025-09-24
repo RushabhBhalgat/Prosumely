@@ -119,10 +119,21 @@ async function refreshBlobCache(): Promise<void> {
     // Update cache with fresh data
     for (const blob of blobs) {
       const decodedPath = decodeURIComponent(blob.pathname)
+      const basename = decodedPath.split('/').pop() || decodedPath
+      
+      // Cache both full path and basename for flexibility
       blobCache.blobs.set(decodedPath, {
         url: blob.url,
         lastAccessed: now,
       })
+      
+      // Also cache by basename if different from full path
+      if (basename !== decodedPath) {
+        blobCache.blobs.set(basename, {
+          url: blob.url,
+          lastAccessed: now,
+        })
+      }
     }
 
     blobCache.lastFullRefresh = now
@@ -141,32 +152,67 @@ async function refreshBlobCache(): Promise<void> {
  */
 async function findBlobUrlDirect(filename: string): Promise<string | null> {
   try {
-    console.log(`[BlobCache] Direct search for: ${filename}`)
+    console.log(`[BlobCache] Direct search for: "${filename}"`)
 
     const { list } = await import('@vercel/blob')
     const { blobs } = await list({
       token: process.env.BLOB_READ_WRITE_TOKEN,
-      // Limit the search to avoid performance issues
-      limit: 100,
+      // Search more blobs for new files
+      limit: 1000,
     })
 
-    const matchingBlob = blobs.find((blob) => {
-      const blobFilename = decodeURIComponent(blob.pathname)
-      return blobFilename === filename
-    })
+    console.log(`[BlobCache] Searching through ${blobs.length} blobs`)
+
+    // Try multiple filename matching strategies
+    const searchVariants = [
+      filename, // Exact match
+      decodeURIComponent(filename), // Decoded version
+      encodeURIComponent(filename), // Encoded version
+      filename.replace(/\s+/g, '%20'), // Space to %20
+      filename.replace(/%20/g, ' '), // %20 to space
+    ]
+
+    let matchingBlob = null
+    let matchedVariant = ''
+
+    for (const variant of searchVariants) {
+      matchingBlob = blobs.find((blob) => {
+        const blobFilename = decodeURIComponent(blob.pathname)
+        const blobBasename = blobFilename.split('/').pop() || blobFilename
+        
+        // Log first few comparisons for debugging
+        if (blobs.indexOf(blob) < 3) {
+          console.log(`[BlobCache] Comparing blob: "${blobBasename}" with variant: "${variant}"`)
+        }
+        
+        return blobBasename === variant || blobFilename === variant
+      })
+
+      if (matchingBlob) {
+        matchedVariant = variant
+        break
+      }
+    }
 
     if (matchingBlob) {
-      // Cache the found result
+      // Cache the found result with original filename as key
       blobCache.blobs.set(filename, {
         url: matchingBlob.url,
         lastAccessed: Date.now(),
       })
 
-      console.log(`[BlobCache] Direct search found: ${filename}`)
+      console.log(`[BlobCache] Direct search found: "${matchingBlob.pathname}" using variant: "${matchedVariant}"`)
       return matchingBlob.url
     }
 
-    console.log(`[BlobCache] Direct search failed for: ${filename}`)
+    // Log available blob names for debugging
+    console.log(`[BlobCache] Direct search failed for: "${filename}"`)
+    console.log(`[BlobCache] Available blobs (first 10):`)
+    blobs.slice(0, 10).forEach((blob, index) => {
+      const blobBasename = decodeURIComponent(blob.pathname).split('/').pop() || blob.pathname
+      console.log(`  ${index + 1}. "${blobBasename}"`)
+    })
+    
     return null
   } catch (error) {
     console.error(`[BlobCache] Direct search error for ${filename}:`, error)
@@ -200,5 +246,19 @@ export function getBlobCacheStats() {
     size: blobCache.blobs.size,
     lastRefresh: new Date(blobCache.lastFullRefresh).toISOString(),
     isRefreshing: blobCache.isRefreshing,
+  }
+}
+
+/**
+ * Invalidate cache for a specific file or force refresh
+ */
+export function invalidateBlobCache(filename?: string): void {
+  if (filename) {
+    blobCache.blobs.delete(filename)
+    console.log(`[BlobCache] Invalidated cache for: ${filename}`)
+  } else {
+    // Force refresh on next request
+    blobCache.lastFullRefresh = 0
+    console.log('[BlobCache] Marked cache for refresh')
   }
 }

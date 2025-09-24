@@ -1,5 +1,6 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
+import { invalidateBlobCache } from '@/lib/blobCache'
 
 export async function GET(request: Request) {
   try {
@@ -150,6 +151,10 @@ export async function POST(request: Request) {
       url: result.url,
       sizes: result.sizes ? Object.keys(result.sizes) : 'none',
     })
+
+    // Invalidate blob cache to ensure new file is found
+    invalidateBlobCache()
+    console.log('Cache invalidated after file upload')
 
     return Response.json(result)
   } catch (error) {
