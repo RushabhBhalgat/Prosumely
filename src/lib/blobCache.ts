@@ -22,7 +22,7 @@ const CLEANUP_INTERVAL = 30 * 60 * 1000 // 30 minutes
 const MAX_CACHE_SIZE = 1000 // Maximum number of cached entries
 
 // Global cache instance
-let blobCache: BlobCache = {
+const blobCache: BlobCache = {
   blobs: new Map(),
   lastFullRefresh: 0,
   isRefreshing: false,
