@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
+import { ObjectId } from 'mongodb'
 
 export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -35,7 +36,6 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
     // Convert string ID to ObjectId format
     let blogId: any
     try {
-      const { ObjectId } = await import('mongodb')
       blogId = new ObjectId(id)
       console.log('Converted ID to ObjectId:', blogId)
     } catch (error) {
