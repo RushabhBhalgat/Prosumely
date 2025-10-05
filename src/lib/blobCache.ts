@@ -120,13 +120,13 @@ async function refreshBlobCache(): Promise<void> {
     for (const blob of blobs) {
       const decodedPath = decodeURIComponent(blob.pathname)
       const basename = decodedPath.split('/').pop() || decodedPath
-      
+
       // Cache both full path and basename for flexibility
       blobCache.blobs.set(decodedPath, {
         url: blob.url,
         lastAccessed: now,
       })
-      
+
       // Also cache by basename if different from full path
       if (basename !== decodedPath) {
         blobCache.blobs.set(basename, {
@@ -179,12 +179,12 @@ async function findBlobUrlDirect(filename: string): Promise<string | null> {
       matchingBlob = blobs.find((blob) => {
         const blobFilename = decodeURIComponent(blob.pathname)
         const blobBasename = blobFilename.split('/').pop() || blobFilename
-        
+
         // Log first few comparisons for debugging
         if (blobs.indexOf(blob) < 3) {
           console.log(`[BlobCache] Comparing blob: "${blobBasename}" with variant: "${variant}"`)
         }
-        
+
         return blobBasename === variant || blobFilename === variant
       })
 
@@ -201,7 +201,9 @@ async function findBlobUrlDirect(filename: string): Promise<string | null> {
         lastAccessed: Date.now(),
       })
 
-      console.log(`[BlobCache] Direct search found: "${matchingBlob.pathname}" using variant: "${matchedVariant}"`)
+      console.log(
+        `[BlobCache] Direct search found: "${matchingBlob.pathname}" using variant: "${matchedVariant}"`,
+      )
       return matchingBlob.url
     }
 
@@ -212,7 +214,7 @@ async function findBlobUrlDirect(filename: string): Promise<string | null> {
       const blobBasename = decodeURIComponent(blob.pathname).split('/').pop() || blob.pathname
       console.log(`  ${index + 1}. "${blobBasename}"`)
     })
-    
+
     return null
   } catch (error) {
     console.error(`[BlobCache] Direct search error for ${filename}:`, error)

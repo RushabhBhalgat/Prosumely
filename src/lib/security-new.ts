@@ -35,7 +35,6 @@ class SecurityManager {
       corsOrigins: [
         'https://prosumely.com',
         'https://www.prosumely.com',
-        'https://prosumely.vercel.app',
         ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000'] : []),
       ],
       maxRequestSize: 50000, // 50KB

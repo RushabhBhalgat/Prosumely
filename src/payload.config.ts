@@ -11,6 +11,7 @@ import { fileURLToPath } from 'url'
 import { Categories } from './collections/Categories'
 import { Consultations } from './collections/Consultations'
 import { Media } from './collections/Media'
+import { N8NBlogs } from './collections/N8NBlogs'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import { RateLimit } from './collections/RateLimit'
@@ -74,7 +75,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Pages, Posts, Media, Categories, Users, RateLimit, Consultations],
+  collections: [Pages, Posts, N8NBlogs, Media, Categories, Users, RateLimit, Consultations],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer, Settings],
   plugins: [

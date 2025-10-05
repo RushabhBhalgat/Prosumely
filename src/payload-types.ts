@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     pages: Page;
     posts: Post;
+    'n8n-blogs': N8NBlog;
     media: Media;
     categories: Category;
     users: User;
@@ -87,6 +88,7 @@ export interface Config {
   collectionsSelect: {
     pages: PagesSelect<false> | PagesSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    'n8n-blogs': N8NBlogsSelect<false> | N8NBlogsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
@@ -756,6 +758,44 @@ export interface Form {
   createdAt: string;
 }
 /**
+ * Manage blogs created by N8N automation workflow. You can only change the status here.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "n8n-blogs".
+ */
+export interface N8NBlog {
+  id: string;
+  title: string;
+  slug: string;
+  /**
+   * HTML content from n8n automation
+   */
+  content: string;
+  /**
+   * SEO meta description
+   */
+  metaDescription?: string | null;
+  /**
+   * URL to the featured image
+   */
+  featuredImage?: string | null;
+  /**
+   * SEO keywords
+   */
+  keywords?: string | null;
+  meta_title?: string | null;
+  meta_description?: string | null;
+  /**
+   * Change this to publish or unpublish the blog
+   */
+  status: 'draft' | 'published';
+  dateCreated: string;
+  datePublished?: string | null;
+  author?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "rate-limits".
  */
@@ -984,6 +1024,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: string | Post;
+      } | null)
+    | ({
+        relationTo: 'n8n-blogs';
+        value: string | N8NBlog;
       } | null)
     | ({
         relationTo: 'media';
@@ -1237,6 +1281,26 @@ export interface PostsSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "n8n-blogs_select".
+ */
+export interface N8NBlogsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  content?: T;
+  metaDescription?: T;
+  featuredImage?: T;
+  keywords?: T;
+  meta_title?: T;
+  meta_description?: T;
+  status?: T;
+  dateCreated?: T;
+  datePublished?: T;
+  author?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

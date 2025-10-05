@@ -29,6 +29,7 @@ const config = {
     'scrollbar-thumb-slate-300',
     'scrollbar-track-transparent',
     'line-clamp-2',
+    'line-clamp-3',
   ],
   theme: {
     container: {

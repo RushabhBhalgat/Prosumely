@@ -34,8 +34,6 @@ export async function POST(request: NextRequest) {
   let _extractedKeywords: any = null
 
   try {
-    console.log('🚀 Enhanced keyword extraction API called with MongoDB storage')
-
     // Step 1: Security validation
     const securityResult = await securityManager.validateRequest(request)
     if (!securityResult.valid) {
@@ -108,8 +106,6 @@ export async function POST(request: NextRequest) {
       throw new Error(errorInfo.message)
     }
 
-    console.log(`📝 Processing job description: ${cleanJobDescription.substring(0, 100)}...`)
-
     // Length validation
     if (cleanJobDescription.length > 4000) {
       errorInfo = {
@@ -122,13 +118,11 @@ export async function POST(request: NextRequest) {
     // Step 4: Check API configuration
     const apiKey = process.env.GEMINI_API_KEY
     if (!apiKey) {
-      console.error('❌ GEMINI_API_KEY environment variable is not set')
       errorInfo = { type: 'CONFIG_ERROR', message: 'Service configuration error' }
       throw new Error('API key not configured')
     }
 
     // Step 5: Generate keywords using Gemini API
-    console.log('🤖 Calling Gemini API for keyword extraction...')
 
     const prompt = `
     Analyze this job description and extract keywords in these specific categories. Return ONLY a valid JSON object with these exact keys:

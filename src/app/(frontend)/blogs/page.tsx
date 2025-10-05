@@ -3,6 +3,7 @@ import type { Metadata } from 'next/types'
 import { CollectionArchive } from '@/components/CollectionArchive'
 import { PageRange } from '@/components/PageRange'
 import { Pagination } from '@/components/Pagination'
+import N8NBlogsList from '@/components/N8NBlogsList'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
@@ -56,6 +57,8 @@ export default async function Page() {
           <Pagination page={posts.page} totalPages={posts.totalPages} />
         )}
       </div>
+
+      <N8NBlogsList />
     </div>
   )
 }
