@@ -1,126 +1,132 @@
 'use client'
-import { useState } from 'react'
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { Star, ChevronLeft, ChevronRight, Quote, X } from 'lucide-react'
 import Link from 'next/link'
 export default function ReviewsSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [expandedReviewId, setExpandedReviewId] = useState<number | null>(null)
+  const textRefs = useRef<Record<number, HTMLQuoteElement | null>>({})
+  const [overflowing, setOverflowing] = useState<Record<number, boolean>>({})
 
   const reviews = [
     {
       id: 1,
-      name: 'Ravi S.',
-      location: 'Bangalore, India',
+      name: 'Joo Kamal',
+      location: 'Egypt',
       avatar: 'RS',
       rating: 5,
-      text: 'I was struggling to get interview calls even with decent experience. After getting my resume rewritten here, I saw a massive difference! Within 2 weeks, I got shortlisted by 3 companies. Prosumely is highly recommended for Indian job seekers!',
+      text: 'I am delighted to share that I have recently received a highly competitive CV, cover letter, project portfolio, and professional LinkedIn profile that exceeded my expectations. I was truly impressed by the quality and professionalism of the work delivered. I am deeply grateful to the working team and the career strategy advisor for their incredible guidance and support throughout the update process. I extend my sincere gratitude to everyone who contributed to the development of my professional CV and project portfolio. This outstanding outcome is a direct result of the support and effort you have all provided.',
       highlight: '3 MNC shortlists in 2 weeks',
     },
     {
       id: 2,
-      name: 'Sara M.',
-      location: 'Dubai, UAE',
+      name: 'Lance Pretorius',
+      location: 'Egypt',
       avatar: 'SM',
       rating: 5,
-      text: 'The Prosumely team completely transformed my CV to match the UAE job market. Clean, professional layout with strong keywords. I landed a job in less than a month! Very happy with the service.',
+      text: 'I recently had my professional resume, globally acceptable CV, cover letter, LinkedIn profile, and project portfolio updated, and I am extremely pleased with the outcome. As someone originally from South Africa but currently living abroad, I truly value how the team tailored my professional CV and portfolio to reflect my international ecperience and aspirations. The guidance, expertise, and support I received from the career strategy advisors and team have been invaluable in presenting my career journey at a global standard.',
       highlight: 'Landed job in under 1 month',
     },
     {
       id: 3,
-      name: 'Mohamed A.',
-      location: 'Doha, Qatar',
+      name: 'Mike Barry',
+      location: 'United Kingdom',
       avatar: 'MA',
       rating: 5,
-      text: 'Excellent service. My resume was outdated and not attracting any recruiters. The new format and professional language made a big impact. Great for mid-level professionals like me.',
+      text: 'Great service and excellent communications. The portfolio that was created is a fantastic document and gives a thorough visual and descriptive view of my skills and experience . The CV got rid of my old bloated document and now it looks modern and fresh. I have already recommended to a few colleagues . Well worth the price.',
       highlight: 'Perfect for mid-level professionals',
     },
     {
       id: 4,
-      name: 'Yousef H.',
-      location: 'Riyadh, KSA',
+      name: 'Syafri Joni',
+      location: 'Indonesia',
       avatar: 'YH',
-      rating: 4,
-      text: 'The resume I received was well written and ATS-friendly. Helped me secure an interview in a competitive field. Communication was good, though delivery was delayed by a day. Still worth it.',
+      rating: 5,
+      text: 'This has been extremely valuable, I believe my CV is now more refined, ATS-compliant, and positioned to capture greater interest from agencies. The addition of a comprehensive portfolio further enables hiring managers to gain a clearer and more complete understanding of my experience and professional profile. I am confident that these enhancements will bring me closer to securing the target role I aspire to',
       highlight: 'ATS-friendly for competitive fields',
     },
     {
       id: 5,
-      name: 'Jessica L.',
-      location: 'New York, USA',
+      name: 'Gill Bradley',
+      location: 'United Kingdom',
       avatar: 'JL',
       rating: 5,
-      text: 'Impressive turnaround and quality. They understood exactly what US employers look for. My resume finally feels modern and results-driven. I already recommended them to two friends.',
+      text: 'I recently used the services of Malcolm Garrington at Presumely to enhance my CV and create a Project Portfolio. I am thoroughly impressed with the attention to detail and the overall professionalism applied in their consultation. From start to finish the entire process was smooth and highly collaborative. He took the time to understand my background, my professional goals and achievements and show them in a highly structured CV and Portfolio. The final documents were visually appealing as well as being suitable for digital screening tools. I would highly recommend this company’s services to anyone who is seeking to obtain a competitive edge in today’s employment market.',
       highlight: 'Modern and results-driven approach',
     },
     {
       id: 6,
-      name: 'David W.',
-      location: 'London, UK',
+      name: 'Gamal Gawad',
+      location: 'Egypt',
       avatar: 'DW',
       rating: 5,
-      text: 'Professional and detailed work. My CV was tailored for the UK market and had a sharp, executive tone. I appreciated the quick revisions and personal touch. Highly satisfied.',
+      text: 'I am delighted to share that I have recently received my globally acceptable CV, cover letter, LinkedIn profile and project portfolio. I am confident that this step will contribute to the growth of my career and what I aspire it to be. I am deeply grateful to the working team and Career strategy advisor for giving me this incredible guidance and their support during the updating process. I extend my sincere gratitude to all those who have taken part in the development of my professional CV and my projects portfolio. This awesome outcome is a result of all the support you have given me.',
       highlight: 'Sharp executive tone with personal touch',
     },
     {
       id: 7,
-      name: 'Amina E.',
-      location: 'Cairo, Egypt',
+      name: 'Reda Zaghloul',
+      location: 'Egypt',
       avatar: 'AE',
       rating: 5,
-      text: 'Very responsive and professional team. They created a new resume and LinkedIn profile for me that got a lot of attention. The service is affordable and worth every pound.',
+      text: 'Throughout my 23+ year career in the Oil & Gas industry, I’ve consistently faced challenges in crafting a professional CV—I was liaising with Mr. Malcolm Garrington, Prosumely Advisor. The Prosumely team created a highly competitive CV, cover letter, project portfolio, and Professional LinkedIn profile that exceeded my expectations. I was truly impressed by the quality and professionalism of Prosumely’s work. I would like to acknowledge their team is fully dedicated, detail-oriented, and I would highly recommend their services to anyone seeking an impactful, ATS-friendly CV. Special thanks to Mr. Malcolm Garrington and the entire Prosumely team for their outstanding support! Reda Zaghloul - Egypt',
       highlight: 'Complete career package with LinkedIn',
     },
     {
       id: 8,
-      name: 'Karan M.',
-      location: 'Dubai, UAE',
+      name: 'Bob Albania (Ehab)',
+      location: 'United Kingdom',
       avatar: 'KM',
-      rating: 4,
-      text: 'Great value for money. The content was very polished and aligned with my industry. The design was clean and professional. I got 2 interview calls within a week of using the new resume.',
+      rating: 5,
+      text: 'After 29 years of experience i found out i did not know how to write my CV until it was done for me by PROSUMELY in the most professional way. Ehab.',
       highlight: 'Polished IT industry alignment',
     },
     {
       id: 9,
-      name: 'Fatima Z.',
-      location: 'Abu Dhabi, UAE',
+      name: 'greg clark',
+      location: 'United Kingdom',
       avatar: 'FZ',
       rating: 5,
-      text: 'I work in HR and I know a good CV when I see one. The one I received from this team was flawless. Highly recommended for job seekers in the Gulf region.',
+      text: 'Great professional service from start to finish and a very quick turnaround to get my new cv out and about.',
       highlight: 'HR professional approved quality',
     },
     {
       id: 10,
-      name: 'Ahmed R.',
-      location: 'Jeddah, KSA',
-      avatar: 'AR',
+      name: 'A W',
+      location: 'Indonesia',
+      avatar: 'FZ',
       rating: 5,
-      text: 'My resume needed to be bilingual and focused on engineering. They delivered exactly that with perfect formatting and strong wording. Very satisfied with their service!',
-      highlight: 'Bilingual engineering expertise',
+      text: 'For Oil and gas Industries QC Inspectors, I’m impressed by how my CV highlights the relevant experience, measurable outcomes, and skills that align with the position. I highly recommend leveraging this CV to support targeted applications and conversations with hiring managers.Agung Widodo.',
+      highlight: 'HR professional approved quality',
     },
     {
       id: 11,
-      name: 'Priya K.',
-      location: 'Mumbai, India',
-      avatar: 'PK',
+      name: 'danang sanyoto',
+      location: 'Indonesia',
+      avatar: 'FZ',
       rating: 5,
-      text: 'As a finance professional, I needed my resume to showcase complex analytical skills. The team did an outstanding job highlighting my achievements with quantified results. Got 5 interview calls in one week!',
-      highlight: '5 finance interviews in 1 week',
+      text: 'Thanks to Prosumely team. All documents are well structured and eye-catching. I believe these documents will help me a lot in getting my dream job.',
+      highlight: 'HR professional approved quality',
     },
     {
       id: 12,
-      name: 'Michael T.',
-      location: 'Toronto, Canada',
-      avatar: 'MT',
+      name: 'MD. Ahmed',
+      location: 'UAE',
+      avatar: 'FZ',
       rating: 5,
-      text: 'The Canadian job market is tough, but this team knew exactly how to position my skills. My new resume opened doors I never thought possible. The investment was absolutely worth it!',
-      highlight: 'Cracked competitive Canadian market',
+      text: 'I am very happy with my CV, cover letter, LinkedIn profile, and project portfolio that Prosumely team created for me. The team was very professional and responsive throughout the process. I would highly recommend their services to anyone looking to improve their job search materials.',
+      highlight: 'HR professional approved quality',
     },
   ]
 
   // Group reviews into slides of 3
-  const slides = []
-  for (let i = 0; i < reviews.length; i += 3) {
-    slides.push(reviews.slice(i, i + 3))
-  }
+  const slides = useMemo(() => {
+    const groups: (typeof reviews)[] = []
+    for (let i = 0; i < reviews.length; i += 3) {
+      groups.push(reviews.slice(i, i + 3))
+    }
+    return groups
+  }, [reviews])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -133,6 +139,45 @@ export default function ReviewsSection() {
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
   }
+
+  // Helpers
+  const getInitials = (name: string | undefined) => {
+    if (!name) return '—'
+    try {
+      // Normalize whitespace and split words; handle names with special chars
+      const parts = name.trim().replace(/\s+/g, ' ').split(' ').filter(Boolean)
+      const first = parts[0]?.charAt(0)
+      const last = parts.length > 1 ? parts[parts.length - 1]?.charAt(0) : ''
+      return `${first ?? ''}${last ?? ''}`.toUpperCase() || '—'
+    } catch {
+      return '—'
+    }
+  }
+
+  const selectedReview = useMemo(
+    () => reviews.find((r) => r.id === expandedReviewId) || null,
+    [expandedReviewId, reviews],
+  )
+
+  // Measure which reviews overflow the clamped height
+  useEffect(() => {
+    const measure = () => {
+      const map: Record<number, boolean> = {}
+      for (const r of reviews) {
+        const el = textRefs.current[r.id]
+        if (el) {
+          // A tiny epsilon accounts for subpixel rounding
+          map[r.id] = el.scrollHeight - el.clientHeight > 1
+        }
+      }
+      setOverflowing(map)
+    }
+
+    // Measure now and on resize (handles md breakpoint line-clamp change)
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [reviews, currentSlide])
 
   return (
     <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 overflow-hidden -mt-8 md:mt-0">
@@ -201,21 +246,32 @@ export default function ReviewsSection() {
                         </div>
 
                         {/* Review Text */}
-                        <blockquote className="text-gray-700 text-sm leading-relaxed mb-4 line-clamp-6">
-                          "{review.text}"
+                        <blockquote
+                          ref={(el) => {
+                            textRefs.current[review.id] = el
+                          }}
+                          className="text-gray-700 text-sm leading-relaxed mb-3 line-clamp-4 md:line-clamp-5 break-words"
+                        >
+                          {review.text}
                         </blockquote>
+                        {overflowing[review.id] && (
+                          <div className="flex justify-end mb-4">
+                            <button
+                              onClick={() => setExpandedReviewId(review.id)}
+                              className="text-blue-600/80 hover:text-blue-700 text-xs underline-offset-2 hover:underline transition-colors"
+                              aria-label={`Read full review from ${review.name}`}
+                            >
+                              Know more
+                            </button>
+                          </div>
+                        )}
 
-                        {/* Key Impact */}
-                        <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border-l-4 border-blue-400 p-3 rounded-r-lg mb-4">
-                          <p className="text-blue-700 font-medium text-xs">
-                            💡 Key Impact: {review.highlight}
-                          </p>
-                        </div>
+                        {/* Removed highlight section as requested */}
 
                         {/* Author Info */}
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-md">
-                            {review.avatar}
+                            {getInitials(review.name)}
                           </div>
                           <div>
                             <h4 className="font-semibold text-gray-900 text-sm">{review.name}</h4>
@@ -314,6 +370,56 @@ export default function ReviewsSection() {
           </Link>
         </div>
       </div>
+
+      {/* Full Review Modal */}
+      {expandedReviewId !== null && selectedReview && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Full review from ${selectedReview.name}`}
+          onClick={() => setExpandedReviewId(null)}
+        >
+          <div
+            className="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-blue-100 p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-3 right-3 p-2 rounded-full hover:bg-slate-100 text-slate-500 hover:text-slate-700"
+              aria-label="Close"
+              onClick={() => setExpandedReviewId(null)}
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-md">
+                {getInitials(selectedReview.name)}
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900">{selectedReview.name}</h3>
+                {selectedReview.location && (
+                  <p className="text-xs text-gray-500">{selectedReview.location}</p>
+                )}
+              </div>
+            </div>
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-4 h-4 ${
+                    i < (selectedReview?.rating ?? 0)
+                      ? 'fill-yellow-400 text-yellow-400'
+                      : 'text-gray-300'
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="text-gray-700 text-sm leading-relaxed whitespace-pre-line break-words">
+              {selectedReview.text}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
