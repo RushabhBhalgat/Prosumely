@@ -173,11 +173,15 @@ export default function ReviewsSection() {
       setOverflowing(map)
     }
 
-    // Measure now and on resize (handles md breakpoint line-clamp change)
-    measure()
+    // Small delay to ensure DOM has rendered after slide change
+    const timer = setTimeout(measure, 0)
     window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
-  }, [reviews, currentSlide])
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('resize', measure)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSlide])
 
   return (
     <section className="relative bg-gradient-to-b from-blue-50 to-white py-20 overflow-hidden -mt-8 md:mt-0">
