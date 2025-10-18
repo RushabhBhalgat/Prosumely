@@ -75,7 +75,7 @@ export default function ReviewsSection() {
     {
       id: 8,
       name: 'Bob Albania (Ehab)',
-      location: 'United Kingdom',
+      location: 'Egypt',
       avatar: 'KM',
       rating: 5,
       text: 'After 29 years of experience i found out i did not know how to write my CV until it was done for me by PROSUMELY in the most professional way. Ehab.',
@@ -83,7 +83,7 @@ export default function ReviewsSection() {
     },
     {
       id: 9,
-      name: 'greg clark',
+      name: 'Greg Clark',
       location: 'United Kingdom',
       avatar: 'FZ',
       rating: 5,
@@ -101,7 +101,7 @@ export default function ReviewsSection() {
     },
     {
       id: 11,
-      name: 'danang sanyoto',
+      name: 'Danang Sanyoto',
       location: 'Indonesia',
       avatar: 'FZ',
       rating: 5,
