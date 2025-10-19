@@ -7,9 +7,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { securityManager } from '@/lib/security-new'
 import { mongoRateLimiter } from '@/lib/rate-limiter-mongo'
 
-// Environment variables
+// Environment variables (using cheapest model: gemini-2.5-flash-lite)
 const GEMINI_API_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
+  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent'
 
 export async function OPTIONS(request: NextRequest) {
   // Handle preflight CORS requests
