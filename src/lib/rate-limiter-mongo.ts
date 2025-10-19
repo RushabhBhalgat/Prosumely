@@ -13,12 +13,36 @@ interface RateLimitConfig {
   minute: { requests: number; windowMs: number }
 }
 
+interface EndpointRateLimits {
+  [endpoint: string]: RateLimitConfig
+}
+
 export class MongoRateLimiter {
   private payload: BasePayload | null = null
-  private readonly config: RateLimitConfig = {
+
+  // Default config for keyword extraction
+  private readonly defaultConfig: RateLimitConfig = {
     free: { requests: 5, windowMs: 60 * 60 * 1000 }, // 5 requests per hour
     burst: { requests: 2, windowMs: 10 * 1000 }, // 2 requests per 10 seconds
     minute: { requests: 10, windowMs: 60 * 1000 }, // 10 requests per minute
+  }
+
+  // Endpoint-specific rate limits
+  private readonly endpointConfigs: EndpointRateLimits = {
+    '/api/keyword-extract': {
+      free: { requests: 5, windowMs: 60 * 60 * 1000 }, // 5 requests per hour
+      burst: { requests: 2, windowMs: 10 * 1000 }, // 2 requests per 10 seconds
+      minute: { requests: 10, windowMs: 60 * 1000 }, // 10 requests per minute
+    },
+    '/api/cover-letter-generate': {
+      free: { requests: 3, windowMs: 60 * 60 * 1000 }, // 3 requests per hour
+      burst: { requests: 1, windowMs: 20 * 1000 }, // 1 request per 20 seconds
+      minute: { requests: 2, windowMs: 60 * 1000 }, // 2 requests per minute
+    },
+  }
+
+  private getConfigForEndpoint(endpoint: string): RateLimitConfig {
+    return this.endpointConfigs[endpoint] || this.defaultConfig
   }
 
   private async getPayloadInstance() {
@@ -77,11 +101,14 @@ export class MongoRateLimiter {
       const ip = this.getClientIP(request)
       const now = new Date()
 
+      // Get config for this specific endpoint
+      const config = this.getConfigForEndpoint(endpoint)
+
       // Check all tiers (burst is most restrictive, then minute, then free)
       const tiers = ['burst', 'minute', 'free'] as const
 
       for (const tier of tiers) {
-        const tierConfig = this.config[tier]
+        const tierConfig = config[tier]
 
         // Find existing rate limit record for this IP, endpoint, and tier
         const rateLimitQuery = {
@@ -166,21 +193,22 @@ export class MongoRateLimiter {
       return {
         allowed: true,
         remaining: Math.min(
-          this.config.free.requests - 1,
-          this.config.minute.requests - 1,
-          this.config.burst.requests - 1,
+          config.free.requests - 1,
+          config.minute.requests - 1,
+          config.burst.requests - 1,
         ),
-        resetTime: new Date(now.getTime() + this.config.free.windowMs),
+        resetTime: new Date(now.getTime() + config.free.windowMs),
         tier: 'allowed',
       }
     } catch (error) {
       console.error('Rate limiting error:', error)
 
       // Fail open - allow request if rate limiting fails
+      const fallbackConfig = this.getConfigForEndpoint(endpoint)
       return {
         allowed: true,
-        remaining: this.config.free.requests - 1,
-        resetTime: new Date(Date.now() + this.config.free.windowMs),
+        remaining: fallbackConfig.free.requests - 1,
+        resetTime: new Date(Date.now() + fallbackConfig.free.windowMs),
         message: 'Rate limiting service temporarily unavailable',
       }
     }

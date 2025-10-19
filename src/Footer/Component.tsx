@@ -454,6 +454,12 @@ export async function Footer() {
                   >
                     Keyword Finder
                   </Link>
+                  <Link
+                    href="/career-tools/cover-letter-generator"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Cover Letter Generator
+                  </Link>
                 </div>
               </div>
             </div>

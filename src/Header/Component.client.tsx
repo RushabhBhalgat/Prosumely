@@ -211,7 +211,9 @@ export const HeaderClient: React.FC<{
                       // Full services for mobile
                       <>
                         <div className="mb-3">
-                          <h4 className="text-sm font-semibold text-[#2563eb] mb-2">Resume Services</h4>
+                          <h4 className="text-sm font-semibold text-[#2563eb] mb-2">
+                            Resume Services
+                          </h4>
                           <div className="space-y-1">
                             <Link
                               href="/ats-resume-writing-service"
@@ -350,6 +352,13 @@ export const HeaderClient: React.FC<{
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Keyword Finder
+                      </Link>
+                      <Link
+                        href="/career-tools/cover-letter-generator"
+                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Cover Letter Generator
                       </Link>
                     </div>
                   </div>

@@ -76,6 +76,40 @@ const CareerTools = () => {
             </div>
           </Link>
 
+          {/* Cover Letter Generator */}
+          <Link href="/career-tools/cover-letter-generator" className="group">
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 group-hover:border-purple-500">
+              <div className="text-purple-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 transition-colors">
+                AI Cover Letter Generator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Generate professional, tailored cover letters in seconds. AI-powered tool that
+                analyzes your resume and job description.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
           {/* Coming Soon Tools */}
           <div className="bg-white/60 rounded-xl shadow-lg p-6 border border-gray-200 opacity-75">
             <div className="text-gray-400 mb-4">
