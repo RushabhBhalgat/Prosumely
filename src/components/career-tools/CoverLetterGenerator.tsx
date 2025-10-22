@@ -416,9 +416,9 @@ Include:
                 Writing a compelling cover letter is one of the most critical steps in your job
                 application process. Our <strong>free AI cover letter generator</strong> uses
                 advanced artificial intelligence to analyze your resume and the target job
-                description, creating a{' '}
-                <strong>personalized, professional cover letter</strong> that highlights your most
-                relevant qualifications and demonstrates your perfect fit for the role.
+                description, creating a <strong>personalized, professional cover letter</strong>{' '}
+                that highlights your most relevant qualifications and demonstrates your perfect fit
+                for the role.
               </p>
 
               <p className="leading-relaxed">
@@ -606,11 +606,7 @@ Include:
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
                   <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -634,11 +630,7 @@ Include:
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
                   <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -662,11 +654,7 @@ Include:
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
                   <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -690,11 +678,7 @@ Include:
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
                   <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -818,12 +802,7 @@ Include:
                 className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200"
               >
                 Job Description Keyword Finder
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -837,12 +816,7 @@ Include:
                 className="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold rounded-lg transition-colors duration-200"
               >
                 View All Career Tools
-                <svg
-                  className="w-4 h-4 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
