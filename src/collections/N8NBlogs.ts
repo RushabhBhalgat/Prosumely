@@ -141,6 +141,53 @@ export const N8NBlogs: CollectionConfig = {
         readOnly: false,
       },
     },
+    {
+      name: 'category',
+      type: 'select',
+      required: true,
+      defaultValue: 'resume-cv-tips',
+      options: [
+        {
+          label: 'Resume by Country / Region',
+          value: 'resume-by-country',
+        },
+        {
+          label: 'Resume by Job Profile / Industry / Level',
+          value: 'resume-by-job-profile',
+        },
+        {
+          label: 'Resume and CV Tips / Best Practices',
+          value: 'resume-cv-tips',
+        },
+        {
+          label: 'LinkedIn Profile Tips',
+          value: 'linkedin-tips',
+        },
+        {
+          label: 'Project Portfolio / Work Samples',
+          value: 'project-portfolio',
+        },
+        {
+          label: 'Leadership / Executive Role Resumes',
+          value: 'leadership-executive',
+        },
+        {
+          label: 'Career Transition / Special Situations',
+          value: 'career-transition',
+        },
+        {
+          label: 'Personal Branding & Online Presence',
+          value: 'personal-branding',
+        },
+        {
+          label: 'Job Search & Hiring Trends',
+          value: 'job-search-trends',
+        },
+      ],
+      admin: {
+        description: 'Blog category for organization',
+      },
+    },
   ],
   hooks: {
     beforeChange: [

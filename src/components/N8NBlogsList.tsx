@@ -23,6 +23,29 @@ interface N8NBlog {
   datePublished?: string
   createdAt: string
   author: string
+  category?: string
+}
+
+const CATEGORY_MAP: { [key: string]: string } = {
+  'resume-by-country': 'Resume by Country / Region',
+  'resume-by-job-profile': 'Resume by Job Profile / Industry / Level',
+  'resume-cv-tips': 'Resume and CV Tips / Best Practices',
+  'linkedin-tips': 'LinkedIn Profile Tips',
+  'project-portfolio': 'Project Portfolio / Work Samples',
+  'leadership-executive': 'Leadership / Executive Role Resumes',
+  'career-transition': 'Career Transition / Special Situations',
+  'personal-branding': 'Personal Branding & Online Presence',
+  'job-search-trends': 'Job Search & Hiring Trends',
+}
+
+// Helper function to get category display name
+const getCategoryDisplayName = (category: string): string => {
+  // If it's a slug, convert to full name
+  if (CATEGORY_MAP[category]) {
+    return CATEGORY_MAP[category]
+  }
+  // If it's already a full name, return it
+  return category
 }
 
 interface N8NBlogsResponse {
@@ -47,7 +70,7 @@ export default function N8NBlogsList() {
 
     try {
       console.log('Loading N8N blogs from API...', { pageNum, append })
-      const response = await fetch(`/api/n8n-blogs?page=${pageNum}&limit=10`)
+      const response = await fetch(`/api/n8n-blogs?page=${pageNum}&limit=9`)
       if (!response.ok) {
         throw new Error('Failed to fetch blogs')
       }
@@ -90,27 +113,66 @@ export default function N8NBlogsList() {
   }
 
   if (error) {
-    return <div className="text-red-600 text-center py-8">Error loading N8N blogs: {error}</div>
+    return (
+      <div className="container mt-20">
+        <div className="text-center py-12 px-4 bg-red-50 border border-red-200 rounded-xl">
+          <svg
+            className="w-12 h-12 text-red-500 mx-auto mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <p className="text-red-800 font-semibold">Error loading articles</p>
+          <p className="text-red-600 text-sm mt-2">{error}</p>
+        </div>
+      </div>
+    )
   }
 
   if (blogs.length === 0 && !loading) {
     console.log('No N8N blogs found or none are published')
     return (
-      <div className="container mt-16">
-        <div className="prose max-w-none mb-8">
-          <h2 className="text-gray-900">Latest Industry Insights</h2>
-          <p className="text-gray-700">No published insights available at the moment.</p>
+      <div className="container mt-20">
+        <div className="mb-10">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Latest Articles</h2>
+          <p className="text-gray-600 text-base">
+            Stay updated with expert insights and industry trends
+          </p>
+        </div>
+        <div className="text-center py-16 px-4 bg-gray-50 border border-gray-200 rounded-xl">
+          <svg
+            className="w-16 h-16 text-gray-400 mx-auto mb-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+            />
+          </svg>
+          <p className="text-gray-600 text-lg font-medium">No articles available yet</p>
+          <p className="text-gray-500 text-sm mt-2">Check back soon for new content</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="container mt-16">
-      <div className="prose max-w-none mb-8">
-        <h2 className="text-gray-900">Latest Industry Insights</h2>
-        <p className="text-gray-700">
-          Expert insights and industry trends from our automation workflow
+    <div className="container mt-20">
+      <div className="mb-10">
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Latest Articles</h2>
+        <p className="text-gray-600 text-base">
+          Stay updated with expert insights and industry trends
         </p>
       </div>
 
@@ -118,25 +180,35 @@ export default function N8NBlogsList() {
         {blogs.map((blog) => (
           <article
             key={blog._id}
-            className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow bg-white"
+            className="group border border-gray-200 rounded-xl overflow-hidden hover:shadow-2xl hover:border-gray-300 transition-all duration-300 bg-white"
           >
             <Link href={`/blogs/${blog.slug}`} className="block">
               {/* Featured Image */}
               {blog.featuredImage && (
-                <div className="h-48 overflow-hidden">
+                <div className="h-48 overflow-hidden bg-gray-100">
                   <img
                     src={ensureHttpsUrl(blog.featuredImage)}
                     alt={blog.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               )}
 
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900 hover:text-blue-600 transition-colors line-clamp-2">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
                   {blog.title}
                 </h3>
-                <p className="text-gray-700 mb-4 line-clamp-3">
+
+                {/* Category Badge */}
+                {blog.category && (
+                  <div className="mb-3">
+                    <span className="inline-block bg-gradient-to-r from-purple-50 to-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold border border-purple-200">
+                      {getCategoryDisplayName(blog.category)}
+                    </span>
+                  </div>
+                )}
+
+                <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed text-sm">
                   {blog.metaDescription ||
                     blog.meta_description ||
                     `${blog.title.slice(0, 120)}...`}
@@ -151,7 +223,7 @@ export default function N8NBlogsList() {
                       .map((keyword, index) => (
                         <span
                           key={index}
-                          className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs"
+                          className="bg-blue-50 text-blue-700 px-2 py-1 rounded-md text-xs font-medium border border-blue-100"
                         >
                           {keyword.trim()}
                         </span>
@@ -159,9 +231,11 @@ export default function N8NBlogsList() {
                   </div>
                 )}
 
-                <div className="flex items-center justify-between text-sm text-gray-600">
-                  <span className="font-medium">{blog.author}</span>
-                  <span>{formatDate(blog.datePublished || blog.createdAt)}</span>
+                <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100">
+                  <span className="font-medium text-gray-700">{blog.author}</span>
+                  <span className="text-xs">
+                    {formatDate(blog.datePublished || blog.createdAt)}
+                  </span>
                 </div>
               </div>
             </Link>
@@ -174,12 +248,12 @@ export default function N8NBlogsList() {
           <button
             onClick={loadMore}
             disabled={loading}
-            className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="inline-flex items-center px-8 py-3 border-2 border-blue-600 text-base font-semibold rounded-lg text-blue-600 bg-white hover:bg-blue-600 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-sm hover:shadow-md"
           >
             {loading ? (
               <>
                 <svg
-                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-700"
+                  className="animate-spin -ml-1 mr-3 h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -198,10 +272,20 @@ export default function N8NBlogsList() {
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   ></path>
                 </svg>
-                Loading...
+                Loading More...
               </>
             ) : (
-              'Load More Articles'
+              <>
+                Load More Articles
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </>
             )}
           </button>
         </div>

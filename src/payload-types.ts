@@ -792,6 +792,19 @@ export interface N8NBlog {
   dateCreated: string;
   datePublished?: string | null;
   author?: string | null;
+  /**
+   * Blog category for organization
+   */
+  category:
+    | 'resume-by-country'
+    | 'resume-by-job-profile'
+    | 'resume-cv-tips'
+    | 'linkedin-tips'
+    | 'project-portfolio'
+    | 'leadership-executive'
+    | 'career-transition'
+    | 'personal-branding'
+    | 'job-search-trends';
   updatedAt: string;
   createdAt: string;
 }
@@ -1299,6 +1312,7 @@ export interface N8NBlogsSelect<T extends boolean = true> {
   dateCreated?: T;
   datePublished?: T;
   author?: T;
+  category?: T;
   updatedAt?: T;
   createdAt?: T;
 }
