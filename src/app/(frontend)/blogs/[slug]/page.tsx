@@ -252,7 +252,7 @@ export default async function BlogPage({ params }: { params: Promise<Params> }) 
         // Render N8N blog
         return (
           <div className="pt-24 pb-24">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
               <N8NBlogContent slug={slug} />
             </div>
           </div>
