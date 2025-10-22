@@ -32,8 +32,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function CategoryPage({ params }: { params: { category: string } }) {
-  const { category } = params
+export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
+  const { category } = await params
 
   // Check if category is valid
   if (!CATEGORY_MAP[category]) {
@@ -193,9 +193,9 @@ export default async function CategoryPage({ params }: { params: { category: str
 export async function generateMetadata({
   params,
 }: {
-  params: { category: string }
+  params: Promise<{ category: string }>
 }): Promise<Metadata> {
-  const { category } = params
+  const { category } = await params
   const categoryName = CATEGORY_MAP[category] || 'Blog Category'
 
   return {
