@@ -16,6 +16,26 @@ export async function Footer() {
 
   const currentYear = new Date().getFullYear()
 
+  // Industry mapping for both modes
+  const industries = [
+    { name: 'Construction Industry', slug: 'construction-industry' },
+    { name: 'Energy - Oil and Gas', slug: 'energy-oil-gas' },
+    { name: 'Hospitality & Tourism', slug: 'hospitality-tourism' },
+    { name: 'Engineering & Manufacturing', slug: 'engineering-manufacturing' },
+    { name: 'Logistics & Supply Chain', slug: 'logistics-supply-chain' },
+    { name: 'Tech & IT', slug: 'tech-it' },
+    { name: 'BFSI', slug: 'banking-financial-services-insurance' },
+    { name: 'Healthcare & Pharma', slug: 'healthcare-pharma' },
+    { name: 'Strategy & Consulting', slug: 'strategy-consulting' },
+    { name: 'Sales & Marketing', slug: 'sales-marketing' },
+    { name: 'Media & Entertainment', slug: 'media-entertainment' },
+    { name: 'Human Resources', slug: 'human-resources' },
+    { name: 'FMCG & Retail', slug: 'fmcg-retail' },
+    { name: 'Legal & Compliance', slug: 'legal-compliance' },
+    { name: 'Public Sector & Government', slug: 'public-sector-government' },
+    { name: 'Chemicals & Materials', slug: 'chemicals-materials' },
+  ]
+
   return (
     <footer className="mt-auto border-t border-border bg-gradient-to-b from-gray-900 to-black text-white">
       {/* Top gradient line */}
@@ -242,50 +262,15 @@ export async function Footer() {
                   Industries We Serve
                 </h3>
                 <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Construction Industry
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Energy - Oil and Gas
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Hospitality & Tourism
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Engineering & Manufacturing
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Logistics & Supply Chain
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">Tech & IT</span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">BFSI</span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Healthcare & Pharma
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Strategy & Consulting
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Sales & Marketing
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Media & Entertainment
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Human Resources
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    FMCG & Retail
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Legal & Compliance
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Public Sector & Government
-                  </span>
-                  <span className="text-gray-500 text-sm py-1 block cursor-default">
-                    Chemicals & Materials
-                  </span>
+                  {industries.map((industry) => (
+                    <Link
+                      key={industry.slug}
+                      href={`/services/${industry.slug}`}
+                      className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                    >
+                      {industry.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
