@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { limitedServices } from '@/data/limitedServicesData'
 import { getServicesMode } from '@/utilities/getSettings'
 
-const industry = 'banking-financial-services-insurance'
+const _industry = 'banking-financial-services-insurance'
 const industryDisplayName = 'Banking, Financial Services & Insurance (BFSI)'
 
 const industryProfiles = [

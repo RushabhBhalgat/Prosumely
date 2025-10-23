@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { limitedServices } from '@/data/limitedServicesData'
 import { getServicesMode } from '@/utilities/getSettings'
 
-const industry = 'public-sector-government'
+const _industry = 'public-sector-government'
 const industryDisplayName = 'Public Sector & Government'
 
 const industryProfiles = [
