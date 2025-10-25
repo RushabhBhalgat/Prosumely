@@ -177,7 +177,7 @@ export default async function BlogPage({ params }: { params: Promise<Params> }) 
   // If we found a Payload post, render it normally
   if (postDoc) {
     // Extract headings for table of contents
-    const headings = postDoc.content ? extractH2Headings(postDoc.content as any) : []
+    const headings = postDoc.content ? extractH2Headings(postDoc.content) : []
 
     return (
       <>
@@ -245,7 +245,7 @@ export default async function BlogPage({ params }: { params: Promise<Params> }) 
                   <div className="p-6 sm:p-8 lg:p-12">
                     <HeadingProcessor />
                     <div className="prose prose-lg max-w-none prose-slate prose-headings:scroll-mt-24">
-                      <RichText data={postDoc.content as any} enableGutter={false} />
+                      <RichText data={postDoc.content} enableGutter={false} />
                     </div>
                   </div>
                 </div>

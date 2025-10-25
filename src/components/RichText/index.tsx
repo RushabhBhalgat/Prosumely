@@ -59,7 +59,7 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
 })
 
 type Props = {
-  data: DefaultTypedEditorState
+  data: DefaultTypedEditorState | any // Allow any to handle Payload CMS type variations
   enableGutter?: boolean
   enableProse?: boolean
 } & React.HTMLAttributes<HTMLDivElement>
@@ -84,7 +84,7 @@ export default function RichText(props: Props) {
 }
 
 // Helper to extract h2 headings from a Lexical rich text state
-export function extractH2Headings(state: DefaultTypedEditorState): { id: string; text: string }[] {
+export function extractH2Headings(state: DefaultTypedEditorState | any): { id: string; text: string }[] {
   try {
     const children = (state as any)?.root?.children || []
     const headings: { id: string; text: string }[] = []
