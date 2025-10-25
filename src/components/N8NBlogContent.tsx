@@ -416,7 +416,7 @@ export default function N8NBlogContent({ slug }: Props) {
                   Roadmap.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-gray-900">$50</span>
+                  <span className="text-2xl font-bold text-gray-900">$130</span>
                   <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:gap-2 transition-all">
                     Learn More
                     <svg
@@ -466,7 +466,7 @@ export default function N8NBlogContent({ slug }: Props) {
                   achievements.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-gray-900">$120</span>
+                  <span className="text-2xl font-bold text-gray-900">$300</span>
                   <div className="flex items-center text-purple-600 font-semibold text-sm group-hover:gap-2 transition-all">
                     Learn More
                     <svg
@@ -519,7 +519,7 @@ export default function N8NBlogContent({ slug }: Props) {
                   impact.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-gray-900">$150</span>
+                  <span className="text-2xl font-bold text-gray-900">$400</span>
                   <div className="flex items-center text-amber-600 font-semibold text-sm group-hover:gap-2 transition-all">
                     Learn More
                     <svg
