@@ -177,7 +177,7 @@ export default async function BlogPage({ params }: { params: Promise<Params> }) 
   // If we found a Payload post, render it normally
   if (postDoc) {
     // Extract headings for table of contents
-    const headings = extractH2Headings(postDoc.content)
+    const headings = postDoc.content ? extractH2Headings(postDoc.content as any) : []
 
     return (
       <>
