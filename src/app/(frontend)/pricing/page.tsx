@@ -2,6 +2,10 @@ import Link from 'next/link'
 import { getServicesMode } from '@/utilities/getSettings'
 import { limitedServices } from '@/data/limitedServicesData'
 
+// Enable static generation with revalidation
+// This will generate the page at build time and revalidate every 24 hours
+export const revalidate = 86400 // 24 hours in seconds
+
 export const metadata = {
   title: 'Resume Writing Pricing | Affordable ATS Resume Services | Prosumely',
   description:

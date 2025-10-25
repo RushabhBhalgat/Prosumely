@@ -51,7 +51,12 @@ export async function GET() {
 
     console.log('Category counts:', counts)
 
-    return NextResponse.json(counts)
+    // Add caching headers
+    return NextResponse.json(counts, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
+      },
+    })
   } catch (error) {
     console.error('Error fetching category counts:', error)
     return NextResponse.json({ error: 'Failed to fetch category counts' }, { status: 500 })

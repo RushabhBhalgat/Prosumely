@@ -7,7 +7,7 @@ import { PostHero } from '@/heros/PostHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import { TableOfContents } from '@/components/TableOfContents'
 import { HeadingProcessor } from '@/components/HeadingProcessor'
-import N8NBlogContent from '@/components/N8NBlogContent'
+import N8NBlogServerContent from '@/components/N8NBlogServerContent'
 
 // Helper function to ensure HTTPS URLs for external images
 const ensureHttpsUrl = (url: string): string => {
@@ -15,6 +15,22 @@ const ensureHttpsUrl = (url: string): string => {
     return url.replace('http://', 'https://')
   }
   return url
+}
+
+interface N8NBlog {
+  _id: string
+  title: string
+  slug: string
+  content: string
+  metaDescription?: string
+  featuredImage?: string
+  keywords?: string
+  meta_title?: string
+  meta_description?: string
+  status: string
+  datePublished?: string
+  createdAt: string
+  author: string
 }
 
 interface Params {
@@ -88,12 +104,15 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     const db = payload.db.connection.db
     if (db) {
       const n8nBlogsCollection = db.collection('n8n-blogs')
-      const n8nBlog = await n8nBlogsCollection.findOne({
+      const n8nBlogDoc = await n8nBlogsCollection.findOne({
         slug,
         status: 'published',
       })
 
-      if (n8nBlog) {
+      if (n8nBlogDoc) {
+        // Type assertion for the blog document
+        const n8nBlog = n8nBlogDoc as unknown as N8NBlog
+
         return {
           title: n8nBlog.meta_title || n8nBlog.title,
           description: n8nBlog.metaDescription || n8nBlog.meta_description,
@@ -243,17 +262,20 @@ export default async function BlogPage({ params }: { params: Promise<Params> }) 
     const db = payload.db.connection.db
     if (db) {
       const n8nBlogsCollection = db.collection('n8n-blogs')
-      const n8nBlog = await n8nBlogsCollection.findOne({
+      const n8nBlogDoc = await n8nBlogsCollection.findOne({
         slug,
         status: 'published',
       })
 
-      if (n8nBlog) {
-        // Render N8N blog
+      if (n8nBlogDoc) {
+        // Type assertion for the blog document
+        const n8nBlog = n8nBlogDoc as unknown as N8NBlog
+
+        // Render N8N blog with server-side data
         return (
           <div className="pt-24 pb-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-              <N8NBlogContent slug={slug} />
+              <N8NBlogServerContent blog={n8nBlog} />
             </div>
           </div>
         )

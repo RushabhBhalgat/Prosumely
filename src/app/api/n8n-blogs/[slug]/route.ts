@@ -25,7 +25,13 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
       return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
     }
 
-    return NextResponse.json(blog)
+    // Add aggressive caching headers
+    // Cache for 1 hour, serve stale content for up to 24 hours while revalidating
+    return NextResponse.json(blog, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+      },
+    })
   } catch (error) {
     console.error('Error fetching N8N blog:', error)
     return NextResponse.json({ error: 'Failed to fetch blog' }, { status: 500 })

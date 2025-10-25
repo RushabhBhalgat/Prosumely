@@ -46,14 +46,22 @@ export async function GET(request: NextRequest) {
     // Get total count for pagination info
     const totalDocs = await n8nBlogsCollection.countDocuments({ status: 'published' })
 
-    return NextResponse.json({
-      docs: blogs,
-      totalDocs,
-      page,
-      totalPages: Math.ceil(totalDocs / limit),
-      hasNextPage: page < Math.ceil(totalDocs / limit),
-      hasPrevPage: page > 1,
-    })
+    // Add caching headers
+    return NextResponse.json(
+      {
+        docs: blogs,
+        totalDocs,
+        page,
+        totalPages: Math.ceil(totalDocs / limit),
+        hasNextPage: page < Math.ceil(totalDocs / limit),
+        hasPrevPage: page > 1,
+      },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=1800, stale-while-revalidate=3600',
+        },
+      },
+    )
   } catch (error) {
     console.error('Error fetching N8N blogs:', error)
     return NextResponse.json({ error: 'Failed to fetch N8N blogs' }, { status: 500 })
