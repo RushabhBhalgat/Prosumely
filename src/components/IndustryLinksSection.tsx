@@ -10,81 +10,97 @@ const industries = [
     name: 'Construction Industry',
     fullUrl: '/construction-industry/services',
     queryUrl: '/services?industry=construction-industry',
+    limitedUrl: '/services/construction-industry', // New URL structure for limited mode
   },
   {
     name: 'Energy - Oil and Gas',
     fullUrl: '/energy-oil-gas-industry/services',
     queryUrl: '/services?industry=energy-oil-gas',
+    limitedUrl: '/services/energy-oil-gas', // Placeholder for future implementation
   },
   {
     name: 'Hospitality & Tourism',
     fullUrl: '/hospitality-tourism-industry/services',
     queryUrl: '/services?industry=hospitality-tourism',
+    limitedUrl: '/services/hospitality-tourism', // Placeholder for future implementation
   },
   {
     name: 'Engineering & Manufacturing',
     fullUrl: '/engineering-manufacturing-industry/services',
     queryUrl: '/services?industry=engineering-manufacturing',
+    limitedUrl: '/services/engineering-manufacturing', // Placeholder for future implementation
   },
   {
     name: 'Logistics & Supply Chain',
     fullUrl: '/logistics-supply-chain-industry/services',
     queryUrl: '/services?industry=logistics-supply-chain',
+    limitedUrl: '/services/logistics-supply-chain', // Placeholder for future implementation
   },
   {
     name: 'Tech & IT',
     fullUrl: '/tech-it-industry/services',
     queryUrl: '/services?industry=tech-it',
+    limitedUrl: '/services/tech-it', // Placeholder for future implementation
   },
   {
     name: 'BFSI',
     fullUrl: '/banking-financial-services-insurance-industry/services',
     queryUrl: '/services?industry=banking-financial-services-insurance',
+    limitedUrl: '/services/banking-financial-services-insurance', // Placeholder for future implementation
   },
   {
     name: 'Healthcare & Pharma',
     fullUrl: '/healthcare-pharma-industry/services',
     queryUrl: '/services?industry=healthcare-pharma',
+    limitedUrl: '/services/healthcare-pharma', // Placeholder for future implementation
   },
   {
     name: 'Strategy & Consulting',
     fullUrl: '/strategy-consulting-industry/services',
     queryUrl: '/services?industry=strategy-consulting',
+    limitedUrl: '/services/strategy-consulting', // Placeholder for future implementation
   },
   {
     name: 'Sales & Marketing',
     fullUrl: '/sales-marketing-industry/services',
     queryUrl: '/services?industry=sales-marketing',
+    limitedUrl: '/services/sales-marketing', // Placeholder for future implementation
   },
   {
     name: 'Media & Entertainment',
     fullUrl: '/media-entertainment-industry/services',
     queryUrl: '/services?industry=media-entertainment',
+    limitedUrl: '/services/media-entertainment', // Placeholder for future implementation
   },
   {
     name: 'Human Resources',
     fullUrl: '/human-resources-industry/services',
     queryUrl: '/services?industry=human-resources',
+    limitedUrl: '/services/human-resources', // Placeholder for future implementation
   },
   {
     name: 'FMCG & Retail',
     fullUrl: '/fmcg-retail-industry/services',
     queryUrl: '/services?industry=fmcg-retail',
+    limitedUrl: '/services/fmcg-retail', // Placeholder for future implementation
   },
   {
     name: 'Legal & Compliance',
     fullUrl: '/legal-compliance-industry/services',
     queryUrl: '/services?industry=legal-compliance',
+    limitedUrl: '/services/legal-compliance', // Placeholder for future implementation
   },
   {
     name: 'Public Sector & Government',
     fullUrl: '/public-sector-government-industry/services',
     queryUrl: '/services?industry=public-sector-government',
+    limitedUrl: '/services/public-sector-government', // Placeholder for future implementation
   },
   {
     name: 'Chemicals & Materials',
     fullUrl: '/chemicals-materials-industry/services',
     queryUrl: '/services?industry=chemicals-materials',
+    limitedUrl: '/services/chemicals-materials', // Placeholder for future implementation
   },
 ]
 
@@ -131,7 +147,30 @@ const IndustryLinksSection = ({ servicesMode = 'full' }: IndustryLinksSectionPro
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6"
         >
           {industries.map((industry, index) => {
-            const isClickable = servicesMode === 'full'
+            // In full mode: use query URL and make clickable
+            // In limited mode: industries with pages are clickable
+  // Industries that are clickable in limited mode with their URLs
+  const limitedModeIndustries = [
+    'Construction Industry',
+    'Energy - Oil and Gas',
+    'Hospitality & Tourism',
+    'Engineering & Manufacturing',
+    'Logistics & Supply Chain',
+    'Tech & IT',
+    'BFSI',
+    'Healthcare & Pharma',
+    'Strategy & Consulting',
+    'Sales & Marketing',
+    'Media & Entertainment',
+    'Human Resources',
+    'FMCG & Retail',
+    'Legal & Compliance',
+    'Public Sector & Government',
+    'Chemicals & Materials',
+  ]
+  
+  const isClickable = servicesMode === 'full' || (servicesMode === 'limited' && limitedModeIndustries.includes(industry.name))
+            const linkUrl = servicesMode === 'full' ? industry.queryUrl : industry.limitedUrl
 
             const cardContent = (
               <>
@@ -174,7 +213,7 @@ const IndustryLinksSection = ({ servicesMode = 'full' }: IndustryLinksSectionPro
               >
                 {isClickable ? (
                   <Link
-                    href={industry.queryUrl}
+                    href={linkUrl}
                     className={`block relative p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg overflow-hidden hover:shadow-2xl hover:bg-white hover:border-blue-200/50 cursor-pointer transition-all duration-300`}
                   >
                     {cardContent}
