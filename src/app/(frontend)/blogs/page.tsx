@@ -1,11 +1,12 @@
 import type { Metadata } from 'next/types'
 
-import N8NBlogsList from '@/components/N8NBlogsList'
-import BlogCategories from '@/components/BlogCategories'
+import N8NBlogsListServer from '@/components/N8NBlogsListServer'
+import BlogCategoriesServer from '@/components/BlogCategoriesServer'
 import React from 'react'
 import PageClient from './page.client'
 
-// Pure on-demand revalidation - relies entirely on revalidatePost hook
+// ISR with 30-minute revalidation for optimal performance
+export const revalidate = 1800 // 30 minutes
 
 export default async function Page() {
   return (
@@ -61,9 +62,9 @@ export default async function Page() {
         </div>
       </div>
 
-      <BlogCategories />
+      <BlogCategoriesServer />
 
-      <N8NBlogsList />
+      <N8NBlogsListServer />
     </div>
   )
 }

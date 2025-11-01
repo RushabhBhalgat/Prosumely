@@ -7,6 +7,9 @@ import ServicesSection from '@/components/ServicesSection'
 import IndustryLinksSection from '@/components/IndustryLinksSection'
 import { getServicesMode } from '@/utilities/getSettings'
 
+// ISR with 1-hour revalidation for homepage
+export const revalidate = 3600 // 1 hour
+
 // --- SEO Metadata ---
 export const metadata = {
   title: 'Prosumely | ATS-friendly Resume Writing Services',

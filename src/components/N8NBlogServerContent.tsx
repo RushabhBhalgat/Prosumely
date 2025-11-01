@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
 
 // Helper function to ensure Cloudinary URLs use HTTPS
 const ensureHttpsUrl = (url: string): string => {

@@ -5,6 +5,9 @@ import React from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+// ISR with 30-minute revalidation for category pages
+export const revalidate = 1800 // 30 minutes
+
 // Helper function to ensure Cloudinary URLs use HTTPS
 const ensureHttpsUrl = (url: string): string => {
   if (!url) return url

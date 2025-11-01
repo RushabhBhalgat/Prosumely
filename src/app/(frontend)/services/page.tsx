@@ -2,6 +2,9 @@ import { Suspense } from 'react'
 import ServicesPageContent from '@/components/ServicesPageContent'
 import { getServicesMode } from '@/utilities/getSettings'
 
+// ISR with 2-hour revalidation for services page
+export const revalidate = 7200 // 2 hours
+
 const ServicesPage = async () => {
   const servicesMode = await getServicesMode()
 

@@ -9,6 +9,9 @@ import { TableOfContents } from '@/components/TableOfContents'
 import { HeadingProcessor } from '@/components/HeadingProcessor'
 import N8NBlogServerContent from '@/components/N8NBlogServerContent'
 
+// ISR with 30-minute revalidation for blog posts
+export const revalidate = 1800 // 30 minutes
+
 // Helper function to ensure HTTPS URLs for external images
 const ensureHttpsUrl = (url: string): string => {
   if (url?.startsWith('http://res.cloudinary.com')) {
