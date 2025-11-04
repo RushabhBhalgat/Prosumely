@@ -1,0 +1,11 @@
+{
+  "name": "resume-gap-identifier-tests",
+  "version": "1.0.0",
+  "description": "Browser-based QA tests for Resume Gap Identifier",
+  "scripts": {
+    "test": "node test-browser.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^21.6.0"
+  }
+}

@@ -90,7 +90,11 @@ export default async function Page() {
       <BlogCategoriesServer />
 
       <div className="container">
-        <N8NBlogsLoadMore initialBlogs={initialBlogs} initialPage={1} initialHasMore={hasNextPage} />
+        <N8NBlogsLoadMore
+          initialBlogs={initialBlogs}
+          initialPage={1}
+          initialHasMore={hasNextPage}
+        />
       </div>
     </div>
   )

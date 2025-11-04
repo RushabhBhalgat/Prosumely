@@ -445,6 +445,12 @@ export async function Footer() {
                   >
                     Cover Letter Generator
                   </Link>
+                  <Link
+                    href="/career-tools/resume-gap-identifier"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Resume Gap Identifier
+                  </Link>
                 </div>
               </div>
             </div>

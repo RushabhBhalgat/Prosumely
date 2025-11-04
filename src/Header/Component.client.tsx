@@ -360,6 +360,13 @@ export const HeaderClient: React.FC<{
                       >
                         Cover Letter Generator
                       </Link>
+                      <Link
+                        href="/career-tools/resume-gap-identifier"
+                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Resume Gap Identifier
+                      </Link>
                     </div>
                   </div>
                 )}
