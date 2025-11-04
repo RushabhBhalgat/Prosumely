@@ -451,6 +451,12 @@ export async function Footer() {
                   >
                     Resume Gap Identifier
                   </Link>
+                  <Link
+                    href="/career-tools/global-opportunity-heatmap"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Global Opportunity Heatmap
+                  </Link>
                 </div>
               </div>
             </div>

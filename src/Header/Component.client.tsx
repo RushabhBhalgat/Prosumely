@@ -367,6 +367,13 @@ export const HeaderClient: React.FC<{
                       >
                         Resume Gap Identifier
                       </Link>
+                      <Link
+                        href="/career-tools/global-opportunity-heatmap"
+                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Global Opportunity Heatmap
+                      </Link>
                     </div>
                   </div>
                 )}

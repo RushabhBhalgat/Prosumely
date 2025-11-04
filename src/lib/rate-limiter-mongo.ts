@@ -44,6 +44,11 @@ export class MongoRateLimiter {
       burst: { requests: 1, windowMs: 15 * 1000 }, // 1 request per 15 seconds
       minute: { requests: 3, windowMs: 60 * 1000 }, // 3 requests per minute
     },
+    '/api/global-opportunity-heatmap': {
+      free: { requests: 4, windowMs: 60 * 60 * 1000 }, // 4 requests per hour
+      burst: { requests: 1, windowMs: 15 * 1000 }, // 1 request per 15 seconds
+      minute: { requests: 3, windowMs: 60 * 1000 }, // 3 requests per minute
+    },
   }
 
   private getConfigForEndpoint(endpoint: string): RateLimitConfig {

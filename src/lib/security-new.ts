@@ -347,7 +347,7 @@ class SecurityManager {
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: https:",
       "font-src 'self' data:",
-      "connect-src 'self' https://generativelanguage.googleapis.com",
+      "connect-src 'self' https://generativelanguage.googleapis.com https://cdn.jsdelivr.net",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",

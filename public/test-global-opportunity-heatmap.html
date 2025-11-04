@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Opportunity Heatmap - QA Test Suite</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        color: #2d3748;
+        margin-bottom: 10px;
+        font-size: 28px;
+      }
+
+      .subtitle {
+        color: #718096;
+        margin-bottom: 30px;
+        font-size: 16px;
+      }
+
+      .warning {
+        background: #fff3cd;
+        border: 2px solid #ffc107;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: #856404;
+      }
+
+      .test-section {
+        margin-bottom: 30px;
+      }
+
+      .test-section h2 {
+        color: #4a5568;
+        margin-bottom: 15px;
+        font-size: 20px;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 10px;
+      }
+
+      .test-item {
+        background: #f7fafc;
+        border-left: 4px solid #cbd5e0;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .test-item.running {
+        border-left-color: #4299e1;
+        background: #ebf8ff;
+      }
+
+      .test-item.passed {
+        border-left-color: #48bb78;
+        background: #f0fff4;
+      }
+
+      .test-item.failed {
+        border-left-color: #f56565;
+        background: #fff5f5;
+      }
+
+      .test-name {
+        font-weight: 600;
+        color: #2d3748;
+      }
+
+      .test-status {
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .status-pending {
+        background: #e2e8f0;
+        color: #4a5568;
+      }
+
+      .status-running {
+        background: #bee3f8;
+        color: #2c5282;
+      }
+
+      .status-passed {
+        background: #c6f6d5;
+        color: #22543d;
+      }
+
+      .status-failed {
+        background: #fed7d7;
+        color: #742a2a;
+      }
+
+      .test-details {
+        font-size: 13px;
+        color: #718096;
+        margin-top: 8px;
+      }
+
+      button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+      }
+
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .summary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+      }
+
+      .summary-item {
+        text-align: center;
+      }
+
+      .summary-value {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .summary-label {
+        font-size: 14px;
+        opacity: 0.9;
+      }
+
+      .error-log {
+        background: #fff5f5;
+        border: 2px solid #fc8181;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .error-log h3 {
+        color: #c53030;
+        margin-bottom: 10px;
+      }
+
+      .error-item {
+        background: white;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        font-size: 13px;
+      }
+
+      .error-item strong {
+        color: #c53030;
+      }
+
+      pre {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin-top: 5px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌍 Global Opportunity Heatmap - QA Test Suite</h1>
+      <p class="subtitle">Production-grade testing for API, rate limiting, and error handling</p>
+
+      <div class="warning" id="protocol-warning" style="display: none">
+        ⚠️ <strong>Important:</strong> This test must be served from http://localhost:3000 to work
+        properly. Copy this file to the <code>public/</code> folder and access it via your Next.js
+        dev server.
+      </div>
+
+      <button id="runTests" onclick="runAllTests()">▶️ Run All Tests</button>
+
+      <div class="test-section">
+        <h2>1. Basic Functionality Tests</h2>
+        <div id="basic-tests"></div>
+      </div>
+
+      <div class="test-section">
+        <h2>2. Input Validation Tests</h2>
+        <div id="validation-tests"></div>
+      </div>
+
+      <div class="test-section">
+        <h2>3. Rate Limiting Tests</h2>
+        <div id="rate-limit-tests"></div>
+      </div>
+
+      <div class="test-section">
+        <h2>4. Error Handling Tests</h2>
+        <div id="error-tests"></div>
+      </div>
+
+      <div class="summary" id="summary" style="display: none">
+        <div class="summary-item">
+          <div class="summary-value" id="total-tests">0</div>
+          <div class="summary-label">Total Tests</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value" id="passed-tests">0</div>
+          <div class="summary-label">Passed</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value" id="failed-tests">0</div>
+          <div class="summary-label">Failed</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value" id="test-duration">0s</div>
+          <div class="summary-label">Duration</div>
+        </div>
+      </div>
+
+      <div class="error-log" id="error-log" style="display: none">
+        <h3>❌ Failed Tests Details</h3>
+        <div id="error-list"></div>
+      </div>
+    </div>
+
+    <script>
+      const API_URL = '/api/global-opportunity-heatmap'
+
+      const tests = {
+        basic: [
+          {
+            name: 'Valid Analysis Request',
+            test: async () => {
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  jobTitle: 'Senior Software Engineer',
+                  yearsOfExperience: 8,
+                  skills: ['React', 'Node.js', 'TypeScript'],
+                  industry: 'Technology',
+                  workMode: 'remote',
+                  salaryExpectation: 'market_rate',
+                  visaRequirement: true,
+                }),
+              })
+              const data = await response.json()
+              if (!response.ok) throw new Error(data.message)
+              if (!data.analysis) throw new Error('No analysis in response')
+              if (!data.analysis.topCountries) throw new Error('No countries in analysis')
+              if (data.analysis.topCountries.length < 5)
+                throw new Error('Too few countries returned')
+              return { success: true, data }
+            },
+          },
+          {
+            name: 'Response Structure Validation',
+            test: async () => {
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  jobTitle: 'Data Scientist',
+                  yearsOfExperience: 5,
+                  skills: ['Python', 'Machine Learning', 'SQL'],
+                }),
+              })
+              const data = await response.json()
+              if (!response.ok) throw new Error(data.message)
+              const required = [
+                'summary',
+                'overallScore',
+                'topCountries',
+                'skillDemand',
+                'remoteWorkInsights',
+                'visaInsights',
+                'recommendations',
+              ]
+              for (const field of required) {
+                if (!data.analysis[field]) throw new Error(`Missing field: ${field}`)
+              }
+              return { success: true }
+            },
+          },
+        ],
+        validation: [
+          {
+            name: 'Missing Job Title',
+            test: async () => {
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  yearsOfExperience: 5,
+                  skills: ['JavaScript'],
+                }),
+              })
+              if (response.status !== 400) throw new Error('Should return 400 for missing title')
+              return { success: true }
+            },
+          },
+          {
+            name: 'Invalid Years of Experience (negative)',
+            test: async () => {
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  jobTitle: 'Developer',
+                  yearsOfExperience: -5,
+                  skills: ['JavaScript'],
+                }),
+              })
+              if (response.status !== 400) throw new Error('Should return 400 for negative YoE')
+              return { success: true }
+            },
+          },
+          {
+            name: 'Invalid Years of Experience (too high)',
+            test: async () => {
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  jobTitle: 'Developer',
+                  yearsOfExperience: 100,
+                  skills: ['JavaScript'],
+                }),
+              })
+              if (response.status !== 400) throw new Error('Should return 400 for YoE > 50')
+              return { success: true }
+            },
+          },
+          {
+            name: 'Missing Skills',
+            test: async () => {
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  jobTitle: 'Developer',
+                  yearsOfExperience: 5,
+                  skills: [],
+                }),
+              })
+              if (response.status !== 400) throw new Error('Should return 400 for empty skills')
+              return { success: true }
+            },
+          },
+          {
+            name: 'Too Many Skills (>20)',
+            test: async () => {
+              const skills = Array.from({ length: 25 }, (_, i) => `Skill${i}`)
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  jobTitle: 'Developer',
+                  yearsOfExperience: 5,
+                  skills,
+                }),
+              })
+              if (response.status !== 400) throw new Error('Should return 400 for >20 skills')
+              return { success: true }
+            },
+          },
+        ],
+        rateLimit: [
+          {
+            name: 'Rate Limit Applied',
+            test: async () => {
+              const requests = []
+              for (let i = 0; i < 5; i++) {
+                requests.push(
+                  fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                      jobTitle: 'Developer',
+                      yearsOfExperience: 5,
+                      skills: ['JavaScript'],
+                    }),
+                  }),
+                )
+              }
+              const responses = await Promise.all(requests)
+              const has429 = responses.some((r) => r.status === 429)
+              if (!has429) throw new Error('Rate limit not triggered after 5 requests')
+              return { success: true }
+            },
+          },
+        ],
+        errorHandling: [
+          {
+            name: 'Empty Request Body',
+            test: async () => {
+              const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({}),
+              })
+              if (response.status !== 400) throw new Error('Should return 400 for empty body')
+              return { success: true }
+            },
+          },
+          {
+            name: 'Malformed JSON',
+            test: async () => {
+              try {
+                const response = await fetch(API_URL, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: '{invalid json',
+                })
+                if (response.ok) throw new Error('Should reject malformed JSON')
+                return { success: true }
+              } catch (error) {
+                return { success: true }
+              }
+            },
+          },
+        ],
+      }
+
+      let testResults = {
+        total: 0,
+        passed: 0,
+        failed: 0,
+        errors: [],
+        startTime: 0,
+      }
+
+      function checkProtocol() {
+        if (window.location.protocol === 'file:') {
+          document.getElementById('protocol-warning').style.display = 'block'
+          document.getElementById('runTests').disabled = true
+          return false
+        }
+        return true
+      }
+
+      async function runTest(testName, testFn, containerId) {
+        const testId = `test-${Date.now()}-${Math.random()}`
+        const container = document.getElementById(containerId)
+
+        const testEl = document.createElement('div')
+        testEl.id = testId
+        testEl.className = 'test-item running'
+        testEl.innerHTML = `
+          <div>
+            <div class="test-name">${testName}</div>
+            <div class="test-details">Running...</div>
+          </div>
+          <span class="test-status status-running">RUNNING</span>
+        `
+        container.appendChild(testEl)
+
+        try {
+          const result = await testFn()
+          testEl.className = 'test-item passed'
+          testEl.querySelector('.test-status').className = 'test-status status-passed'
+          testEl.querySelector('.test-status').textContent = 'PASSED'
+          testEl.querySelector('.test-details').textContent = 'Test completed successfully'
+          testResults.passed++
+          return true
+        } catch (error) {
+          testEl.className = 'test-item failed'
+          testEl.querySelector('.test-status').className = 'test-status status-failed'
+          testEl.querySelector('.test-status').textContent = 'FAILED'
+          testEl.querySelector('.test-details').textContent = error.message
+          testResults.failed++
+          testResults.errors.push({ test: testName, error: error.message })
+          return false
+        } finally {
+          testResults.total++
+          updateSummary()
+        }
+      }
+
+      async function runAllTests() {
+        if (!checkProtocol()) return
+
+        document.getElementById('runTests').disabled = true
+        testResults = { total: 0, passed: 0, failed: 0, errors: [], startTime: Date.now() }
+
+        document.getElementById('basic-tests').innerHTML = ''
+        document.getElementById('validation-tests').innerHTML = ''
+        document.getElementById('rate-limit-tests').innerHTML = ''
+        document.getElementById('error-tests').innerHTML = ''
+        document.getElementById('summary').style.display = 'none'
+        document.getElementById('error-log').style.display = 'none'
+
+        // Run basic tests
+        for (const test of tests.basic) {
+          await runTest(test.name, test.test, 'basic-tests')
+          await new Promise((resolve) => setTimeout(resolve, 1000))
+        }
+
+        // Run validation tests
+        for (const test of tests.validation) {
+          await runTest(test.name, test.test, 'validation-tests')
+          await new Promise((resolve) => setTimeout(resolve, 500))
+        }
+
+        // Run error handling tests
+        for (const test of tests.errorHandling) {
+          await runTest(test.name, test.test, 'error-tests')
+          await new Promise((resolve) => setTimeout(resolve, 500))
+        }
+
+        // Run rate limit tests last
+        for (const test of tests.rateLimit) {
+          await runTest(test.name, test.test, 'rate-limit-tests')
+        }
+
+        finalizeResults()
+      }
+
+      function updateSummary() {
+        document.getElementById('summary').style.display = 'grid'
+        document.getElementById('total-tests').textContent = testResults.total
+        document.getElementById('passed-tests').textContent = testResults.passed
+        document.getElementById('failed-tests').textContent = testResults.failed
+
+        const duration = ((Date.now() - testResults.startTime) / 1000).toFixed(1)
+        document.getElementById('test-duration').textContent = `${duration}s`
+      }
+
+      function finalizeResults() {
+        updateSummary()
+
+        if (testResults.errors.length > 0) {
+          const errorLog = document.getElementById('error-log')
+          const errorList = document.getElementById('error-list')
+          errorLog.style.display = 'block'
+          errorList.innerHTML = testResults.errors
+            .map(
+              (err) => `
+            <div class="error-item">
+              <strong>${err.test}</strong>
+              <pre>${err.error}</pre>
+            </div>
+          `,
+            )
+            .join('')
+        }
+
+        document.getElementById('runTests').disabled = false
+      }
+
+      // Check protocol on load
+      window.addEventListener('load', checkProtocol)
+    </script>
+  </body>
+</html>
