@@ -4,21 +4,26 @@ import { PageHeading } from '@/components/SEO/PageHeading'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Career Tools - ATS Resume Scanner & Job Search Resources | Prosumely',
+  title: 'Free Career Tools - AI-Powered Job Search Resources | Prosumely',
   description:
-    'Free career tools to boost your job search. Extract keywords from job descriptions, analyze your resume for ATS compatibility, and access professional career resources.',
+    'Free AI-powered career tools to boost your job search. Generate cover letters, identify resume gaps, explore global opportunities, extract job keywords, and optimize for ATS systems.',
   keywords: [
     'career tools',
     'job search tools',
+    'AI cover letter generator',
+    'resume gap analyzer',
+    'global job opportunities',
     'ATS resume scanner',
     'keyword finder',
     'resume analyzer',
     'free career resources',
+    'job description analyzer',
+    'career planning tools',
   ],
   openGraph: {
-    title: 'Free Career Tools - ATS Resume Scanner & Job Search Resources',
+    title: 'Free Career Tools - AI-Powered Job Search Resources',
     description:
-      'Free career tools to boost your job search. Extract keywords from job descriptions, analyze your resume for ATS compatibility.',
+      'Free AI-powered career tools: Cover letter generator, resume gap identifier, global opportunity heatmap, and more. Boost your job search success.',
     type: 'website',
     url: 'https://prosumely.com/career-tools',
   },
@@ -32,12 +37,12 @@ const CareerTools = () => {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <PageHeading as="h1" className="text-4xl font-bold text-center mb-4">
-          Free Career Tools
+          Free AI-Powered Career Tools
         </PageHeading>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Boost your job search with our free professional tools. Optimize your resume for ATS
-          systems, extract keywords from job descriptions, and access resources to land your dream
-          job.
+          Boost your job search with our free professional tools. Generate AI cover letters,
+          identify resume gaps, explore global opportunities, optimize for ATS systems, and extract
+          keywords from job descriptions to land your dream job.
         </p>
 
         {/* Tools Grid */}
@@ -97,6 +102,74 @@ const CareerTools = () => {
                 analyzes your resume and job description.
               </p>
               <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Resume Gap Identifier */}
+          <Link href="/career-tools/resume-gap-identifier" className="group">
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 group-hover:border-green-500">
+              <div className="text-green-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-green-600 transition-colors">
+                Resume Gap Identifier
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Identify missing skills and qualifications between your resume and target job role.
+                Get actionable improvement suggestions.
+              </p>
+              <div className="flex items-center text-green-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Global Opportunity Heatmap */}
+          <Link href="/career-tools/global-opportunity-heatmap" className="group">
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 group-hover:border-indigo-500">
+              <div className="text-indigo-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">
+                Global Opportunity Heatmap
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Discover the best countries for your career. Explore job demand, salaries, visa
+                friendliness, and remote work opportunities worldwide.
+              </p>
+              <div className="flex items-center text-indigo-600 font-medium group-hover:translate-x-1 transition-transform">
                 Try Free Tool
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
