@@ -1,14 +1,39 @@
 import type { Metadata } from 'next/types'
 
-import N8NBlogsListServer from '@/components/N8NBlogsListServer'
 import BlogCategoriesServer from '@/components/BlogCategoriesServer'
+import N8NBlogsLoadMore from '@/components/N8NBlogsLoadMore'
 import React from 'react'
 import PageClient from './page.client'
+import { draftMode } from 'next/headers'
 
 // ISR with 30-minute revalidation for optimal performance
 export const revalidate = 1800 // 30 minutes
 
+async function getInitialBlogs() {
+  const { isEnabled: isDraftMode } = await draftMode()
+  const protocol = process.env.NEXT_PUBLIC_SERVER_URL?.startsWith('https') ? 'https' : 'http'
+  const domain = process.env.NEXT_PUBLIC_SERVER_URL || 'localhost:3000'
+  const baseUrl = `${protocol}://${domain.replace(/^https?:\/\//, '')}`
+
+  const response = await fetch(`${baseUrl}/api/n8n-blogs?page=1&limit=9`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    next: isDraftMode ? { revalidate: 0 } : { revalidate: 1800 },
+  })
+
+  if (!response.ok) {
+    console.error('Failed to fetch initial blogs:', response.statusText)
+    return { docs: [], hasNextPage: false }
+  }
+
+  return response.json()
+}
+
 export default async function Page() {
+  const { docs: initialBlogs, hasNextPage } = await getInitialBlogs()
+
   return (
     <div className="pt-24 pb-24 bg-gradient-to-b from-gray-50 to-white">
       <PageClient />
@@ -64,7 +89,9 @@ export default async function Page() {
 
       <BlogCategoriesServer />
 
-      <N8NBlogsListServer />
+      <div className="container">
+        <N8NBlogsLoadMore initialBlogs={initialBlogs} initialPage={1} initialHasMore={hasNextPage} />
+      </div>
     </div>
   )
 }
