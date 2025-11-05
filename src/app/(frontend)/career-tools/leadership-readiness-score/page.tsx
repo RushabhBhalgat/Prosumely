@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import LeadershipReadinessCalculator from '@/components/career-tools/LeadershipReadinessCalculator'
 
 export const metadata: Metadata = {
@@ -182,12 +183,12 @@ export default function LeadershipReadinessScorePage() {
               writers create compelling executive resumes that showcase your leadership journey and
               position you for C-suite opportunities.
             </p>
-            <a
+            <Link
               href="/executive-resume-writing-service"
               className="inline-block bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold px-8 py-3 rounded-lg hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Explore Executive Resume Service →
-            </a>
+            </Link>
           </div>
         </div>
       </div>
