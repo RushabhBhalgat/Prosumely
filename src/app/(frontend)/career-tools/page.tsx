@@ -183,6 +183,40 @@ const CareerTools = () => {
             </div>
           </Link>
 
+          {/* Leadership Readiness Score */}
+          <Link href="/career-tools/leadership-readiness-score" className="group">
+            <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-orange-200 group-hover:border-orange-500">
+              <div className="text-orange-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-orange-600 transition-colors">
+                Leadership Readiness Score
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Assess your leadership potential with our AI-powered evaluation. Get personalized
+                insights, certification recommendations, and a clear development roadmap.
+              </p>
+              <div className="flex items-center text-orange-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
           {/* Coming Soon Tools */}
           <div className="bg-white/60 rounded-xl shadow-lg p-6 border border-gray-200 opacity-75">
             <div className="text-gray-400 mb-4">

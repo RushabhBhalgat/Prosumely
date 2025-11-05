@@ -374,6 +374,13 @@ export const HeaderClient: React.FC<{
                       >
                         Global Opportunity Heatmap
                       </Link>
+                      <Link
+                        href="/career-tools/leadership-readiness-score"
+                        className="block py-2 text-sm text-gray-700 hover:text-orange-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Leadership Readiness Score
+                      </Link>
                     </div>
                   </div>
                 )}
