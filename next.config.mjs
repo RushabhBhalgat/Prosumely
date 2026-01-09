@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Standalone output for production deployment outside Vercel
-  output: 'standalone',
-  
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.

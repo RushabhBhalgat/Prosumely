@@ -1,16 +1,16 @@
 spec:
   name: prosumely
   services:
-  - name: web
-    github:
-      repo: RushabhBhalgat/Prosumely
-      branch: main
-      deploy_on_push: true
-    build_command: pnpm install && pnpm build
-    run_command: cd .next/standalone && node server.js
-    environment_slug: node-js
-    instance_count: 1
-    instance_size_slug: basic-xxs
-    http_port: 3000
-    routes:
-    - path: /
+    - name: web
+      github:
+        repo: RushabhBhalgat/Prosumely
+        branch: main
+        deploy_on_push: true
+      build_command: pnpm install && pnpm build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
+      run_command: cd .next/standalone && node server.js
+      environment_slug: node-js
+      instance_count: 1
+      instance_size_slug: basic-xxs
+      http_port: 3000
+      routes:
+        - path: /
