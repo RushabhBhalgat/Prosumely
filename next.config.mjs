@@ -15,15 +15,13 @@ const nextConfig = {
   },
   // Image optimization configuration
   images: {
+    unoptimized: true, // Disable Next.js image optimization - DigitalOcean buildpack doesn't support Sharp properly
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**.public.blob.vercel-storage.com',
       },
     ],
-    domains: ['prosumely-surd3.ondigitalocean.app', 'prosumely.com', 'www.prosumely.com'],
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60,
   },
   // Ensure proper cache behavior for dynamic content
   async headers() {
