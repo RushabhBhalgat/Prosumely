@@ -68,7 +68,7 @@
     "react-dom": "19.1.0",
     "react-hook-form": "7.45.4",
     "react-simple-maps": "^3.0.0",
-    "sharp": "0.32.6",
+    "sharp": "^0.33.5",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7"
   },
@@ -91,8 +91,7 @@
     "typescript": "5.7.3"
   },
   "engines": {
-    "node": "^18.20.2 || >=20.9.0",
-    "pnpm": "^9 || ^10"
+    "node": "20.x"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
