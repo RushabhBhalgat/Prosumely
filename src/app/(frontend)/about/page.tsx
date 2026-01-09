@@ -261,7 +261,7 @@ const AboutPage = () => {
                 {/* Image Section */}
                 <div className="relative h-96 lg:h-auto">
                   <Image
-                    src="/Malcolm Garrington Advisor.jpeg"
+                    src="/malcolm-garrington-advisor.jpeg"
                     alt="Malcolm Garrington - Career Strategy Advisor"
                     fill
                     className="object-cover"
