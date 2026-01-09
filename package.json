@@ -7,6 +7,7 @@
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
+    "postinstall": "node -e \"try{require('sharp')}catch(e){process.exit(1)}\" || pnpm rebuild sharp",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
@@ -17,6 +18,7 @@
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
     "reinstall": "cross-env NODE_OPTIONS=--no-deprecation rm -rf node_modules && rm pnpm-lock.yaml && pnpm --ignore-workspace install",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "start:standalone": "node .next/standalone/server.js",
     "test:sitemap": "node scripts/test-sitemap.js",
     "seo:audit": "node scripts/seo-audit.js",
     "seo:sitemap-cleanup": "node scripts/sitemap-cleanup.js",
