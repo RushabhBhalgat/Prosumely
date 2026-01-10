@@ -1,5 +1,5 @@
 import React from 'react'
-import { Metadata } from 'next/model'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import SalaryComparisonTool from '@/components/career-tools/SalaryComparisonTool'
 
