@@ -105,7 +105,7 @@ export default async function BlogCategoriesServer() {
 
     const n8nBlogsCollection = db.collection('n8n-blogs')
 
-    // Get counts for each category
+    // Get counts for each category - checking both slugs and full names
     const categoryCounts = await n8nBlogsCollection
       .aggregate([
         { $match: { status: 'published' } },
@@ -118,15 +118,22 @@ export default async function BlogCategoriesServer() {
       ])
       .toArray()
 
+    console.log('Raw category counts from DB:', categoryCounts)
+
     // Convert to a more usable format, normalizing category names to slugs
     const tempCounts: { [key: string]: number } = {}
     categoryCounts.forEach((item: any) => {
       const categoryValue = item._id
+      if (!categoryValue) {
+        console.warn('Found blog(s) with no category:', item.count)
+        return
+      }
       // If it's already a slug, use it; if it's a full name, convert it
       const slug = CATEGORY_NAME_TO_SLUG[categoryValue] || categoryValue
       tempCounts[slug] = (tempCounts[slug] || 0) + item.count
     })
     counts = tempCounts
+    console.log('Normalized category counts:', counts)
   } catch (error) {
     console.error('Error fetching category counts:', error)
   }

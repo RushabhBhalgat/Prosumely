@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload'
 import { authenticated } from '../access/authenticated'
 import { authenticatedOrPublished } from '../access/authenticatedOrPublished'
+import { revalidateN8NBlog, revalidateDelete } from './N8NBlogs/hooks/revalidateN8NBlog'
 
 export const N8NBlogs: CollectionConfig = {
   slug: 'n8n-blogs',
@@ -207,5 +208,7 @@ export const N8NBlogs: CollectionConfig = {
         return data
       },
     ],
+    afterChange: [revalidateN8NBlog],
+    afterDelete: [revalidateDelete],
   },
 }

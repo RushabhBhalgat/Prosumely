@@ -40,21 +40,27 @@ export async function GET() {
       ])
       .toArray()
 
+    console.log('Raw category counts from DB:', categoryCounts)
+
     // Convert to a more usable format, normalizing category names to slugs
     const counts: { [key: string]: number } = {}
     categoryCounts.forEach((item: any) => {
       const categoryValue = item._id
+      if (!categoryValue) {
+        console.warn('Found blog(s) with no category:', item.count)
+        return
+      }
       // If it's already a slug, use it; if it's a full name, convert it
       const slug = CATEGORY_NAME_TO_SLUG[categoryValue] || categoryValue
       counts[slug] = (counts[slug] || 0) + item.count
     })
 
-    console.log('Category counts:', counts)
+    console.log('Normalized category counts:', counts)
 
-    // Add caching headers
+    // Add caching headers - reduced to 5 minutes for more responsive updates
     return NextResponse.json(counts, {
       headers: {
-        'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=7200',
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
       },
     })
   } catch (error) {

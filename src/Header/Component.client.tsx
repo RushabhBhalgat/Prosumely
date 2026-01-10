@@ -430,6 +430,48 @@ export const HeaderClient: React.FC<{
                       >
                         Career Transition Calculator
                       </Link>
+                      <Link
+                        href="/career-tools/retirement-readiness"
+                        className="block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Retirement Readiness
+                      </Link>
+                      <Link
+                        href="/career-tools/salary-comparison"
+                        className="block py-2 text-sm text-gray-700 hover:text-purple-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Salary Comparison
+                      </Link>
+                      <Link
+                        href="/career-tools/next-job-recommender"
+                        className="block py-2 text-sm text-gray-700 hover:text-green-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Next Job Recommender
+                      </Link>
+                      <Link
+                        href="/career-tools/work-happiness-index"
+                        className="block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Work Happiness Index
+                      </Link>
+                      <Link
+                        href="/career-tools/global-relocation-affordability"
+                        className="block py-2 text-sm text-gray-700 hover:text-teal-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Global Relocation Calculator
+                      </Link>
+                      <Link
+                        href="/career-tools/automation-risk"
+                        className="block py-2 text-sm text-gray-700 hover:text-purple-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        AI Automation Risk
+                      </Link>
                     </div>
                   </div>
                 )}

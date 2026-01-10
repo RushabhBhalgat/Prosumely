@@ -8,6 +8,99 @@
 import { useState, useRef } from 'react'
 import Link from 'next/link'
 
+const LOCATIONS = [
+  // Countries
+  'United States',
+  'United Kingdom',
+  'Canada',
+  'Australia',
+  'Germany',
+  'France',
+  'Netherlands',
+  'Switzerland',
+  'Singapore',
+  'United Arab Emirates',
+  'Saudi Arabia',
+  'Qatar',
+  'Japan',
+  'South Korea',
+  'China',
+  'Hong Kong',
+  'India',
+  'Philippines',
+  'Thailand',
+  'Malaysia',
+  'Indonesia',
+  'Vietnam',
+  'Mexico',
+  'Brazil',
+  'Argentina',
+  'Spain',
+  'Italy',
+  'Portugal',
+  'Ireland',
+  'Sweden',
+  'Norway',
+  'Denmark',
+  'Finland',
+  'Belgium',
+  'Austria',
+  'New Zealand',
+  'Poland',
+  'Czech Republic',
+  'Greece',
+  'Turkey',
+  'Israel',
+  'South Africa',
+  'Egypt',
+  'Kenya',
+  'Nigeria',
+  // Major US Cities
+  'New York City, USA',
+  'Los Angeles, USA',
+  'Chicago, USA',
+  'Houston, USA',
+  'Phoenix, USA',
+  'San Francisco, USA',
+  'Seattle, USA',
+  'Boston, USA',
+  'Miami, USA',
+  'Austin, USA',
+  'Denver, USA',
+  'San Diego, USA',
+  'Portland, USA',
+  'Atlanta, USA',
+  'Dallas, USA',
+  'Washington DC, USA',
+  // Major Global Cities
+  'London, UK',
+  'Paris, France',
+  'Berlin, Germany',
+  'Munich, Germany',
+  'Amsterdam, Netherlands',
+  'Zurich, Switzerland',
+  'Geneva, Switzerland',
+  'Tokyo, Japan',
+  'Seoul, South Korea',
+  'Beijing, China',
+  'Shanghai, China',
+  'Dubai, UAE',
+  'Abu Dhabi, UAE',
+  'Sydney, Australia',
+  'Melbourne, Australia',
+  'Toronto, Canada',
+  'Vancouver, Canada',
+  'Montreal, Canada',
+  'Singapore',
+  'Bangkok, Thailand',
+  'Kuala Lumpur, Malaysia',
+  'Manila, Philippines',
+  'Mumbai, India',
+  'Bangalore, India',
+  'Delhi, India',
+  'Other',
+]
+
 interface LocationCost {
   location: string
   housing: {
@@ -176,13 +269,18 @@ export default function CostOfLivingCalculator() {
               <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Current Location <span className="text-red-500">*</span>
               </label>
-              <input
-                type="text"
+              <select
                 value={formData.currentLocation}
                 onChange={(e) => setFormData({ ...formData, currentLocation: e.target.value })}
-                placeholder="e.g., New York, USA"
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-              />
+              >
+                <option value="">Select current location</option>
+                {LOCATIONS.map((location) => (
+                  <option key={location} value={location}>
+                    {location}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div>
@@ -207,13 +305,18 @@ export default function CostOfLivingCalculator() {
             <div className="space-y-3">
               {formData.targetLocations.map((location, index) => (
                 <div key={index} className="flex gap-2">
-                  <input
-                    type="text"
+                  <select
                     value={location}
                     onChange={(e) => handleLocationChange(index, e.target.value)}
-                    placeholder={`Target location ${index + 1}`}
                     className="flex-1 px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                  />
+                  >
+                    <option value="">Select target location {index + 1}</option>
+                    {LOCATIONS.map((loc) => (
+                      <option key={loc} value={loc}>
+                        {loc}
+                      </option>
+                    ))}
+                  </select>
                   {formData.targetLocations.length > 1 && (
                     <button
                       onClick={() => handleRemoveLocation(index)}

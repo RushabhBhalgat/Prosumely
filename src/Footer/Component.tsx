@@ -505,6 +505,24 @@ export async function Footer() {
                   >
                     Career Transition Calculator
                   </Link>
+                  <Link
+                    href="/career-tools/retirement-readiness"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Retirement Readiness
+                  </Link>
+                  <Link
+                    href="/career-tools/salary-comparison"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Salary Comparison
+                  </Link>
+                  <Link
+                    href="/career-tools/next-job-recommender"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Next Job Recommender
+                  </Link>
                 </div>
               </div>
             </div>

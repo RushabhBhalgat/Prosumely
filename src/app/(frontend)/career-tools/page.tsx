@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Free Career Tools - AI-Powered Job Search Resources | Prosumely',
   description:
-    'Free AI-powered career tools to boost your job search. Generate cover letters, LinkedIn profiles, identify resume gaps, explore global opportunities, extract job keywords, analyze salaries, plan career roadmaps, calculate freelance rates, identify future skills, compare cost of living, and assess career transitions.',
+    'Free AI-powered career tools to boost your job search. Generate cover letters, LinkedIn profiles, identify resume gaps, explore global opportunities, extract job keywords, analyze salaries, compare offers, plan retirement, get job recommendations, plan career roadmaps, calculate freelance rates, identify future skills, compare cost of living, assess career transitions, calculate certification ROI, evaluate AI readiness, and plan expat finances.',
   keywords: [
     'career tools',
     'job search tools',
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
     'resume analyzer',
     'salary analyzer',
     'salary comparison tool',
+    'retirement planning calculator',
+    'pension calculator',
+    'next job recommender',
+    'career move suggestions',
     'career roadmap generator',
     'career progression planner',
     'free career resources',
@@ -42,11 +46,22 @@ export const metadata: Metadata = {
     'career transition calculator',
     'career change assessment',
     'skill forecasting',
+    'certification ROI calculator',
+    'certification investment analysis',
+    'AI skills assessment',
+    'AI readiness score',
+    'AI proficiency test',
+    'work abroad calculator',
+    'expat savings calculator',
+    'international work planning',
+    'retirement readiness index',
+    'multi-country salary comparison',
+    'AI job matching',
   ],
   openGraph: {
     title: 'Free Career Tools - AI-Powered Job Search Resources',
     description:
-      'Free AI-powered career tools: Cover letter generator, LinkedIn profile creator, resume gap identifier, salary analyzer, career roadmap planner, freelance rate calculator, global opportunity heatmap, and more. Boost your job search success.',
+      'Free AI-powered career tools: Cover letter generator, LinkedIn profile creator, resume gap identifier, salary comparison tool, retirement readiness calculator, next job recommender, career roadmap planner, freelance rate calculator, global opportunity heatmap, certification ROI calculator, AI skills readiness score, work abroad savings calculator, and more. Boost your job search success.',
     type: 'website',
     url: 'https://prosumely.com/career-tools',
   },
@@ -65,7 +80,8 @@ const CareerTools = () => {
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
           Boost your job search with our free professional tools. Generate AI cover letters,
           LinkedIn profiles, identify resume gaps, explore global opportunities, analyze salary
-          expectations, plan your career roadmap, calculate optimal freelance rates, identify
+          expectations, compare job offers, plan retirement readiness, get personalized job
+          recommendations, plan your career roadmap, calculate optimal freelance rates, identify
           future-proof skills, compare cost of living globally, assess career transitions, and
           extract keywords from job descriptions to land your dream job.
         </p>
@@ -229,6 +245,108 @@ const CareerTools = () => {
                 insights, certification recommendations, and a clear development roadmap.
               </p>
               <div className="flex items-center text-orange-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Career Strength Index */}
+          <Link href="/career-tools/career-strength-index" className="group">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-blue-200 group-hover:border-indigo-500">
+              <div className="text-blue-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">
+                Career Strength Index
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Comprehensive 360-degree career assessment across skills, experience, network,
+                brand, and market demand. Get your overall career health score and improvement plan.
+              </p>
+              <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Work-Life Balance Index */}
+          <Link href="/career-tools/work-life-balance-index" className="group">
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-green-200 group-hover:border-teal-500">
+              <div className="text-green-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-teal-600 transition-colors">
+                Work-Life Balance Index
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Measure your work-life balance across time, flexibility, stress, and health.
+                Identify burnout risk and get personalized recommendations for improving wellness.
+              </p>
+              <div className="flex items-center text-green-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Lifetime Earning Potential Calculator */}
+          <Link href="/career-tools/lifetime-earning-calculator" className="group">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-purple-200 group-hover:border-pink-500">
+              <div className="text-purple-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-pink-600 transition-colors">
+                Lifetime Earning Potential Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Project your total career earnings from now to retirement. Model different scenarios
+                to understand how career decisions impact lifetime wealth.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
                 Try Free Tool
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -462,6 +580,451 @@ const CareerTools = () => {
                 evaluation, and detailed transition roadmap. Get objective go/no-go recommendations.
               </p>
               <div className="flex items-center text-indigo-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Career Transition Calculator */}
+          <Link href="/career-tools/career-transition-calculator" className="group">
+            <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-indigo-200 group-hover:border-cyan-500">
+              <div className="text-indigo-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-600 transition-colors">
+                Career Transition Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Assess career change feasibility with risk analysis, skill transferability
+                evaluation, and detailed transition roadmap. Get objective go/no-go recommendations.
+              </p>
+              <div className="flex items-center text-indigo-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Certification ROI Calculator */}
+          <Link href="/career-tools/certification-roi-calculator" className="group">
+            <div className="bg-gradient-to-br from-blue-50 to-violet-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-blue-200 group-hover:border-violet-500">
+              <div className="text-blue-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-violet-600 transition-colors">
+                Certification ROI Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Calculate return on investment for professional certifications. Analyze costs,
+                salary increases, payback periods, and market demand to make smart learning
+                investments.
+              </p>
+              <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* AI Skills Readiness Score */}
+          <Link href="/career-tools/ai-skills-readiness" className="group">
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-purple-200 group-hover:border-blue-500">
+              <div className="text-purple-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+                AI Skills Readiness Score
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Evaluate your AI proficiency and get a personalized learning path. Measure literacy,
+                tool proficiency, and adaptability to stay competitive in an AI-augmented workplace.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Work Abroad Savings Calculator */}
+          <Link href="/career-tools/work-abroad-savings" className="group">
+            <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-teal-200 group-hover:border-blue-500">
+              <div className="text-teal-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+                Work Abroad Savings Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Calculate realistic savings potential when working internationally. Analyze salary,
+                expenses, remittances, and wealth accumulation for confident expat financial
+                planning.
+              </p>
+              <div className="flex items-center text-teal-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Retirement Readiness Index */}
+          <Link href="/career-tools/retirement-readiness" className="group">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-blue-200 group-hover:border-indigo-500">
+              <div className="text-blue-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">
+                Retirement Readiness Index
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Evaluate retirement preparedness based on savings, pension contributions, and
+                country-specific retirement systems. Compare security across countries for expats.
+              </p>
+              <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Salary Comparison Tool */}
+          <Link href="/career-tools/salary-comparison" className="group">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-purple-200 group-hover:border-pink-500">
+              <div className="text-purple-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-pink-600 transition-colors">
+                Salary Comparison Tool
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Compare salary offers across locations with cost-of-living adjustments, tax
+                calculations, and purchasing power analysis. Make informed relocation decisions.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Next Job Recommender */}
+          <Link href="/career-tools/next-job-recommender" className="group">
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-green-200 group-hover:border-emerald-500">
+              <div className="text-green-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-emerald-600 transition-colors">
+                Next Job Recommender
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Get AI-powered next career move recommendations based on your skills, experience,
+                and goals. Discover suitable roles with transition strategies and success
+                probabilities.
+              </p>
+              <div className="flex items-center text-green-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Skill Gap Analyzer */}
+          <Link href="/career-tools/skill-gap-analyzer" className="group">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-blue-200 group-hover:border-purple-500">
+              <div className="text-blue-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 transition-colors">
+                Skill Gap Analyzer
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Discover exact skills you need for your target role. Get a personalized learning
+                roadmap with resources, timeline, and portfolio projects.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Study Abroad ROI Calculator */}
+          <Link href="/career-tools/study-abroad-roi" className="group">
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-emerald-200 group-hover:border-teal-500">
+              <div className="text-emerald-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-teal-600 transition-colors">
+                Study Abroad ROI Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Calculate return on investment for international education. Analyze costs, salary
+                boost, career opportunities, and payback period.
+              </p>
+              <div className="flex items-center text-teal-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Job Demand vs Supply Calculator */}
+          <Link href="/career-tools/job-demand-supply" className="group">
+            <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-rose-200 group-hover:border-pink-500">
+              <div className="text-rose-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-pink-600 transition-colors">
+                Job Market Competition Index
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Analyze job market competition for your role. Understand demand vs supply, get
+                tailored job search strategies.
+              </p>
+              <div className="flex items-center text-pink-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Work Happiness Index */}
+          <Link href="/career-tools/work-happiness-index" className="group">
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-blue-200 group-hover:border-purple-500">
+              <div className="text-blue-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 transition-colors">
+                Work Happiness Index
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Evaluate your overall job satisfaction across 13 key dimensions. Get personalized
+                insights and actionable strategies to improve workplace happiness.
+              </p>
+              <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Global Relocation Affordability Calculator */}
+          <Link href="/career-tools/global-relocation-affordability" className="group">
+            <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-teal-200 group-hover:border-blue-500">
+              <div className="text-teal-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+                Global Relocation Affordability Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Calculate the true cost of international relocation. Get comprehensive breakdown of
+                one-time and ongoing expenses with affordability score.
+              </p>
+              <div className="flex items-center text-teal-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* AI Automation Risk Assessment */}
+          <Link href="/career-tools/automation-risk" className="group">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-purple-200 group-hover:border-pink-500">
+              <div className="text-purple-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-pink-600 transition-colors">
+                AI Automation Risk Assessment
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Assess your job's vulnerability to AI automation. Understand which tasks are at risk
+                and get actionable career protection strategies.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
                 Try Free Tool
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
