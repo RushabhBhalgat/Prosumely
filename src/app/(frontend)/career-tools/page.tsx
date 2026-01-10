@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Free Career Tools - AI-Powered Job Search Resources | Prosumely',
   description:
-    'Free AI-powered career tools to boost your job search. Generate cover letters, identify resume gaps, explore global opportunities, extract job keywords, and optimize for ATS systems.',
+    'Free AI-powered career tools to boost your job search. Generate cover letters, identify resume gaps, explore global opportunities, extract job keywords, analyze salaries, and optimize for ATS systems.',
   keywords: [
     'career tools',
     'job search tools',
@@ -16,14 +16,18 @@ export const metadata: Metadata = {
     'ATS resume scanner',
     'keyword finder',
     'resume analyzer',
+    'salary analyzer',
+    'salary comparison tool',
     'free career resources',
     'job description analyzer',
     'career planning tools',
+    'leadership assessment',
+    'salary expectations',
   ],
   openGraph: {
     title: 'Free Career Tools - AI-Powered Job Search Resources',
     description:
-      'Free AI-powered career tools: Cover letter generator, resume gap identifier, global opportunity heatmap, and more. Boost your job search success.',
+      'Free AI-powered career tools: Cover letter generator, resume gap identifier, salary analyzer, global opportunity heatmap, and more. Boost your job search success.',
     type: 'website',
     url: 'https://prosumely.com/career-tools',
   },
@@ -41,8 +45,8 @@ const CareerTools = () => {
         </PageHeading>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
           Boost your job search with our free professional tools. Generate AI cover letters,
-          identify resume gaps, explore global opportunities, optimize for ATS systems, and extract
-          keywords from job descriptions to land your dream job.
+          identify resume gaps, explore global opportunities, analyze salary expectations, optimize
+          for ATS systems, and extract keywords from job descriptions to land your dream job.
         </p>
 
         {/* Tools Grid */}
@@ -217,6 +221,40 @@ const CareerTools = () => {
             </div>
           </Link>
 
+          {/* Salary Analyzer */}
+          <Link href="/career-tools/salary-analyzer" className="group">
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-green-200 group-hover:border-green-500">
+              <div className="text-green-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-green-600 transition-colors">
+                Expected Salary Analyzer
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Get data-driven salary expectations by country, experience, and industry. Compare
+                globally and negotiate with confidence.
+              </p>
+              <div className="flex items-center text-green-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
           {/* Coming Soon Tools */}
           <div className="bg-white/60 rounded-xl shadow-lg p-6 border border-gray-200 opacity-75">
             <div className="text-gray-400 mb-4">
@@ -251,25 +289,6 @@ const CareerTools = () => {
             <h3 className="text-xl font-bold mb-3 text-gray-500">Interview Question Generator</h3>
             <p className="text-gray-500 mb-4">
               Generate personalized interview questions based on your industry and experience level.
-            </p>
-            <div className="text-gray-400 font-medium">Coming Soon</div>
-          </div>
-
-          <div className="bg-white/60 rounded-xl shadow-lg p-6 border border-gray-200 opacity-75">
-            <div className="text-gray-400 mb-4">
-              <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                />
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-gray-500">Salary Calculator</h3>
-            <p className="text-gray-500 mb-4">
-              Compare salaries across industries and locations to negotiate better compensation
-              packages.
             </p>
             <div className="text-gray-400 font-medium">Coming Soon</div>
           </div>

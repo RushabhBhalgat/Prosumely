@@ -16,6 +16,7 @@ const serverUrl =
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Force rebuild: 2026-01-10T10:00:00Z
   images: {
     unoptimized: true, // Disable image optimization for DigitalOcean buildpack compatibility
     remotePatterns: [

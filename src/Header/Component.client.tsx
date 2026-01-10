@@ -381,6 +381,13 @@ export const HeaderClient: React.FC<{
                       >
                         Leadership Readiness Score
                       </Link>
+                      <Link
+                        href="/career-tools/salary-analyzer"
+                        className="block py-2 text-sm text-gray-700 hover:text-green-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Salary Analyzer
+                      </Link>
                     </div>
                   </div>
                 )}
