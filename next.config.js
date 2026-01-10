@@ -17,6 +17,7 @@ const serverUrl =
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true, // Disable image optimization for DigitalOcean buildpack compatibility
     remotePatterns: [
       ...[serverUrl].map((item) => {
         const url = new URL(item)
@@ -36,9 +37,6 @@ const nextConfig = {
         hostname: 'localhost',
       },
     ],
-    // Add image optimization settings
-    formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 86400, // Cache images for 24 hours
   },
   reactStrictMode: true,
   redirects,
