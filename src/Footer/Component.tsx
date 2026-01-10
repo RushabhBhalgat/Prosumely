@@ -480,12 +480,32 @@ export async function Footer() {
                     className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
                   >
                     Freelance Rate Calculator
-                  </Link>                  <Link
+                  </Link>
+                  <Link
                     href="/career-tools/linkedin-profile-generator"
-                    className="text-gray-600 hover:text-gray-900 transition-colors block"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
                   >
                     LinkedIn Profile Generator
-                  </Link>                </div>
+                  </Link>
+                  <Link
+                    href="/career-tools/future-skills-identifier"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Future Skills Identifier
+                  </Link>
+                  <Link
+                    href="/career-tools/cost-of-living-calculator"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Cost of Living Calculator
+                  </Link>
+                  <Link
+                    href="/career-tools/career-transition-calculator"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Career Transition Calculator
+                  </Link>
+                </div>
               </div>
             </div>
 

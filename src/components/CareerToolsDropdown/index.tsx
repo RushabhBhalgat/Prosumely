@@ -172,6 +172,45 @@ export function CareerToolsDropdown() {
                 <span className="text-xs text-gray-500 mt-1">Create compelling LinkedIn content</span>
               </div>
             </Link>
+
+            <Link
+              href="/career-tools/future-skills-identifier"
+              className="group flex items-center py-3 text-sm text-gray-800 hover:text-purple-600 transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-purple-600 pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex flex-col">
+                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
+                  Future Skills Identifier
+                </span>
+                <span className="text-xs text-gray-500 mt-1">Identify emerging skills for 2-5 years</span>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/cost-of-living-calculator"
+              className="group flex items-center py-3 text-sm text-gray-800 hover:text-green-600 transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-green-600 pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex flex-col">
+                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
+                  Cost of Living Calculator
+                </span>
+                <span className="text-xs text-gray-500 mt-1">Compare expenses across cities globally</span>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/career-transition-calculator"
+              className="group flex items-center py-3 text-sm text-gray-800 hover:text-cyan-600 transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-cyan-600 pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex flex-col">
+                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
+                  Career Transition Calculator
+                </span>
+                <span className="text-xs text-gray-500 mt-1">Assess career change feasibility & risk</span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

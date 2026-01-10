@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Free Career Tools - AI-Powered Job Search Resources | Prosumely',
   description:
-    'Free AI-powered career tools to boost your job search. Generate cover letters, LinkedIn profiles, identify resume gaps, explore global opportunities, extract job keywords, analyze salaries, plan career roadmaps, calculate freelance rates, and optimize for ATS systems.',
+    'Free AI-powered career tools to boost your job search. Generate cover letters, LinkedIn profiles, identify resume gaps, explore global opportunities, extract job keywords, analyze salaries, plan career roadmaps, calculate freelance rates, identify future skills, compare cost of living, and assess career transitions.',
   keywords: [
     'career tools',
     'job search tools',
@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     'LinkedIn optimization tool',
     'LinkedIn content creator',
     'professional profile writer',
+    'future skills',
+    'emerging skills',
+    'cost of living calculator',
+    'career transition calculator',
+    'career change assessment',
+    'skill forecasting',
   ],
   openGraph: {
     title: 'Free Career Tools - AI-Powered Job Search Resources',
@@ -58,9 +64,10 @@ const CareerTools = () => {
         </PageHeading>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
           Boost your job search with our free professional tools. Generate AI cover letters,
-          LinkedIn profiles, identify resume gaps, explore global opportunities, analyze salary expectations, plan your
-          career roadmap, calculate optimal freelance rates, optimize for ATS systems, and extract
-          keywords from job descriptions to land your dream job.
+          LinkedIn profiles, identify resume gaps, explore global opportunities, analyze salary
+          expectations, plan your career roadmap, calculate optimal freelance rates, identify
+          future-proof skills, compare cost of living globally, assess career transitions, and
+          extract keywords from job descriptions to land your dream job.
         </p>
 
         {/* Tools Grid */}
@@ -342,16 +349,119 @@ const CareerTools = () => {
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-blue-200 group-hover:border-blue-500">
               <div className="text-blue-600 mb-4">
                 <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
                 LinkedIn Profile Generator
               </h3>
               <p className="text-gray-600 mb-4">
-                Transform your resume into compelling LinkedIn content. Generate professional headlines, about sections, and ATS-optimized descriptions instantly.
+                Transform your resume into compelling LinkedIn content. Generate professional
+                headlines, about sections, and ATS-optimized descriptions instantly.
               </p>
               <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Future Skills Identifier */}
+          <Link href="/career-tools/future-skills-identifier" className="group">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-purple-200 group-hover:border-purple-500">
+              <div className="text-purple-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 transition-colors">
+                Future Skills Identifier
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Discover emerging skills for the next 2-5 years. AI-powered analysis identifies
+                future-proof skills based on your industry and career trajectory.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Cost of Living Calculator */}
+          <Link href="/career-tools/cost-of-living-calculator" className="group">
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-blue-200 group-hover:border-green-500">
+              <div className="text-blue-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-green-600 transition-colors">
+                Cost of Living Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Compare living expenses across countries and cities. Detailed breakdowns of housing,
+                transportation, food, healthcare, and more for smart relocation decisions.
+              </p>
+              <div className="flex items-center text-blue-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Career Transition Calculator */}
+          <Link href="/career-tools/career-transition-calculator" className="group">
+            <div className="bg-gradient-to-br from-indigo-50 to-cyan-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-indigo-200 group-hover:border-cyan-500">
+              <div className="text-indigo-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-cyan-600 transition-colors">
+                Career Transition Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Assess career change feasibility with risk analysis, skill transferability
+                evaluation, and detailed transition roadmap. Get objective go/no-go recommendations.
+              </p>
+              <div className="flex items-center text-indigo-600 font-medium group-hover:translate-x-1 transition-transform">
                 Try Free Tool
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path

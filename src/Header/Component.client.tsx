@@ -409,6 +409,27 @@ export const HeaderClient: React.FC<{
                       >
                         LinkedIn Profile Generator
                       </Link>
+                      <Link
+                        href="/career-tools/future-skills-identifier"
+                        className="block py-2 text-sm text-gray-700 hover:text-purple-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Future Skills Identifier
+                      </Link>
+                      <Link
+                        href="/career-tools/cost-of-living-calculator"
+                        className="block py-2 text-sm text-gray-700 hover:text-green-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Cost of Living Calculator
+                      </Link>
+                      <Link
+                        href="/career-tools/career-transition-calculator"
+                        className="block py-2 text-sm text-gray-700 hover:text-cyan-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Career Transition Calculator
+                      </Link>
                     </div>
                   </div>
                 )}
