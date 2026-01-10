@@ -5,8 +5,9 @@
 
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 // Type definitions
 interface SalaryRange {
@@ -680,12 +681,12 @@ export default function SalaryAnalyzer() {
                                     <li>Save your information and come back later</li>
                                     <li>
                                       Try our other{' '}
-                                      <a
+                                      <Link
                                         href="/career-tools"
                                         className="underline hover:text-amber-900"
                                       >
                                         free career tools
-                                      </a>
+                                      </Link>
                                     </li>
                                   </ul>
                                 </div>

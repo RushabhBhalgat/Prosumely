@@ -607,9 +607,7 @@ export default function CareerRoadmapGenerator() {
             {/* Step 4: Constraints & Availability */}
             {currentStep === 4 && (
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Resources & Constraints
-                </h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Resources & Constraints</h2>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -804,7 +802,7 @@ export default function CareerRoadmapGenerator() {
                       Generating Your Roadmap...
                     </>
                   ) : (
-                    '🚀 Generate My Career Roadmap'
+                    'Generate My Career Roadmap'
                   )}
                 </button>
               )}
@@ -816,11 +814,7 @@ export default function CareerRoadmapGenerator() {
             <div className="mt-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
               <div className="flex items-start">
                 <div className="flex-shrink-0">
-                  <svg
-                    className="h-5 w-5 text-red-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg className="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fillRule="evenodd"
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -917,9 +911,7 @@ export default function CareerRoadmapGenerator() {
                           </div>
 
                           <div>
-                            <h5 className="font-semibold text-gray-900 mb-2">
-                              Skills to Acquire:
-                            </h5>
+                            <h5 className="font-semibold text-gray-900 mb-2">Skills to Acquire:</h5>
                             <div className="flex flex-wrap gap-2">
                               {phase.skills.map((skill, i) => (
                                 <span
@@ -1111,7 +1103,7 @@ export default function CareerRoadmapGenerator() {
 
           {/* Risks & Reality Check */}
           <div className="bg-yellow-50 rounded-2xl shadow-xl p-8 border-2 border-yellow-300">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">⚠️ Risks & Reality Check</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Risks & Reality Check</h3>
             <div className="space-y-4">
               {result.risksReality.map((risk, index) => (
                 <div

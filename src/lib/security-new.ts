@@ -35,9 +35,11 @@ class SecurityManager {
       corsOrigins: [
         'https://prosumely.com',
         'https://www.prosumely.com',
-        ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000'] : []),
+        ...(process.env.NODE_ENV === 'development'
+          ? ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002']
+          : []),
       ],
-      maxRequestSize: 50000, // 50KB
+      maxRequestSize: 50000, // 50KB - Note: File uploads may need higher limit
       csrfProtection: true,
       signatureValidation: false, // Enable in production if needed
       blockedUserAgents: [

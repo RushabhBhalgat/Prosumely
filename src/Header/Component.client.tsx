@@ -402,6 +402,13 @@ export const HeaderClient: React.FC<{
                       >
                         Freelance Rate Calculator
                       </Link>
+                      <Link
+                        href="/career-tools/linkedin-profile-generator"
+                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        LinkedIn Profile Generator
+                      </Link>
                     </div>
                   </div>
                 )}
