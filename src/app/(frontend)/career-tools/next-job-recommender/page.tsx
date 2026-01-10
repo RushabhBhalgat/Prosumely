@@ -1,5 +1,5 @@
-import React from 'next'
-import { Metadata } from 'next/model'
+import React from 'react'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
