@@ -388,6 +388,20 @@ export const HeaderClient: React.FC<{
                       >
                         Salary Analyzer
                       </Link>
+                      <Link
+                        href="/career-tools/career-roadmap-generator"
+                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Career Roadmap Generator
+                      </Link>
+                      <Link
+                        href="/career-tools/freelance-rate-calculator"
+                        className="block py-2 text-sm text-gray-700 hover:text-pink-600 transition-colors duration-200"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        Freelance Rate Calculator
+                      </Link>
                     </div>
                   </div>
                 )}

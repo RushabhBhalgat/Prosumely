@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Free Career Tools - AI-Powered Job Search Resources | Prosumely',
   description:
-    'Free AI-powered career tools to boost your job search. Generate cover letters, identify resume gaps, explore global opportunities, extract job keywords, analyze salaries, and optimize for ATS systems.',
+    'Free AI-powered career tools to boost your job search. Generate cover letters, identify resume gaps, explore global opportunities, extract job keywords, analyze salaries, plan career roadmaps, calculate freelance rates, and optimize for ATS systems.',
   keywords: [
     'career tools',
     'job search tools',
@@ -18,16 +18,25 @@ export const metadata: Metadata = {
     'resume analyzer',
     'salary analyzer',
     'salary comparison tool',
+    'career roadmap generator',
+    'career progression planner',
     'free career resources',
     'job description analyzer',
     'career planning tools',
     'leadership assessment',
     'salary expectations',
+    'freelance rate calculator',
+    'freelance pricing tool',
+    'pricing strategy',
+    'hourly rate calculator',
+    'project pricing',
+    'retainer pricing',
+    'freelance income calculator',
   ],
   openGraph: {
     title: 'Free Career Tools - AI-Powered Job Search Resources',
     description:
-      'Free AI-powered career tools: Cover letter generator, resume gap identifier, salary analyzer, global opportunity heatmap, and more. Boost your job search success.',
+      'Free AI-powered career tools: Cover letter generator, resume gap identifier, salary analyzer, career roadmap planner, freelance rate calculator, global opportunity heatmap, and more. Boost your job search success.',
     type: 'website',
     url: 'https://prosumely.com/career-tools',
   },
@@ -45,8 +54,9 @@ const CareerTools = () => {
         </PageHeading>
         <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
           Boost your job search with our free professional tools. Generate AI cover letters,
-          identify resume gaps, explore global opportunities, analyze salary expectations, optimize
-          for ATS systems, and extract keywords from job descriptions to land your dream job.
+          identify resume gaps, explore global opportunities, analyze salary expectations, plan your
+          career roadmap, calculate optimal freelance rates, optimize for ATS systems, and extract
+          keywords from job descriptions to land your dream job.
         </p>
 
         {/* Tools Grid */}
@@ -242,6 +252,74 @@ const CareerTools = () => {
                 globally and negotiate with confidence.
               </p>
               <div className="flex items-center text-green-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Career Roadmap Generator */}
+          <Link href="/career-tools/career-roadmap-generator" className="group">
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-purple-200 group-hover:border-purple-500">
+              <div className="text-purple-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600 transition-colors">
+                Career Roadmap Generator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Create your personalized career progression plan with phases, skills,
+                certifications, and actionable timelines to reach your target role.
+              </p>
+              <div className="flex items-center text-purple-600 font-medium group-hover:translate-x-1 transition-transform">
+                Try Free Tool
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </div>
+            </div>
+          </Link>
+
+          {/* Freelance Rate Calculator */}
+          <Link href="/career-tools/freelance-rate-calculator" className="group">
+            <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-pink-200 group-hover:border-pink-500">
+              <div className="text-pink-600 mb-4">
+                <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-pink-600 transition-colors">
+                Freelance Rate Calculator
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Calculate optimal freelance rates and pricing strategy. Get hourly, project-based,
+                and retainer recommendations with negotiation tips.
+              </p>
+              <div className="flex items-center text-pink-600 font-medium group-hover:translate-x-1 transition-transform">
                 Try Free Tool
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path

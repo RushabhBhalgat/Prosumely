@@ -133,6 +133,32 @@ export function CareerToolsDropdown() {
                 <span className="text-xs text-gray-500 mt-1">Compare salaries globally</span>
               </div>
             </Link>
+
+            <Link
+              href="/career-tools/career-roadmap-generator"
+              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex flex-col">
+                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
+                  Career Roadmap Generator
+                </span>
+                <span className="text-xs text-gray-500 mt-1">Plan your career progression</span>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/freelance-rate-calculator"
+              className="group flex items-center py-3 text-sm text-gray-800 hover:text-[#2563eb] transition-all duration-200 ease-in-out border-l-4 border-transparent hover:border-[#2563eb] pl-3 -ml-3"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex flex-col">
+                <span className="font-medium group-hover:translate-x-1 transition-transform duration-200">
+                  Freelance Rate Calculator
+                </span>
+                <span className="text-xs text-gray-500 mt-1">Calculate optimal pricing rates</span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

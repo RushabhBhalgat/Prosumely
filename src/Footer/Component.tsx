@@ -457,6 +457,30 @@ export async function Footer() {
                   >
                     Global Opportunity Heatmap
                   </Link>
+                  <Link
+                    href="/career-tools/leadership-readiness-score"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Leadership Readiness Score
+                  </Link>
+                  <Link
+                    href="/career-tools/salary-analyzer"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Salary Analyzer
+                  </Link>
+                  <Link
+                    href="/career-tools/career-roadmap-generator"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Career Roadmap Generator
+                  </Link>
+                  <Link
+                    href="/career-tools/freelance-rate-calculator"
+                    className="text-gray-400 hover:text-[#9adaf3] transition-colors duration-200 text-sm py-1 block"
+                  >
+                    Freelance Rate Calculator
+                  </Link>
                 </div>
               </div>
             </div>
