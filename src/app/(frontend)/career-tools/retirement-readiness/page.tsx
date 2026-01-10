@@ -1,5 +1,5 @@
 import React from 'react'
-import { Metadata } from 'next/model'
+import { Metadata } from 'next'
 import Link from 'next/link'
 import RetirementReadinessCalculator from '@/components/career-tools/RetirementReadinessCalculator'
 
