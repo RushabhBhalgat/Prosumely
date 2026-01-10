@@ -3,9 +3,7 @@ import { Metadata } from 'next/model'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
-const NextJobRecommender = dynamic(() => import('@/components/career-tools/NextJobRecommender'), {
-  ssr: false,
-})
+const NextJobRecommender = dynamic(() => import('@/components/career-tools/NextJobRecommender'))
 
 export const metadata: Metadata = {
   title: 'Free Next Job Recommender - AI Career Move Suggestions | Prosumely',
