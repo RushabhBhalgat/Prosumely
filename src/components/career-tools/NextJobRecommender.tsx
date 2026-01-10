@@ -59,6 +59,8 @@ interface ApiResponse {
   hiddenOpportunities: string[]
   overallInsights: string[]
   success: boolean
+  error?: string
+  message?: string
 }
 
 interface ApiError {

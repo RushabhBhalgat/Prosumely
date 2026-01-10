@@ -75,6 +75,7 @@ interface ApiResponse {
   analysis: Analysis
   processingTime: number
   success: boolean
+  error?: string
 }
 
 // Predefined skills list for auto-suggestions

@@ -16,6 +16,8 @@ interface Keywords {
 
 interface ApiResponse {
   keywords: Keywords
+  error?: string
+  message?: string
 }
 
 interface ApiError {

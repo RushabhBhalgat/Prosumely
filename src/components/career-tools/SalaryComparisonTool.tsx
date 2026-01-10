@@ -87,6 +87,8 @@ interface ApiResponse {
   analysis: ComparisonAnalysis
   processingTime: number
   success: boolean
+  error?: string
+  message?: string
 }
 
 interface ApiError {

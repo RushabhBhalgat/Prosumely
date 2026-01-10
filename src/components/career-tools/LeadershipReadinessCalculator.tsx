@@ -102,6 +102,8 @@ interface ApiResponse {
   assessment: AssessmentResult
   processingTime: number
   success: boolean
+  error?: string
+  message?: string
 }
 
 interface ApiError {

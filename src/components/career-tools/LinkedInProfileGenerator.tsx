@@ -21,6 +21,8 @@ interface ApiResponse {
   content: GeneratedContent
   processingTime: number
   success: boolean
+  error?: string
+  message?: string
 }
 
 interface ApiError {

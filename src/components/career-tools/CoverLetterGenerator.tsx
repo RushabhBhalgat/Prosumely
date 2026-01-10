@@ -11,6 +11,8 @@ import Link from 'next/link'
 interface ApiResponse {
   coverLetter: string
   wordCount: number
+  error?: string
+  message?: string
 }
 
 interface ApiError {

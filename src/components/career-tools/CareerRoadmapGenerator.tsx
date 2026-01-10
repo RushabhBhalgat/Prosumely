@@ -109,6 +109,8 @@ interface ApiResponse {
   roadmap: RoadmapResult
   processingTime: number
   success: boolean
+  error?: string
+  message?: string
 }
 
 interface ApiError {

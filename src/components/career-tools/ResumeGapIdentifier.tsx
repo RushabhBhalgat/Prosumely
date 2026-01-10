@@ -48,6 +48,8 @@ interface ApiResponse {
   analysis: GapAnalysis
   processingTime: number
   success: boolean
+  error?: string
+  message?: string
 }
 
 interface ApiError {
