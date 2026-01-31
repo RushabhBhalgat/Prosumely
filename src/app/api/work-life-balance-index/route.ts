@@ -7,7 +7,7 @@ import { securityManager } from '@/lib/security-new'
 import { mongoRateLimiter } from '@/lib/rate-limiter-mongo'
 
 const GEMINI_API_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent'
+  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent'
 
 export async function OPTIONS(request: NextRequest) {
   const corsHeaders = securityManager.getCORSHeaders(request)

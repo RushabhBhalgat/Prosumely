@@ -9,7 +9,7 @@ import { mongoRateLimiter } from '@/lib/rate-limiter-mongo'
 
 // Environment variables (using Gemini 2.0 Flash for better quality)
 const GEMINI_API_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent'
+  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent'
 
 export async function OPTIONS(request: NextRequest) {
   // Handle preflight CORS requests

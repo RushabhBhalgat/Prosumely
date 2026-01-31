@@ -9,7 +9,7 @@ import { mongoRateLimiter } from '@/lib/rate-limiter-mongo'
 
 // Environment variables (using Gemini 2.0 Flash Exp - FREE tier)
 const GEMINI_API_URL =
-  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent'
+  'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent'
 
 // Static content library for cost optimization
 const STATIC_RESOURCES = {

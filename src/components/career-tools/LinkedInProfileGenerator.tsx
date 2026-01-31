@@ -229,7 +229,8 @@ export default function LinkedInProfileGenerator() {
                 )}
               </div>
               <p className="text-xs text-gray-500 mt-2">
-                Accepted formats: PDF, DOCX (Max 5MB) • <strong>DOCX recommended for best results</strong>
+                Accepted formats: PDF, DOCX (Max 5MB) •{' '}
+                <strong>DOCX recommended for best results</strong>
               </p>
             </div>
 

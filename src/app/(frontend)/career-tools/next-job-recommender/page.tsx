@@ -8,7 +8,7 @@ const NextJobRecommender = dynamic(() => import('@/components/career-tools/NextJ
 export const metadata: Metadata = {
   title: 'Free Next Job Recommender - AI Career Move Suggestions | Prosumely',
   description:
-    'Get AI-powered next career move recommendations based on your skills, experience, and goals. Discover suitable roles with transition strategies and success probabilities.',
+    'AI-powered next career move recommendations based on your skills, experience, and goals. Discover suitable roles with transition strategies and success probabilities.',
   keywords: [
     'next job recommender',
     'career move suggestions',
