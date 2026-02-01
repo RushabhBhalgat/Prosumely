@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
+import Link from 'next/link'
 import CareerStrengthIndex from '@/components/career-tools/CareerStrengthIndex'
 
 export const metadata: Metadata = {
@@ -98,7 +99,7 @@ export default function CareerStrengthIndexPage() {
             value
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <a
+            <Link
               href="/career-tools/skill-gap-analyzer"
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
             >
@@ -121,9 +122,9 @@ export default function CareerStrengthIndexPage() {
               <p className="text-sm text-gray-600">
                 Identify missing skills to boost your career strength score
               </p>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/career-tools/career-roadmap-builder"
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
             >
@@ -146,9 +147,9 @@ export default function CareerStrengthIndexPage() {
               <p className="text-sm text-gray-600">
                 Plan your career progression with actionable milestones
               </p>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/career-tools/future-skills-identifier"
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
             >
@@ -171,9 +172,9 @@ export default function CareerStrengthIndexPage() {
               <p className="text-sm text-gray-600">
                 Stay ahead by learning the most in-demand emerging skills
               </p>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/career-tools/ai-skills-readiness"
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
             >
@@ -196,9 +197,9 @@ export default function CareerStrengthIndexPage() {
               <p className="text-sm text-gray-600">
                 Measure your AI literacy and get personalized learning paths
               </p>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/career-tools/resume-gap-identifier"
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
             >
@@ -221,9 +222,9 @@ export default function CareerStrengthIndexPage() {
               <p className="text-sm text-gray-600">
                 Discover what's missing from your resume to strengthen your positioning
               </p>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/career-tools/global-opportunity-heatmap"
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
             >
@@ -246,7 +247,7 @@ export default function CareerStrengthIndexPage() {
               <p className="text-sm text-gray-600">
                 Find high-demand markets for your role and skills globally
               </p>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -274,7 +275,7 @@ export default function CareerStrengthIndexPage() {
               <p className="text-lg mb-6 text-white/90">
                 Strengthen your career positioning with expert feedback on your resume—free.
               </p>
-              <a
+              <Link
                 href="/resume-review"
                 className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
               >
@@ -319,7 +320,7 @@ export default function CareerStrengthIndexPage() {
               <p className="text-lg mb-6 text-white/90">
                 Maximize your career strength index with an ATS-optimized CV crafted by experts.
               </p>
-              <a
+              <Link
                 href="/ats-resume"
                 className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
               >
@@ -338,7 +339,7 @@ export default function CareerStrengthIndexPage() {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

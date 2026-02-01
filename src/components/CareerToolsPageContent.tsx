@@ -483,7 +483,7 @@ export function CareerToolsPageContent() {
       (tool) =>
         tool.title.toLowerCase().includes(query) || tool.description.toLowerCase().includes(query),
     )
-  }, [searchQuery])
+  }, [searchQuery, allTools])
 
   const getColorClasses = (color: string) => {
     const colorMap: Record<string, { text: string; border: string; bg: string }> = {
