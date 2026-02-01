@@ -85,7 +85,7 @@ export default function JobDescriptionKeywordFinderPage() {
 
       {/* SEO Content Section */}
       <section className="bg-white py-12">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="prose max-w-none">
             <h2 className="text-2xl font-bold mb-6">
               How to Use Job Description Keywords to Beat ATS
@@ -109,50 +109,50 @@ export default function JobDescriptionKeywordFinderPage() {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-3">Best Practices</h3>
-                <ul className="text-gray-600 space-y-2 list-disc list-inside">
-                  <li>Use exact keyword matches from the job description</li>
-                  <li>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Best Practices</h3>
+                <ul className="space-y-2.5 text-gray-700 leading-7">
+                  <li className="pl-0">Use exact keyword matches from the job description</li>
+                  <li className="pl-0">
                     Include both acronyms and full forms (e.g., "AI" and "Artificial Intelligence")
                   </li>
-                  <li>Incorporate keywords naturally throughout your resume</li>
-                  <li>Focus on relevant technical skills and certifications</li>
-                  <li>Use action verbs to describe your achievements</li>
-                  <li>Include soft skills mentioned in the job posting</li>
+                  <li className="pl-0">Incorporate keywords naturally throughout your resume</li>
+                  <li className="pl-0">Focus on relevant technical skills and certifications</li>
+                  <li className="pl-0">Use action verbs to describe your achievements</li>
+                  <li className="pl-0">Include soft skills mentioned in the job posting</li>
                 </ul>
               </div>
             </div>
 
-            <div className="mt-8 bg-blue-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3 text-blue-800">
+            <div className="mt-10 bg-blue-50/50 rounded-xl p-8 border border-blue-200/50">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">
                 Pro Tips for ATS Optimization
               </h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="grid md:grid-cols-3 gap-8">
                 <div>
-                  <h4 className="font-medium text-blue-700 mb-2">Format Correctly</h4>
-                  <ul className="text-blue-600 space-y-1 list-disc list-inside">
-                    <li>Use standard section headings</li>
-                    <li>Avoid images and graphics</li>
-                    <li>Save as .docx or .pdf</li>
-                    <li>Use simple fonts</li>
+                  <h4 className="font-bold text-gray-900 mb-3 text-lg">Format Correctly</h4>
+                  <ul className="space-y-2 text-gray-700 leading-7">
+                    <li className="pl-0">Use standard section headings</li>
+                    <li className="pl-0">Avoid images and graphics</li>
+                    <li className="pl-0">Save as .docx or .pdf</li>
+                    <li className="pl-0">Use simple fonts</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium text-blue-700 mb-2">Keyword Placement</h4>
-                  <ul className="text-blue-600 space-y-1 list-disc list-inside">
-                    <li>Professional summary</li>
-                    <li>Skills section</li>
-                    <li>Work experience</li>
-                    <li>Education section</li>
+                  <h4 className="font-bold text-gray-900 mb-3 text-lg">Keyword Placement</h4>
+                  <ul className="space-y-2 text-gray-700 leading-7">
+                    <li className="pl-0">Professional summary</li>
+                    <li className="pl-0">Skills section</li>
+                    <li className="pl-0">Work experience</li>
+                    <li className="pl-0">Education section</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium text-blue-700 mb-2">Avoid Common Mistakes</h4>
-                  <ul className="text-blue-600 space-y-1 list-disc list-inside">
-                    <li>Don't stuff keywords unnaturally</li>
-                    <li>Avoid typos and misspellings</li>
-                    <li>Don't use headers/footers</li>
-                    <li>Avoid complex formatting</li>
+                  <h4 className="font-bold text-gray-900 mb-3 text-lg">Avoid Common Mistakes</h4>
+                  <ul className="space-y-2 text-gray-700 leading-7">
+                    <li className="pl-0">Don't stuff keywords unnaturally</li>
+                    <li className="pl-0">Avoid typos and misspellings</li>
+                    <li className="pl-0">Don't use headers/footers</li>
+                    <li className="pl-0">Avoid complex formatting</li>
                   </ul>
                 </div>
               </div>

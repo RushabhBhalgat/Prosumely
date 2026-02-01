@@ -591,6 +591,306 @@ export default function RetirementReadinessCalculator() {
         </div>
       </div>
 
+      {/* Cross-Links Section */}
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <Link
+          href="/career-tools/career-roadmap-generator"
+          className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-blue-500"
+        >
+          <h3 className="text-lg font-semibold text-blue-600 mb-2">🗺️ Career Roadmap Generator</h3>
+          <p className="text-gray-600 text-sm">
+            Plan your career progression to maximize earnings before retirement. Strategic career
+            moves can significantly impact your retirement savings.
+          </p>
+        </Link>
+
+        <Link
+          href="/career-tools/future-skills-identifier"
+          className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-purple-500"
+        >
+          <h3 className="text-lg font-semibold text-purple-600 mb-2">
+            🔮 Future Skills Identifier
+          </h3>
+          <p className="text-gray-600 text-sm">
+            Stay competitive in the job market as you approach retirement. Identify skills that
+            extend your career or create post-retirement income opportunities.
+          </p>
+        </Link>
+      </div>
+
+      {/* Multi-Dimensional Retirement Readiness Sections */}
+      <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Understanding Retirement Readiness
+        </h2>
+        <p className="text-gray-600 mb-8">
+          Retirement readiness is multi-dimensional — it's not just about having enough money. A
+          truly prepared retirement encompasses financial security, lifestyle fulfillment, and
+          physical and social well-being.
+        </p>
+
+        {/* Financial Readiness */}
+        <div className="mb-8 border-l-4 border-green-500 pl-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+            <svg className="w-8 h-8 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
+                clipRule="evenodd"
+              />
+            </svg>
+            1. Financial Readiness
+          </h3>
+          <p className="text-gray-700 mb-4">
+            Financial readiness means having sufficient savings, investments, and income streams to
+            maintain your desired lifestyle throughout retirement. Key components include:
+          </p>
+          <ul className="space-y-2 text-gray-700">
+            <li className="flex items-start">
+              <span className="text-green-600 mr-2">•</span>
+              <span>
+                <strong>Retirement Savings:</strong> 401(k), IRA, pension plans, and other
+                investment accounts that provide the foundation of your retirement income.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-600 mr-2">•</span>
+              <span>
+                <strong>Passive Income Streams:</strong> Social Security, pension benefits, rental
+                income, dividends, and annuities that provide regular cash flow.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-600 mr-2">•</span>
+              <span>
+                <strong>Healthcare Coverage:</strong> Medicare, supplemental insurance, and health
+                savings accounts (HSA) to cover medical expenses.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-600 mr-2">•</span>
+              <span>
+                <strong>Emergency Fund:</strong> Liquid reserves to handle unexpected expenses
+                without derailing your retirement plan.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-green-600 mr-2">•</span>
+              <span>
+                <strong>Debt Management:</strong> Eliminating high-interest debt and managing any
+                remaining obligations like mortgages.
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Lifestyle & Purpose */}
+        <div className="mb-8 border-l-4 border-purple-500 pl-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+            <svg className="w-8 h-8 text-purple-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+              <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+            </svg>
+            2. Lifestyle & Purpose
+          </h3>
+          <p className="text-gray-700 mb-4">
+            Retirement is a major life transition that requires planning beyond finances. Having a
+            clear vision for how you'll spend your time and maintain a sense of purpose is crucial
+            for a fulfilling retirement:
+          </p>
+          <ul className="space-y-2 text-gray-700">
+            <li className="flex items-start">
+              <span className="text-purple-600 mr-2">•</span>
+              <span>
+                <strong>Purpose and Identity:</strong> Transitioning from a work-focused identity to
+                new roles — volunteer, mentor, hobbyist, lifelong learner, or entrepreneur.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 mr-2">•</span>
+              <span>
+                <strong>Hobbies and Interests:</strong> Cultivating passions that bring joy and keep
+                you mentally engaged — travel, arts, sports, gardening, or creative pursuits.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 mr-2">•</span>
+              <span>
+                <strong>Living Arrangements:</strong> Deciding where to live (age in place,
+                downsize, relocate, or move closer to family) and ensuring your home meets long-term
+                needs.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 mr-2">•</span>
+              <span>
+                <strong>Work-Life Balance:</strong> Some retirees choose part-time work, consulting,
+                or entrepreneurship to stay active and supplement income.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-purple-600 mr-2">•</span>
+              <span>
+                <strong>Travel and Experiences:</strong> Planning adventures and experiences you've
+                postponed during your working years.
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Health & Social Preparedness */}
+        <div className="mb-0 border-l-4 border-blue-500 pl-6">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+            <svg className="w-8 h-8 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                clipRule="evenodd"
+              />
+            </svg>
+            3. Health & Social Preparedness
+          </h3>
+          <p className="text-gray-700 mb-4">
+            Your physical and emotional well-being are foundational to enjoying retirement.
+            Preparing for health challenges and maintaining strong social connections are essential:
+          </p>
+          <ul className="space-y-2 text-gray-700">
+            <li className="flex items-start">
+              <span className="text-blue-600 mr-2">•</span>
+              <span>
+                <strong>Physical Health:</strong> Maintaining fitness through regular exercise,
+                healthy eating, and preventive healthcare to enjoy an active retirement.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 mr-2">•</span>
+              <span>
+                <strong>Mental Health:</strong> Managing stress, staying mentally sharp through
+                cognitive activities, and addressing emotional adjustments to retirement.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 mr-2">•</span>
+              <span>
+                <strong>Healthcare Planning:</strong> Understanding Medicare/health coverage,
+                budgeting for medical costs, and planning for long-term care if needed.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 mr-2">•</span>
+              <span>
+                <strong>Social Connections:</strong> Maintaining friendships, family relationships,
+                and community ties to combat isolation and loneliness.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 mr-2">•</span>
+              <span>
+                <strong>Support Networks:</strong> Building relationships with peers, neighbors, and
+                community groups who share your interests and can provide mutual support.
+              </span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-600 mr-2">•</span>
+              <span>
+                <strong>Family Dynamics:</strong> Planning time with children, grandchildren, and
+                extended family while respecting boundaries and maintaining independence.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* FAQs with Schema Markup */}
+      <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+        <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          Frequently Asked Questions About Retirement Planning
+        </h2>
+        <div className="space-y-6">
+          <div className="border-b border-gray-200 pb-6">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              What is a good retirement readiness score?
+            </h3>
+            <p className="text-gray-700">
+              A retirement readiness score of 80 or above indicates you're on track for a
+              comfortable retirement. Scores between 60-79 suggest moderate preparation with some
+              areas needing improvement. Scores below 60 indicate significant gaps that require
+              immediate attention. The score considers savings adequacy, investment strategy,
+              timeline, pension/social security, and cost preparedness.
+            </p>
+          </div>
+
+          <div className="border-b border-gray-200 pb-6">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              How much money do I need to retire comfortably?
+            </h3>
+            <p className="text-gray-700">
+              A common rule of thumb is to aim for 70-80% of your pre-retirement income annually.
+              For example, if you earn $75,000/year, you'd need $52,500-60,000 per year in
+              retirement. The total amount depends on your retirement age, life expectancy, desired
+              lifestyle, location, and healthcare needs. Many experts suggest having 10-12x your
+              annual salary saved by retirement age.
+            </p>
+          </div>
+
+          <div className="border-b border-gray-200 pb-6">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              At what age should I start planning for retirement?
+            </h3>
+            <p className="text-gray-700">
+              The ideal time to start planning is in your 20s or as soon as you begin earning
+              income. The power of compound interest means even small contributions early on can
+              grow significantly. However, it's never too late — even if you're in your 40s, 50s, or
+              60s, strategic planning and catch-up contributions can still make a substantial
+              difference in your retirement readiness.
+            </p>
+          </div>
+
+          <div className="border-b border-gray-200 pb-6">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              What are the best retirement savings accounts?
+            </h3>
+            <p className="text-gray-700">
+              The most popular retirement accounts include 401(k) plans (employer-sponsored with
+              potential matching contributions), Traditional IRAs (tax-deductible contributions),
+              Roth IRAs (tax-free withdrawals in retirement), and SEP IRAs for self-employed
+              individuals. Each has different contribution limits, tax advantages, and withdrawal
+              rules. Many financial advisors recommend maximizing employer 401(k) matches first,
+              then contributing to IRAs.
+            </p>
+          </div>
+
+          <div className="border-b border-gray-200 pb-6">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              Can I retire abroad, and what should I consider?
+            </h3>
+            <p className="text-gray-700">
+              Yes, many retirees choose to live abroad for lower costs, better climate, or new
+              experiences. Key considerations include visa/residency requirements, healthcare access
+              and insurance, cost of living, tax implications (some countries have tax treaties with
+              the US), language barriers, proximity to family, and political stability. Popular
+              retirement destinations include Portugal, Mexico, Costa Rica, Spain, and Thailand.
+              Research thoroughly and consider extended visits before committing.
+            </p>
+          </div>
+
+          <div className="pb-0">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              How do I prepare for healthcare costs in retirement?
+            </h3>
+            <p className="text-gray-700">
+              Healthcare is one of the largest retirement expenses. In the US, Medicare begins at 65
+              but doesn't cover everything — consider Medicare Supplement (Medigap) or Medicare
+              Advantage plans. Budget for premiums, deductibles, prescriptions, dental, vision, and
+              long-term care insurance. Health Savings Accounts (HSAs) offer triple-tax advantages
+              for healthcare savings. The average couple may need $300,000-400,000+ for healthcare
+              throughout retirement, according to Fidelity estimates.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Error Display */}
       {error && (
         <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-8">

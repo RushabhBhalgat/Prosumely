@@ -385,7 +385,7 @@ export default function SalaryAnalyzerPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-8 border border-green-200 text-center">
+          <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-8 border border-green-200 text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Need Professional Career Guidance?
             </h3>
@@ -396,10 +396,195 @@ export default function SalaryAnalyzerPage() {
             </p>
             <Link
               href="/services"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200"
+              className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 no-underline"
+              style={{ color: '#ffffff' }}
             >
               Explore Career Services
             </Link>
+          </div>
+
+          {/* Related Tools Section */}
+          <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-8 border border-green-200 mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+              Comprehensive Salary & Career Tools
+            </h3>
+            <p className="text-gray-700 text-center mb-8 max-w-3xl mx-auto">
+              Use these tools together to get a complete picture of your compensation and career
+              potential
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link
+                href="/career-tools/salary-comparison"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
+                  Compare Your Salary to Market
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Benchmark your current salary against market rates with detailed comparisons
+                </p>
+              </Link>
+
+              <Link
+                href="/career-tools/skill-gap-analyzer"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-purple-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Salary Benchmarking Tool</h4>
+                <p className="text-sm text-gray-600">
+                  Identify skills to acquire for higher salary tiers in your field
+                </p>
+              </Link>
+
+              <Link
+                href="/career-tools/career-roadmap-builder"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
+                  Market Compensation Insights
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Plan your career path to systematically increase earning potential
+                </p>
+              </Link>
+            </div>
+          </div>
+
+          {/* CTAs Section */}
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Free Resume Review CTA */}
+            <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Get a Free Resume Review</h3>
+                <p className="text-lg mb-6 text-white/90">
+                  Position yourself for higher offers. Get expert feedback on your resume—free.
+                </p>
+                <Link
+                  href="/resume-review"
+                  className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
+                >
+                  <span style={{ color: '#7c3aed' }}>Get Free Review</span>
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    style={{ color: '#7c3aed' }}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* ATS CV CTA */}
+            <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl shadow-xl p-8 text-white">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Command Top Salaries</h3>
+                <p className="text-lg mb-6 text-white/90">
+                  Compete for premium compensation with an ATS-optimized CV crafted by experts.
+                </p>
+                <Link
+                  href="/ats-resume"
+                  className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
+                >
+                  <span style={{ color: '#ea580c' }}>Get Professional Help</span>
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    style={{ color: '#ea580c' }}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

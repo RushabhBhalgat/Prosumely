@@ -524,12 +524,12 @@ Example: We're looking for a skilled Software Engineer with experience in React,
               </div>
             </div>
 
-            {/* Tips Section */}
-            <div className="mt-8 bg-blue-50 rounded-xl p-6 border border-blue-100">
+            {/* Tips Section - Pro Tips for ATS Optimization */}
+            <div className="mt-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border border-blue-200 shadow-sm">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
-                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center shadow-md">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path
                         fillRule="evenodd"
                         d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
@@ -539,31 +539,42 @@ Example: We're looking for a skilled Software Engineer with experience in React,
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold text-blue-900 mb-3">
-                    💡 How to Use These Keywords
+                  <h4 className="text-xl font-bold text-blue-900 mb-4">
+                    💡 Pro Tips for ATS Optimization
                   </h4>
-                  <div className="space-y-3 text-sm text-blue-800">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div>
-                        <p>
-                          <strong>Action Verbs:</strong> Use these in your resume bullet points to
-                          describe your achievements and responsibilities dynamically
-                        </p>
-                        <p className="mt-2">
-                          <strong>Technical Skills:</strong> Include relevant ones in your skills
-                          section and throughout your experience descriptions
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          <strong>Soft Skills:</strong> Weave these into your summary and experience
-                          descriptions to show your personality and work style
-                        </p>
-                        <p className="mt-2">
-                          <strong>ATS Tip:</strong> Use exact keyword matches from the job
-                          description in your resume for maximum compatibility
-                        </p>
-                      </div>
+                  <div className="space-y-4">
+                    <div className="bg-white/50 backdrop-blur-sm rounded-lg p-4">
+                      <h5 className="font-semibold text-blue-900 mb-2">Best Practices:</h5>
+                      <ul className="space-y-2 text-sm text-blue-800">
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                          <span>
+                            <strong>Action Verbs:</strong> Use these in your resume bullet points to
+                            describe your achievements and responsibilities dynamically
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                          <span>
+                            <strong>Technical Skills:</strong> Include relevant ones in your skills
+                            section and throughout your experience descriptions
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                          <span>
+                            <strong>Soft Skills:</strong> Weave these into your summary and
+                            experience descriptions to show your personality and work style
+                          </span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 mr-3 flex-shrink-0"></span>
+                          <span>
+                            <strong>ATS Tip:</strong> Use exact keyword matches from the job
+                            description in your resume for maximum compatibility
+                          </span>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -571,6 +582,89 @@ Example: We're looking for a skilled Software Engineer with experience in React,
             </div>
           </div>
         )}
+
+        {/* Additional CTAs Section */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Free Resume Review CTA */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500 rounded-xl mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-purple-900 mb-2">Free Resume Review</h3>
+              <p className="text-purple-700 text-sm mb-4">
+                Get expert feedback on your resume. We'll identify areas for improvement and provide
+                actionable recommendations.
+              </p>
+              <Link
+                href="/resume-review"
+                className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
+                Get Free Review
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Executive CV Service CTA */}
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-500 rounded-xl mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-amber-900 mb-2">Executive CV - Only $30</h3>
+              <p className="text-amber-700 text-sm mb-4">
+                Premium executive CV writing service at an unbeatable price. Stand out in the
+                C-suite market.
+              </p>
+              <Link
+                href="/executive-resume-writing-service"
+                className="inline-flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+              >
+                Get Executive CV
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
 
         {/* SEO Footer Content */}
         <div className="bg-gray-50 rounded-lg p-6 text-sm text-gray-600">

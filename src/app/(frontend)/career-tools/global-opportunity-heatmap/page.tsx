@@ -780,8 +780,14 @@ export default function GlobalOpportunityHeatmapPage() {
                 <strong>1.</strong> Use the heatmap to identify your top 3 target countries
               </li>
               <li>
-                <strong>2.</strong> Run Resume Gap Identifier to tailor your skills for those
-                markets
+                <strong>2.</strong> Run{' '}
+                <Link
+                  href="/career-tools/resume-gap-identifier"
+                  className="text-blue-600 hover:text-blue-700 underline font-semibold"
+                >
+                  Resume Gap Identifier
+                </Link>{' '}
+                to tailor your skills for those markets
               </li>
               <li>
                 <strong>3.</strong> Generate country-specific cover letters with our AI tool
@@ -794,6 +800,101 @@ export default function GlobalOpportunityHeatmapPage() {
                 <strong>5.</strong> Research visa requirements and start the application process
               </li>
             </ul>
+          </div>
+        </section>
+
+        {/* Additional CTAs Section */}
+        <section className="mt-12">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Free Resume Review CTA */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500 rounded-xl mb-4">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-purple-900 mb-2">Free Resume Review</h3>
+                <p className="text-purple-700 text-sm mb-4">
+                  Get expert feedback on your resume. We'll identify areas for improvement and
+                  provide actionable recommendations.
+                </p>
+                <Link
+                  href="/resume-review"
+                  className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                >
+                  Get Free Review
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Executive CV Service CTA */}
+            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-amber-200 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-amber-500 rounded-xl mb-4">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-amber-900 mb-2">Executive CV - Only $30</h3>
+                <p className="text-amber-700 text-sm mb-4">
+                  Premium executive CV writing service at an unbeatable price. Stand out in the
+                  C-suite market.
+                </p>
+                <Link
+                  href="/executive-resume-writing-service"
+                  className="inline-flex items-center px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                >
+                  Get Executive CV
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </div>

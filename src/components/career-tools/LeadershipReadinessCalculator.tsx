@@ -1459,6 +1459,318 @@ export default function LeadershipReadinessCalculator() {
             </div>
           </div>
         )}
+
+        {/* What is Leadership Readiness? Section */}
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 space-y-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+            <svg
+              className="w-8 h-8 text-orange-600 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+              />
+            </svg>
+            What is Leadership Readiness?
+          </h2>
+
+          <div className="prose max-w-none space-y-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              <strong>Leadership readiness</strong> is your capacity to step into a leadership role
+              effectively—whether that&apos;s transitioning from individual contributor to
+              first-time manager, or advancing from middle management to senior leadership.
+              It&apos;s measured by a combination of technical expertise, emotional intelligence,
+              communication skills, strategic thinking, and your ability to inspire and develop
+              others.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">First-Time Manager</h3>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Moving from &quot;doing the work&quot; to &quot;leading the team.&quot; Readiness
+                  means mastering delegation, conflict resolution, and performance coaching while
+                  maintaining technical credibility. Key skills: emotional intelligence, active
+                  listening, feedback delivery, and time management.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Middle Management</h3>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Leading managers and influencing cross-functionally. Readiness requires strategic
+                  thinking, budget management, talent development, and stakeholder influence.
+                  You&apos;re no longer just executing strategy—you&apos;re shaping it. Key skills:
+                  cross-functional collaboration, resource allocation, performance management.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl border border-orange-200">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center mr-3">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900">Senior Leadership</h3>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Setting organizational vision and driving large-scale change. Readiness means
+                  mastering executive presence, board-level communication, change management, and
+                  P&L accountability. You&apos;re responsible for culture, strategy, and long-term
+                  business outcomes. Key skills: vision setting, organizational influence, crisis
+                  management.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mt-6">
+              <p className="text-gray-800 leading-relaxed">
+                <strong className="text-amber-900">💡 Why It Matters:</strong> Organizations
+                don&apos;t promote based solely on technical skills or tenure. Leadership readiness
+                is about proving you can handle{' '}
+                <em>increased scope, ambiguity, and accountability</em>—and our AI assessment
+                evaluates exactly where you stand across these dimensions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Infographic Image Section */}
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Understanding Your Leadership Readiness Score
+          </h2>
+          <div className="relative">
+            <img
+              src="https://res.cloudinary.com/dekim1abx/image/upload/v1769926683/leadership-readiness-score-development-paths-infographic_yrclxd.png"
+              alt="Leadership Readiness Score Development Paths Infographic"
+              className="w-full rounded-xl shadow-lg"
+            />
+            <p className="text-center text-gray-600 mt-4 text-sm leading-relaxed italic">
+              A visual breakdown of our AI Leadership Assessment, illustrating how numerical scores
+              translate into actionable career stages—from Emerging Leader to Director.
+            </p>
+          </div>
+        </div>
+
+        {/* Cross-Links Section */}
+        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-xl border border-blue-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Continue Your Career Development Journey
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link
+              href="/career-tools/career-roadmap-builder"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    Career Roadmap Builder
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Build a step-by-step career progression plan aligned with your leadership goals
+                    and timeline.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/future-skills-identifier"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                    Future Skills Identifier
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Discover emerging leadership skills and competencies that will be critical for
+                    your career in 3-5 years.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* CTAs Section */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Free Resume Review CTA */}
+          <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Get a Free Resume Review</h3>
+              <p className="text-lg mb-6 text-white/90">
+                See how your resume stacks up for leadership roles. Get personalized feedback from
+                career experts—completely free.
+              </p>
+              <Link
+                href="/resume-review"
+                className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
+              >
+                <span style={{ color: '#7c3aed' }}>Get Free Review</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#7c3aed' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Executive CV CTA */}
+          <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Ready for Executive Roles?</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Our executive resume writers create leadership-branded resumes that position you for
+                senior management and C-suite opportunities.
+              </p>
+              <Link
+                href="/executive-resume-writing-service"
+                className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
+              >
+                <span style={{ color: '#ea580c' }}>Get Executive Resume</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#ea580c' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

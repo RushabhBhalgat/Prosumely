@@ -873,18 +873,84 @@ const WorkLifeBalanceIndex = () => {
           </div>
         )}
 
-        {/* Footer */}
+        {/* Educational Content Section */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            About Work-Life Balance Index
+            Understanding Work-Life Balance
           </h2>
+
           <div className="prose prose-green max-w-none">
-            <p className="text-gray-700 mb-4">
-              The Work-Life Balance Index measures your current balance across multiple factors
-              including working hours, flexibility, stress levels, personal time, and life
-              satisfaction. Our assessment identifies burnout risk and provides personalized
-              recommendations for improving balance.
-            </p>
+            {/* What is Work-Life Balance Index */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                What is a Work-Life Balance Index?
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                A Work-Life Balance Index is a comprehensive assessment tool that measures the
+                equilibrium between your professional responsibilities and personal life. It
+                evaluates multiple dimensions including time allocation, workplace flexibility,
+                stress levels, physical wellbeing, and overall life satisfaction. By quantifying
+                these factors, the index provides a clear picture of your current balance status and
+                identifies areas that need attention. This scientific approach helps professionals
+                make data-driven decisions about their careers and lifestyle choices.
+              </p>
+            </div>
+
+            {/* Work-Life Balance Score */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Work-Life Balance Score for Careers
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Your work-life balance score is a numerical representation of how well you're
+                managing the demands of your career alongside your personal needs and aspirations.
+                The score considers factors such as working hours, commute time, job flexibility,
+                vacation usage, after-hours work expectations, and personal time quality. A higher
+                score indicates better balance and lower burnout risk. Understanding your score
+                helps you benchmark against industry standards and take proactive steps to improve
+                areas where you may be struggling. Regular assessments can track your progress over
+                time and validate the effectiveness of changes you implement.
+              </p>
+            </div>
+
+            {/* Importance of Work-Life Balance */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Importance of Work-Life Balance in Jobs
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Maintaining a healthy work-life balance is crucial for long-term career success and
+                personal wellbeing. Poor balance leads to chronic stress, burnout, decreased
+                productivity, and serious health consequences including cardiovascular disease,
+                anxiety, and depression. Professionally, it can result in reduced job satisfaction,
+                lower performance, and higher turnover rates. Conversely, good work-life balance
+                enhances creativity, improves decision-making, strengthens relationships, and
+                increases overall life satisfaction. Employers increasingly recognize that balanced
+                employees are more engaged, innovative, and loyal, making work-life balance a key
+                factor in talent retention and organizational success.
+              </p>
+            </div>
+
+            {/* Statistics Image */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl p-6 border border-green-200">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  Work-Life Balance Statistics
+                </h3>
+                <div className="flex justify-center">
+                  <img
+                    src="https://res.cloudinary.com/dekim1abx/image/upload/v1769922382/work-life-balance-prosumely_lsi8mm.jpg"
+                    alt="Work-Life Balance Statistics and Insights"
+                    className="rounded-lg shadow-lg max-w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
+                <p className="text-sm text-gray-600 text-center mt-4 italic">
+                  Key statistics highlighting the impact of work-life balance on professional
+                  success and personal wellbeing
+                </p>
+              </div>
+            </div>
 
             <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">Related Tools</h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -906,6 +972,101 @@ const WorkLifeBalanceIndex = () => {
                   Assess your leadership potential and development needs
                 </p>
               </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional CTAs Section */}
+        <div className="mt-8">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Free Resume Review CTA */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500 rounded-xl mb-4">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-purple-900 mb-2">Free Resume Review</h3>
+                <p className="text-purple-700 text-sm mb-4">
+                  Get expert feedback on your resume. We'll identify areas for improvement and
+                  provide actionable recommendations.
+                </p>
+                <Link
+                  href="/resume-review"
+                  className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                >
+                  Get Free Review
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* ATS CV Service CTA */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-200 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-500 rounded-xl mb-4">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">ATS Resume - Only $20</h3>
+                <p className="text-blue-700 text-sm mb-4">
+                  Professional ATS-optimized resume writing service. Beat applicant tracking systems
+                  and land more interviews.
+                </p>
+                <Link
+                  href="/ats-resume-writing-service"
+                  className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                >
+                  Get ATS Resume
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -6,7 +6,6 @@ import { CMSLink } from '@/components/Link'
 import { ServicesDropdown } from '@/components/ServicesDropdown'
 import { ResourcesDropdown } from '@/components/ResourcesDropdown'
 import { PricingDropdown } from '@/components/PricingDropdown'
-import { CareerToolsDropdown } from '@/components/CareerToolsDropdown'
 import { useHeaderTheme } from '@/providers/HeaderTheme'
 
 import type { Header as HeaderType } from '@/payload-types'
@@ -17,7 +16,6 @@ export const HeaderClient: React.FC<{
 }> = ({ data, servicesMode = 'full' }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const [mobileCareerToolsOpen, setMobileCareerToolsOpen] = useState(false)
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false)
   const { navItems } = data || {}
   const { setHeaderTheme } = useHeaderTheme()
@@ -45,7 +43,6 @@ export const HeaderClient: React.FC<{
   useEffect(() => {
     if (!isMenuOpen) {
       setMobileServicesOpen(false)
-      setMobileCareerToolsOpen(false)
       setMobileResourcesOpen(false)
     }
   }, [isMenuOpen])
@@ -73,8 +70,13 @@ export const HeaderClient: React.FC<{
           {/* Services dropdown */}
           <ServicesDropdown servicesMode={servicesMode} />
 
-          {/* Career Tools dropdown */}
-          <CareerToolsDropdown />
+          {/* Career Tools link */}
+          <Link
+            href="/career-tools"
+            className="px-4 py-2 rounded-lg text-gray-900 font-medium dark:text-black transition-all duration-300 ease-in-out transform hover:scale-105"
+          >
+            Career Tools
+          </Link>
 
           {/* Resources dropdown */}
           <ResourcesDropdown />
@@ -321,160 +323,15 @@ export const HeaderClient: React.FC<{
                 )}
               </div>
 
-              {/* Career Tools Dropdown for mobile */}
+              {/* Career Tools Link for mobile */}
               <div className="py-1 border-b border-gray-100">
-                <button
-                  onClick={() => setMobileCareerToolsOpen(!mobileCareerToolsOpen)}
-                  className="flex items-center justify-between w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
+                <Link
+                  href="/career-tools"
+                  className="block w-full py-3 font-medium text-gray-800 hover:text-[#2563eb] transition-colors duration-200"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Career Tools
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className={`transition-transform duration-200 ${mobileCareerToolsOpen ? 'rotate-180' : ''}`}
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </button>
-                {mobileCareerToolsOpen && (
-                  <div className="pl-4 pb-2 space-y-1">
-                    <div className="space-y-1">
-                      <Link
-                        href="/career-tools/job-description-keyword-finder"
-                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Keyword Finder
-                      </Link>
-                      <Link
-                        href="/career-tools/cover-letter-generator"
-                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Cover Letter Generator
-                      </Link>
-                      <Link
-                        href="/career-tools/resume-gap-identifier"
-                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Resume Gap Identifier
-                      </Link>
-                      <Link
-                        href="/career-tools/global-opportunity-heatmap"
-                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Global Opportunity Heatmap
-                      </Link>
-                      <Link
-                        href="/career-tools/leadership-readiness-score"
-                        className="block py-2 text-sm text-gray-700 hover:text-orange-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Leadership Readiness Score
-                      </Link>
-                      <Link
-                        href="/career-tools/salary-analyzer"
-                        className="block py-2 text-sm text-gray-700 hover:text-green-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Salary Analyzer
-                      </Link>
-                      <Link
-                        href="/career-tools/career-roadmap-generator"
-                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Career Roadmap Generator
-                      </Link>
-                      <Link
-                        href="/career-tools/freelance-rate-calculator"
-                        className="block py-2 text-sm text-gray-700 hover:text-pink-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Freelance Rate Calculator
-                      </Link>
-                      <Link
-                        href="/career-tools/linkedin-profile-generator"
-                        className="block py-2 text-sm text-gray-700 hover:text-[#2563eb] transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        LinkedIn Profile Generator
-                      </Link>
-                      <Link
-                        href="/career-tools/future-skills-identifier"
-                        className="block py-2 text-sm text-gray-700 hover:text-purple-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Future Skills Identifier
-                      </Link>
-                      <Link
-                        href="/career-tools/cost-of-living-calculator"
-                        className="block py-2 text-sm text-gray-700 hover:text-green-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Cost of Living Calculator
-                      </Link>
-                      <Link
-                        href="/career-tools/career-transition-calculator"
-                        className="block py-2 text-sm text-gray-700 hover:text-cyan-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Career Transition Calculator
-                      </Link>
-                      <Link
-                        href="/career-tools/retirement-readiness"
-                        className="block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Retirement Readiness
-                      </Link>
-                      <Link
-                        href="/career-tools/salary-comparison"
-                        className="block py-2 text-sm text-gray-700 hover:text-purple-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Salary Comparison
-                      </Link>
-                      <Link
-                        href="/career-tools/next-job-recommender"
-                        className="block py-2 text-sm text-gray-700 hover:text-green-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Next Job Recommender
-                      </Link>
-                      <Link
-                        href="/career-tools/work-happiness-index"
-                        className="block py-2 text-sm text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Work Happiness Index
-                      </Link>
-                      <Link
-                        href="/career-tools/global-relocation-affordability"
-                        className="block py-2 text-sm text-gray-700 hover:text-teal-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        Global Relocation Calculator
-                      </Link>
-                      <Link
-                        href="/career-tools/automation-risk"
-                        className="block py-2 text-sm text-gray-700 hover:text-purple-600 transition-colors duration-200"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        AI Automation Risk
-                      </Link>
-                    </div>
-                  </div>
-                )}
+                </Link>
               </div>
 
               {/* Resources Dropdown for mobile */}

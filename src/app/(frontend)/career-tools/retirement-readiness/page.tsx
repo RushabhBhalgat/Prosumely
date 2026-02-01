@@ -34,8 +34,70 @@ export const metadata: Metadata = {
 }
 
 export default function RetirementReadinessPage() {
+  // FAQ Schema Markup for SEO
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is a good retirement readiness score?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "A retirement readiness score of 80 or above indicates you're on track for a comfortable retirement. Scores between 60-79 suggest moderate preparation with some areas needing improvement. Scores below 60 indicate significant gaps that require immediate attention. The score considers savings adequacy, investment strategy, timeline, pension/social security, and cost preparedness.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How much money do I need to retire comfortably?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "A common rule of thumb is to aim for 70-80% of your pre-retirement income annually. For example, if you earn $75,000/year, you'd need $52,500-60,000 per year in retirement. The total amount depends on your retirement age, life expectancy, desired lifestyle, location, and healthcare needs. Many experts suggest having 10-12x your annual salary saved by retirement age.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'At what age should I start planning for retirement?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "The ideal time to start planning is in your 20s or as soon as you begin earning income. The power of compound interest means even small contributions early on can grow significantly. However, it's never too late — even if you're in your 40s, 50s, or 60s, strategic planning and catch-up contributions can still make a substantial difference in your retirement readiness.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What are the best retirement savings accounts?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The most popular retirement accounts include 401(k) plans (employer-sponsored with potential matching contributions), Traditional IRAs (tax-deductible contributions), Roth IRAs (tax-free withdrawals in retirement), and SEP IRAs for self-employed individuals. Each has different contribution limits, tax advantages, and withdrawal rules. Many financial advisors recommend maximizing employer 401(k) matches first, then contributing to IRAs.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I retire abroad, and what should I consider?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, many retirees choose to live abroad for lower costs, better climate, or new experiences. Key considerations include visa/residency requirements, healthcare access and insurance, cost of living, tax implications (some countries have tax treaties with the US), language barriers, proximity to family, and political stability. Popular retirement destinations include Portugal, Mexico, Costa Rica, Spain, and Thailand.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I prepare for healthcare costs in retirement?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Healthcare is one of the largest retirement expenses. In the US, Medicare begins at 65 but doesn't cover everything — consider Medicare Supplement (Medigap) or Medicare Advantage plans. Budget for premiums, deductibles, prescriptions, dental, vision, and long-term care insurance. Health Savings Accounts (HSAs) offer triple-tax advantages for healthcare savings. The average couple may need $300,000-400,000+ for healthcare throughout retirement.",
+        },
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      {/* FAQ Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <div className="container mx-auto px-4 py-12">
         <RetirementReadinessCalculator />
 
@@ -257,14 +319,13 @@ export default function RetirementReadinessPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">
-              Need more personalized retirement planning assistance?
-            </p>
+            <p className="text-gray-600 mb-4">Maximize your career earnings before retirement!</p>
             <Link
-              href="/services/career-coaching"
-              className="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors"
+              href="/services/resume-review"
+              className="inline-block px-8 py-3 bg-blue-600 font-bold rounded-lg hover:bg-blue-700 transition-colors"
+              style={{ color: '#ffffff !important', textDecoration: 'none' }}
             >
-              Schedule a Career Consultation
+              <span style={{ color: '#ffffff' }}>Get Free Resume Review</span>
             </Link>
           </div>
         </div>

@@ -298,6 +298,184 @@ export default function FutureSkillsIdentifier() {
           </button>
         </div>
 
+        {/* Cross-link to Related Tools */}
+        <div className="bg-white rounded-2xl shadow-xl p-8">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+            Complete Your Career Strategy
+          </h2>
+          <p className="text-gray-600 text-center mb-6">
+            Maximize your career growth by combining these powerful tools
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link
+              href="/career-tools/resume-gap-identifier"
+              className="group bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border-2 border-blue-200 hover:border-blue-400 transition-all hover:shadow-lg"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    Resume Gap Identifier →
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Identify which of these future skills are missing from your resume and get
+                    actionable recommendations to bridge the gaps.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/career-roadmap-generator"
+              className="group bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border-2 border-purple-200 hover:border-purple-400 transition-all hover:shadow-lg"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                    Career Roadmap Generator →
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Create a detailed timeline and action plan for acquiring these emerging skills
+                    and advancing your career strategically.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Statistics Image */}
+        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 border border-indigo-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+            Future of Work: Skills & Trends
+          </h2>
+          <div className="flex justify-center mb-4">
+            <img
+              src="https://res.cloudinary.com/dekim1abx/image/upload/v1769923261/work-life-balance-statistics-trends-2025_unwvyg.png"
+              alt="Work-Life Balance Statistics and Career Trends 2025"
+              className="rounded-lg shadow-lg max-w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+          <p className="text-sm text-gray-600 text-center italic">
+            Key statistics and trends shaping the future of work and skill requirements
+          </p>
+        </div>
+
+        {/* Additional CTAs Section */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Free Resume Review CTA */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-500 rounded-xl mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-purple-900 mb-2">Free Resume Review</h3>
+              <p className="text-purple-700 text-sm mb-4">
+                Get expert feedback on your resume. We'll identify areas for improvement and provide
+                actionable recommendations.
+              </p>
+              <Link
+                href="/resume-review"
+                className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                style={{ color: '#ffffff', textDecoration: 'none' }}
+              >
+                Get Free Review
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* ATS CV Service CTA */}
+          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-200 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-500 rounded-xl mb-4">
+                <svg
+                  className="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-blue-900 mb-2">ATS Resume - Only $20</h3>
+              <p className="text-blue-700 text-sm mb-4">
+                Professional ATS-optimized resume writing service. Beat applicant tracking systems
+                and land more interviews.
+              </p>
+              <Link
+                href="/ats-resume-writing-service"
+                className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+                style={{ color: '#ffffff', textDecoration: 'none' }}
+              >
+                Get ATS Resume
+                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Results */}
         {analysis && (
           <div ref={resultsRef} className="space-y-8 animate-fade-in">

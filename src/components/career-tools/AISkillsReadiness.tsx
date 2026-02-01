@@ -586,6 +586,393 @@ export default function AISkillsReadiness() {
             </div>
           </div>
         )}
+
+        {/* Scoring Labels Explanation Section */}
+        <div className="mt-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Understanding Your AI Readiness Score
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-xl border-2 border-red-200">
+              <div className="flex items-center mb-3">
+                <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white font-bold text-xl">1</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">AI Beginner</h3>
+              </div>
+              <p className="text-sm text-gray-700 mb-3">
+                <strong>Score: 0-40</strong>
+              </p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Limited or no experience with AI tools. May have heard of ChatGPT or similar tools
+                but haven&apos;t integrated them into daily work. Needs foundational training on AI
+                basics and practical applications.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-xl border-2 border-yellow-300">
+              <div className="flex items-center mb-3">
+                <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white font-bold text-xl">2</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">AI Practitioner</h3>
+              </div>
+              <p className="text-sm text-gray-700 mb-3">
+                <strong>Score: 41-65</strong>
+              </p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Regularly uses AI tools like ChatGPT, Gemini, or Copilot for basic tasks (writing,
+                research, brainstorming). Understands prompting basics but hasn&apos;t mastered
+                advanced techniques or integrated AI deeply into workflows.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-300">
+              <div className="flex items-center mb-3">
+                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white font-bold text-xl">3</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">AI Fluent</h3>
+              </div>
+              <p className="text-sm text-gray-700 mb-3">
+                <strong>Score: 66-85</strong>
+              </p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Confidently uses multiple AI tools across various tasks. Masters advanced prompting,
+                understands AI limitations, and integrates AI into daily workflows for productivity
+                gains. Can train teammates on AI best practices.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-300">
+              <div className="flex items-center mb-3">
+                <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white font-bold text-xl">4</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">AI Expert</h3>
+              </div>
+              <p className="text-sm text-gray-700 mb-3">
+                <strong>Score: 86-100</strong>
+              </p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Deep expertise across AI tools, APIs, and custom implementations. Builds AI-powered
+                workflows, automates complex tasks, and drives organizational AI adoption.
+                Recognized as an AI thought leader in their field.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Industry Benchmarks Section */}
+        <div className="mt-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl shadow-xl border border-purple-200 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            AI Readiness by Industry (2026 Benchmarks)
+          </h2>
+          <p className="text-gray-700 text-center mb-6 max-w-3xl mx-auto">
+            See how different industries are adopting AI and where your score ranks compared to
+            professionals in your field.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full bg-white rounded-lg shadow-sm">
+              <thead className="bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                <tr>
+                  <th className="px-6 py-3 text-left font-semibold">Industry</th>
+                  <th className="px-6 py-3 text-left font-semibold">Avg Score</th>
+                  <th className="px-6 py-3 text-left font-semibold">Adoption Level</th>
+                  <th className="px-6 py-3 text-left font-semibold">Top AI Use Cases</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200">
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Technology/Engineering</td>
+                  <td className="px-6 py-4 text-green-600 font-bold">78</td>
+                  <td className="px-6 py-4 text-gray-700">Very High</td>
+                  <td className="px-6 py-4 text-gray-700 text-sm">
+                    Code generation, debugging, automation
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Marketing/Advertising</td>
+                  <td className="px-6 py-4 text-blue-600 font-bold">71</td>
+                  <td className="px-6 py-4 text-gray-700">High</td>
+                  <td className="px-6 py-4 text-gray-700 text-sm">
+                    Content creation, campaign optimization, analytics
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Finance/Consulting</td>
+                  <td className="px-6 py-4 text-blue-600 font-bold">65</td>
+                  <td className="px-6 py-4 text-gray-700">Moderate-High</td>
+                  <td className="px-6 py-4 text-gray-700 text-sm">
+                    Data analysis, report generation, research
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Healthcare/Pharma</td>
+                  <td className="px-6 py-4 text-yellow-600 font-bold">58</td>
+                  <td className="px-6 py-4 text-gray-700">Moderate</td>
+                  <td className="px-6 py-4 text-gray-700 text-sm">
+                    Clinical documentation, research summaries
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Education</td>
+                  <td className="px-6 py-4 text-yellow-600 font-bold">52</td>
+                  <td className="px-6 py-4 text-gray-700">Moderate</td>
+                  <td className="px-6 py-4 text-gray-700 text-sm">
+                    Lesson planning, grading assistance, tutoring
+                  </td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="px-6 py-4 font-medium text-gray-900">Manufacturing/Logistics</td>
+                  <td className="px-6 py-4 text-orange-600 font-bold">45</td>
+                  <td className="px-6 py-4 text-gray-700">Low-Moderate</td>
+                  <td className="px-6 py-4 text-gray-700 text-sm">
+                    Predictive maintenance, supply chain optimization
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-6 bg-white rounded-lg p-4 border border-purple-200">
+            <p className="text-sm text-gray-700 leading-relaxed">
+              <strong className="text-purple-700">Recruiter Insight:</strong> Many hiring managers
+              now explicitly assess AI proficiency during interviews, especially in tech, marketing,
+              and consulting roles. Being &quot;AI Fluent&quot; (66+ score) is increasingly becoming
+              a baseline expectation for competitive candidates. Demonstrating AI expertise can
+              differentiate you in a crowded job market.
+            </p>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                What is an AI Skills Readiness Score?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                An AI Skills Readiness Score measures your proficiency with AI tools, your
+                understanding of AI concepts, and your ability to integrate AI into your work
+                effectively. Our assessment evaluates four key dimensions: AI literacy
+                (understanding how AI works), tool proficiency (hands-on experience with ChatGPT,
+                Copilot, etc.), integration skills (applying AI to solve real problems), and
+                adaptability (keeping up with rapid AI advancements).
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Why does AI readiness matter for my career?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                AI is transforming every industry. Professionals who master AI tools are 30-50% more
+                productive, command higher salaries, and have better career prospects. Recruiters
+                increasingly prioritize AI skills, and job postings mentioning &quot;AI
+                proficiency&quot; have grown 200%+ in 2024-2026. Being AI-ready future-proofs your
+                career and makes you indispensable to employers.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                How can I improve my AI readiness score?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Start by using AI tools daily: ChatGPT for writing/research, GitHub Copilot for
+                coding, or Midjourney for design. Take online courses (Coursera, LinkedIn Learning)
+                on prompt engineering and AI fundamentals. Join AI communities (Reddit, Discord) to
+                learn from power users. Most importantly, experiment with AI in your actual work—the
+                best learning comes from solving real problems.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Do recruiters care about AI skills?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Absolutely. In 2026, 75% of hiring managers report asking about AI experience during
+                interviews, especially for roles in marketing, tech, consulting, and content
+                creation. However, they also worry about candidates who rely on AI blindly without
+                critical thinking. The key is demonstrating that you use AI as a productivity
+                multiplier—not a replacement for expertise.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Cross-Links Section */}
+        <div className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-xl border border-blue-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Continue Your Career Development
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link
+              href="/career-tools/future-skills-identifier"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    Future Skills Identifier
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Discover other emerging skills beyond AI that will be critical for your career
+                    in the next 3-5 years.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/skill-gap-analyzer"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                    Skill Gap Analyzer
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Identify specific skills (including AI) you need to acquire to reach your target
+                    role.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* CTAs Section */}
+        <div className="mt-8 grid md:grid-cols-2 gap-6">
+          {/* Free Resume Review CTA */}
+          <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Get a Free Resume Review</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Showcase your AI skills effectively on your resume. Get expert feedback—free.
+              </p>
+              <Link
+                href="/resume-review"
+                className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
+              >
+                <span style={{ color: '#7c3aed' }}>Get Free Review</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#7c3aed' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Executive CV CTA */}
+          <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Position Yourself as AI-Forward</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Craft a resume that highlights your AI expertise and positions you as a
+                forward-thinking professional.
+              </p>
+              <Link
+                href="/executive-resume-writing-service"
+                className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
+              >
+                <span style={{ color: '#ea580c' }}>Get Professional Help</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#ea580c' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

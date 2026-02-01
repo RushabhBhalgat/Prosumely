@@ -959,6 +959,103 @@ export default function SkillGapAnalyzer() {
             </div>
           </div>
         )}
+
+        {/* Cross-Links Section */}
+        <div className="grid md:grid-cols-2 gap-6 mt-8">
+          <Link
+            href="/career-tools/resume-gap-analyzer"
+            className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-blue-500"
+          >
+            <h3 className="text-lg font-semibold text-blue-600 mb-2">📊 Resume Gap Identifier</h3>
+            <p className="text-gray-600 text-sm">
+              Analyze your resume against target job descriptions to identify missing skills,
+              keywords, and qualifications that could improve your candidacy.
+            </p>
+          </Link>
+
+          <Link
+            href="/career-tools/future-skills-identifier"
+            className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-purple-500"
+          >
+            <h3 className="text-lg font-semibold text-purple-600 mb-2">
+              🔮 Future Skills Identifier
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Discover trending skills in your industry and identify which certifications align with
+              future job market demands to stay ahead of the curve.
+            </p>
+          </Link>
+        </div>
+
+        {/* Tool Screenshot/Example */}
+        <div className="bg-white rounded-xl shadow-lg p-8 mt-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">See It In Action</h3>
+          <div className="mb-6">
+            <img
+              src="https://res.cloudinary.com/dekim1abx/image/upload/v1769925503/Include_real_examples_or_tool_screenshots_showing_typical_outputs_which_increases_perceived_value_and_makes_outreach_easier._gqoywa.jpg"
+              alt="Skill Gap Analyzer Tool Screenshot"
+              className="w-full rounded-lg shadow-md"
+            />
+            <p className="text-sm text-gray-600 mt-4 italic text-center">
+              See it in action: Our AI analyzes your resume in seconds to pinpoint missing skills
+              and build a personalized roadmap for your target role.
+            </p>
+          </div>
+        </div>
+
+        {/* Call-to-Action Section */}
+        <div className="grid md:grid-cols-2 gap-6 mt-8">
+          <Link
+            href="/services/resume-review"
+            className="block bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1"
+            style={{ color: '#ffffff', textDecoration: 'none' }}
+          >
+            <div className="flex items-start">
+              <svg className="w-12 h-12 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                <path
+                  fillRule="evenodd"
+                  d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <div>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff' }}>
+                  Free Resume Review
+                </h3>
+                <p className="text-purple-100 text-sm">
+                  Get expert feedback on your resume to increase your chances of landing interviews.
+                  Our AI-powered review identifies areas for improvement.
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/services/ats-optimized-resume"
+            className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1"
+            style={{ color: '#ffffff', textDecoration: 'none' }}
+          >
+            <div className="flex items-start">
+              <svg className="w-12 h-12 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <div>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff' }}>
+                  $20 ATS-Optimized Resume
+                </h3>
+                <p className="text-blue-100 text-sm">
+                  Professional resume writing service optimized for Applicant Tracking Systems.
+                  Stand out from the competition with our expert formatting.
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   )

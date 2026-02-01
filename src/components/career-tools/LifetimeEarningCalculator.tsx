@@ -578,38 +578,332 @@ const LifetimeEarningCalculator = () => {
           </div>
         )}
 
-        {/* Footer */}
-        <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            About Lifetime Earning Potential Calculator
+        {/* Educational Content Section */}
+        <div className="mt-12 bg-white rounded-2xl shadow-xl border border-gray-100 p-8 space-y-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+            <svg
+              className="w-8 h-8 text-purple-600 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            Understanding Your Lifetime Earning Potential
           </h2>
-          <div className="prose prose-purple max-w-none">
-            <p className="text-gray-700 mb-4">
-              The Lifetime Earning Potential Calculator projects your total career earnings from
-              current age to retirement based on your role, industry, education, and growth
-              assumptions. Model different scenarios to understand how career decisions impact
-              lifetime wealth.
+
+          <div className="prose max-w-none space-y-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Your lifetime earning potential is the total amount of money you will earn throughout
+              your entire career—from your first paycheck to retirement. This number is influenced
+              by factors like your industry, role, education level, promotion frequency, career
+              breaks, geographic location, and how aggressively you negotiate raises or pursue new
+              opportunities.
             </p>
 
-            <h3 className="text-xl font-bold text-gray-900 mt-6 mb-3">Related Tools</h3>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                What Affects Lifetime Earnings?
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-purple-700 mb-2 flex items-center">
+                    <span className="text-2xl mr-2">📈</span>
+                    Promotions & Career Growth
+                  </h4>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Promotions dramatically increase lifetime earnings. Moving from entry-level to
+                    mid-management can add $500K-$1M+ to lifetime income. Each promotion typically
+                    brings 10-20% salary increases, compounded over decades.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-purple-700 mb-2 flex items-center">
+                    <span className="text-2xl mr-2">💰</span>
+                    Annual Raises Matter More Than You Think
+                  </h4>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    A 3% annual raise vs. 5% might seem small, but over 30 years, that 2% difference
+                    can add $300K-$500K to your lifetime earnings. Consistent raises compound
+                    powerfully over time.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-purple-700 mb-2 flex items-center">
+                    <span className="text-2xl mr-2">🔄</span>
+                    Career Changes & Industry Shifts
+                  </h4>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Switching careers can increase lifetime earnings if moving to higher-paying
+                    industries (e.g., finance, tech, healthcare). However, career breaks or lateral
+                    moves may temporarily reduce income trajectory.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-purple-700 mb-2 flex items-center">
+                    <span className="text-2xl mr-2">🎓</span>
+                    Education & Certifications
+                  </h4>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Advanced degrees (MBA, JD, MD) can add $1M-$3M to lifetime earnings.
+                    Professional certifications (PMP, CFA, CPA) boost earning potential by 10-30% in
+                    specialized fields.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+              <p className="text-gray-800 leading-relaxed">
+                <strong className="text-amber-900">💡 Key Insight:</strong> Most people earn 80% of
+                their lifetime income between ages 35-60. Maximizing income during peak earning
+                years through strategic promotions, negotiations, and upskilling has outsized impact
+                on lifetime wealth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                What factors affect lifetime earnings the most?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                The biggest factors are: (1) Industry choice (tech, finance, healthcare pay
+                significantly more than retail, hospitality), (2) Promotion frequency (every 3-5
+                years vs. staying stagnant), (3) Annual raises (3% vs. 5-7% makes a huge difference
+                over decades), (4) Career breaks (extended unemployment reduces cumulative
+                earnings), and (5) Geographic location (coastal cities pay 30-50% more than rural
+                areas for the same roles).
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                How do promotions change career earnings over a lifetime?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Promotions are the fastest way to increase lifetime earnings. Each promotion
+                typically brings a 10-20% salary increase. If you get promoted every 3-4 years (vs.
+                every 6-7 years), you could earn an additional $500K-$1M+ over your career.
+                Senior-level promotions (Director, VP, C-Suite) can add $2M-$5M to lifetime income.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                Does changing careers increase lifetime earnings?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                It depends. Switching to higher-paying industries (e.g., from education to tech) can
+                increase lifetime earnings by $500K-$1M+. However, career changes often come with
+                temporary salary resets (10-20% lower starting pay). The key is ensuring your new
+                career has higher long-term growth potential and faster salary progression.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                How accurate is a lifetime earning calculator?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                Lifetime earning calculators provide estimates, not guarantees. Accuracy depends on
+                assumptions about salary growth, promotions, and career trajectory. Our tool uses AI
+                analysis of industry benchmarks, but real-world earnings vary based on performance,
+                economic conditions, negotiation skills, and opportunities pursued.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                What is the average lifetime earning potential in the US?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                The average US worker earns approximately $1.7-$2.5M over their lifetime (pre-tax).
+                However, this varies dramatically by education: high school graduates average $1.3M,
+                bachelor&apos;s degree holders average $2.3M, and master&apos;s degree holders
+                average $2.7M. Professionals in high-earning fields (doctors, lawyers, engineers,
+                finance) can earn $5M-$10M+ over their careers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Cross-Links Section */}
+        <div className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-xl border border-blue-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Maximize Your Career Earnings
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link
+              href="/career-tools/career-roadmap-builder"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    Career Roadmap Builder
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Create a strategic plan to reach higher-paying roles and maximize your earning
+                    potential over time.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/skill-gap-analyzer"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                    Skill Gap Analyzer
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Identify skills you need to acquire for promotions and higher-paying roles that
+                    boost lifetime earnings.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* CTAs Section */}
+        <div className="mt-8 grid md:grid-cols-2 gap-6">
+          {/* Free Resume Review CTA */}
+          <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Get a Free Resume Review</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Maximize your earning potential with a resume that showcases your value. Get expert
+                feedback—free.
+              </p>
               <Link
-                href="/career-tools/salary-analyzer"
-                className="block p-4 bg-green-50 rounded-lg hover:shadow-md transition-shadow"
+                href="/resume-review"
+                className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
               >
-                <h4 className="font-semibold text-green-700 mb-1">Salary Analyzer</h4>
-                <p className="text-sm text-gray-600">
-                  Get data-driven salary expectations by industry
-                </p>
+                <span style={{ color: '#7c3aed' }}>Get Free Review</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#7c3aed' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </Link>
+            </div>
+          </div>
+
+          {/* Executive CV CTA */}
+          <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Accelerate Your Career Growth</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Position yourself for promotions and higher-paying roles with a professionally
+                crafted executive resume.
+              </p>
               <Link
-                href="/career-tools/career-strength-index"
-                className="block p-4 bg-blue-50 rounded-lg hover:shadow-md transition-shadow"
+                href="/executive-resume-writing-service"
+                className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
               >
-                <h4 className="font-semibold text-blue-700 mb-1">Career Strength Index</h4>
-                <p className="text-sm text-gray-600">
-                  Comprehensive assessment of your career health
-                </p>
+                <span style={{ color: '#ea580c' }}>Get Executive Resume</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#ea580c' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </Link>
             </div>
           </div>

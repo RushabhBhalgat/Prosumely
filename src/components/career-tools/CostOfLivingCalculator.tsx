@@ -604,6 +604,346 @@ export default function CostOfLivingCalculator() {
             </div>
           </div>
         )}
+
+        {/* City Comparisons Section */}
+        <div className="mt-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Popular Career Hub Comparisons
+          </h2>
+          <p className="text-gray-700 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
+            Here are typical monthly living costs for popular cities where remote workers, expats,
+            and career professionals relocate. Use these as benchmarks when planning your move.
+          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                city: 'New York City, USA',
+                rent: '$3,500-$5,000',
+                total: '$5,500-$7,500',
+                flag: '🇺🇸',
+              },
+              { city: 'London, UK', rent: '£2,200-£3,500', total: '£3,800-£5,500', flag: '🇬🇧' },
+              { city: 'Singapore', rent: 'S$3,000-S$4,500', total: 'S$4,800-S$6,500', flag: '🇸🇬' },
+              {
+                city: 'Berlin, Germany',
+                rent: '€1,200-€2,000',
+                total: '€2,500-€3,800',
+                flag: '🇩🇪',
+              },
+              {
+                city: 'Dubai, UAE',
+                rent: 'AED 6,000-9,000',
+                total: 'AED 10,000-14,000',
+                flag: '🇦🇪',
+              },
+              {
+                city: 'Mumbai, India',
+                rent: '₹40,000-₹70,000',
+                total: '₹70,000-₹1,20,000',
+                flag: '🇮🇳',
+              },
+              {
+                city: 'Bangalore, India',
+                rent: '₹30,000-₹60,000',
+                total: '₹60,000-₹1,00,000',
+                flag: '🇮🇳',
+              },
+              {
+                city: 'Toronto, Canada',
+                rent: 'C$2,000-C$3,200',
+                total: 'C$3,500-C$5,000',
+                flag: '🇨🇦',
+              },
+              {
+                city: 'Tokyo, Japan',
+                rent: '¥150,000-¥250,000',
+                total: '¥280,000-¥420,000',
+                flag: '🇯🇵',
+              },
+            ].map((city, idx) => (
+              <div
+                key={idx}
+                className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 hover:shadow-lg transition-shadow"
+              >
+                <div className="flex items-center mb-3">
+                  <span className="text-3xl mr-3">{city.flag}</span>
+                  <h3 className="text-lg font-bold text-gray-900">{city.city}</h3>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Rent (1-2BR):</span>
+                    <span className="font-semibold text-gray-900">{city.rent}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-600">Total Monthly:</span>
+                    <span className="font-bold text-blue-600">{city.total}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8 bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                What is a cost of living calculator?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                A cost of living calculator is a tool that compares the expenses of living in
+                different cities, states, or countries. It analyzes housing, transportation, food,
+                healthcare, taxes, and lifestyle costs to help you understand how much money you
+                need to maintain your current standard of living in a new location. Our calculator
+                provides detailed breakdowns and equivalent salary recommendations for relocations.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                How do I compare living costs between cities?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                To compare living costs: (1) Choose your current city and target cities, (2) Enter
+                your household size and lifestyle preferences, (3) Our tool analyzes housing,
+                transportation, food, healthcare, taxes, and other expenses, (4) Review the cost
+                breakdowns and equivalent salary requirements for each city. Key tip: Don&apos;t
+                just compare gross salaries—factor in taxes, healthcare costs, and purchasing power.
+              </p>
+            </div>
+
+            <div className="border-b border-gray-200 pb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                What affects cost of living the most?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                The biggest factors are: (1) Housing costs (rent/mortgage can be 30-50% of
+                expenses), (2) Healthcare and insurance (varies dramatically between countries), (3)
+                Taxes (income, sales, property taxes), (4) Transportation (car ownership vs. public
+                transit), and (5) Geographic location (urban vs. suburban, coastal vs. inland). In
+                expensive cities like NYC or London, housing alone can be 2-3x higher than mid-sized
+                cities.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                How much salary increase do I need when relocating?
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                It depends on the cost difference. Moving from a low-cost city (e.g., Austin) to a
+                high-cost city (e.g., San Francisco) may require a 40-60% salary increase to
+                maintain the same standard of living. Moving internationally adds complexity—factor
+                in currency exchange, tax treaties, healthcare systems, and visa costs. Use our
+                calculator to get personalized salary equivalent recommendations based on your
+                lifestyle.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Cross-Links Section */}
+        <div className="mt-8 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl shadow-xl border border-blue-200 p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            More Career & Relocation Planning Tools
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link
+              href="/career-tools/global-opportunity-heatmap"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    Global Opportunity Heatmap
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Discover high-demand job markets and emerging career hotspots worldwide.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/freelance-rate-calculator"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                    Freelance Rate Calculator
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Adjust your freelance rates based on local living costs and purchasing power.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            <Link
+              href="/career-tools/lifetime-earning-calculator"
+              className="group bg-white p-6 rounded-xl border-2 border-blue-200 hover:border-blue-400 hover:shadow-lg transition-all duration-200"
+            >
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg
+                    className="w-6 h-6 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                    Lifetime Earning Calculator
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Project how relocation affects your total career earnings and retirement
+                    savings.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* CTAs Section */}
+        <div className="mt-8 grid md:grid-cols-2 gap-6">
+          {/* Free Resume Review CTA */}
+          <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Get a Free Resume Review</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Moving to a new city or country? Optimize your resume for local job markets—free
+                expert feedback.
+              </p>
+              <Link
+                href="/resume-review"
+                className="inline-flex items-center px-8 py-4 bg-white text-purple-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
+              >
+                <span style={{ color: '#7c3aed' }}>Get Free Review</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#7c3aed' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* Executive CV CTA */}
+          <div className="bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">International Career Move?</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Get a professionally crafted resume optimized for international job markets and
+                global opportunities.
+              </p>
+              <Link
+                href="/executive-resume-writing-service"
+                className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl"
+                style={{ color: '#ffffff' }}
+              >
+                <span style={{ color: '#ea580c' }}>Get Professional Help</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#ea580c' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

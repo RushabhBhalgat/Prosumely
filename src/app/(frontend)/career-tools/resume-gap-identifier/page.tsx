@@ -578,57 +578,258 @@ export default function ResumeGapIdentifierPage() {
         </div>
 
         {/* Related Tools CTA */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-10 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-10">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
             More Free Career Tools to Boost Your Job Search
           </h2>
-          <p className="text-gray-600 text-lg mb-6 max-w-3xl mx-auto">
+          <p className="text-gray-600 text-lg mb-8 max-w-3xl mx-auto text-center">
             Maximize your chances of landing your dream job with our complete suite of AI-powered
             career tools.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <Link
+              href="/career-tools/skill-gap-analyzer"
+              className="bg-gradient-to-br from-purple-50 to-blue-50 p-6 rounded-xl border border-purple-200 hover:shadow-lg transition-all duration-200 no-underline"
+            >
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-purple-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                  />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Skill Gap Analyzer</h4>
+              <p className="text-sm text-gray-600">
+                Identify and bridge skill gaps to reach your career goals faster
+              </p>
+            </Link>
+
+            <Link
+              href="/career-tools/career-roadmap-builder"
+              className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 hover:shadow-lg transition-all duration-200 no-underline"
+            >
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                  />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Career Roadmap Generator</h4>
+              <p className="text-sm text-gray-600">
+                Create a personalized career path with milestones and actionable steps
+              </p>
+            </Link>
+
+            <Link
+              href="/career-tools/future-skills-identifier"
+              className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200 hover:shadow-lg transition-all duration-200 no-underline"
+            >
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Future Skills Identifier</h4>
+              <p className="text-sm text-gray-600">
+                Discover emerging skills to stay ahead in your industry
+              </p>
+            </Link>
+
+            <Link
+              href="/career-tools/ai-skills-readiness"
+              className="bg-gradient-to-br from-pink-50 to-rose-50 p-6 rounded-xl border border-pink-200 hover:shadow-lg transition-all duration-200 no-underline"
+            >
+              <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-pink-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">AI Skills Readiness</h4>
+              <p className="text-sm text-gray-600">
+                Assess your AI proficiency and get learning recommendations
+              </p>
+            </Link>
+
+            <Link
+              href="/career-tools/global-opportunity-heatmap"
+              className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl border border-orange-200 hover:shadow-lg transition-all duration-200 no-underline"
+            >
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-orange-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Global Opportunity Heatmap</h4>
+              <p className="text-sm text-gray-600">
+                Explore career opportunities worldwide and find the best locations for your role
+              </p>
+            </Link>
+
             <Link
               href="/career-tools/cover-letter-generator"
-              className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200"
+              className="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl border border-indigo-200 hover:shadow-lg transition-all duration-200 no-underline"
             >
-              AI Cover Letter Generator
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                <svg
+                  className="w-6 h-6 text-indigo-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Cover Letter Generator</h4>
+              <p className="text-sm text-gray-600">
+                Create compelling, personalized cover letters in minutes
+              </p>
             </Link>
-            <Link
-              href="/career-tools/keyword-finder"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200"
-            >
-              Keyword Finder Tool
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-            <Link
-              href="/career-tools"
-              className="inline-flex items-center px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold rounded-lg transition-colors duration-200"
-            >
-              View All Tools
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
+          </div>
+        </div>
+
+        {/* CTAs Section */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Free Resume Review CTA */}
+          <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Get a Free Resume Review</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Close the gaps in your resume with expert feedback. Get actionable insights—free.
+              </p>
+              <Link
+                href="/resume-review"
+                className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
+              >
+                <span style={{ color: '#7c3aed' }}>Get Free Review</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#7c3aed' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+          {/* ATS CV CTA */}
+          <div className="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl shadow-xl p-8 text-white">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold mb-3">ATS-Optimized Resume</h3>
+              <p className="text-lg mb-6 text-white/90">
+                Eliminate resume gaps with a professionally crafted, ATS-friendly CV that passes
+                every screening.
+              </p>
+              <Link
+                href="/ats-resume"
+                className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
+              >
+                <span style={{ color: '#0891b2' }}>Get ATS Resume</span>
+                <svg
+                  className="w-5 h-5 ml-2"
+                  style={{ color: '#0891b2' }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -320,10 +320,243 @@ export default function GlobalRelocationAffordabilityPage() {
           <div className="mt-12 text-center">
             <Link
               href="/career-tools"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-semibold rounded-lg hover:from-teal-700 hover:to-blue-700 transition-all shadow-lg"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-teal-600 to-blue-600 text-white font-semibold rounded-lg hover:from-teal-700 hover:to-blue-700 transition-all shadow-lg no-underline"
+              style={{ color: '#ffffff' }}
             >
               Explore More Career Tools
             </Link>
+          </div>
+
+          {/* Related Tools Section */}
+          <div className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-xl p-8 border border-teal-200 mt-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+              Essential Tools for International Relocation
+            </h3>
+            <p className="text-gray-700 text-center mb-8 max-w-3xl mx-auto">
+              Maximize SEO value and user engagement by internally linking to these related career
+              tools
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link
+                href="/career-tools/global-opportunity-heatmap"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-purple-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Global Opportunity Heatmap</h4>
+                <p className="text-sm text-gray-600">
+                  Explore career opportunities worldwide before deciding where to relocate
+                </p>
+              </Link>
+
+              <Link
+                href="/career-tools/cost-of-living-calculator"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-blue-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Cost of Living Calculator</h4>
+                <p className="text-sm text-gray-600">
+                  Compare detailed living expenses between your current location and destination
+                </p>
+              </Link>
+
+              <Link
+                href="/career-tools/salary-analyzer"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Salary Analyzer</h4>
+                <p className="text-sm text-gray-600">
+                  Understand expected salaries in your target country and role
+                </p>
+              </Link>
+
+              <Link
+                href="/career-tools/career-transition-calculator"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-orange-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">
+                  Career Transition Calculator
+                </h4>
+                <p className="text-sm text-gray-600">
+                  Evaluate career change feasibility if relocation involves switching industries
+                </p>
+              </Link>
+
+              <Link
+                href="/career-tools/salary-comparison"
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 border border-gray-100 no-underline"
+              >
+                <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-pink-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-bold text-gray-900 mb-2">Salary Comparison</h4>
+                <p className="text-sm text-gray-600">
+                  Compare job offers across multiple countries with purchasing power analysis
+                </p>
+              </Link>
+            </div>
+          </div>
+
+          {/* CTAs Section */}
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Free Resume Review CTA */}
+            <div className="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Get a Free Resume Review</h3>
+                <p className="text-lg mb-6 text-white/90">
+                  Position yourself for international opportunities. Get expert feedback—free.
+                </p>
+                <Link
+                  href="/resume-review"
+                  className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
+                >
+                  <span style={{ color: '#7c3aed' }}>Get Free Review</span>
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    style={{ color: '#7c3aed' }}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* ATS CV CTA */}
+            <div className="bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl shadow-xl p-8 text-white">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-2xl mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">International Career CV</h3>
+                <p className="text-lg mb-6 text-white/90">
+                  Secure your global relocation with an ATS-optimized CV for international markets.
+                </p>
+                <Link
+                  href="/ats-resume"
+                  className="inline-flex items-center px-8 py-4 bg-white font-bold text-lg rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl no-underline"
+                >
+                  <span style={{ color: '#14b8a6' }}>Get ATS Resume</span>
+                  <svg
+                    className="w-5 h-5 ml-2"
+                    style={{ color: '#14b8a6' }}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

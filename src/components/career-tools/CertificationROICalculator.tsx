@@ -403,6 +403,109 @@ export default function CertificationROICalculator() {
           </form>
         </div>
 
+        {/* Cross-Links Section */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <Link
+            href="/career-tools/future-skills-identifier"
+            className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-blue-500"
+          >
+            <h3 className="text-lg font-semibold text-blue-600 mb-2">
+              🔮 Future Skills Identifier
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Discover trending skills in your industry and identify which certifications align with
+              future job market demands.
+            </p>
+          </Link>
+
+          <Link
+            href="/career-tools/resume-gap-analyzer"
+            className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-purple-500"
+          >
+            <h3 className="text-lg font-semibold text-purple-600 mb-2">📊 Resume Gap Analyzer</h3>
+            <p className="text-gray-600 text-sm">
+              Analyze your resume against target job descriptions to identify missing certifications
+              and qualifications that could improve your candidacy.
+            </p>
+          </Link>
+        </div>
+
+        {/* Certification ROI Comparison Image and Table */}
+        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">Certification ROI Comparison</h2>
+          <div className="mb-6">
+            <img
+              src="https://res.cloudinary.com/dekim1abx/image/upload/v1769923861/certification-roi-comparison-pmp-aws-cfa_itvzp2.png"
+              alt="Certification ROI Comparison - PMP, AWS, CFA"
+              className="w-full rounded-lg shadow-md"
+            />
+            <p className="text-sm text-gray-600 mt-3 italic text-center">
+              A breakdown of the financial return for popular certifications, illustrating how
+              initial study costs compare to long-term salary growth.
+            </p>
+          </div>
+
+          {/* HTML Table for SEO */}
+          <div className="overflow-x-auto">
+            <table className="min-w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gradient-to-r from-blue-50 to-purple-50">
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">
+                    Certification
+                  </th>
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">
+                    Initial Cost & Study Time
+                  </th>
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">
+                    Avg. Salary Increase
+                  </th>
+                  <th className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-800">
+                    Payback Period
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="hover:bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-800">
+                    PMP (Project Management Professional)
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                    ~$1,500 / 3-6 months
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-green-600 font-semibold">
+                    +20-25%
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-gray-700">&lt;1 year</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-800">
+                    AWS Solutions Architect
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                    ~$500 / 2-4 months
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-green-600 font-semibold">
+                    +25-35%
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-gray-700">A few months</td>
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="border border-gray-300 px-4 py-3 font-medium text-gray-800">
+                    CFA (Chartered Financial Analyst)
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-gray-700">
+                    ~$3,000+ / 2-4 years
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-green-600 font-semibold">
+                    +35-50%
+                  </td>
+                  <td className="border border-gray-300 px-4 py-3 text-gray-700">1-3 years</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-8">
             <p className="text-red-800">{error}</p>
@@ -600,6 +703,60 @@ export default function CertificationROICalculator() {
             </div>
           </div>
         )}
+
+        {/* Call-to-Action Section */}
+        <div className="grid md:grid-cols-2 gap-6 mt-8">
+          <Link
+            href="/services/resume-review"
+            className="block bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1"
+            style={{ color: '#ffffff', textDecoration: 'none' }}
+          >
+            <div className="flex items-start">
+              <svg className="w-12 h-12 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                <path
+                  fillRule="evenodd"
+                  d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <div>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff' }}>
+                  Free Resume Review
+                </h3>
+                <p className="text-purple-100 text-sm">
+                  Get expert feedback on your resume to increase your chances of landing interviews.
+                  Our AI-powered review identifies areas for improvement.
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/services/ats-optimized-resume"
+            className="block bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all transform hover:-translate-y-1"
+            style={{ color: '#ffffff', textDecoration: 'none' }}
+          >
+            <div className="flex items-start">
+              <svg className="w-12 h-12 mr-4 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <div>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#ffffff' }}>
+                  $20 ATS-Optimized Resume
+                </h3>
+                <p className="text-blue-100 text-sm">
+                  Professional resume writing service optimized for Applicant Tracking Systems.
+                  Stand out from the competition with our expert formatting.
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   )
